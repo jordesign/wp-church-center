@@ -1,0 +1,880 @@
+body {
+	padding:0;
+  margin:0;
+	font-family: 'helvetica neue', helvetica, calibri, arial, sans-serif;
+	background:#333;
+  
+}
+
+* {
+  box-sizing:border-box;
+}
+
+.skip-container {
+  display:none;
+}
+
+//Header 
+.header {
+  height: 80px;
+  position:relative;
+  z-index: 12;
+  
+  top:0;
+  left:0;
+  right:0;
+
+  
+  img {
+    float:left;
+    margin: 10px;
+    max-height: 60px;
+    max-width: 320px;
+
+  }
+
+  .menuLink {
+    float:right;
+    height: 40px;
+    margin: 20px;
+    line-height: 40px;
+    color:#fff;
+    font-size: 40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    i {
+      height: 40px;
+      line-height: 40px;
+      
+    }
+
+    i:before {
+      height: 40px;
+      line-height: 40px;
+    }
+    
+    span {
+      display:none;
+    }
+  }
+}
+
+.header.card {
+  position:fixed;
+}
+
+//Menu 
+#menu {
+  position:fixed;
+  top:0;
+  right:-280px;
+  bottom:0;
+  width: 280px;
+  background:#f6f6f6;
+  box-shadow: 0px 0px 28px -1px rgba(0,0,0,0.62);
+  z-index:10;
+  transition: right .2s ease-in-out;
+  
+  ul {
+    list-style:none;
+    padding: 50px 0 0;
+    margin:0;
+    
+    li {
+      height: 48px;
+      
+      a {
+        line-height: 42px;
+        padding: 0 15px;
+        font-size: 16px;
+        color:#666;
+        text-decoration:none;
+        display:inline-block;
+        height: 42px;
+        
+        span {
+          display:inline-block;
+        height: 42px;
+        line-height: 42px;
+        }
+        
+        i {
+          display:inline-block;
+          width: 32px;
+          height: 32px;
+          text-align:center;
+          color:#fff;
+          background:#444;
+          font-size: 16px;
+          line-height: 32px;
+          margin-right: 10px;
+          border-radius: 50%;
+          position:relative;
+          top:-1px;
+        }
+        i:before {
+          line-height: 32px;
+          height: 32px;
+        }
+      }
+    }
+  }
+
+  .closeMenu {
+    position: absolute;
+    top: 0;
+    right:0;
+    width: 50px;
+    height: 50px;
+    text-align:center;
+    font-size: 32px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#444;
+    i {
+      height: 50px;
+      line-height: 50px;
+      
+    }
+
+    i:before {
+      height: 50px;
+      line-height: 50px;
+      
+    }
+    
+    span {
+      display:none;
+    }
+    
+  }
+}
+
+#menu:target {
+  right: 0;
+}
+
+//Footer
+.footer {
+  display:none;
+}
+
+//Grid View
+.cardHolder.grid {
+  padding: 20px 10px 10px;
+  
+  .card {
+    float:left;
+    display:block;
+    padding-top: 50%;
+    height:0;
+    overflow:hidden;
+    width: 100%; 
+    padding: 80% 0 0;
+    position:relative;
+    transition: all .4s ease;
+    
+    
+    .cardBody {
+
+      position:absolute;
+      top: 10px;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      background:#222;
+      
+      .topSection, .overlay, .bottomSection {
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+      }
+
+      .overlay {
+        opacity: 0.75;
+        transition: all .4s ease;
+      }
+      .bottomSection {
+        position:absolute;
+        bottom:0;
+        left:0;
+        right:0;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding: 15px;
+        text-align:center;
+        
+        .intro {
+          text-align:center;
+        }
+        
+        h3 {
+          font-size: 32px;
+          line-height:36px;
+          margin:0 0 0px;
+          font-weight:normal;
+          color:#fff !important;
+          text-shadow: 0px 0px 9px rgba(0, 0, 0, 0.6);
+        }
+
+        p {
+          color:#fff;
+          font-size: 16px;
+          line-height: 21px;
+          margin:0;
+          opacity:0.8;
+          text-shadow: 0px 0px 9px rgba(0, 0, 0, 0.6);
+        }
+      }
+    }
+  }
+
+  .card:hover .cardBody {
+    .overlay {
+      opacity: 1;
+    }
+  }
+
+}
+
+
+//list
+.cardHolder.list {
+  padding:0 10px 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  .card {
+    display:block;
+    width: 100%;
+    margin:0;
+    min-height: 100px;
+    display: flex;
+    align-items:center;
+    padding: 15px 50px 15px 15px;
+    position:relative;
+    transition: background .4s ease;
+    text-decoration:none !important;
+    
+    h3 {
+      color:#fff;
+      font-size: 24px;
+      line-height: 30px;
+      margin:0;
+    }
+
+    p {
+      font-size: 16px;
+      color:#fff;
+      opacity: 0.8;
+      margin:0;
+    }
+
+    i {
+      position:absolute;
+      top:0;
+      bottom:0;
+      right: 10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size: 32px !important;
+      transition:color .4s ease;
+      //color:#fff;
+    }
+
+    i:before {
+      font-size: 32px !important;
+    }
+  }
+
+  .card:not(:hover) i {
+    color:#fff !important;
+  }
+  .card:after {
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    height: 6px;
+    content:'';
+    background:#111;
+    opacity: 0.15;
+  }
+
+  .card:hover {
+    background:#222 !important;
+  }
+}
+
+
+//cards
+.cardHolder.card {
+  position:fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  padding: 90px 0 60px 1px ;
+  
+  .slick-arrow {
+    display:none;
+  }
+
+  .slick-initialized .slick-slide {
+    display:flex;
+  }
+
+  .slick-list {
+    overflow: visible;
+    display: flex;
+    flex: 1 1 auto;
+  }
+
+  .slick-track {
+      display: flex;
+      flex: 1 0 auto;
+  }
+
+  .slick-dots {
+    bottom: -40px;
+    
+    li {
+      margin: 0 2px;
+    }
+    
+    li.slick-active button:before,
+    li button:before {
+      color:#fff;
+      font-size: 42px;
+    }
+  }
+  
+  .card {
+    display:flex;
+    float:left;
+    outline: none;
+    margin-right: 15px;
+    background:#fff;
+    box-shadow: 0 30px 50px rgba(0,0,0,0.62);
+    border-radius: 3px;
+    text-decoration:none;
+    
+    .cardBody {
+          outline: none;
+          width: auto;
+          height: auto;
+          margin-bottom: 0;
+          display: flex;
+          flex-direction: column;
+          flex: 1 1 auto;
+          position:relative;
+    }
+    
+    
+    .topSection {
+      border-top-right-radius: 3px;
+      border-top-left-radius: 3px;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      height: auto;
+      flex: 1 1 auto;
+      display: flex;
+      
+      
+    }
+    span {
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        opacity: 0.5;
+        z-index:10;
+      }
+
+    .bottomSection {
+      padding:20px;
+      background:#fff;
+      text-align:center;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      position:relative;
+      z-index:11;
+      
+      h3 {
+        font-size: 19px;
+        line-height: 21px;
+        margin:0 0 10px;
+        font-weight:normal;
+      }
+
+      p {
+        color:#666;
+        font-size: 16px;
+        line-height: 21px;
+        margin:0;
+      }
+    }
+  }
+}
+
+.cards.greyscale .card .topSection {
+  filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale"); /* Firefox 10+, Firefox on Android */
+    filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+//Single Cards
+.wpchurch_hub.single {
+  .header {
+    position:relative;
+  }
+
+  .singleCard {
+    background:#fff;
+    
+    .cardHeader {
+      min-height: 50vh;
+      padding: 30px 20px;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      position:relative;
+      
+      .cardImage {
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+      }
+      .cardImage.greyscale {
+        filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale"); /* Firefox 10+, Firefox on Android */
+        filter: gray; /* IE6-9 */
+      -webkit-filter: grayscale(1);
+      filter: grayscale(1);
+      }
+      
+      .overlay {
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        opacity: 0.5;
+        
+      }
+      
+
+        .backButton {
+          background: #fff;
+          position:absolute;
+          top:0;
+          right:0;
+          padding: 10px;
+          font-size: 18px;
+          line-height: 22px;
+          
+          i:before {
+            transform: rotate(180deg);
+            font-size: 18px !important;
+          }
+        }
+    }
+
+    .cardInfo {
+      padding: 20px;
+      color:#444;
+      
+      .cardTitle {
+          
+          h1 {
+            font-size: 32px;
+            font-weight:normal;
+            margin: 0;
+          }
+          p {
+            font-size: 16px;
+            line-height: 22px;
+            margin:0 0 40px;
+            color:#333;
+            text-transform:uppercase;
+          }
+        }
+      
+    }
+  }
+}
+
+
+//Typography 
+
+.cardInfo {
+  
+  p, td, li {
+    font-size: 18px;
+    line-height: 28px;
+    
+  }
+  p {
+    margin-bottom: 28px;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+
+  .cardHolder.grid {
+
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    .card {
+      width: 50%;
+      float:left;
+      padding-top: 50%;
+    }
+  }
+
+}
+
+@media only screen and (min-width: 667px) {
+
+.header {
+  position:relative !important;
+  padding: 2% 4%;
+  height: 120px;
+  
+  img {
+    max-height: 75px;
+    
+  }
+
+  .menuLink {
+    margin: 35px 0 0 0;
+  }
+  
+}
+
+
+
+.cardHolder.card {
+  position: relative;
+  padding: 20px 10px;
+  clear:both;
+  
+  .card {
+    width: 42%;
+    margin: 0 4% 8%;
+    height: 400px;
+    transition: all .2s ease;
+
+  }
+
+  .card:hover {
+    transform: scale(0.97);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.62);
+  }
+}
+
+.cardHolder.grid {
+  
+  .card:hover {
+    transform: scale(0.97);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.62);
+  }
+}
+
+.singleCard {
+  max-width: 900px;
+  margin: 20px auto 50px;
+}
+
+
+}
+
+
+
+@media only screen and (min-width: 900px) {
+
+.header {
+  padding: 2% 3% 5%;
+  max-width: 1200px;
+  margin:0 auto;
+  
+
+  
+
+  .menuLink {
+      display:none;
+    }
+
+    #menu {
+      display:block;
+      position:relative;
+      right:0;
+      float:right;
+      background:none;
+      width: 70%;
+      box-shadow:none;
+      
+      ul {
+        padding: 25px 15px 0 0;
+        text-align:right;
+        
+        li {
+          display:inline-block;
+          
+          a {
+            padding:0px;
+            
+            span {
+              display:none;
+            }
+
+            i {
+              background:#fff;
+              
+              width: 42px;
+              height: 42px;
+              line-height:42px;
+              font-size: 21px;
+              transition: all .4s ease;
+            }
+
+            i:before {
+              width: 32px;
+              height: 42px;
+              line-height:42px;
+              font-size: 21px;
+              text-align:center;
+            }
+
+          }
+          a:hover {
+            i {
+              background:#111;
+              color:#fff !important;
+            }
+          }
+        }
+      }
+      
+      .closeMenu{
+        display:none;
+      }
+    }
+  }
+
+  .cardHolder.card {
+
+    max-width: 1200px;
+    margin:0 auto;
+
+  .card {
+    width: 29%;
+    margin: 0 2% 4%;
+  }
+}
+
+.cardHolder.grid {
+  .card {
+    width: 33.333%;
+    padding-top: 33%;
+  }
+}
+
+.wpchurch_hub.single .singleCard{
+
+  .cardHeader {
+
+    .cardTitle {
+      
+      bottom: 60px;
+      max-width: 80%;
+      padding: 20px;
+      
+      h1 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+
+    .backButton {
+      padding:10px;
+      text-decoration:none;
+      
+      i {
+        font-size: 32px;
+        line-height: 32px;
+        width: 32px;
+        
+      }
+      i:before {
+        margin:0;
+      }
+
+      span {
+        width:0;
+        overflow:hidden;
+        display:inline-block;
+        transition: all .4s ease;
+      }
+    }
+
+    a.backButton:hover span {
+      width: 70px;
+      padding-left: 10px;
+    }
+  }
+
+  .cardInfo {
+    padding: 30px 20px;
+    max-width: 660px;
+    margin: 0 auto;
+  }
+
+  } 
+
+}
+
+@media only screen and (min-width: 1100px) {
+
+  .header {
+    padding: 0 1.5% 4%;
+    
+    #menu ul {
+      padding-right:0;
+    }
+  }
+
+  .cardHolder.card {
+    .card {
+    width: 22%;
+    margin: 0 1.5% 3%;
+  }
+  }
+
+  .cardHolder.grid {
+    padding: 10px 20px;
+    
+    .card {
+      width: 25%;
+      padding: 25% 20px 20px;
+    }
+  }
+}
+
+
+//Slick Slider
+@import 'slick';
+@import 'slick-theme';
+
+
+
+//Icons
+@font-face {
+      font-family: 'wpch_font';
+      src: url('./font/wpch_font.eot?14667736');
+      src: url('./font/wpch_font.eot?14667736#iefix') format('embedded-opentype'),
+           url('./font/wpch_font.woff?14667736') format('woff'),
+           url('./font/wpch_font.ttf?14667736') format('truetype'),
+           url('./font/wpch_font.svg?14667736#wpch_font') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+.fa-icon
+{
+ font-family: "wpch_font";
+ font-style: normal;
+ font-weight: normal;
+ speak: none;
+
+ display: inline-block;
+ text-decoration: inherit;
+ width: 1em;
+ margin-right: .2em;
+ text-align: center;
+ /* opacity: .8; */
+
+ /* For safety - reset parent styles, that can break glyph codes*/
+ font-variant: normal;
+ text-transform: none;
+
+ /* fix buttons height, for twitter bootstrap */
+ line-height: 1em;
+
+ /* Animation center compensation - margins should be symmetric */
+ /* remove if not needed */
+ margin-left: .2em;
+
+ /* You can be more comfortable with increased icons size */
+ /* font-size: 120%; */
+
+ /* Font smoothing. That was taken from TWBS */
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+
+ /* Uncomment for 3D effect */
+ /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+[class^="fa-"]:before, [class*=" fa-"]:before {
+  font-family: "wpch_font";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.fa-pencil:before { content: '\e800'; } /* '' */
+.fa-cancel:before { content: '\e801'; } /* '' */
+.fa-home:before { content: '\e802'; } /* '' */
+.fa-twitter:before { content: '\f099'; } /* '' */
+.fa-facebook:before { content: '\f09a'; } /* '' */
+.fa-menu:before { content: '\f0c9'; } /* '' */
+.fa-money:before { content: '\f0d6'; } /* '' */
+.fa-angle-circled-right:before { content: '\f138'; } /* '' */
+.fa-youtube-play:before { content: '\f16a'; } /* '' */
+.fa-instagram:before { content: '\f16d'; } /* '' */
+.fa-jsfiddle:before { content: '\f1cc'; } /* '' */
+.fa-vimeo:before { content: '\f27d'; } /* '' */
+.fa-snapchat-ghost:before { content: '\f2ac'; } /* '' */

@@ -1,0 +1,947 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'helvetica neue', helvetica, calibri, arial, sans-serif;
+  background: #333;
+}
+* {
+  box-sizing: border-box;
+}
+.skip-container {
+  display: none;
+}
+.header {
+  height: 80px;
+  position: relative;
+  z-index: 12;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.header img {
+  float: left;
+  margin: 10px;
+  max-height: 60px;
+  max-width: 320px;
+}
+.header .menuLink {
+  float: right;
+  height: 40px;
+  margin: 20px;
+  line-height: 40px;
+  color: #fff;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header .menuLink i {
+  height: 40px;
+  line-height: 40px;
+}
+.header .menuLink i:before {
+  height: 40px;
+  line-height: 40px;
+}
+.header .menuLink span {
+  display: none;
+}
+.header.card {
+  position: fixed;
+}
+#menu {
+  position: fixed;
+  top: 0;
+  right: -280px;
+  bottom: 0;
+  width: 280px;
+  background: #f6f6f6;
+  box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.62);
+  z-index: 10;
+  transition: right 0.2s ease-in-out;
+}
+#menu ul {
+  list-style: none;
+  padding: 50px 0 0;
+  margin: 0;
+}
+#menu ul li {
+  height: 48px;
+}
+#menu ul li a {
+  line-height: 42px;
+  padding: 0 15px;
+  font-size: 16px;
+  color: #666;
+  text-decoration: none;
+  display: inline-block;
+  height: 42px;
+}
+#menu ul li a span {
+  display: inline-block;
+  height: 42px;
+  line-height: 42px;
+}
+#menu ul li a i {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  color: #fff;
+  background: #444;
+  font-size: 16px;
+  line-height: 32px;
+  margin-right: 10px;
+  border-radius: 50%;
+  position: relative;
+  top: -1px;
+}
+#menu ul li a i:before {
+  line-height: 32px;
+  height: 32px;
+}
+#menu .closeMenu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+}
+#menu .closeMenu i {
+  height: 50px;
+  line-height: 50px;
+}
+#menu .closeMenu i:before {
+  height: 50px;
+  line-height: 50px;
+}
+#menu .closeMenu span {
+  display: none;
+}
+#menu:target {
+  right: 0;
+}
+.footer {
+  display: none;
+}
+.cardHolder.grid {
+  padding: 20px 10px 10px;
+}
+.cardHolder.grid .card {
+  float: left;
+  display: block;
+  padding-top: 50%;
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  padding: 80% 0 0;
+  position: relative;
+  transition: all .4s ease;
+}
+.cardHolder.grid .card .cardBody {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background: #222;
+}
+.cardHolder.grid .card .cardBody .topSection,
+.cardHolder.grid .card .cardBody .overlay,
+.cardHolder.grid .card .cardBody .bottomSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.cardHolder.grid .card .cardBody .overlay {
+  opacity: 0.75;
+  transition: all .4s ease;
+}
+.cardHolder.grid .card .cardBody .bottomSection {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  text-align: center;
+}
+.cardHolder.grid .card .cardBody .bottomSection .intro {
+  text-align: center;
+}
+.cardHolder.grid .card .cardBody .bottomSection h3 {
+  font-size: 32px;
+  line-height: 36px;
+  margin: 0 0 0px;
+  font-weight: normal;
+  color: #fff !important;
+  text-shadow: 0px 0px 9px rgba(0, 0, 0, 0.6);
+}
+.cardHolder.grid .card .cardBody .bottomSection p {
+  color: #fff;
+  font-size: 16px;
+  line-height: 21px;
+  margin: 0;
+  opacity: 0.8;
+  text-shadow: 0px 0px 9px rgba(0, 0, 0, 0.6);
+}
+.cardHolder.grid .card:hover .cardBody .overlay {
+  opacity: 1;
+}
+.cardHolder.list {
+  padding: 0 10px 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.cardHolder.list .card {
+  display: block;
+  width: 100%;
+  margin: 0;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 15px 50px 15px 15px;
+  position: relative;
+  transition: background .4s ease;
+  text-decoration: none !important;
+}
+.cardHolder.list .card h3 {
+  color: #fff;
+  font-size: 24px;
+  line-height: 30px;
+  margin: 0;
+}
+.cardHolder.list .card p {
+  font-size: 16px;
+  color: #fff;
+  opacity: 0.8;
+  margin: 0;
+}
+.cardHolder.list .card i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px !important;
+  transition: color .4s ease;
+}
+.cardHolder.list .card i:before {
+  font-size: 32px !important;
+}
+.cardHolder.list .card:not(:hover) i {
+  color: #fff !important;
+}
+.cardHolder.list .card:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  content: '';
+  background: #111;
+  opacity: 0.15;
+}
+.cardHolder.list .card:hover {
+  background: #222 !important;
+}
+.cardHolder.card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 90px 0 60px 1px ;
+}
+.cardHolder.card .slick-arrow {
+  display: none;
+}
+.cardHolder.card .slick-initialized .slick-slide {
+  display: flex;
+}
+.cardHolder.card .slick-list {
+  overflow: visible;
+  display: flex;
+  flex: 1 1 auto;
+}
+.cardHolder.card .slick-track {
+  display: flex;
+  flex: 1 0 auto;
+}
+.cardHolder.card .slick-dots {
+  bottom: -40px;
+}
+.cardHolder.card .slick-dots li {
+  margin: 0 2px;
+}
+.cardHolder.card .slick-dots li.slick-active button:before,
+.cardHolder.card .slick-dots li button:before {
+  color: #fff;
+  font-size: 42px;
+}
+.cardHolder.card .card {
+  display: flex;
+  float: left;
+  outline: none;
+  margin-right: 15px;
+  background: #fff;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.62);
+  border-radius: 3px;
+  text-decoration: none;
+}
+.cardHolder.card .card .cardBody {
+  outline: none;
+  width: auto;
+  height: auto;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  position: relative;
+}
+.cardHolder.card .card .topSection {
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  flex: 1 1 auto;
+  display: flex;
+}
+.cardHolder.card .card span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+  z-index: 10;
+}
+.cardHolder.card .card .bottomSection {
+  padding: 20px;
+  background: #fff;
+  text-align: center;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  position: relative;
+  z-index: 11;
+}
+.cardHolder.card .card .bottomSection h3 {
+  font-size: 19px;
+  line-height: 21px;
+  margin: 0 0 10px;
+  font-weight: normal;
+}
+.cardHolder.card .card .bottomSection p {
+  color: #666;
+  font-size: 16px;
+  line-height: 21px;
+  margin: 0;
+}
+.cards.greyscale .card .topSection {
+  filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale");
+  /* Firefox 10+, Firefox on Android */
+  filter: gray;
+  /* IE6-9 */
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+.wpchurch_hub.single .header {
+  position: relative;
+}
+.wpchurch_hub.single .singleCard {
+  background: #fff;
+}
+.wpchurch_hub.single .singleCard .cardHeader {
+  min-height: 50vh;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.wpchurch_hub.single .singleCard .cardHeader .cardImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.wpchurch_hub.single .singleCard .cardHeader .cardImage.greyscale {
+  filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale");
+  /* Firefox 10+, Firefox on Android */
+  filter: gray;
+  /* IE6-9 */
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+.wpchurch_hub.single .singleCard .cardHeader .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+}
+.wpchurch_hub.single .singleCard .cardHeader .backButton {
+  background: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  font-size: 18px;
+  line-height: 22px;
+}
+.wpchurch_hub.single .singleCard .cardHeader .backButton i:before {
+  transform: rotate(180deg);
+  font-size: 18px !important;
+}
+.wpchurch_hub.single .singleCard .cardInfo {
+  padding: 20px;
+  color: #444;
+}
+.wpchurch_hub.single .singleCard .cardInfo .cardTitle h1 {
+  font-size: 32px;
+  font-weight: normal;
+  margin: 0;
+}
+.wpchurch_hub.single .singleCard .cardInfo .cardTitle p {
+  font-size: 16px;
+  line-height: 22px;
+  margin: 0 0 40px;
+  color: #333;
+  text-transform: uppercase;
+}
+.cardInfo p,
+.cardInfo td,
+.cardInfo li {
+  font-size: 18px;
+  line-height: 28px;
+}
+.cardInfo p {
+  margin-bottom: 28px;
+}
+@media only screen and (min-width: 480px) {
+  .cardHolder.grid {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .cardHolder.grid .card {
+    width: 50%;
+    float: left;
+    padding-top: 50%;
+  }
+}
+@media only screen and (min-width: 667px) {
+  .header {
+    position: relative !important;
+    padding: 2% 4%;
+    height: 120px;
+  }
+  .header img {
+    max-height: 75px;
+  }
+  .header .menuLink {
+    margin: 35px 0 0 0;
+  }
+  .cardHolder.card {
+    position: relative;
+    padding: 20px 10px;
+    clear: both;
+  }
+  .cardHolder.card .card {
+    width: 42%;
+    margin: 0 4% 8%;
+    height: 400px;
+    transition: all .2s ease;
+  }
+  .cardHolder.card .card:hover {
+    transform: scale(0.97);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.62);
+  }
+  .cardHolder.grid .card:hover {
+    transform: scale(0.97);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.62);
+  }
+  .singleCard {
+    max-width: 900px;
+    margin: 20px auto 50px;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .header {
+    padding: 2% 3% 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .header .menuLink {
+    display: none;
+  }
+  .header #menu {
+    display: block;
+    position: relative;
+    right: 0;
+    float: right;
+    background: none;
+    width: 70%;
+    box-shadow: none;
+  }
+  .header #menu ul {
+    padding: 25px 15px 0 0;
+    text-align: right;
+  }
+  .header #menu ul li {
+    display: inline-block;
+  }
+  .header #menu ul li a {
+    padding: 0px;
+  }
+  .header #menu ul li a span {
+    display: none;
+  }
+  .header #menu ul li a i {
+    background: #fff;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    font-size: 21px;
+    transition: all .4s ease;
+  }
+  .header #menu ul li a i:before {
+    width: 32px;
+    height: 42px;
+    line-height: 42px;
+    font-size: 21px;
+    text-align: center;
+  }
+  .header #menu ul li a:hover i {
+    background: #111;
+    color: #fff !important;
+  }
+  .header #menu .closeMenu {
+    display: none;
+  }
+  .cardHolder.card {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .cardHolder.card .card {
+    width: 29%;
+    margin: 0 2% 4%;
+  }
+  .cardHolder.grid .card {
+    width: 33.333%;
+    padding-top: 33%;
+  }
+  .wpchurch_hub.single .singleCard .cardHeader .cardTitle {
+    bottom: 60px;
+    max-width: 80%;
+    padding: 20px;
+  }
+  .wpchurch_hub.single .singleCard .cardHeader .cardTitle h1 {
+    font-size: 28px;
+  }
+  .wpchurch_hub.single .singleCard .cardHeader .cardTitle p {
+    font-size: 18px;
+  }
+  .wpchurch_hub.single .singleCard .cardHeader .backButton {
+    padding: 10px;
+    text-decoration: none;
+  }
+  .wpchurch_hub.single .singleCard .cardHeader .backButton i {
+    font-size: 32px;
+    line-height: 32px;
+    width: 32px;
+  }
+  .wpchurch_hub.single .singleCard .cardHeader .backButton i:before {
+    margin: 0;
+  }
+  .wpchurch_hub.single .singleCard .cardHeader .backButton span {
+    width: 0;
+    overflow: hidden;
+    display: inline-block;
+    transition: all .4s ease;
+  }
+  .wpchurch_hub.single .singleCard .cardHeader a.backButton:hover span {
+    width: 70px;
+    padding-left: 10px;
+  }
+  .wpchurch_hub.single .singleCard .cardInfo {
+    padding: 30px 20px;
+    max-width: 660px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  .header {
+    padding: 0 1.5% 4%;
+  }
+  .header #menu ul {
+    padding-right: 0;
+  }
+  .cardHolder.card .card {
+    width: 22%;
+    margin: 0 1.5% 3%;
+  }
+  .cardHolder.grid {
+    padding: 10px 20px;
+  }
+  .cardHolder.grid .card {
+    width: 25%;
+    padding: 25% 20px 20px;
+  }
+}
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.slick-list:focus {
+  outline: none;
+}
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+}
+.slick-track:before,
+.slick-track:after {
+  content: "";
+  display: table;
+}
+.slick-track:after {
+  clear: both;
+}
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+[dir="rtl"] .slick-slide {
+  float: right;
+}
+.slick-slide img {
+  display: block;
+}
+.slick-slide.slick-loading img {
+  display: none;
+}
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+.slick-initialized .slick-slide {
+  display: block;
+}
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+  display: none;
+}
+@charset "UTF-8";
+/* Slider */
+.slick-loading .slick-list {
+  background: #ffffff url('ajax-loader.gif') center center no-repeat;
+}
+/* Arrows */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 20px;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  padding: 0;
+  border: none;
+  outline: none;
+}
+.slick-prev:hover,
+.slick-next:hover,
+.slick-prev:focus,
+.slick-next:focus {
+  outline: none;
+  background: transparent;
+  color: transparent;
+}
+.slick-prev:hover:before,
+.slick-next:hover:before,
+.slick-prev:focus:before,
+.slick-next:focus:before {
+  opacity: 1;
+}
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: 0.25;
+}
+.slick-prev:before,
+.slick-next:before {
+  font-size: 20px;
+  line-height: 1;
+  color: #ffffff;
+  opacity: 0.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.slick-prev {
+  left: -25px;
+}
+.slick-prev[dir="rtl"] {
+  left: auto;
+  right: -25px;
+}
+.slick-prev:before {
+  content: "←";
+}
+.slick-prev:before[dir="rtl"] {
+  content: "→";
+}
+.slick-next {
+  right: -25px;
+}
+.slick-next[dir="rtl"] {
+  left: -25px;
+  right: auto;
+}
+.slick-next:before {
+  content: "→";
+}
+.slick-next:before[dir="rtl"] {
+  content: "←";
+}
+/* Dots */
+.slick-dotted .slick-slider {
+  margin-bottom: 30px;
+}
+.slick-dots {
+  position: absolute;
+  bottom: -25px;
+  list-style: none;
+  display: block;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+.slick-dots li button {
+  border: 0;
+  background: transparent;
+  display: block;
+  height: 20px;
+  width: 20px;
+  outline: none;
+  line-height: 0px;
+  font-size: 0px;
+  color: transparent;
+  padding: 5px;
+  cursor: pointer;
+}
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+  outline: none;
+}
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before {
+  opacity: 1;
+}
+.slick-dots li button:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "•";
+  width: 20px;
+  height: 20px;
+  font-size: 6px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+  opacity: 0.25;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before {
+  color: #000000;
+  opacity: 0.75;
+}
+@font-face {
+  font-family: 'wpch_font';
+  src: url('font/wpch_font.eot?14667736');
+  src: url('font/wpch_font.eot?14667736#iefix') format('embedded-opentype'), url('font/wpch_font.woff?14667736') format('woff'), url('font/wpch_font.ttf?14667736') format('truetype'), url('font/wpch_font.svg?14667736#wpch_font') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.fa-icon {
+  font-family: "wpch_font";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* You can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+[class^="fa-"]:before,
+[class*=" fa-"]:before {
+  font-family: "wpch_font";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+.fa-pencil:before {
+  content: '\e800';
+}
+/* '' */
+.fa-cancel:before {
+  content: '\e801';
+}
+/* '' */
+.fa-home:before {
+  content: '\e802';
+}
+/* '' */
+.fa-twitter:before {
+  content: '\f099';
+}
+/* '' */
+.fa-facebook:before {
+  content: '\f09a';
+}
+/* '' */
+.fa-menu:before {
+  content: '\f0c9';
+}
+/* '' */
+.fa-money:before {
+  content: '\f0d6';
+}
+/* '' */
+.fa-angle-circled-right:before {
+  content: '\f138';
+}
+/* '' */
+.fa-youtube-play:before {
+  content: '\f16a';
+}
+/* '' */
+.fa-instagram:before {
+  content: '\f16d';
+}
+/* '' */
+.fa-jsfiddle:before {
+  content: '\f1cc';
+}
+/* '' */
+.fa-vimeo:before {
+  content: '\f27d';
+}
+/* '' */
+.fa-snapchat-ghost:before {
+  content: '\f2ac';
+}
+/* '' */
