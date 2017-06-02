@@ -29,7 +29,7 @@ d.slice(e-c+1,e+c+2).addClass("slick-active").attr("aria-hidden","false")),0===a
 jQuery(document).ready(function($){
 
 	if($(window).width() < 667){
-	  $('.card .card').slick({
+	  $('.cardHolder.card .cards').slick({
 	    //adaptiveHeight: true,
 	    //arrows: false,
 	    centerMode: true,
