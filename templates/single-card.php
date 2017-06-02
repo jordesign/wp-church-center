@@ -42,7 +42,7 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 	} 
 	?>
 
-
+</div>
 
 </div>
 

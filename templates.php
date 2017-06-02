@@ -34,61 +34,67 @@ function wpch_archive_template($template){
 function wpch_remove_default_styles ()
 {
 
-	if ('card' == get_post_type() ){
+	if ('card' == get_post_type() || is_post_type_archive('card') || is_page_template('hub_home.php') ){
 		// get all styles data
 		global $wp_styles;
+
+		$keep_styles = array(
+		   'admin-bar',
+		);
 
 		// loop over all of the registered scripts
 		foreach ($wp_styles->registered as $handle => $data)
 		{
-			// remove it
-			wp_deregister_style($handle);
-			wp_dequeue_style($handle);
-		}
-
-		// get all styles data
-		global $wp_scripts;
-
-		// loop over all of the registered scripts
-		foreach ($wp_scripts->registered as $handle => $data)
-		{
-			// remove it
-			wp_deregister_script($handle);
-			wp_dequeue_script($handle);
+			if(!in_array ($handle, $keep_styles) ){
+				// remove it
+				wp_deregister_style($handle);
+				wp_dequeue_style($handle);
+			}
 		}
 
 	}
 }
 
 if(get_option( 'wpch_disable_styles' ) == 1){
-	add_action('wp_enqueue_scripts', 'wpch_remove_default_styles', 1000);
+	add_action('wp_print_scripts', 'wpch_remove_default_styles', 100);
+
 }
+
+
+
 
 
 function wpch_remove_default_scripts ()
 {
 
-	if ('card' == get_post_type() ){
+	if ('card' == get_post_type() || is_post_type_archive('card') || is_page_template('hub_home.php') ){
 
 		// get all styles data
 		global $wp_scripts;
 
+		$keep_scripts = array(
+		   
+		);
+
 		// loop over all of the registered scripts
 		foreach ($wp_scripts->registered as $handle => $data)
 		{
-			// remove it
-			wp_deregister_script($handle);
-			wp_dequeue_script($handle);
+
+			if(!in_array ($handle, $keep_scripts) ){
+				// remove it
+				wp_deregister_script($handle);
+				wp_dequeue_script($handle);
+			}
 		}
 
 	}
 }
 if(get_option( 'wpch_disable_scripts' ) == 1){
-	add_action('wp_enqueue_scripts', 'wpch_remove_default_scripts', 1000);
+	add_action('wp_print_scripts', 'wpch_remove_default_scripts', 100);
 }
 
 //Now enqueue styles we want
-add_action('wp_enqueue_scripts', 'wpch_add_styles', 1010);
+add_action('wp_enqueue_scripts', 'wpch_add_styles', 101);
 
 function wpch_add_styles() {
 	if(is_singular( 'card' )  || is_post_type_archive('card') || get_page_template_slug( get_the_ID() ) =='hub_home.php' ){
