@@ -24,21 +24,26 @@
     <?php }else{ ?>
         <meta property="og:title" content="<?php echo get_option( 'wpch_church_name' ); ?> Hub">
     <?php } ?>
+
+    <?php if (is_singular('card') ) { ?>
+        <meta property="og:description" content="<?php the_field('wpch_subtitle'); ?>">
+    <?php }else{ ?>
+        <meta property="og:description" content="Find out what is happening for members at <?php echo get_option( 'wpch_church_name' ); ?>">
+    <?php } ?>
     
-    <meta property="og:description" content="<?php the_excerpt(); ?>">
     <meta property="og:url" content="<?php the_permalink(); ?>">
     <meta property="og:site_name" content="<?php echo get_option( 'wpch_church_name' ); ?> Hub">
-    <meta property="og:image" content="<?php the_post_thumbnail_url('fullsize'); ?>">
+    <meta property="og:image" content="<?php $image = get_field('wpch_image'); echo wp_get_attachment_image_src( $image, 'card_hero_image' )[0];?>">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:description" content="<?php the_excerpt(); ?>">
+    <meta name="twitter:description" content="<?php the_field('wpch_subtitle'); ?>">
 
     <?php if (is_singular('card') ) { ?>
         <meta name="twitter:title" content="<?php the_title();?> | <?php echo get_option( 'wpch_church_name' ); ?> Hub">
     <?php }else{ ?>
         <meta name="twitter:title" content="<?php echo get_option( 'wpch_church_name' ); ?> Hub">
     <?php } ?>
-    <meta name="twitter:image" content="<?php the_post_thumbnail_url('fullsize'); ?>">
+    <meta name="twitter:image" content="<?php $image = get_field('wpch_image'); echo wp_get_attachment_image_src( $image, 'card_hero_image' )[0];?>">
 
     <!-- The mountain of stuff WP puts in -->
     <?php wp_head(); ?>

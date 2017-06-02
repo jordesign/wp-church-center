@@ -92,8 +92,8 @@ add_action('wp_enqueue_scripts', 'wpch_add_styles', 1010);
 
 function wpch_add_styles() {
 	if(is_singular( 'card' )  || is_post_type_archive('card') || get_page_template_slug( get_the_ID() ) =='hub_home.php' ){
-		wp_enqueue_style( 'wpch-style', '/wp-content/plugins/wp-church-hub/templates/wpch_style.css' );
-		wp_enqueue_script( 'wpch-scripts', '/wp-content/plugins/wp-church-hub/templates/wpch_script.js' );
+		wp_enqueue_style( 'wpch-style', '/wp-content/plugins/wp-church-center/templates/wpch_style.css' );
+		wp_enqueue_script( 'wpch-scripts', '/wp-content/plugins/wp-church-center/templates/wpch_script.js' );
 	}
 }
 
