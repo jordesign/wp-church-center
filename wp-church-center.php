@@ -10,14 +10,14 @@
  *
  * @link              http://wpchurch.team
  * @since             1.0.0
- * @package           WP_Church_Hub
+ * @package           WP_Church_Center
  *
  * @wordpress-plugin
- * Plugin Name:       WP Church Hub
- * Plugin URI:        http://wpchurch.team/church_hub/
+ * Plugin Name:       WP Church Center
+ * Plugin URI:        http://wpchurch.center
  * Description:       Provides a Hub of Next Steps for your Church.
  * Version:           1.0.0
- * Author:            WP Church Team
+ * Author:            Jordesign, WP Church Team
  * Author URI:        http://wpchurch.team/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt

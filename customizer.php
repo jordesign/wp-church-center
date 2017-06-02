@@ -7,7 +7,7 @@ function wpch_new_customizer_settings($wp_customize) {
 
 /** **** **** *** *** *** *** *** *.
 /**   Add WP Church Hub Panel   */
-$wp_customize->add_panel( 'wp_church_hub', array(
+$wp_customize->add_panel( 'WP_Church_Center', array(
   'title' => __( 'Church Hub' ),
   'description' => 'Set up the details of your Church Hub', 
   'priority' => 160, // Mixed with top-level-section hierarchy.
@@ -19,20 +19,20 @@ $wp_customize->add_section('wpch_details', array(
 'title' => 'Your Church Details',
 'description' => 'Basic settings for your Church Hub',
 'priority' => 120,
-'panel' => 'wp_church_hub',
+'panel' => 'WP_Church_Center',
 ));
 
 $wp_customize->add_section('wpch_links', array(
 'title' => 'Church Links',
 'description' => '<p>Links to your website and Social Media profiles</p>',
 'priority' => 120,
-'panel' => 'wp_church_hub',
+'panel' => 'WP_Church_Center',
 ));
 
 $wp_customize->add_section('wpch_settings', array(
 'title' => 'Design &amp; Settings',
 'priority' => 120,
-'panel' => 'wp_church_hub',
+'panel' => 'WP_Church_Center',
 ));
 
 
