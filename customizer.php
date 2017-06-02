@@ -8,8 +8,8 @@ function wpch_new_customizer_settings($wp_customize) {
 /** **** **** *** *** *** *** *** *.
 /**   Add WP Church Hub Panel   */
 $wp_customize->add_panel( 'WP_Church_Center', array(
-  'title' => __( 'Church Hub' ),
-  'description' => 'Set up the details of your Church Hub', 
+  'title' => __( 'Church Center' ),
+  'description' => 'Set up the details of your Church Center', 
   'priority' => 160, // Mixed with top-level-section hierarchy.
 ) );
 
