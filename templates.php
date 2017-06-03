@@ -39,7 +39,8 @@ function wpch_remove_default_styles ()
 		global $wp_styles;
 
 		$keep_styles = array(
-		   'admin-bar',
+		   'admin-bar',  //Always show the admin bar
+		   'nf-display'  //Ninja Forms
 		);
 
 		// loop over all of the registered scripts
@@ -73,7 +74,10 @@ function wpch_remove_default_scripts ()
 		global $wp_scripts;
 
 		$keep_scripts = array(
-		   
+		   'jquery',
+		   'nf-front-end-deps', //Ninja Forms
+		   'nf-front-end', //Ninja Forms
+		   'admin-bar' 
 		);
 
 		// loop over all of the registered scripts
