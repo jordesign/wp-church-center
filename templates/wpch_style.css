@@ -49,6 +49,9 @@ body {
 .header.card {
   position: fixed;
 }
+.admin-bar .header.card {
+  top: 46px;
+}
 #menu {
   position: fixed;
   top: 0;
@@ -256,6 +259,9 @@ body {
 }
 .cardHolder.list .card:hover {
   background: #222 !important;
+}
+.admin-bar .cardHolder.card {
+  padding-top: 122px;
 }
 .cardHolder.card {
   position: fixed;
