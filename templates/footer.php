@@ -14,6 +14,8 @@
  * Print enqueued style/script handles to debug what we want to stop from being de-enqueued by the theme
  * https://lakewood.media/list-enqueued-scripts-handle/
  */
+
+/*
     if( !is_admin() && is_user_logged_in() && current_user_can( 'manage_options' )) {
         // Print Scripts
         global $wp_scripts;
@@ -33,3 +35,4 @@
            echo '</div>';
         endforeach;
     }
+*/
