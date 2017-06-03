@@ -77,7 +77,8 @@ function wpch_remove_default_scripts ()
 		   'jquery',
 		   'nf-front-end-deps', //Ninja Forms
 		   'nf-front-end', //Ninja Forms
-		   'admin-bar' 
+		   'admin-bar' ,
+		   'wpch-scripts'
 		);
 
 		// loop over all of the registered scripts
