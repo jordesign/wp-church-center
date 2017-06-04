@@ -52,7 +52,7 @@ class PageTemplater {
 
 		}
 
-		// Add a filter to the save post to inject out template into the page cache
+		// Add a filter to the save post to inject our template into the page cache
 		add_filter(
 			'wp_insert_post_data', 
 			array( $this, 'register_project_templates' ) 
@@ -85,7 +85,7 @@ class PageTemplater {
 
 	/**
 	 * Adds our template to the pages cache in order to trick WordPress
-	 * into thinking the template file exists where it doens't really exist.
+	 * into thinking the template file exists where it doesn't really exist.
 	 */
 	public function register_project_templates( $atts ) {
 
@@ -138,7 +138,7 @@ class PageTemplater {
 			$post->ID, '_wp_page_template', true
 		);
 
-		// Just to be safe, we check if the file exist first
+		// Just to be safe, we check if the file exists first
 		if ( file_exists( $file ) ) {
 			return $file;
 		} else {
