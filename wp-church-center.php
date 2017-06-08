@@ -8,17 +8,17 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              http://wpchurch.team
+ * @link              http://wpccurch.team
  * @since             1.0.0
  * @package           WP_Church_Center
  *
  * @wordpress-plugin
  * Plugin Name:       WP Church Center
- * Plugin URI:        http://wpchurch.center
- * Description:       Provides a Hub of Next Steps for your Church.
+ * Plugin URI:        http://wpccurch.center
+ * Description:       Provides a 'Next Steps' Center for your Church.
  * Version:           1.0.0
  * Author:            Jordesign, WP Church Team
- * Author URI:        http://wpchurch.team/
+ * Author URI:        http://wpccurch.team/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       wp_church_team
@@ -47,9 +47,9 @@ if( ! class_exists('acf') ) {
 	
 
 	// 1. customize ACF path
-	add_filter('acf/settings/path', 'wpch_acf_settings_path');
+	add_filter('acf/settings/path', 'wpcc_acf_settings_path');
 	 
-	function wpch_acf_settings_path( $path ) {
+	function wpcc_acf_settings_path( $path ) {
 	 
 	    // update path
 	    $path = plugin_dir_path( __FILE__ ) . '/advanced-custom-fields/';
@@ -59,9 +59,9 @@ if( ! class_exists('acf') ) {
 	    
 	}
 	// 2. customize ACF dir
-	add_filter('acf/settings/dir', 'wpch_acf_settings_dir');
+	add_filter('acf/settings/dir', 'wpcc_acf_settings_dir');
 	 
-	function wpch_acf_settings_dir( $dir ) {
+	function wpcc_acf_settings_dir( $dir ) {
 	 
 	    // update path
 	    $dir = plugin_dir_path( __FILE__ ) . '/advanced-custom-fields/';

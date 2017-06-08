@@ -1,28 +1,28 @@
 <?php
 
-define('WPCH_PLUGIN_PATH', dirname(__FILE__));
+define('wpcc_PLUGIN_PATH', dirname(__FILE__));
 
 //Use Filters to direct the 'card' CPT to use the templates in our plugin
-add_filter('single_template','wpch_single_template');
-add_filter('archive_template','wpch_archive_template');
+add_filter('single_template','wpcc_single_template');
+add_filter('archive_template','wpcc_archive_template');
 
 //route single- template
-function wpch_single_template($single_template){
+function wpcc_single_template($single_template){
   global $post;
   $found = locate_template('single-card.php', false);
   if($post->post_type == 'card' && $found == ''){
-    $single_template = WPCH_PLUGIN_PATH .'/templates/single-card.php';
+    $single_template = wpcc_PLUGIN_PATH .'/templates/single-card.php';
   }
   return $single_template;
 }
 
 //route archive- template
-function wpch_archive_template($template){
+function wpcc_archive_template($template){
   if(is_post_type_archive('card')){
     $theme_files = array('archive-card.php');
     $exists_in_theme = locate_template($theme_files, false);
     if($exists_in_theme == ''){
-      return WPCH_PLUGIN_PATH . '/templates/archive-card.php';
+      return wpcc_PLUGIN_PATH . '/templates/archive-card.php';
     }
   }
   return $template;
@@ -31,10 +31,10 @@ function wpch_archive_template($template){
 
 // De-Queue ALL scripts and Stylesheets
 
-function wpch_remove_default_styles ()
+function wpcc_remove_default_styles ()
 {
 
-	if ('card' == get_post_type() || is_post_type_archive('card') || is_page_template('hub_home.php') ){
+	if ('card' == get_post_type() || is_post_type_archive('card') || is_page_template('center_home.php') ){
 		// get all styles data
 		global $wp_styles;
 
@@ -56,8 +56,8 @@ function wpch_remove_default_styles ()
 	}
 }
 
-if(get_option( 'wpch_disable_styles' ) == 1){
-	add_action('wp_print_scripts', 'wpch_remove_default_styles', 100);
+if(get_option( 'wpcc_disable_styles' ) == 1){
+	add_action('wp_print_scripts', 'wpcc_remove_default_styles', 100);
 
 }
 
@@ -65,10 +65,10 @@ if(get_option( 'wpch_disable_styles' ) == 1){
 
 
 
-function wpch_remove_default_scripts ()
+function wpcc_remove_default_scripts ()
 {
 
-	if ('card' == get_post_type() || is_post_type_archive('card') || is_page_template('hub_home.php') ){
+	if ('card' == get_post_type() || is_post_type_archive('card') || is_page_template('center_home.php') ){
 
 		// get all styles data
 		global $wp_scripts;
@@ -78,7 +78,7 @@ function wpch_remove_default_scripts ()
 		   'nf-front-end-deps', //Ninja Forms
 		   'nf-front-end', //Ninja Forms
 		   'admin-bar' ,
-		   'wpch-scripts'
+		   'wpcc-scripts'
 		);
 
 		// loop over all of the registered scripts
@@ -94,17 +94,17 @@ function wpch_remove_default_scripts ()
 
 	}
 }
-if(get_option( 'wpch_disable_scripts' ) == 1){
-	add_action('wp_print_scripts', 'wpch_remove_default_scripts', 100);
+if(get_option( 'wpcc_disable_scripts' ) == 1){
+	add_action('wp_print_scripts', 'wpcc_remove_default_scripts', 100);
 }
 
 //Now enqueue styles we want
-add_action('wp_enqueue_scripts', 'wpch_add_styles', 101);
+add_action('wp_enqueue_scripts', 'wpcc_add_styles', 101);
 
-function wpch_add_styles() {
-	if(is_singular( 'card' )  || is_post_type_archive('card') || get_page_template_slug( get_the_ID() ) =='hub_home.php' ){
-		wp_enqueue_style( 'wpch-style', '/wp-content/plugins/wp-church-center/templates/wpch_style.css' );
-		wp_enqueue_script( 'wpch-scripts', '/wp-content/plugins/wp-church-center/templates/wpch_script.js' );
+function wpcc_add_styles() {
+	if(is_singular( 'card' )  || is_post_type_archive('card') || get_page_template_slug( get_the_ID() ) =='center_home.php' ){
+		wp_enqueue_style( 'wpcc-style', '/wp-content/plugins/wp-church-center/templates/wpcc_style.css' );
+		wp_enqueue_script( 'wpcc-scripts', '/wp-content/plugins/wp-church-center/templates/wpcc_script.js' );
 	}
 }
 

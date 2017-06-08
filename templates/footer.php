@@ -1,6 +1,6 @@
 <?php
 
-/* Footer for WP Church Hub Pages */
+/* Footer for WP Church Center Pages */
 ?>
 
 <div class="footer">

@@ -3,8 +3,8 @@
 <svg xmlns="http://www.w3.org/2000/svg">
 <metadata>Copyright (C) 2017 by original authors @ fontello.com</metadata>
 <defs>
-<font id="wpch_font" horiz-adv-x="1000" >
-<font-face font-family="wpch_font" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<font id="wpcc_font" horiz-adv-x="1000" >
+<font-face font-family="wpcc_font" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
 <missing-glyph horiz-adv-x="1000" />
 <glyph glyph-name="pencil" unicode="&#xe800;" d="M718 680q32-32 47-64t15-48l0-16-252-252-290-288-238-52 50 240 290 288 252 252q54 12 126-60z m-494-640l24 24q-2 44-52 94-22 22-45 35t-35 13l-14 2-22-24-18-80q28-16 46-34 24-24 36-48z" horiz-adv-x="780" />
 

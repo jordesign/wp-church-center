@@ -3,10 +3,10 @@
 /**
 * Create Logo Setting and Upload Control
 */
-function wpch_new_customizer_settings($wp_customize) {
+function wpcc_new_customizer_settings($wp_customize) {
 
 /** **** **** *** *** *** *** *** *.
-/**   Add WP Church Hub Panel   */
+/**   Add WP Church Center Panel   */
 $wp_customize->add_panel( 'WP_Church_Center', array(
   'title' => __( 'Church Center' ),
   'description' => 'Set up the details of your Church Center', 
@@ -14,22 +14,22 @@ $wp_customize->add_panel( 'WP_Church_Center', array(
 ) );
 
 /** **** **** *** *** *** *** *** *.
-/**   Add WP Church Hub Sections   */
-$wp_customize->add_section('wpch_details', array(
+/**   Add WP Church Center Sections   */
+$wp_customize->add_section('wpcc_details', array(
 'title' => 'Your Church Details',
-'description' => 'Basic settings for your Church Hub',
+'description' => 'Basic settings for your Church Center',
 'priority' => 120,
 'panel' => 'WP_Church_Center',
 ));
 
-$wp_customize->add_section('wpch_links', array(
+$wp_customize->add_section('wpcc_links', array(
 'title' => 'Church Links',
 'description' => '<p>Links to your website and Social Media profiles</p>',
 'priority' => 120,
 'panel' => 'WP_Church_Center',
 ));
 
-$wp_customize->add_section('wpch_settings', array(
+$wp_customize->add_section('wpcc_settings', array(
 'title' => 'Design &amp; Settings',
 'priority' => 120,
 'panel' => 'WP_Church_Center',
@@ -40,29 +40,29 @@ $wp_customize->add_section('wpch_settings', array(
 /**   Add Settings and Controls for 'Your Church Details'   */
 
 // add a setting for the site logo
-$wp_customize->add_setting('wpch_church_logo', array(
+$wp_customize->add_setting('wpcc_church_logo', array(
      'type' => 'option', 
      'capability' => 'manage_options',
 ));
 
 // Add a control to upload the logo
-$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wpch_church_logo',
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wpcc_church_logo',
 array(
 'label' => 'Upload Logo',
-'section' => 'wpch_details',
-'settings' => 'wpch_church_logo',
+'section' => 'wpcc_details',
+'settings' => 'wpcc_church_logo',
 ) ) );
 
 // add a setting for the church name
-$wp_customize->add_setting('wpch_church_name', array(
+$wp_customize->add_setting('wpcc_church_name', array(
      'type' => 'option', 
      'capability' => 'manage_options',
 ));
 
 //add control for church website link
-$wp_customize->add_control( 'wpch_church_name', array(
+$wp_customize->add_control( 'wpcc_church_name', array(
    'label'   => 'Church Name',
-   'section' => 'wpch_details',
+   'section' => 'wpcc_details',
    'type'    => 'text',
 ) );
 
@@ -75,120 +75,120 @@ $wp_customize->add_control( 'wpch_church_name', array(
 /**   Add Settings and Controls for 'Church Links'   */
 
 // add a setting for the church website link
-$wp_customize->add_setting('wpch_church_url', array(
+$wp_customize->add_setting('wpcc_church_url', array(
      'type' => 'option', 
      'capability' => 'manage_options',
 ));
 
 //add control for church website link
-$wp_customize->add_control( 'wpch_church_url', array(
+$wp_customize->add_control( 'wpcc_church_url', array(
    'label'   => 'Church Website URL',
-   'section' => 'wpch_links',
+   'section' => 'wpcc_links',
    'type'    => 'text',
 ) );
 
 // add a setting for the Facebook link
-$wp_customize->add_setting('wpch_facebook', array(
+$wp_customize->add_setting('wpcc_facebook', array(
      'type' => 'option', 
      'capability' => 'manage_options',
 ));
 
 //add control for Facebook link
-$wp_customize->add_control( 'wpch_facebook', array(
+$wp_customize->add_control( 'wpcc_facebook', array(
    'label'   => 'Facebook Profile URL',
-   'section' => 'wpch_links',
+   'section' => 'wpcc_links',
    'type'    => 'text',
 ) );
 
 
 // add a setting for the Twitter link
-$wp_customize->add_setting('wpch_twitter', array(
+$wp_customize->add_setting('wpcc_twitter', array(
      'type' => 'option', 
      'capability' => 'manage_options',
 ));
 
 //add control for Facebook link
-$wp_customize->add_control( 'wpch_twitter', array(
+$wp_customize->add_control( 'wpcc_twitter', array(
    'label'   => 'Twitter Profile URL',
-   'section' => 'wpch_links',
+   'section' => 'wpcc_links',
    'type'    => 'text',
 ) );
 
 
 // add a setting for the Twitter link
-$wp_customize->add_setting('wpch_instagram', array(
+$wp_customize->add_setting('wpcc_instagram', array(
      'type' => 'option', 
      'capability' => 'manage_options',
 ));
 
 //add control for Facebook link
-$wp_customize->add_control( 'wpch_instagram', array(
+$wp_customize->add_control( 'wpcc_instagram', array(
    'label'   => 'Instagram Profile URL',
-   'section' => 'wpch_links',
+   'section' => 'wpcc_links',
    'type'    => 'text',
 ) );
 
 
 // add a setting for the Snapchat link
-$wp_customize->add_setting('wpch_snapchat', array(
+$wp_customize->add_setting('wpcc_snapchat', array(
      'type' => 'option', 
      'capability' => 'manage_options',
 ));
 
 //add control for Facebook link
-$wp_customize->add_control( 'wpch_snapchat', array(
+$wp_customize->add_control( 'wpcc_snapchat', array(
    'label'   => 'Snapchat Profile URL',
-   'section' => 'wpch_links',
+   'section' => 'wpcc_links',
    'type'    => 'text',
 ) );
 
 
 // add a setting for the Snapchat link
-$wp_customize->add_setting('wpch_youtube', array(
+$wp_customize->add_setting('wpcc_youtube', array(
      'type' => 'option', 
      'capability' => 'manage_options',
 ));
 
 //add control for Facebook link
-$wp_customize->add_control( 'wpch_youtube', array(
+$wp_customize->add_control( 'wpcc_youtube', array(
    'label'   => 'Youtube Profile URL',
-   'section' => 'wpch_links',
+   'section' => 'wpcc_links',
    'type'    => 'text',
 ) );
 
 
 // add a setting for the Snapchat link
-$wp_customize->add_setting('wpch_vimeo', array(
+$wp_customize->add_setting('wpcc_vimeo', array(
      'type' => 'option', 
      'capability' => 'manage_options',
 ));
 
 //add control for Facebook link
-$wp_customize->add_control( 'wpch_vimeo', array(
+$wp_customize->add_control( 'wpcc_vimeo', array(
    'label'   => 'Vimeo profile URL',
-   'section' => 'wpch_links',
+   'section' => 'wpcc_links',
    'type'    => 'text',
 ) );
 
 // add a setting for the Snapchat link
-$wp_customize->add_setting('wpch_giving', array(
+$wp_customize->add_setting('wpcc_giving', array(
      'type' => 'option', 
      'capability' => 'manage_options',
 ));
 
 //add control for Facebook link
-$wp_customize->add_control( 'wpch_giving', array(
+$wp_customize->add_control( 'wpcc_giving', array(
    'label'   => 'Online Giving URL',
-   'section' => 'wpch_links',
+   'section' => 'wpcc_links',
    'type'    => 'text',
 ) );
 
 
 /** **** **** *** *** *** *** *** *.
-/**   Add Settings and Controls for 'Hub Settings'   */
+/**   Add Settings and Controls for 'Center Settings'   */
 
 //Add Setting for Background COlour
-$wp_customize->add_setting( 'wpch_background', array(
+$wp_customize->add_setting( 'wpcc_background', array(
        'default'    => '#333333', 
        'type'       => 'option', 
        'capability' => 'manage_options', 
@@ -198,25 +198,25 @@ $wp_customize->add_setting( 'wpch_background', array(
 //Add Control for Background Colour
  $wp_customize->add_control( new WP_Customize_Color_Control( 
     $wp_customize, 
-    'wpch_background', //Set a unique ID for the control
+    'wpcc_background', //Set a unique ID for the control
     array(
-       'label'      => __( 'Background Color', 'wpch_plugin' ), 
-       'settings'   => 'wpch_background', 
-       'section'    => 'wpch_settings',
+       'label'      => __( 'Background Color', 'wpcc_plugin' ), 
+       'settings'   => 'wpcc_background', 
+       'section'    => 'wpcc_settings',
     ) 
  ) );
 
  //Add Control for layout type
- $wp_customize->add_setting( 'wpch_layout', array(
+ $wp_customize->add_setting( 'wpcc_layout', array(
   'capability' => 'manage_options',
-  'sanitize_callback' => 'wpch_sanitize_select',
+  'sanitize_callback' => 'wpcc_sanitize_select',
   'type' => 'option',
   'default' => 'grid',
 ) );
 
-$wp_customize->add_control( 'wpch_layout', array(
+$wp_customize->add_control( 'wpcc_layout', array(
   'type' => 'select',
-  'section' => 'wpch_settings', // Add a default or your own section
+  'section' => 'wpcc_settings', // Add a default or your own section
   'label' => __( 'Layout Type' ),
   'description' => __( 'What style of layout should we use to show all the Next Steps' ),
   'choices' => array(
@@ -226,7 +226,7 @@ $wp_customize->add_control( 'wpch_layout', array(
   ),
 ) );
 
-function wpch_sanitize_select( $input, $setting ) {
+function wpcc_sanitize_select( $input, $setting ) {
 
   // Ensure input is a slug.
   $input = sanitize_key( $input );
@@ -241,7 +241,7 @@ function wpch_sanitize_select( $input, $setting ) {
 
 
 // Add settings for greyscale images
-    $wp_customize->add_setting( 'wpch_greyscale', array(
+    $wp_customize->add_setting( 'wpcc_greyscale', array(
         'default'    => '',
         'type'       => 'option',
         'capability' => 'manage_options',
@@ -249,16 +249,16 @@ function wpch_sanitize_select( $input, $setting ) {
     ) );
 
     // Add control and output for greyscale field
-    $wp_customize->add_control( 'wpch_greyscale', array(
-        'label'      => __( 'Convert Images to Greyscale', 'wpch_plugin' ),
-        'section'    => 'wpch_settings',
+    $wp_customize->add_control( 'wpcc_greyscale', array(
+        'label'      => __( 'Convert Images to Greyscale', 'wpcc_plugin' ),
+        'section'    => 'wpcc_settings',
         'type'       => 'checkbox',
         'std'         => '1',
         'description' => 'This makes sure that all images are converted to Black and White, so they work better with the color tinting.',
     ) );
 
   // Add settings for disabling styles
-    $wp_customize->add_setting( 'wpch_disable_styles', array(
+    $wp_customize->add_setting( 'wpcc_disable_styles', array(
         'default'    => '',
         'type'       => 'option',
         'capability' => 'manage_options',
@@ -266,16 +266,16 @@ function wpch_sanitize_select( $input, $setting ) {
     ) );
 
     // Add control and output for disabling styles
-    $wp_customize->add_control( 'wpch_disable_styles', array(
-        'label'      => __( 'Disable Theme &amp; Plugin Styles', 'wpch_plugin' ),
-        'section'    => 'wpch_settings',
+    $wp_customize->add_control( 'wpcc_disable_styles', array(
+        'label'      => __( 'Disable Theme &amp; Plugin Styles', 'wpcc_plugin' ),
+        'section'    => 'wpcc_settings',
         'type'       => 'checkbox',
         'std'         => '1',
-        'description' => 'This removes unecessary stylesheets to help load your hub faster. If some content appears incorrectly, you may need to disable this setting.',
+        'description' => 'This removes unecessary stylesheets to help load your center faster. If some content appears incorrectly, you may need to disable this setting.',
     ) );
 
     // Add settings for disabling scripts
-    $wp_customize->add_setting( 'wpch_disable_scripts', array(
+    $wp_customize->add_setting( 'wpcc_disable_scripts', array(
         'default'    => '',
         'type'       => 'option',
         'capability' => 'manage_options',
@@ -283,18 +283,18 @@ function wpch_sanitize_select( $input, $setting ) {
     ) );
 
     // Add control and output for disabling scripts
-    $wp_customize->add_control( 'wpch_disable_scripts', array(
-        'label'      => __( 'Disable Theme &amp; Plugin Scripts', 'wpch_plugin' ),
-        'section'    => 'wpch_settings',
+    $wp_customize->add_control( 'wpcc_disable_scripts', array(
+        'label'      => __( 'Disable Theme &amp; Plugin Scripts', 'wpcc_plugin' ),
+        'section'    => 'wpcc_settings',
         'type'       => 'checkbox',
         'std'         => '1',
-        'description' => 'This removes unecessary scripts to help load your hub faster. If some content appears incorrectly, you may need to disable this setting.',
+        'description' => 'This removes unecessary scripts to help load your center faster. If some content appears incorrectly, you may need to disable this setting.',
     ) );
 
 
 
 }
-add_action('customize_register', 'wpch_new_customizer_settings');
+add_action('customize_register', 'wpcc_new_customizer_settings');
 
 
 
@@ -302,8 +302,8 @@ add_action('customize_register', 'wpch_new_customizer_settings');
 function tmx_customizer_live_preview() {
 
   wp_enqueue_script(
-    'wpch-theme-customizer',
-    '/wp-content/plugins/wp-church-hub/templates/wpch_customizer.js',
+    'wpcc-theme-customizer',
+    '/wp-content/plugins/wp-church-center/templates/wpcc_customizer.js',
     array( 'jquery', 'customize-preview' ),
     '',
     true

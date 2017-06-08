@@ -1,6 +1,6 @@
 <?php
 // Register Custom Post Type
-function wpch_post_type() {
+function wpcc_post_type() {
 
 	$labels = array(
 		'name'                  => _x( 'Cards', 'Post Type General Name', 'WP_Church_Center' ),
@@ -61,7 +61,7 @@ function wpch_post_type() {
 			array (
 				'key' => 'field_5908a41b36dd2',
 				'label' => 'Subtitle',
-				'name' => 'wpch_subtitle',
+				'name' => 'wpcc_subtitle',
 				'type' => 'text',
 				'default_value' => '',
 				'placeholder' => '',
@@ -73,7 +73,7 @@ function wpch_post_type() {
 			array (
 				'key' => 'field_5908a49e36dd3',
 				'label' => 'Card Content',
-				'name' => 'wpch_content',
+				'name' => 'wpcc_content',
 				'type' => 'wysiwyg',
 				'default_value' => '',
 				'toolbar' => 'full',
@@ -107,7 +107,7 @@ function wpch_post_type() {
 			array (
 				'key' => 'field_5908a8e2b3dab',
 				'label' => 'Card Image',
-				'name' => 'wpch_image',
+				'name' => 'wpcc_image',
 				'type' => 'image',
 				'save_format' => 'id',
 				'preview_size' => 'medium',
@@ -116,7 +116,7 @@ function wpch_post_type() {
 			array (
 				'key' => 'field_5908a904b3dac',
 				'label' => 'Highlight Color',
-				'name' => 'wpch_color',
+				'name' => 'wpcc_color',
 				'type' => 'color_picker',
 				'required' => 1,
 				'default_value' => '',
@@ -144,12 +144,12 @@ function wpch_post_type() {
 }
 
 }
-add_action( 'init', 'wpch_post_type', 0 );
+add_action( 'init', 'wpcc_post_type', 0 );
 
 /**
  * Remove the slug from published post permalinks. Only affect our custom post type, though.
  */
-function wpch_remove_cpt_slug( $post_link, $post, $leavename ) {
+function wpcc_remove_cpt_slug( $post_link, $post, $leavename ) {
  
     if ( 'card' != $post->post_type || 'publish' != $post->post_status ) {
         return $post_link;
@@ -159,14 +159,14 @@ function wpch_remove_cpt_slug( $post_link, $post, $leavename ) {
  
     return $post_link;
 }
-add_filter( 'post_type_link', 'wpch_remove_cpt_slug', 10, 3 );
+add_filter( 'post_type_link', 'wpcc_remove_cpt_slug', 10, 3 );
 
 /**
  * Have WordPress match postname to any of our public post types (post, page, race)
  * All of our public post types can have /post-name/ as the slug, so they better be unique across all posts
  * By default, core only accounts for posts and pages where the slug is /post-name/
  */
-function wpch_parse_request_trick( $query ) {
+function wpcc_parse_request_trick( $query ) {
  
     // Only noop the main query
     if ( ! $query->is_main_query() )
@@ -182,20 +182,20 @@ function wpch_parse_request_trick( $query ) {
         $query->set( 'post_type', array( 'post', 'page', 'card' ) );
     }
 }
-add_action( 'pre_get_posts', 'wpch_parse_request_trick' );
+add_action( 'pre_get_posts', 'wpcc_parse_request_trick' );
 
-function wpch_get_home_hub_link(){
+function wpcc_get_home_center_link(){
 	//Set Global for Hub Home link
-	$hubHomeQuery = new WP_Query( array(
+	$centerHomeQuery = new WP_Query( array(
 	    'post_type'  => 'page',
 	    'meta_key'   => '_wp_page_template',
-	    'meta_value' => 'hub_home.php',
+	    'meta_value' => 'center_home.php',
 	    'orderby' 	  => 'modified',
 	    'posts_per_page' => 1
 	) );
 
-	if ( $hubHomeQuery->have_posts() ) {
-	    while ( $hubHomeQuery->have_posts() ) : $hubHomeQuery->the_post(); // WP loop
+	if ( $centerHomeQuery->have_posts() ) {
+	    while ( $centerHomeQuery->have_posts() ) : $centerHomeQuery->the_post(); // WP loop
 	        echo get_the_permalink(); 
 	    endwhile; // end of the loop.
 	} else { // in case there are no pages with this template

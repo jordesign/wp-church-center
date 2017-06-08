@@ -69,7 +69,7 @@ class PageTemplater {
 
 		// Add your templates to this array.
 		$this->templates = array(
-			'hub_home.php' => 'Church Hub Homepage',
+			'center_home.php' => 'Church Center Homepage',
 		);
 			
 	} 

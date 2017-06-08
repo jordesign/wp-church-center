@@ -1,6 +1,8 @@
 <?php
-
-/* Archive for WP Church Center  */
+/*
+ * Template Name: Church Center Homepage
+ * Description: The full list of Church Center cards
+ */
 
 
 /**  Load Header */
@@ -9,11 +11,17 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 <div class="cardHolder <?php echo get_option( 'wpcc_layout' ); ?>">
 <div class="cards <?php if(get_option( 'wpcc_greyscale' ) == 1) { echo 'greyscale'; } ?>">
 
+	<?php
 
-	<?php 
-	if ( have_posts() ) {
-		while ( have_posts() ) {
-			the_post();  ?>
+	$wpcc_query = new WP_Query( array (
+                    'post_type' => 'card', 
+                    'posts_per_page' => -1
+     ) );
+
+	
+	if ( $wpcc_query -> have_posts() ) {
+		while ( $wpcc_query -> have_posts() ) {
+			$wpcc_query -> the_post();  ?>
 			
 				<?php if(get_option( 'wpcc_layout' ) == 'list'){ ?>
 
@@ -22,7 +30,7 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 							<h3><?php the_title(); ?></h3>
 							<p><?php the_field('wpcc_subtitle'); ?></p>
 						</div>
-						<i class="fa fa-angle-circled-right" style="color: <?php the_field('wpcc_color'); ?>"></i>
+						<i class="fa fa-angle-circled-right"></i>
 					</a>
 
 				<?php }else{ ?>
