@@ -5,14 +5,14 @@ function wpcc_post_type() {
 	$labels = array(
 		'name'                  => _x( 'Cards', 'Post Type General Name', 'WP_Church_Center' ),
 		'singular_name'         => _x( 'Card', 'Post Type Singular Name', 'WP_Church_Center' ),
-		'menu_name'             => __( 'Cards', 'WP_Church_Center' ),
+		'menu_name'             => __( 'Church Center', 'WP_Church_Center' ),
 		'name_admin_bar'        => __( 'Cards', 'WP_Church_Center' ),
 		'archives'              => __( 'Card Archives', 'WP_Church_Center' ),
 		'attributes'            => __( 'Card Attributes', 'WP_Church_Center' ),
 		'parent_item_colon'     => __( 'Parent Card:', 'WP_Church_Center' ),
 		'all_items'             => __( 'All Cards', 'WP_Church_Center' ),
 		'add_new_item'          => __( 'Add New Card', 'WP_Church_Center' ),
-		'add_new'               => __( 'Add New', 'WP_Church_Center' ),
+		'add_new'               => __( 'Add Card', 'WP_Church_Center' ),
 		'new_item'              => __( 'New Card', 'WP_Church_Center' ),
 		'edit_item'             => __( 'Edit Card', 'WP_Church_Center' ),
 		'update_item'           => __( 'Update Card', 'WP_Church_Center' ),
@@ -196,10 +196,10 @@ function wpcc_get_home_center_link(){
 
 	if ( $centerHomeQuery->have_posts() ) {
 	    while ( $centerHomeQuery->have_posts() ) : $centerHomeQuery->the_post(); // WP loop
-	        echo get_the_permalink(); 
+	        return get_the_permalink(); 
 	    endwhile; // end of the loop.
 	} else { // in case there are no pages with this template
-	    echo get_post_type_archive_link( 'card' );
+	    return get_post_type_archive_link( 'card' );
 	}
 	wp_reset_query();
 }

@@ -22,7 +22,7 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 
 					
 					
-					<a class="backButton" href="<?php wpcc_get_home_center_link(); ?>"><i class="fa fa-angle-circled-right"></i><span> Back</span></a>
+					<a class="backButton" href="<?php echo wpcc_get_home_center_link(); ?>"><i class="fa fa-angle-circled-right"></i><span> Back</span></a>
 
 				</div>
 			

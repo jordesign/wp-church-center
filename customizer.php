@@ -311,3 +311,15 @@ function tmx_customizer_live_preview() {
 
 } // end tcx_customizer_live_preview
 add_action( 'customize_preview_init', 'tmx_customizer_live_preview' );
+
+// Add link to customizer settings
+add_action('admin_menu', 'wpcc_extra_admin_menu');
+
+function wpcc_extra_admin_menu() {
+    global $submenu;
+    $query['url'] = wpcc_get_home_center_link();
+    $query['autofocus[panel]'] = 'WP_Church_Center';
+    $url = add_query_arg( $query, admin_url( 'customize.php' ) );
+
+    $submenu['edit.php?post_type=card'][] = array('Center Settings', 'manage_options', $url);
+}
