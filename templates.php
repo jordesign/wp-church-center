@@ -94,7 +94,7 @@ function wpcc_remove_default_scripts ()
 
 	}
 }
-if(get_option( 'wpcc_disable_scripts' ) == 1){
+if(get_option( 'wpcc_disable_scripts' ) == 1 && !is_admin() ){
 	add_action('wp_print_scripts', 'wpcc_remove_default_scripts', 100);
 }
 
