@@ -57,7 +57,7 @@
          } 
 
          .cardInfo h2, .cardInfo h3, .cardInfo h4, .cardInfo h5, .cardInfo h6, .cardInfo a {
-             color: <?php the_field( 'wpcc_color' ); ?>;
+             color: <?php echo get_post_meta(get_the_ID(),'wpcc_color',true ); ?>;
          }
 
 

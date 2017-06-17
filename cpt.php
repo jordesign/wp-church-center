@@ -185,6 +185,7 @@ function wpcc_parse_request_trick( $query ) {
 add_action( 'pre_get_posts', 'wpcc_parse_request_trick' );
 
 function wpcc_get_home_center_link(){
+
 	//Set Global for Hub Home link
 	$centerHomeQuery = new WP_Query( array(
 	    'post_type'  => 'page',
@@ -194,14 +195,15 @@ function wpcc_get_home_center_link(){
 	    'posts_per_page' => 1
 	) );
 
-	if ( $centerHomeQuery->have_posts() ) {
-	    while ( $centerHomeQuery->have_posts() ) : $centerHomeQuery->the_post(); // WP loop
-	        return get_the_permalink(); 
-	    endwhile; // end of the loop.
-	} else { // in case there are no pages with this template
-	    return get_post_type_archive_link( 'card' );
-	}
-	wp_reset_query();
+	if ( $centerHomeQuery->have_posts() ) : 
+		while ( $centerHomeQuery->have_posts() ) : $centerHomeQuery->the_post();
+			echo get_the_permalink(); 
+		endwhile; 
+		wp_reset_query();
+	else: 
+	    echo get_post_type_archive_link( 'card' );
+	endif;
+	 
 }
 
 

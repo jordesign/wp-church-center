@@ -52,6 +52,7 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 
 		<?php } 
 	} 
+	wp_reset_query();
 	?>
 </div>
 </div>
