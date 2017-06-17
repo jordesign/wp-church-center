@@ -6,7 +6,11 @@
 /**  Load Header */
 require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 
-<div class="cardHolder <?php echo get_option( 'wpcc_layout' ); ?>">
+<div class="cardHolder <?php if(isset($_GET["layout"])) { 
+		echo $_GET["layout"];
+	}else{
+		echo get_option( 'wpcc_layout' );
+	}  ?>">
 <div class="cards <?php if(get_option( 'wpcc_greyscale' ) == 1) { echo 'greyscale'; } ?>">
 
 
