@@ -71,7 +71,7 @@ function wpcc_post_type() {
 				'maxlength' => '',
 			),
 			array (
-				'key' => 'field_5908a49e36dd3',
+				'key' => 'field_5908a49ed36dd3',
 				'label' => 'Card Content',
 				'name' => 'wpcc_content',
 				'type' => 'wysiwyg',

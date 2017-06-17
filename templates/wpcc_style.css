@@ -506,6 +506,9 @@ body {
   .page-template-center_home .footer.card {
     display: block;
   }
+  .admin-bar .header.card {
+    top: 0px;
+  }
 }
 @media only screen and (min-width: 900px) {
   .header {
