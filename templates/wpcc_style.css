@@ -144,7 +144,8 @@ body {
   text-align: center;
   margin: 0;
 }
-.post-type-archive-card .footer.card {
+.post-type-archive-card .footer.card,
+.page-template-center_home .footer.card {
   display: none;
 }
 .cardHolder.grid {
@@ -501,7 +502,8 @@ body {
     max-width: 900px;
     margin: 20px auto 50px;
   }
-  .post-type-archive-card .footer.card {
+  .post-type-archive-card .footer.card,
+  .page-template-center_home .footer.card {
     display: block;
   }
 }
