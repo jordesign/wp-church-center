@@ -132,17 +132,20 @@ body {
 }
 .post-type-archive-card .footer.grid,
 .footer {
+  margin-top: 20px;
   background: #111;
-  padding: 10px;
+  padding: 15px;
+  clear: both;
 }
 .post-type-archive-card .footer.grid p,
 .footer p {
-  color: #fff;
+  color: #aaa;
   font-size: 12px;
   text-align: center;
   margin: 0;
 }
-.post-type-archive-card .footer.card {
+.post-type-archive-card .footer.card,
+.page-template-center_home .footer.card {
   display: none;
 }
 .cardHolder.grid {
@@ -498,6 +501,13 @@ body {
   .singleCard {
     max-width: 900px;
     margin: 20px auto 50px;
+  }
+  .post-type-archive-card .footer.card,
+  .page-template-center_home .footer.card {
+    display: block;
+  }
+  .admin-bar .header.card {
+    top: 0px;
   }
 }
 @media only screen and (min-width: 900px) {

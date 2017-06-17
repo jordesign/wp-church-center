@@ -30,10 +30,10 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 				<div class="cardInfo" >
 					<div class="cardTitle">
 						<h1 style="color: <?php the_field('wpcc_color'); ?>"><?php the_title(); ?></h1>
-						<p><?php echo get_field('wpcc_subtitle', $post->ID); ?></p>
+						<p><?php the_field('wpcc_subtitle'); ?></p>
 					</div>
 
-					<?php the_field('wpcc_content'); ?> d
+					<?php the_field('wpcc_content'); ?>
 	
 				
 			</div>
