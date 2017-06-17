@@ -509,6 +509,9 @@ body {
   .admin-bar .header.card {
     top: 0px;
   }
+  .wpchurch_center.single .singleCard .cardHeader .backButton i:before {
+    font-size: 32px !important;
+  }
 }
 @media only screen and (min-width: 900px) {
   .header {
