@@ -66,6 +66,20 @@ $wp_customize->add_control( 'wpcc_church_name', array(
    'type'    => 'text',
 ) );
 
+// add a setting for the church name
+$wp_customize->add_setting('wpcc_church_copyright', array(
+     'type' => 'option', 
+     'capability' => 'manage_options',
+));
+
+//add control for church website link
+$wp_customize->add_control( 'wpcc_church_copyright', array(
+   'label'   => 'Footer Copyright Text',
+   'section' => 'wpcc_details',
+   'type'    => 'text',
+   'description' => 'Leave this blank for no footer'
+) );
+
 
  
 

@@ -3,9 +3,11 @@
 /* Footer for WP Church Center Pages */
 ?>
 
-<div class="footer">
-	<p>Copyright &copy; <?php echo esc_html( get_option( 'blogname' ) ); ?> <?php echo date('Y'); ?> All Rights Reserved</p>
-</div>
+<?php if ($footerText = get_option( 'wpcc_church_copyright' ) ){ ?>
+  <div class="footer <?php echo get_option( 'wpcc_layout' ); ?>">
+  	<p><?php echo $footerText; ?></p>
+  </div>
+<?php } ?>
 <?php wp_footer(); 
 
 

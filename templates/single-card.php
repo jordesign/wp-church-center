@@ -33,7 +33,8 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 						<p><?php the_field('wpcc_subtitle'); ?></p>
 					</div>
 
-					<?php the_field('wpcc_content'); ?>		
+					<?php the_field('wpcc_content'); ?>
+	
 				
 			</div>
 					
