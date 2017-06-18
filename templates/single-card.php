@@ -34,7 +34,8 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 						<p><?php echo get_post_meta(get_the_ID(get_the_ID()),'wpcc_subtitle',true); ?></p>
 					</div>
 
-					<?php echo get_post_meta(get_the_ID(),'wpcc_content',true); ?>
+					<?php $content = get_post_meta(get_the_ID(),'wpcc_content',true); 
+					echo apply_filters( 'the_content', $content ); ?>
 	
 				
 			</div>
