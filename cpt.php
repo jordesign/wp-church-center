@@ -197,12 +197,18 @@ function wpcc_get_home_center_link(){
 
 	if ( $centerHomeQuery->have_posts() ) : 
 		while ( $centerHomeQuery->have_posts() ) : $centerHomeQuery->the_post();
-			echo get_the_permalink(); 
+			$homeURL =  get_the_permalink(); 
 		endwhile; 
 		wp_reset_query();
 	else: 
-	    echo get_post_type_archive_link( 'card' );
+	    $homeURL =  get_post_type_archive_link( 'card' );
 	endif;
+
+	if(is_admin()){
+		return $homeURL;
+	}else{
+		echo $homeURL;
+	}
 	 
 }
 
