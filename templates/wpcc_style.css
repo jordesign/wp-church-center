@@ -600,6 +600,7 @@ body {
   }
   .wpchurch_center.single .singleCard .cardHeader .backButton i:before {
     margin: 0;
+    font-size: 32px !important;
   }
   .wpchurch_center.single .singleCard .cardHeader .backButton span {
     width: 0;

@@ -10,8 +10,10 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 
 <div class="cardHolder <?php if(isset($_GET["layout"])) { 
 		echo $_GET["layout"];
+	}else if ($layout = get_option( 'wpcc_layout' ) ){
+		echo $layout;
 	}else{
-		echo get_option( 'wpcc_layout' );
+		echo 'list';
 	}  ?>">
 <div class="cards <?php if(get_option( 'wpcc_greyscale' ) == 1) { echo 'greyscale'; } ?>">
 
@@ -27,16 +29,27 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 		while ( $wpcc_query -> have_posts() ) {
 			$wpcc_query -> the_post();  ?>
 			
-				<?php if(get_option( 'wpcc_layout' ) == 'list'){ ?>
+				<?php if(isset($_GET["layout"])) {
+						$layout = $_GET["layout"];
+					}
+					if(get_option( 'wpcc_layout' ) == 'list' && $layout !='grid' && $layout !='card'){ ?>
 
 					<a class="card" href="<?php the_permalink(); ?>" style="background-color: <?php the_field('wpcc_color'); ?>">
 						<div class="cardBody">
 							<h3><?php the_title(); ?></h3>
 							<p><?php the_field('wpcc_subtitle'); ?></p>
 						</div>
-						<i class="fa fa-angle-circled-right"></i>
+						<i class="fa fa-angle-circled-right" style="color: <?php the_field('wpcc_color'); ?>"></i>
 					</a>
 
+				<?php }else if ($layout=='list'){ ?>
+					<a class="card" href="<?php the_permalink(); ?>" style="background-color: <?php the_field('wpcc_color'); ?>">
+						<div class="cardBody">
+							<h3><?php the_title(); ?></h3>
+							<p><?php the_field('wpcc_subtitle'); ?></p>
+						</div>
+						<i class="fa fa-angle-circled-right" style="color: <?php the_field('wpcc_color'); ?>"></i>
+					</a>
 				<?php }else{ ?>
 					<a class="card" href="<?php the_permalink(); ?>" tabindex="-1">
 						<div class="cardBody">
