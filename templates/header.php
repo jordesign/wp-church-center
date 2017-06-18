@@ -78,7 +78,13 @@
     <a class="skip-link" tabindex="1" href="#main"><?php esc_html_e( '&darr; Skip to Main Content', 'wpcc' ); ?></a>
 </div><!-- .skip-container -->
 
-<div class="header <?php echo get_option( 'wpcc_layout' ); ?>">
+<div class="header <?php if(isset($_GET["layout"])) { 
+        echo $_GET["layout"];
+    }else if ($layout = get_option( 'wpcc_layout' ) ){
+        echo $layout;
+    }else{
+        echo 'list';
+    }  ?>">
 	<a href="<?php wpcc_get_home_center_link(); ?>"><img src="<?php echo esc_html( get_option( 'wpcc_church_logo' ) ); ?>" alt="<?php echo esc_html( get_option( 'blogname' ) ); ?> Logo" id="logo"></a>
 
 	<a href="#menu" aria-controls="menu" class="menuLink" tabindex="2">
