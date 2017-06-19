@@ -8,20 +8,20 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              http://wpccurch.team
+ * @link              http://wpchurch.team
  * @since             1.0.0
  * @package           WP_Church_Center
  *
  * @wordpress-plugin
  * Plugin Name:       WP Church Center
- * Plugin URI:        http://wpccurch.center
+ * Plugin URI:        http://wpchurch.center
  * Description:       Provides a 'Next Steps' Center for your Church.
  * Version:           1.0.0
  * Author:            Jordesign, WP Church Team
- * Author URI:        http://wpccurch.team/
+ * Author URI:        http://wpchurch.team/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       wp_church_team
+ * Text Domain:       WP_Church_Center
  */
 
 // If this file is called directly, abort.
@@ -43,8 +43,6 @@ require_once plugin_dir_path( __FILE__ ) . 'templates.php';
 
 /**   Check if ACF is used with another plugin, if not already called, use this one */
 if( ! class_exists('acf') ) {
-	
-	
 
 	// 1. customize ACF path
 	add_filter('acf/settings/path', 'wpcc_acf_settings_path');
@@ -58,6 +56,7 @@ if( ! class_exists('acf') ) {
 	    return $path;
 	    
 	}
+	
 	// 2. customize ACF dir
 	add_filter('acf/settings/dir', 'wpcc_acf_settings_dir');
 	 

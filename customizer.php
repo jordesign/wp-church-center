@@ -311,21 +311,6 @@ function wpcc_sanitize_select( $input, $setting ) {
 add_action('customize_register', 'wpcc_new_customizer_settings');
 
 
-
-//Customizer S
-function tmx_customizer_live_preview() {
-
-  wp_enqueue_script(
-    'wpcc-theme-customizer',
-    '/wp-content/plugins/wp-church-center/templates/wpcc_customizer.js',
-    array( 'jquery', 'customize-preview' ),
-    '',
-    true
-  );
-
-} // end tcx_customizer_live_preview
-add_action( 'customize_preview_init', 'tmx_customizer_live_preview' );
-
 // Add link to customizer settings
 add_action('admin_menu', 'wpcc_extra_admin_menu');
 

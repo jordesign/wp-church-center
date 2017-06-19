@@ -1,5 +1,5 @@
 <?php
-// Register Custom Post Type
+// Register 'card' Custom Post Type
 function wpcc_post_type() {
 
 	$labels = array(
@@ -52,7 +52,8 @@ function wpcc_post_type() {
 	);
 	register_post_type( 'card', $args );
 
-	if(function_exists("register_field_group"))
+
+if(function_exists("register_field_group"))
 {
 	register_field_group(array (
 		'id' => 'acf_card-content',
@@ -100,6 +101,8 @@ function wpcc_post_type() {
 		),
 		'menu_order' => 0,
 	));
+
+
 	register_field_group(array (
 		'id' => 'acf_card-presentation',
 		'title' => 'Card Presentation',
@@ -146,6 +149,7 @@ function wpcc_post_type() {
 }
 add_action( 'init', 'wpcc_post_type', 0 );
 
+
 /**
  * Remove the slug from published post permalinks. Only affect our custom post type, though.
  */
@@ -186,7 +190,7 @@ add_action( 'pre_get_posts', 'wpcc_parse_request_trick' );
 
 function wpcc_get_home_center_link(){
 
-	//Set Global for Hub Home link
+	//Get the  Church Center Home link
 	$centerHomeQuery = new WP_Query( array(
 	    'post_type'  => 'page',
 	    'meta_key'   => '_wp_page_template',
@@ -204,12 +208,10 @@ function wpcc_get_home_center_link(){
 	    $homeURL =  get_post_type_archive_link( 'card' );
 	endif;
 
-	if(is_admin()){
-		return $homeURL;
+	if ( is_admin() ) {
+		return esc_html( $homeURL );
 	}else{
-		echo $homeURL;
+		echo esc_html( $homeURL );
 	}
 	 
 }
-
-

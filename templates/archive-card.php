@@ -2,18 +2,19 @@
 
 /* Archive for WP Church Center  */
 
-
 /**  Load Header */
 require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 
-<div class="cardHolder <?php if(isset($_GET["layout"])) { 
+<div class="cardHolder 
+	<?php if( isset($_GET["layout"]) ) { 
 		echo $_GET["layout"];
-	}else if ($layout = get_option( 'wpcc_layout' ) ){
+	} elseif ( $layout = get_option( 'wpcc_layout' ) ){
 		echo $layout;
-	}else{
+	} else {
 		echo 'list';
 	}  ?>">
-<div class="cards <?php if(get_option( 'wpcc_greyscale' ) == 1) { echo 'greyscale'; } ?>">
+	
+	<div class="cards <?php if(get_option( 'wpcc_greyscale' ) == 1) { echo 'greyscale'; } ?>">
 
 
 	<?php 
