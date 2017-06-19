@@ -13,19 +13,17 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 	} else {
 		echo 'list';
 	}  ?>">
-	
+
 	<div class="cards <?php if(get_option( 'wpcc_greyscale' ) == 1) { echo 'greyscale'; } ?>">
 
-
-	<?php 
-	if ( have_posts() ) {
+	<?php if ( have_posts() ) {
 		while ( have_posts() ) {
 			the_post();  ?>
 			
-				<?php if(isset($_GET["layout"])) {
+				<?php if ( isset($_GET["layout"]) ) {
 						$layout = $_GET["layout"];
 					}
-					if(get_option( 'wpcc_layout' ) == 'list' && $layout !='grid' && $layout !='card'){ ?>
+					if ( 'list' == get_option('wpcc_layout' ) && 'grid' != $layout && 'card' != $layout ){ ?>
 
 					<a class="card" href="<?php the_permalink(); ?>" style="background-color: <?php the_field('wpcc_color'); ?>">
 						<div class="cardBody">
@@ -35,7 +33,7 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 						<i class="fa fa-angle-circled-right" style="color: <?php the_field('wpcc_color'); ?>"></i>
 					</a>
 
-				<?php }else if ($layout=='list'){ ?>
+				<?php } elseif ( $layout=='list' ){ ?>
 					<a class="card" href="<?php the_permalink(); ?>" style="background-color: <?php the_field('wpcc_color'); ?>">
 						<div class="cardBody">
 							<h3><?php the_title(); ?></h3>
@@ -43,7 +41,7 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 						</div>
 						<i class="fa fa-angle-circled-right" style="color: <?php the_field('wpcc_color'); ?>"></i>
 					</a>
-				<?php }else{ ?>
+				<?php } else { ?>
 					<a class="card" href="<?php the_permalink(); ?>" tabindex="-1">
 						<div class="cardBody">
 							<div class="topSection" style="background: url(<?php $image = get_field('wpcc_image'); echo wp_get_attachment_image_src( $image, 'card_image' )[0];?>) no-repeat 50% 50%; background-size:cover;">
@@ -61,11 +59,11 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 				<?php } ?>
 
 		<?php } 
-	} 
-	?>
+	} ?>
+
 </div>
 </div>
 
 
-<?php /**  Load Header */
+<?php /**  Load Footer */
 require_once plugin_dir_path( __FILE__ ) . 'footer.php'; ?>

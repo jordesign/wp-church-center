@@ -3,10 +3,11 @@
 /* Header for WP Church Center Pages */
 ?>
 
+<!DOCTYPE html> 
 <html <?php language_attributes(); ?> prefix="og: http://ogp.me/ns#">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 
-    <?php if (is_singular('card') ) { ?>
+    <?php if ( is_singular('card') ) { ?>
         <title><?php the_title();?> | <?php echo get_option( 'wpcc_church_name' ); ?> Center</title>
     <?php }else{ ?>
         <title><?php echo get_option( 'wpcc_church_name' ); ?> Center</title>
@@ -19,15 +20,15 @@
     <!-- Meta Tags -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
-    <?php if (is_singular('card') ) { ?>
+    <?php if ( is_singular('card') ) { ?>
         <meta property="og:title" content="<?php the_title();?> | <?php echo get_option( 'wpcc_church_name' ); ?> center">
-    <?php }else{ ?>
+    <?php } else { ?>
         <meta property="og:title" content="<?php echo get_option( 'wpcc_church_name' ); ?> center">
     <?php } ?>
 
-    <?php if (is_singular('card') ) { ?>
+    <?php if ( is_singular('card' ) ) { ?>
         <meta property="og:description" content="<?php the_field('wpcc_subtitle'); ?>">
-    <?php }else{ ?>
+    <?php } else { ?>
         <meta property="og:description" content="Find out what is happening for members at <?php echo get_option( 'wpcc_church_name' ); ?>">
     <?php } ?>
     
@@ -38,9 +39,9 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:description" content="<?php the_field('wpcc_subtitle'); ?>">
 
-    <?php if (is_singular('card') ) { ?>
+    <?php if ( is_singular('card') ) { ?>
         <meta name="twitter:title" content="<?php the_title();?> | <?php echo get_option( 'wpcc_church_name' ); ?> center">
-    <?php }else{ ?>
+    <?php } else { ?>
         <meta name="twitter:title" content="<?php echo get_option( 'wpcc_church_name' ); ?> center">
     <?php } ?>
     <meta name="twitter:image" content="<?php $image = get_field('wpcc_image'); echo wp_get_attachment_image_src( $image, 'card_hero_image' )[0];?>">
@@ -78,11 +79,11 @@
     <a class="skip-link" tabindex="1" href="#main"><?php esc_html_e( '&darr; Skip to Main Content', 'wpcc' ); ?></a>
 </div><!-- .skip-container -->
 
-<div class="header <?php if(isset($_GET["layout"])) { 
+<div class="header <?php if ( isset($_GET["layout"]) ) { 
         echo $_GET["layout"];
-    }else if ($layout = get_option( 'wpcc_layout' ) ){
+    } elseif ($layout = get_option( 'wpcc_layout' ) ) {
         echo $layout;
-    }else{
+    } else {
         echo 'list';
     }  ?>">
 	<a href="<?php wpcc_get_home_center_link(); ?>"><img src="<?php echo esc_html( get_option( 'wpcc_church_logo' ) ); ?>" alt="<?php echo esc_html( get_option( 'blogname' ) ); ?> Logo" id="logo"></a>
@@ -91,45 +92,42 @@
 	  <i class="fa-logo fa-menu"></i><span>Menu</span>
 	</a>
 
-        
-
-
         <div id="menu" class="columns large-9">
 
         		<!-- Social Icons -->
         		<ul class="socialMenu">
 
-        			<?php if($churchLink = get_option( 'wpcc_church_url' )){ ?>
-					<li><a href="<?php echo $churchLink; ?>"><i class="fa-logo fa-home"></i><span><?php echo esc_html( get_option( 'blogname' ) ); ?> Website</span></a></li>
+        			<?php if ( $churchLink = get_option( 'wpcc_church_url' ) ) { ?>
+					   <li><a href="<?php echo $churchLink; ?>"><i class="fa-logo fa-home"></i><span><?php echo esc_html( get_option( 'blogname' ) ); ?> Website</span></a></li>
         			<?php } ?>
 
 
-        			<?php if($facebookLink = get_option( 'wpcc_facebook' )){ ?>
-					<li><a href="<?php echo $facebookLink; ?>" title="Facebook"><i class="fa-logo fa-facebook"></i><span>Facebook</span></a></li>
+        			<?php if ( $facebookLink = get_option( 'wpcc_facebook' ) ) { ?>
+					   <li><a href="<?php echo $facebookLink; ?>" title="Facebook"><i class="fa-logo fa-facebook"></i><span>Facebook</span></a></li>
         			<?php } ?>
 
-        			<?php if($twitterLink = get_option( 'wpcc_twitter' )){ ?>
-					<li><a href="<?php echo $twitterLink; ?>" title="Twitter"><i class="fa-logo fa-twitter"></i><span>Twitter</span></a></li>
+        			<?php if ( $twitterLink = get_option( 'wpcc_twitter' ) ) { ?>
+					   <li><a href="<?php echo $twitterLink; ?>" title="Twitter"><i class="fa-logo fa-twitter"></i><span>Twitter</span></a></li>
         			<?php } ?>
 
-        			<?php if($instLink = get_option( 'wpcc_instagram' )){ ?>
-					<li><a href="<?php echo $instaLink; ?>" title="Instagra,"><i class="fa-logo fa-instagram"></i><span>Twitter</span></a></li>
+        			<?php if ( $instLink = get_option( 'wpcc_instagram' ) ) { ?>
+					   <li><a href="<?php echo $instaLink; ?>" title="Instagram"><i class="fa-logo fa-instagram"></i><span>Twitter</span></a></li>
         			<?php } ?>
 
-        			<?php if($snapchatLink = get_option( 'wpcc_snapchat' )){ ?>
-					<li><a href="<?php echo $snapchatLink; ?>" title="Snapchat"><i class="fa-logo fa-snapchat-ghost"></i><span>Snapchat</span></a></li>
+        			<?php if ( $snapchatLink = get_option( 'wpcc_snapchat' ) ) { ?>
+					   <li><a href="<?php echo $snapchatLink; ?>" title="Snapchat"><i class="fa-logo fa-snapchat-ghost"></i><span>Snapchat</span></a></li>
         			<?php } ?>
 
-        			<?php if($vimeoLink = get_option( 'wpcc_vimeo' )){ ?>
-					<li><a href="<?php echo $vimeoLink; ?>" title="Vimeo"><i class="fa-logo fa-vimeo"></i><span>Vimeo</span></a></li>
+        			<?php if ( $vimeoLink = get_option( 'wpcc_vimeo' ) ){ ?>
+					   <li><a href="<?php echo $vimeoLink; ?>" title="Vimeo"><i class="fa-logo fa-vimeo"></i><span>Vimeo</span></a></li>
         			<?php } ?>
 
-        			<?php if($youtubeLink = get_option( 'wpcc_youtube' )){ ?>
-					<li><a href="<?php echo $youtubeLink; ?>" title="Youtube"><i class="fa-logo fa-youtube-play"></i><span>Youtube</span></a></li>
+        			<?php if ( $youtubeLink = get_option( 'wpcc_youtube' ) ) { ?>
+					   <li><a href="<?php echo $youtubeLink; ?>" title="Youtube"><i class="fa-logo fa-youtube-play"></i><span>Youtube</span></a></li>
         			<?php } ?>
 
-        			<?php if($givingLink = get_option( 'wpcc_giving' )){ ?>
-					<li><a href="<?php echo $givingLink; ?>" title="Online Giving"><i class="fa-logo fa-money"></i><span>Online Giving</span></a></li>
+        			<?php if ( $givingLink = get_option( 'wpcc_giving' ) ) { ?>
+					   <li><a href="<?php echo $givingLink; ?>" title="Online Giving"><i class="fa-logo fa-money"></i><span>Online Giving</span></a></li>
         			<?php } ?>
 
         		</ul>

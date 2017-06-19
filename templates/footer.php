@@ -3,12 +3,12 @@
 /* Footer for WP Church Center Pages */
 ?>
 
-<?php if ($footerText = get_option( 'wpcc_church_copyright' ) ){ ?>
-  <div class="footer <?php if(isset($_GET["layout"])) { 
+<?php if ( $footerText = get_option( 'wpcc_church_copyright' ) ){ ?>
+  <div class="footer <?php if ( isset($_GET["layout"]) ) { 
     echo $_GET["layout"];
-  }else if ($layout = get_option( 'wpcc_layout' ) ){
+  } elseif ( $layout = get_option( 'wpcc_layout' ) ){
     echo $layout;
-  }else{
+  } else {
     echo 'list';
   }  ?>">
   	<p><?php echo $footerText; ?></p>
