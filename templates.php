@@ -9,9 +9,9 @@ add_filter( 'archive_template' , 'wpcc_archive_template' );
 //route single-template
 function wpcc_single_template( $single_template ){
   global $post;
-  locate_template('single-card.php', false) = $found;
+  $found = locate_template('single-card.php', false) ;
   if( $post->post_type == 'card' && $found == '' ){
-    wpcc_PLUGIN_PATH .'/templates/single-card.php' = $single_template;
+    $single_template = wpcc_PLUGIN_PATH .'/templates/single-card.php';
   }
   return $single_template;
 }
@@ -19,8 +19,8 @@ function wpcc_single_template( $single_template ){
 //route archive-template
 function wpcc_archive_template( $template ){
   if( is_post_type_archive('card') ){
-    array('archive-card.php') = $theme_files ;
-    locate_template($theme_files, false) = $exists_in_theme;
+    $theme_files = array('archive-card.php')  ;
+    $exists_in_theme = locate_template($theme_files, false);
     if( $exists_in_theme == '' ){
       return wpcc_PLUGIN_PATH . '/templates/archive-card.php';
     }
@@ -104,6 +104,16 @@ add_action('wp_enqueue_scripts', 'wpcc_add_styles', 101);
 //Image Sizes
 add_image_size( 'card_image', 600, 1200, false );
 add_image_size( 'card_hero_image', 1200, 1200, false );
+
+//remove automated WP title 
+add_action('template_redirect', 'wpcc_remove_title');
+function wpcc_remove_title()
+{
+    if ( get_post_type() == 'card' || is_post_type_archive('card') || is_page_template('center_home.php' ) ){
+		remove_action( 'wp_head', '_wp_render_title_tag', 1 );
+	}
+}
+
 
 //Definitely Hide admin bar when not logged in
 add_filter( 'show_admin_bar', 'wpct_hide_adminbar' );
