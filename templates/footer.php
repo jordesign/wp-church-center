@@ -14,6 +14,7 @@
   	<p><?php echo $footerText; ?></p>
   </div>
 <?php } ?>
+</div>
 <?php wp_footer(); 
 
 

@@ -74,7 +74,7 @@
 
 
 <body <?php body_class( 'wpchurch_center'); ?>>
-
+<div class="wrapper">
 <div class="skip-container">
     <a class="skip-link" tabindex="1" href="#main"><?php esc_html_e( '&darr; Skip to Main Content', 'wpcc' ); ?></a>
 </div><!-- .skip-container -->

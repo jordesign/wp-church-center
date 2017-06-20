@@ -1,9 +1,27 @@
+html {
+  min-height: 100%;
+}
+
 body {
   padding:0;
   margin:0;
   font-family: 'helvetica neue', helvetica, calibri, arial, sans-serif;
   background:#333;
+  min-height: 100vh;
   
+}
+
+.wrapper {
+  position:relative;
+  min-height: 100vh;
+  width: 100%;
+  float:left;
+  padding-bottom: 60px;
+}
+.wrapper .after {
+  content:'';
+  display:table;
+  clear:both;
 }
 
 * {
@@ -162,8 +180,12 @@ body {
 
 //Footer
 .post-type-archive-card .footer.grid,
+
 .footer {
-  margin-top:20px;
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
   background:#111;
   padding: 15px;
   clear:both;
@@ -171,6 +193,7 @@ body {
   p {
     color:#aaa;
     font-size: 12px;
+    line-height: 15px;
     text-align:center;
     margin:0;
   }
@@ -181,6 +204,12 @@ body {
 .post-type-archive-card .footer.card,
 .page-template-center_home .footer.card {
   display:none;
+}
+
+.cardHolder {
+  width: 100%;
+  
+
 }
 
 //Grid View
