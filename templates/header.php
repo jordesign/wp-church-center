@@ -74,6 +74,31 @@
 
 
 <body <?php body_class( 'wpchurch_center'); ?>>
+ 
+<?php if( WPCC_LAYOUT_SWITCHING ===  true){ 
+
+    if( isset($_GET["layout"]) ) { 
+        $layout = $_GET["layout"];
+    } ?>
+
+    <div class="wppc_layout_switcher">
+        <p>
+            <span>Switch layout</span>
+            <a href="?layout=grid" class="<?php if ('grid' == get_option('wpcc_layout') && $layout == false || 'grid' == $layout ){ echo 'active'; } ?>">
+                Grid
+            </a>
+            <a href="?layout=list" class="<?php if ('list' == get_option('wpcc_layout') && $layout == false || 'list' == $layout ){ echo 'active'; } ?>">    
+                List
+            </a>
+            <a href="?layout=card" class="<?php if ('card' == get_option('wpcc_layout') && $layout == false || 'card' == $layout ){ echo 'active'; } ?>">
+                Card
+            </a>
+        </p>
+    </div>
+
+<?php } ?>
+
+
 <div class="wrapper">
 <div class="skip-container">
     <a class="skip-link" tabindex="1" href="#main"><?php esc_html_e( '&darr; Skip to Main Content', 'wpcc' ); ?></a>
@@ -85,7 +110,9 @@
         echo $layout;
     } else {
         echo 'list';
-    }  ?>">
+    }  ?>
+
+    <?php if( WPCC_LAYOUT_SWITCHING ===  true){ echo 'layoutSwitching'; } ?>">
 	<a href="<?php wpcc_get_home_center_link(); ?>"><img src="<?php echo esc_html( get_option( 'wpcc_church_logo' ) ); ?>" alt="<?php echo esc_html( get_option( 'blogname' ) ); ?> Logo" id="logo"></a>
 
 	<a href="#menu" aria-controls="menu" class="menuLink" tabindex="2">

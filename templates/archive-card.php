@@ -12,7 +12,9 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 		echo $layout;
 	} else {
 		echo 'list';
-	}  ?>">
+	}  ?>
+
+	<?php if( WPCC_LAYOUT_SWITCHING ===  true){ echo 'layoutSwitching'; } ?>">
 
 	<div class="cards <?php if(get_option( 'wpcc_greyscale' ) == 1) { echo 'greyscale'; } ?>">
 

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   min-height: 100%;
 }
@@ -34,32 +35,44 @@ body {
   left: 0;
   right: 0;
 }
+.header > a {
+  display: flex;
+  min-height: 80px;
+  float: left;
+  width: 75%;
+  max-width: 320px;
+  align-items: center;
+  padding: 10px;
+}
 .header img {
   float: left;
-  margin: 10px;
   max-height: 60px;
-  max-width: 320px;
+  max-width: 100%;
+  height: auto;
 }
-.header .menuLink {
+.header a.menuLink {
   float: right;
   height: 40px;
-  margin: 20px;
+  width: auto;
+  margin: 20px 20px 20px 0;
+  padding: 0;
   line-height: 40px;
   color: #fff;
   font-size: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 1px;
 }
-.header .menuLink i {
+.header a.menuLink i {
   height: 40px;
   line-height: 40px;
 }
-.header .menuLink i:before {
+.header a.menuLink i:before {
   height: 40px;
   line-height: 40px;
 }
-.header .menuLink span {
+.header a.menuLink span {
   display: none;
 }
 .header.card {
@@ -172,7 +185,7 @@ body {
   width: 100%;
 }
 .cardHolder.grid {
-  padding: 20px 10px 10px;
+  padding: 0px 10px 10px;
 }
 .cardHolder.grid .card {
   float: left;
@@ -479,6 +492,38 @@ body {
 .cardInfo p {
   margin-bottom: 28px;
 }
+.wppc_layout_switcher {
+  padding: 0 10px;
+  height: 52px;
+  background: #333;
+  text-align: right;
+}
+.wppc_layout_switcher p {
+  color: #888;
+  padding-top: 10px;
+}
+.wppc_layout_switcher p span {
+  margin-right: 10px;
+}
+.wppc_layout_switcher p a {
+  display: inline-block;
+  color: #ddd;
+  text-decoration: none;
+  padding: 2px 10px;
+  border-radius: 5px;
+  margin: 0 7px 0 0;
+}
+.wppc_layout_switcher p a.active,
+.wppc_layout_switcher p a:hover {
+  background: #666;
+  text-decoration: none;
+}
+.cardHolder.card.layoutSwitching {
+  padding-top: 130px;
+}
+.header.card.layoutSwitching {
+  top: 50px;
+}
 @media only screen and (min-width: 480px) {
   .cardHolder.grid {
     max-width: 1200px;
@@ -535,6 +580,12 @@ body {
   .wpchurch_center.single .singleCard .cardHeader .backButton i:before {
     font-size: 32px !important;
   }
+  .cardHolder.card.layoutSwitching {
+    padding-top: 0px;
+  }
+  .header.card.layoutSwitching {
+    top: 0px;
+  }
 }
 @media only screen and (min-width: 900px) {
   .header {
@@ -542,7 +593,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
   }
-  .header .menuLink {
+  .header a.menuLink {
     display: none;
   }
   .header #menu {
@@ -551,7 +602,7 @@ body {
     right: 0;
     float: right;
     background: none;
-    width: 70%;
+    width: 60%;
     box-shadow: none;
   }
   .header #menu ul {
@@ -746,10 +797,9 @@ body {
 .slick-arrow.slick-hidden {
   display: none;
 }
-@charset "UTF-8";
 /* Slider */
 .slick-loading .slick-list {
-  background: #ffffff url('ajax-loader.gif') center center no-repeat;
+  background: #fff url('ajax-loader.gif') center center no-repeat;
 }
 /* Arrows */
 .slick-prev,
@@ -793,7 +843,7 @@ body {
 .slick-next:before {
   font-size: 20px;
   line-height: 1;
-  color: #ffffff;
+  color: white;
   opacity: 0.75;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -878,13 +928,13 @@ body {
   font-size: 6px;
   line-height: 20px;
   text-align: center;
-  color: #000000;
+  color: black;
   opacity: 0.25;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 .slick-dots li.slick-active button:before {
-  color: #000000;
+  color: black;
   opacity: 0.75;
 }
 @font-face {
@@ -1001,3 +1051,4 @@ body {
   content: '\f2ac';
 }
 /* '' */
+/*# sourceMappingURL=wpcc_style.css.map */

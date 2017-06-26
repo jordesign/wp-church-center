@@ -42,4 +42,7 @@ Add a page which uses the \'Church Center Homepage\' template
 3. An example card
 
 == Changelog ==
+v1.0.1
+- Tweaks to logo & header styling
+
 v1.0 First release of core plugin
