@@ -41,37 +41,42 @@ require_once plugin_dir_path( __FILE__ ) . 'templates/pagetemplater.php';
 /**  Archive Page Templates */
 require_once plugin_dir_path( __FILE__ ) . 'templates.php';
 
-/**   Check if ACF is used with another plugin, if not already called, use this one */
-if( ! class_exists('acf') ) {
+add_action( 'after_setup_theme', 'wpcc_acf_setup' );
 
-	// 1. customize ACF path
-	add_filter('acf/settings/path', 'wpcc_acf_settings_path');
-	 
-	function wpcc_acf_settings_path( $path ) {
-	 
-	    // update path
-	    $path = plugin_dir_path( __FILE__ ) . '/advanced-custom-fields/';
-	    
-	    // return
-	    return $path;
-	    
+function wpcc_acf_setup() {
+	/**   Check if ACF is used with another plugin, if not already called, use this one */
+	if( ! class_exists('acf') ) {
+
+		// 1. customize ACF path
+		add_filter('acf/settings/path', 'wpcc_acf_settings_path');
+		 
+		function wpcc_acf_settings_path( $path ) {
+		 
+		    // update path
+		    $path = plugin_dir_path( __FILE__ ) . '/advanced-custom-fields/';
+		    
+		    // return
+		    return $path;
+		    
+		}
+		
+		// 2. customize ACF dir
+		add_filter('acf/settings/dir', 'wpcc_acf_settings_dir');
+		 
+		function wpcc_acf_settings_dir( $dir ) {
+		 
+		    // update path
+		    $dir = plugin_dir_path( __FILE__ ) . '/advanced-custom-fields/';
+		    
+		    // return
+		    return $dir;
+		    
+		}
+
+		// 3. Hide ACF field group menu item
+		add_filter('acf/settings/show_admin', '__return_false');
+
+			require_once plugin_dir_path( __FILE__ ) . 'advanced-custom-fields/acf.php';
 	}
-	
-	// 2. customize ACF dir
-	add_filter('acf/settings/dir', 'wpcc_acf_settings_dir');
-	 
-	function wpcc_acf_settings_dir( $dir ) {
-	 
-	    // update path
-	    $dir = plugin_dir_path( __FILE__ ) . '/advanced-custom-fields/';
-	    
-	    // return
-	    return $dir;
-	    
-	}
-
-	// 3. Hide ACF field group menu item
-	add_filter('acf/settings/show_admin', '__return_false');
-
-	require_once plugin_dir_path( __FILE__ ) . 'advanced-custom-fields/acf.php';
 }
+
