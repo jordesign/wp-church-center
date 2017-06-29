@@ -93,6 +93,7 @@
             <a href="?layout=card" class="<?php if ('card' == get_option('wpcc_layout') && $layout == false || 'card' == $layout ){ echo 'active'; } ?>">
                 Card
             </a>
+            <a href="https://wordpress.org/plugins/wp-church-center/" class="downloadLink" target="_blank">Download Plugin</a>
         </p>
     </div>
 

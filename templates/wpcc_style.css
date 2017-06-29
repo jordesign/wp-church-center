@@ -518,6 +518,10 @@ body {
   background: #666;
   text-decoration: none;
 }
+.wppc_layout_switcher p a.downloadLink {
+  background: #eee;
+  color: #666;
+}
 .cardHolder.card.layoutSwitching {
   padding-top: 130px;
 }
