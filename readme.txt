@@ -47,6 +47,8 @@ Add a page which uses the 'Church Center Homepage' template
 v1.0.1
 - BUG FIX: Include ACF later to avoid conflict with themes using ACF Pro
 - Tweaks to logo & header styling
+- Make card header shorter on mobile screens
+- Tidy up ReadMe.txt
 
 
 v1.0 First release of core plugin

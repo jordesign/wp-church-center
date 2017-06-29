@@ -424,7 +424,7 @@ body {
   background: #fff;
 }
 .wpchurch_center.single .singleCard .cardHeader {
-  min-height: 50vh;
+  min-height: 35vh;
   padding: 30px 20px;
   display: flex;
   justify-content: center;
