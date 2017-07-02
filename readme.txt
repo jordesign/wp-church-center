@@ -46,6 +46,7 @@ Add a page which uses the 'Church Center Homepage' template
 == Changelog ==
 v1.0.1
 - BUG FIX: Include ACF later to avoid conflict with themes using ACF Pro
+- BUG FIX: More robust OG & Twitter meta tags
 - Tweaks to logo & header styling
 - Make card header shorter on mobile screens
 - Tidy up ReadMe.txt
