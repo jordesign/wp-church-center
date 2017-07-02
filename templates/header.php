@@ -17,34 +17,59 @@
     <meta charset="<?php bloginfo('charset'); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Meta Tags -->
-    <meta property="og:locale" content="en_US">
-    <meta property="og:type" content="website">
-    <?php if ( is_singular('card') ) { ?>
-        <meta property="og:title" content="<?php the_title();?> | <?php echo get_option( 'wpcc_church_name' ); ?> center">
-    <?php } else { ?>
-        <meta property="og:title" content="<?php echo get_option( 'wpcc_church_name' ); ?> center">
-    <?php } ?>
+    <!-- Meta Tags if YOAST SEO is not enabled -->
+    <?php if ( !active( 'wordpress-seo/wp-seo.php' ) ) { ?>
+        <meta property="og:locale" content="en_US">
+        <meta property="og:type" content="website">
+        <?php if ( is_singular('card') ) { ?>
+            <meta property="og:title" content="<?php the_title();?> | <?php echo get_option( 'wpcc_church_name' ); ?> center">
+        <?php } else { ?>
+            <meta property="og:title" content="<?php echo get_option( 'wpcc_church_name' ); ?> center">
+        <?php } ?>
 
-    <?php if ( is_singular('card' ) ) { ?>
-        <meta property="og:description" content="<?php the_field('wpcc_subtitle'); ?>">
-    <?php } else { ?>
-        <meta property="og:description" content="Find out what is happening for members at <?php echo get_option( 'wpcc_church_name' ); ?>">
-    <?php } ?>
-    
-    <meta property="og:url" content="<?php the_permalink(); ?>">
-    <meta property="og:site_name" content="<?php echo get_option( 'wpcc_church_name' ); ?> center">
-    <meta property="og:image" content="<?php $image = get_field('wpcc_image'); echo wp_get_attachment_image_src( $image, 'card_hero_image' )[0];?>">
+        <?php if ( is_singular('card' ) ) { ?>
+            <meta property="og:description" content="<?php the_field('wpcc_subtitle'); ?>">
+            <meta name="twitter:description" content="<?php the_field('wpcc_subtitle'); ?>">
+        <?php } else { ?>
+            <meta property="og:description" content="Find out what is happening for members at <?php echo get_option( 'wpcc_church_name' ); ?>">
+            <meta name="twitter:description" content="Find out what is happening for members at <?php echo get_option( 'wpcc_church_name' ); ?>">
+        <?php } ?>
+        
+        <?php if ( is_singular('card' ) ) { ?>
+            <meta property="og:url" content="<?php the_permalink(); ?>">
+        <?php }else{ ?>
+            <meta property="og:url" content="<?php wpcc_get_home_center_link(); ?>">
+        <?php } ?>
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:description" content="<?php the_field('wpcc_subtitle'); ?>">
+        <meta property="og:site_name" content="<?php echo get_option( 'wpcc_church_name' ); ?> center">
 
-    <?php if ( is_singular('card') ) { ?>
-        <meta name="twitter:title" content="<?php the_title();?> | <?php echo get_option( 'wpcc_church_name' ); ?> center">
-    <?php } else { ?>
-        <meta name="twitter:title" content="<?php echo get_option( 'wpcc_church_name' ); ?> center">
+        <?php if ( is_singular('card' ) ) { ?>
+            <meta property="og:image" content="<?php $image = get_field('wpcc_image'); echo wp_get_attachment_image_src( $image, 'card_hero_image' )[0];?>">
+        <?php }else{ 
+            $wpcc_query = new WP_Query( array (
+                    'post_type' => 'card', 
+                    'posts_per_page' => 1
+                ) );
+
+                if ( $wpcc_query -> have_posts() ) {
+                    while ( $wpcc_query -> have_posts() ) {
+                        $wpcc_query -> the_post();  ?>
+                        <meta property="og:image" content="<?php $image = get_field('wpcc_image'); echo wp_get_attachment_image_src( $image, 'card_image' )[0]; ?> ">
+                    <?php } 
+                } 
+                wp_reset_query();
+            } ?>
+
+        <meta name="twitter:card" content="summary">
+        
+
+        <?php if ( is_singular('card') ) { ?>
+            <meta name="twitter:title" content="<?php the_title();?> | <?php echo get_option( 'wpcc_church_name' ); ?> center">
+        <?php } else { ?>
+            <meta name="twitter:title" content="<?php echo get_option( 'wpcc_church_name' ); ?> center">
+        <?php } ?>
+        <meta name="twitter:image" content="<?php $image = get_field('wpcc_image'); echo wp_get_attachment_image_src( $image, 'card_hero_image' )[0];?>">
     <?php } ?>
-    <meta name="twitter:image" content="<?php $image = get_field('wpcc_image'); echo wp_get_attachment_image_src( $image, 'card_hero_image' )[0];?>">
 
     <!-- The mountain of stuff WP puts in -->
     <?php wp_head(); ?>

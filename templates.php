@@ -123,3 +123,15 @@ function wpct_hide_adminbar(){
     }
     return true;
 }
+
+//Function to check if certain plugins are active
+function active( $plugin ) {
+    $network_active = false;
+    if ( is_multisite() ) {
+        $plugins = get_site_option( 'active_sitewide_plugins' );
+        if ( isset( $plugins[$plugin] ) ) {
+            $network_active = true;
+        }
+    }
+    return in_array( $plugin, get_option( 'active_plugins' ) ) || $network_active;
+}
