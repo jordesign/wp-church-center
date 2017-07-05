@@ -163,8 +163,8 @@
 					   <li><a href="<?php echo $twitterLink; ?>" title="Twitter"><i class="fa-logo fa-twitter"></i><span>Twitter</span></a></li>
         			<?php } ?>
 
-        			<?php if ( $instLink = get_option( 'wpcc_instagram' ) ) { ?>
-					   <li><a href="<?php echo $instaLink; ?>" title="Instagram"><i class="fa-logo fa-instagram"></i><span>Twitter</span></a></li>
+        			<?php if ( $instaLink = get_option( 'wpcc_instagram' ) ) { ?>
+					   <li><a href="<?php echo $instaLink; ?>" title="Instagram"><i class="fa-logo fa-instagram"></i><span>Instagram</span></a></li>
         			<?php } ?>
 
         			<?php if ( $snapchatLink = get_option( 'wpcc_snapchat' ) ) { ?>

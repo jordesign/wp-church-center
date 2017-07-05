@@ -44,6 +44,11 @@ Add a page which uses the 'Church Center Homepage' template
 3. An example card
 
 == Changelog ==
+
+v1.0.2
+- BUG FIX: Fix Instagram link
+
+
 v1.0.1
 - BUG FIX: Include ACF later to avoid conflict with themes using ACF Pro
 - BUG FIX: More robust OG & Twitter meta tags
