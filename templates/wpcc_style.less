@@ -119,28 +119,29 @@ body {
     li {
       min-height: 48px;
       clear:both;
+      width: 100%;
+      float:left;
+      padding: 10px 0;
       
       a {
-        line-height: 42px;
-        padding: 0 15px;
+        
+        padding: 0 15px 0px;
         font-size: 15px;
         color:#666;
         text-decoration:none;
-        display:inline-block;
-        height: 42px;
+        display:block;
         
         span {
           display:block;
-          height: 42px;
           line-height: 42px;
-          float:left;
           font-size: 15px;
           line-height: 18px;
-          margin-left: 60px;
+          margin-left: 42px;
+          padding-top: 6px;
         }
         
         i {
-          display:inline-block;
+          float:left;
           width: 32px;
           height: 32px;
           text-align:center;
@@ -158,6 +159,10 @@ body {
           height: 32px;
         }
       }
+    }
+
+    li:hover {
+      background:#eee;
     }
   }
 
@@ -767,14 +772,17 @@ body {
       box-shadow:none;
       
       ul {
-        padding: 25px 15px 0 0;
+        padding: 20px 0 0 0;
         text-align:right;
         
         li {
           display:inline-block;
+          width: auto;
+          float:none;
           
           a {
             padding:0px;
+            display:inline-block;
             
             span {
               display:none;
