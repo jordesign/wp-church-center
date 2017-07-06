@@ -48,6 +48,8 @@ Add a page which uses the 'Church Center Homepage' template
 v1.0.2
 - FEATURE: Flush rewrite rules on plugin activation/deactivation
 - BUG FIX: Fix Instagram link
+- BUG FIX: Default colours for social icons
+- BUG FIX: More robust menu styles to allow for longer text
 
 
 v1.0.1
