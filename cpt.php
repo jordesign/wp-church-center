@@ -188,6 +188,18 @@ function wpcc_parse_request_trick( $query ) {
 }
 add_action( 'pre_get_posts', 'wpcc_parse_request_trick' );
 
+
+//Flush the rewrite rules on plugin activation (and deactivation)
+//This should mean that /card-name/ just works 
+register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
+register_activation_hook( __FILE__, 'wpcc_flush_rewrites' );
+function wpcc_flush_rewrites() {
+	// call your CPT registration function here (it should also be hooked into 'init')
+	wpcc_post_type();
+	flush_rewrite_rules(false);
+}
+
+
 function wpcc_get_home_center_link(){
 
 	//Get the  Church Center Home link

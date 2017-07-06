@@ -46,6 +46,7 @@ Add a page which uses the 'Church Center Homepage' template
 == Changelog ==
 
 v1.0.2
+- FEATURE: Flush rewrite rules on plugin activation/deactivation
 - BUG FIX: Fix Instagram link
 
 
