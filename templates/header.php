@@ -22,7 +22,7 @@
         <meta property="og:locale" content="en_US">
         <meta property="og:type" content="website">
         <?php if ( is_singular('card') ) { ?>
-            <meta property="og:title" content="<?php the_title();?> | <?php echo get_option( 'wpcc_church_name' ); ?> center">
+            <meta property="og:title" content="<?php the_title();?> | <?php echo esc_html(get_option( 'wpcc_church_name' ) ); ?> Center">
         <?php } else { ?>
             <meta property="og:title" content="<?php echo get_option( 'wpcc_church_name' ); ?> center">
         <?php } ?>
@@ -88,7 +88,7 @@
 
 
          @media only screen and (min-width: 900px) {
-            #menu ul li a i,
+            .header #menu ul li a i,
             .backButton, .backButton:hover {
              color: <?php echo get_option( 'wpcc_background' ); ?>;
          }
@@ -151,7 +151,7 @@
         		<ul class="socialMenu">
 
         			<?php if ( $churchLink = get_option( 'wpcc_church_url' ) ) { ?>
-					   <li><a href="<?php echo $churchLink; ?>"><i class="fa-logo fa-home"></i><span><?php echo esc_html( get_option( 'blogname' ) ); ?> Website</span></a></li>
+					   <li><a href="<?php echo $churchLink; ?>"><i class="fa-logo fa-home"></i><span><?php echo esc_html( get_option( 'wpcc_church_name' ) ); ?> Website</span></a></li>
         			<?php } ?>
 
 
