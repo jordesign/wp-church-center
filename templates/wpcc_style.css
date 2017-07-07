@@ -690,6 +690,9 @@ body {
     background: #111;
     color: #fff !important;
   }
+  .header #menu ul li:hover {
+    background: none;
+  }
   .header #menu .closeMenu {
     display: none;
   }

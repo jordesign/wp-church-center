@@ -1118,6 +1118,94 @@
 		"oAP": "\/customizer.php",
 		"oF": 0
 		},
+	"\/page-ordering\/localization\/simple-page-ordering-de_DE.mo": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-ordering\/localization\/simple-page-ordering-de_DE.mo",
+		"oF": 0
+		},
+	"\/page-ordering\/localization\/simple-page-ordering-de_DE.po": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-ordering\/localization\/simple-page-ordering-de_DE.po",
+		"oF": 0
+		},
+	"\/page-ordering\/localization\/simple-page-ordering-es_ES.mo": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-ordering\/localization\/simple-page-ordering-es_ES.mo",
+		"oF": 0
+		},
+	"\/page-ordering\/localization\/simple-page-ordering-es_ES.po": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-ordering\/localization\/simple-page-ordering-es_ES.po",
+		"oF": 0
+		},
+	"\/page-ordering\/localization\/simple-page-ordering-nl_NL.mo": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-ordering\/localization\/simple-page-ordering-nl_NL.mo",
+		"oF": 0
+		},
+	"\/page-ordering\/localization\/simple-page-ordering-nl_NL.po": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-ordering\/localization\/simple-page-ordering-nl_NL.po",
+		"oF": 0
+		},
+	"\/page-ordering\/localization\/simple-page-ordering-pt_BR.mo": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-ordering\/localization\/simple-page-ordering-pt_BR.mo",
+		"oF": 0
+		},
+	"\/page-ordering\/localization\/simple-page-ordering-pt_BR.po": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-ordering\/localization\/simple-page-ordering-pt_BR.po",
+		"oF": 0
+		},
+	"\/page-ordering\/readme.txt": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-ordering\/readme.txt",
+		"oF": 0
+		},
+	"\/page-ordering\/simple-page-ordering.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/page-ordering\/simple-page-ordering-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/page-ordering\/simple-page-ordering.dev.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/page-ordering\/simple-page-ordering.dev-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/page-ordering\/simple-page-ordering.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/page-ordering\/simple-page-ordering-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/page-ordering\/simple-page-ordering.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/page-ordering\/simple-page-ordering.php",
+		"oF": 0
+		},
 	"\/README.md": {
 		"cS": 0,
 		"eF": 1,

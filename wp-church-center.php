@@ -41,6 +41,9 @@ require_once plugin_dir_path( __FILE__ ) . 'templates/pagetemplater.php';
 /**  Archive Page Templates */
 require_once plugin_dir_path( __FILE__ ) . 'templates.php';
 
+/**  Page Ordering */
+require_once plugin_dir_path( __FILE__ ) . 'page-ordering/simple-page-ordering.php';
+
 add_action( 'after_setup_theme', 'wpcc_acf_setup' );
 
 function wpcc_acf_setup() {

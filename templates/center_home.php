@@ -21,7 +21,9 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 
 	$wpcc_query = new WP_Query( array (
                     'post_type' => 'card', 
-                    'posts_per_page' => -1
+                    'posts_per_page' => -1,
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC'
      ) );
 
 	

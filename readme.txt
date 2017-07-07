@@ -45,6 +45,9 @@ Add a page which uses the 'Church Center Homepage' template
 
 == Changelog ==
 
+v1.1
+- FEATURE: Add drag-and-drop sorting
+
 v1.0.2
 - FEATURE: Flush rewrite rules on plugin activation/deactivation
 - FEATURE: Add styles for card view when 'swiping' isn't used.
