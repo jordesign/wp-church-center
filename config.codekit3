@@ -1297,6 +1297,15 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/templates\/wpcc_script-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/templates\/wpcc_script-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/templates\/wpcc_script.js": {
 		"ft": 64,
 		"mi": 1,

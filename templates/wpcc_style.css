@@ -532,12 +532,6 @@ body {
   background: #eee;
   color: #666;
 }
-.cardHolder.card.layoutSwitching {
-  padding-top: 130px;
-}
-.header.card.layoutSwitching {
-  top: 50px;
-}
 .nojs .header.card {
   position: relative;
   top: 0;
@@ -555,6 +549,15 @@ body {
   float: none;
   margin: 0 auto 40px;
   height: 400px;
+}
+.layoutSwitcher .cardHolder.card {
+  padding-top: 150px;
+}
+.layoutSwitcher .cardHolder.card .card {
+  height: 67vh;
+}
+.header.card.layoutSwitcher {
+  top: 70px;
 }
 @media only screen and (min-width: 480px) {
   .cardHolder.grid {
@@ -625,6 +628,12 @@ body {
   }
   .header.card.layoutSwitching {
     top: 0px;
+  }
+  .header.card.layoutSwitcher {
+    top: 0;
+  }
+  .layoutSwitcher .cardHolder.card {
+    padding-top: 0;
   }
 }
 @media only screen and (min-width: 900px) {

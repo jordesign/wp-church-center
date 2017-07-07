@@ -127,7 +127,7 @@
     }?>
 
 
-<div class="wrapper">
+<div class="wrapper <?php if( WPCC_LAYOUT_SWITCHING ===  true){ echo 'layoutSwitcher'; } ?>">
 <div class="skip-container">
     <a class="skip-link" tabindex="1" href="#main"><?php esc_html_e( '&darr; Skip to Main Content', 'wpcc' ); ?></a>
 </div><!-- .skip-container -->
@@ -140,7 +140,7 @@
         echo 'list';
     }  ?>
 
-    <?php if( WPCC_LAYOUT_SWITCHING ===  true){ echo 'layoutSwitching'; } ?>">
+    <?php if( WPCC_LAYOUT_SWITCHING ===  true){ echo 'layoutSwitcher'; } ?>">
 	<a href="<?php wpcc_get_home_center_link(); ?>"><img src="<?php echo esc_html( get_option( 'wpcc_church_logo' ) ); ?>" alt="<?php echo esc_html( get_option( 'blogname' ) ); ?> Logo" id="logo"></a>
 
 	<a href="#menu" aria-controls="menu" class="menuLink" tabindex="2">

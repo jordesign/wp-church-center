@@ -652,13 +652,7 @@ body {
 
 }
 
-.cardHolder.card.layoutSwitching {
-  padding-top: 130px;
-}
 
-.header.card.layoutSwitching {
-  top: 50px;
-}
 
 
 //Card Styles when slick isn't included (just in case)
@@ -684,6 +678,20 @@ body {
       height: 400px;
     }
   }
+}
+
+
+//Card Syles when the layout switcher is shown
+.layoutSwitcher .cardHolder.card {
+  padding-top: 150px;
+  
+  .card {
+    height: 67vh;
+  }
+}
+
+.header.card.layoutSwitcher {
+  top: 70px;
 }
 
 @media only screen and (min-width: 480px) {
@@ -779,6 +787,15 @@ body {
 
   .header.card.layoutSwitching {
     top: 0px;
+  }
+
+  //Card Syles when the layout switcher is shown
+  .header.card.layoutSwitcher {
+    top:0;
+  }
+
+  .layoutSwitcher .cardHolder.card {
+    padding-top:0;
   }
 
 
