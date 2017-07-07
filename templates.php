@@ -97,7 +97,7 @@ if( 1 == get_option( 'wpcc_disable_scripts' )  && !is_admin() ){
 function wpcc_add_styles() {
 	if( is_singular( 'card' )  || is_post_type_archive('card') || get_page_template_slug( get_the_ID() ) =='center_home.php' ){
 		wp_enqueue_style( 'wpcc-style', plugins_url( '/templates/wpcc_style.css', __FILE__  ) );
-		wp_enqueue_script( 'wpcc-scripts', plugins_url( '/templates/wpcc_script-ck.js', __FILE__ ), array( 'jquery' ) );
+		wp_enqueue_script( 'wpcc-scripts', plugins_url( '/templates/wpcc_script-min.js', __FILE__ ), array( 'jquery' ) );
 	}
 }
 add_action('wp_enqueue_scripts', 'wpcc_add_styles', 1000);

@@ -98,7 +98,7 @@
 </head>
 
 
-<body <?php body_class( 'wpchurch_center'); ?>>
+<body <?php body_class( 'wpchurch_center nojs'); ?>>
  
 <?php if( WPCC_LAYOUT_SWITCHING ===  true ){ 
     if (is_post_type_archive('card') || get_page_template_slug( get_the_ID() ) ){

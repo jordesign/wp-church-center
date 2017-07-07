@@ -660,17 +660,48 @@ body {
   top: 50px;
 }
 
+
+//Card Styles when slick isn't included (just in case)
+.nojs {
+
+  .header.card {
+    position:relative;
+    top:0;
+  }
+  .cardHolder.card {
+
+    position:relative;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    padding-top:40px;
+
+    .card {
+      width: 90%; 
+      float:none;
+      margin: 0 auto 40px;
+      height: 400px;
+    }
+  }
+}
+
 @media only screen and (min-width: 480px) {
 
   .cardHolder.grid {
     max-width: 1200px;
     margin: 0 auto;
     
-    .card {
+    .card, .card {
       width: 50%;
       float:left;
       padding-top: 50%;
     }
+  }
+
+  .wppc_layout_switcher {
+    height: 57px;
+
   }
 
 }
@@ -694,7 +725,7 @@ body {
 
 
 
-.cardHolder.card {
+.cardHolder.card, .nojs .cardHolder.card {
   position: relative;
   padding: 20px 10px;
   clear:both;
@@ -704,6 +735,7 @@ body {
     margin: 0 4% 8%;
     height: 400px;
     transition: all .2s ease;
+    float:left;
 
   }
 
@@ -752,14 +784,6 @@ body {
 
 }
 
-
-@media only screen and (min-width: 480px) {
-  .wppc_layout_switcher {
-    height: 57px;
-
-  }
-
-}
 
 @media only screen and (min-width: 900px) {
 
@@ -833,7 +857,7 @@ body {
     }
   }
 
-  .cardHolder.card {
+  .cardHolder.card, .nojs .cardHolder.card {
     max-width: 1200px;
     margin:0 auto;
 
@@ -921,7 +945,7 @@ body {
     }
   }
 
-  .cardHolder.card {
+  .cardHolder.card, .nojs .cardHolder.card {
     .card {
       width: 22%;
       margin: 0 1.5% 3%;
