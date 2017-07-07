@@ -100,29 +100,31 @@
 
 <body <?php body_class( 'wpchurch_center'); ?>>
  
-<?php if( WPCC_LAYOUT_SWITCHING ===  true){ 
+<?php if( WPCC_LAYOUT_SWITCHING ===  true ){ 
+    if (is_post_type_archive('card') || get_page_template_slug( get_the_ID() ) ){
 
-    if( isset($_GET["layout"]) ) { 
-        $layout = $_GET["layout"];
-    } ?>
+        if( isset($_GET["layout"]) ) { 
+            $layout = $_GET["layout"];
+        } ?>
 
-    <div class="wppc_layout_switcher">
-        <p>
-            <span>Switch layout</span>
-            <a href="?layout=grid" class="<?php if ('grid' == get_option('wpcc_layout') && $layout == false || 'grid' == $layout ){ echo 'active'; } ?>">
-                Grid
-            </a>
-            <a href="?layout=list" class="<?php if ('list' == get_option('wpcc_layout') && $layout == false || 'list' == $layout ){ echo 'active'; } ?>">    
-                List
-            </a>
-            <a href="?layout=card" class="<?php if ('card' == get_option('wpcc_layout') && $layout == false || 'card' == $layout ){ echo 'active'; } ?>">
-                Card
-            </a>
-            <a href="https://wordpress.org/plugins/wp-church-center/" class="downloadLink" target="_blank">Download Plugin</a>
-        </p>
-    </div>
+        <div class="wppc_layout_switcher">
+            <p>
+                <span>Switch layout</span>
+                <a href="?layout=grid" class="<?php if ('grid' == get_option('wpcc_layout') && $layout == false || 'grid' == $layout ){ echo 'active'; } ?>">
+                    Grid
+                </a>
+                <a href="?layout=list" class="<?php if ('list' == get_option('wpcc_layout') && $layout == false || 'list' == $layout ){ echo 'active'; } ?>">    
+                    List
+                </a>
+                <a href="?layout=card" class="<?php if ('card' == get_option('wpcc_layout') && $layout == false || 'card' == $layout ){ echo 'active'; } ?>">
+                    Card
+                </a>
+                <a href="https://wordpress.org/plugins/wp-church-center/" class="downloadLink" target="_blank">Download Plugin</a>
+            </p>
+        </div>
 
-<?php } ?>
+        <?php } 
+    }?>
 
 
 <div class="wrapper">
