@@ -50,6 +50,8 @@ v1.0.2
 - BUG FIX: Fix Instagram link
 - BUG FIX: Default colours for social icons
 - BUG FIX: More robust menu styles to allow for longer text
+- BUG FIX: tidy up theme switcher
+- BUG FIX: WPCC javascript not loading when scripts disabled
 
 
 v1.0.1
