@@ -68,11 +68,12 @@ function wpcc_remove_default_scripts (){
 		global $wp_scripts;
 
 		$keep_scripts = array(
-		   'jquery',
-		   'nf-front-end-deps', 	//Ninja Forms
-		   'nf-front-end', 		//Ninja Forms
+		   'wpcc-scripts' ,
+		   'jquery' ,
+		   'nf-front-end-deps' , 	
+		   'nf-front-end' , 	
 		   'admin-bar' ,
-		   'wpcc-scripts'
+		   
 		);
 
 		// loop over all of the registered scripts
@@ -81,7 +82,7 @@ function wpcc_remove_default_scripts (){
 
 			if( !in_array ($handle, $keep_scripts ) ){
 				// remove it
-				wp_deregister_script($handle);
+				//wp_deregister_script($handle);
 				wp_dequeue_script($handle);
 			}
 		}
@@ -99,7 +100,7 @@ function wpcc_add_styles() {
 		wp_enqueue_script( 'wpcc-scripts', plugins_url( '/templates/wpcc_script-ck.js', __FILE__ ), array( 'jquery' ) );
 	}
 }
-add_action('wp_enqueue_scripts', 'wpcc_add_styles', 101);
+add_action('wp_enqueue_scripts', 'wpcc_add_styles', 1000);
 
 //Image Sizes
 add_image_size( 'card_image', 600, 1200, false );
