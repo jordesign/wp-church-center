@@ -536,6 +536,12 @@ body {
   position: relative;
   top: 0;
 }
+.nojs .header.card.layoutSwitcher {
+  top: 0;
+}
+.nojs .layoutSwitcher .cardHolder.card {
+  padding-top: 20px;
+}
 .nojs .cardHolder.card {
   position: relative;
   top: 0;

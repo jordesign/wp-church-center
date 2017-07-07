@@ -240,6 +240,37 @@ $wp_customize->add_control( 'wpcc_layout', array(
   ),
 ) );
 
+function is_card_layout($control){
+    // Check if the selected layout is card'
+    if( $control->manager->get_setting('wpcc_layout')->value() != 'card' ){
+    // If it isn't - then it won't show the section/panel/control
+        return false;
+    } else {
+    // If it is, we do show it
+        return true;
+    }
+}
+
+ //Add Control for Card Scroll Direction
+ $wp_customize->add_setting( 'wpcc_scroll_direction', array(
+  'capability' => 'manage_options',
+  'sanitize_callback' => 'wpcc_sanitize_select',
+  'type' => 'option',
+  'default' => 'grid',
+) );
+
+$wp_customize->add_control( 'wpcc_scroll_direction', array(
+  'type' => 'select',
+  'section' => 'wpcc_settings', // Add a default or your own section
+  'active_callback' => 'is_card_layout',
+  'description' => __( 'Scroll direction on small screens' ),
+  'choices' => array(
+    'horizontal' => __( 'Horizontal Scroll' ),
+    'vertical' => __( 'Vertical Scroll' ),
+  ),
+  'default' => 'horizontal'
+) );
+
 function wpcc_sanitize_select( $input, $setting ) {
 
   // Ensure input is a slug.

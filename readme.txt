@@ -47,6 +47,7 @@ Add a page which uses the 'Church Center Homepage' template
 
 v1.1
 - FEATURE: Add drag-and-drop sorting
+- FEATURE: Add option for scroll direction on small screens
 
 v1.0.2
 - FEATURE: Flush rewrite rules on plugin activation/deactivation
