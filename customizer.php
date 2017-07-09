@@ -15,22 +15,35 @@ $wp_customize->add_panel( 'WP_Church_Center', array(
 
 /** **** **** *** *** *** *** *** *.
 /**   Add WP Church Center Sections   */
-$wp_customize->add_section('wpcc_details', array(
-'title' => 'Your Church Details',
-'description' => 'Basic settings for your Church Center',
+$wp_customize->add_section('wpcc_header', array(
+'title' => 'Header',
+'description' => '',
+'priority' => 120,
+'panel' => 'WP_Church_Center',
+));
+
+$wp_customize->add_section('wpcc_footer', array(
+'title' => 'Footer',
+'description' => '',
 'priority' => 120,
 'panel' => 'WP_Church_Center',
 ));
 
 $wp_customize->add_section('wpcc_links', array(
 'title' => 'Church Links',
-'description' => '<p>Links to your website and Social Media profiles</p>',
+'description' => 'Links to your website and Social Media profiles',
+'priority' => 120,
+'panel' => 'WP_Church_Center',
+));
+
+$wp_customize->add_section('wpcc_design', array(
+'title' => 'Design Options',
 'priority' => 120,
 'panel' => 'WP_Church_Center',
 ));
 
 $wp_customize->add_section('wpcc_settings', array(
-'title' => 'Design &amp; Settings',
+'title' => 'Settings',
 'priority' => 120,
 'panel' => 'WP_Church_Center',
 ));
@@ -38,6 +51,31 @@ $wp_customize->add_section('wpcc_settings', array(
 
 /** **** **** *** *** *** *** *** *.
 /**   Add Settings and Controls for 'Your Church Details'   */
+
+//Heading for the logo section
+add_action( 'customize_render_control_wpcc_header_layout', function(){
+    printf( '<h2 style="margin: 30px 0 10px; color:#333; font-size:16px;">%s</h2>', __( 'Logo options', 'wpcc' ) );
+});
+
+//Add Control for Header Layout
+ $wp_customize->add_setting( 'wpcc_header_layout', array(
+  'capability' => 'manage_options',
+  'sanitize_callback' => 'wpcc_sanitize_select',
+  'type' => 'option',
+  'default' => 'left',
+) );
+
+$wp_customize->add_control( 'wpcc_header_layout', array(
+  'type' => 'select',
+  'section' => 'wpcc_header', // Add a default or your own section
+  'label' => __( 'Logo Position' ),
+  'choices' => array(
+    'left' => __( 'Left Aligned' ),
+    'right' => __( 'Right Aligned' ),
+    'center' => __( 'Center Aligned' ),
+  ),
+
+) );
 
 // add a setting for the site logo
 $wp_customize->add_setting('wpcc_church_logo', array(
@@ -49,7 +87,7 @@ $wp_customize->add_setting('wpcc_church_logo', array(
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wpcc_church_logo',
 array(
 'label' => 'Upload Logo',
-'section' => 'wpcc_details',
+'section' => 'wpcc_header',
 'settings' => 'wpcc_church_logo',
 ) ) );
 
@@ -59,10 +97,10 @@ $wp_customize->add_setting('wpcc_church_name', array(
      'capability' => 'manage_options',
 ));
 
-//add control for church website link
+//add control for church website name
 $wp_customize->add_control( 'wpcc_church_name', array(
    'label'   => 'Church Name',
-   'section' => 'wpcc_details',
+   'section' => 'wpcc_header',
    'type'    => 'text',
 ) );
 
@@ -72,21 +110,115 @@ $wp_customize->add_setting('wpcc_church_copyright', array(
      'capability' => 'manage_options',
 ));
 
-//add control for church website link
+//Heading for the Menu section
+add_action( 'customize_render_control_wpcc_icon_style', function(){
+    printf( '<h2 style="margin: 0px 0 10px; padding-top: 35px; color:#333; font-size:16px;clear:both;">%s</h2>', __( 'Menu options', 'wpcc' ) );
+});
+
+//Add Control for Icon Style
+ $wp_customize->add_setting( 'wpcc_icon_style', array(
+  'capability' => 'manage_options',
+  'sanitize_callback' => 'wpcc_sanitize_select',
+  'type' => 'option',
+  'default' => 'circle',
+) );
+
+$wp_customize->add_control( 'wpcc_icon_style', array(
+  'type' => 'select',
+  'section' => 'wpcc_header', // Add a default or your own section
+  'label' => __( 'Menu Icon Style' ),
+  'choices' => array(
+    'plain' => __( 'Plain' ),
+    'circle' => __( 'Circle' ),
+    'circle-outline' => __( 'Outlined Circle' ),
+    'rounded-square' => __( 'Rounded Square' ),
+  ),
+
+) );
+
+//Add Setting for Icon  Colour
+$wp_customize->add_setting( 'wpcc_icon_color', array(
+       'default'    => '#333', 
+       'type'       => 'option', 
+       'capability' => 'manage_options', 
+    ) 
+ ); 
+
+//Add Control for Icon Colour
+ $wp_customize->add_control( new WP_Customize_Color_Control( 
+    $wp_customize, 
+    'wpcc_icon_color', //Set a unique ID for the control
+    array(
+       'label'      => __( 'Icon Color', 'wpcc_plugin' ), 
+       'settings'   => 'wpcc_icon_color', 
+       'section'    => 'wpcc_header',
+    ) 
+ ) );
+
+//Add Setting for Icon Background Colour
+$wp_customize->add_setting( 'wpcc_icon_background', array(
+       'default'    => '#ffffff', 
+       'type'       => 'option', 
+       'capability' => 'manage_options', 
+    ) 
+ ); 
+
+//Add Control for Icon Background Colour
+ $wp_customize->add_control( new WP_Customize_Color_Control( 
+    $wp_customize, 
+    'wpcc_icon_background', //Set a unique ID for the control
+    array(
+       'label'      => __( 'Icon Background Color', 'wpcc_plugin' ), 
+       'settings'   => 'wpcc_icon_background', 
+       'section'    => 'wpcc_header',
+    ) 
+ ) );
+
+//add control for church website copyright
 $wp_customize->add_control( 'wpcc_church_copyright', array(
    'label'   => 'Footer Copyright Text',
-   'section' => 'wpcc_details',
+   'section' => 'wpcc_footer',
    'type'    => 'text',
    'description' => 'Leave this blank for no footer'
 ) );
 
+//Add Setting for Footer Background Colour
+$wp_customize->add_setting( 'wpcc_footer_background', array(
+       'default'    => '#333', 
+       'type'       => 'option', 
+       'capability' => 'manage_options', 
+    ) 
+ ); 
 
- 
+//Add Control for Footer Background Colour
+ $wp_customize->add_control( new WP_Customize_Color_Control( 
+    $wp_customize, 
+    'wpcc_footer_background', //Set a unique ID for the control
+    array(
+       'label'      => __( 'Footer Background Color', 'wpcc_plugin' ), 
+       'settings'   => 'wpcc_footer_background', 
+       'section'    => 'wpcc_footer',
+    ) 
+ ) );
 
+//Add Setting for Footer Text Colour
+$wp_customize->add_setting( 'wpcc_footer_text', array(
+       'default'    => '#888888', 
+       'type'       => 'option', 
+       'capability' => 'manage_options', 
+    ) 
+ ); 
 
-
-/** **** **** *** *** *** *** *** *.
-/**   Add Settings and Controls for 'Church Links'   */
+//Add Control for Footer Text Colour
+ $wp_customize->add_control( new WP_Customize_Color_Control( 
+    $wp_customize, 
+    'wpcc_footer_text', //Set a unique ID for the control
+    array(
+       'label'      => __( 'Footer Text Color', 'wpcc_plugin' ), 
+       'settings'   => 'wpcc_icon_background', 
+       'section'    => 'wpcc_footer',
+    ) 
+ ) );
 
 // add a setting for the church website link
 $wp_customize->add_setting('wpcc_church_url', array(
@@ -197,9 +329,24 @@ $wp_customize->add_control( 'wpcc_giving', array(
    'type'    => 'text',
 ) );
 
+//Add Control Overall theme
+ $wp_customize->add_setting( 'wpcc_theme', array(
+  'capability' => 'manage_options',
+  'sanitize_callback' => 'wpcc_sanitize_select',
+  'type' => 'option',
+  'default' => 'dark',
+) );
 
-/** **** **** *** *** *** *** *** *.
-/**   Add Settings and Controls for 'Center Settings'   */
+$wp_customize->add_control( 'wpcc_theme', array(
+  'type' => 'select',
+  'section' => 'wpcc_design', // Add a default or your own section
+  'label' => __( 'Overall Style' ),
+  'choices' => array(
+    'light' => __( 'Light Theme' ),
+    'dark' => __( 'Dark Theme' ),
+    
+  ),
+) );
 
 //Add Setting for Background COlour
 $wp_customize->add_setting( 'wpcc_background', array(
@@ -216,9 +363,14 @@ $wp_customize->add_setting( 'wpcc_background', array(
     array(
        'label'      => __( 'Background Color', 'wpcc_plugin' ), 
        'settings'   => 'wpcc_background', 
-       'section'    => 'wpcc_settings',
+       'section'    => 'wpcc_design',
     ) 
  ) );
+
+ //Heading for the Card view section
+add_action( 'customize_render_control_wpcc_layout', function(){
+    printf( '<h2 style="margin: 30px 0 10px; color:#333;clear:both; font-size:16px;padding-top: 50px;">%s</h2>', __( 'Card / List View', 'wpcc' ) );
+});
 
  //Add Control for layout type
  $wp_customize->add_setting( 'wpcc_layout', array(
@@ -230,13 +382,15 @@ $wp_customize->add_setting( 'wpcc_background', array(
 
 $wp_customize->add_control( 'wpcc_layout', array(
   'type' => 'select',
-  'section' => 'wpcc_settings', // Add a default or your own section
+  'section' => 'wpcc_design', // Add a default or your own section
   'label' => __( 'Layout Type' ),
   'description' => __( 'What style of layout should we use to show all the Next Steps' ),
   'choices' => array(
     'grid' => __( 'Grid' ),
-    'card' => __( 'Cards' ),
     'list' => __( 'List' ),
+    'small-card' => __( 'Small Cards' ),
+    'card' => __( 'Cards' ),
+    
   ),
 ) );
 
@@ -256,19 +410,18 @@ function is_card_layout($control){
   'capability' => 'manage_options',
   'sanitize_callback' => 'wpcc_sanitize_select',
   'type' => 'option',
-  'default' => 'grid',
+  'default' => 'horizontal',
 ) );
 
 $wp_customize->add_control( 'wpcc_scroll_direction', array(
   'type' => 'select',
-  'section' => 'wpcc_settings', // Add a default or your own section
+  'section' => 'wpcc_design', // Add a default or your own section
   'active_callback' => 'is_card_layout',
   'description' => __( 'Scroll direction on small screens' ),
   'choices' => array(
     'horizontal' => __( 'Horizontal Scroll' ),
     'vertical' => __( 'Vertical Scroll' ),
   ),
-  'default' => 'horizontal'
 ) );
 
 function wpcc_sanitize_select( $input, $setting ) {
@@ -283,7 +436,10 @@ function wpcc_sanitize_select( $input, $setting ) {
   return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }
 
-
+ //Heading for the Image Control section
+add_action( 'customize_render_control_wpcc_greyscale', function(){
+    printf( '<h2 style="margin: 30px 0 10px; color:#333;clear:both; font-size:16px;padding-top: 50px;">%s</h2>', __( 'Image Options', 'wpcc' ) );
+});
 
 // Add settings for greyscale images
     $wp_customize->add_setting( 'wpcc_greyscale', array(
@@ -293,13 +449,34 @@ function wpcc_sanitize_select( $input, $setting ) {
         'transport' => 'refresh',
     ) );
 
+
+
     // Add control and output for greyscale field
     $wp_customize->add_control( 'wpcc_greyscale', array(
         'label'      => __( 'Convert Images to Greyscale', 'wpcc_plugin' ),
-        'section'    => 'wpcc_settings',
+        'section'    => 'wpcc_design',
         'type'       => 'checkbox',
         'std'         => '1',
         'description' => 'This makes sure that all images are converted to Black and White, so they work better with the color tinting.',
+    ) );
+
+  // Add settings for tinting images
+    $wp_customize->add_setting( 'wpcc_tinting', array(
+        'default'    => '',
+        'type'       => 'option',
+        'capability' => 'manage_options',
+        'transport' => 'refresh',
+    ) );
+
+
+
+    // Add control and output for greyscale field
+    $wp_customize->add_control( 'wpcc_tinting', array(
+        'label'      => __( 'Tint Images with Feature Color', 'wpcc_plugin' ),
+        'section'    => 'wpcc_design',
+        'type'       => 'checkbox',
+        'std'         => '1',
+        'description' => 'This will cause the image to be tinted with the selected feature color from the card',
     ) );
 
   // Add settings for disabling styles
