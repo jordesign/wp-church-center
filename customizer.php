@@ -72,7 +72,7 @@ $wp_customize->add_control( 'wpcc_header_layout', array(
   'choices' => array(
     'left' => __( 'Left Aligned' ),
     'right' => __( 'Right Aligned' ),
-    'center' => __( 'Center Aligned' ),
+    'center' => __( 'Center Aligned' ), 
   ),
 
 ) );
@@ -169,6 +169,7 @@ $wp_customize->add_setting( 'wpcc_icon_background', array(
     'wpcc_icon_background', //Set a unique ID for the control
     array(
        'label'      => __( 'Icon Background Color', 'wpcc_plugin' ), 
+       'description'=> "This colour won't be used for the plain and outline styles",
        'settings'   => 'wpcc_icon_background', 
        'section'    => 'wpcc_header',
     ) 
@@ -215,7 +216,7 @@ $wp_customize->add_setting( 'wpcc_footer_text', array(
     'wpcc_footer_text', //Set a unique ID for the control
     array(
        'label'      => __( 'Footer Text Color', 'wpcc_plugin' ), 
-       'settings'   => 'wpcc_icon_background', 
+       'settings'   => 'wpcc_footer_text', 
        'section'    => 'wpcc_footer',
     ) 
  ) );

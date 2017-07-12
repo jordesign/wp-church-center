@@ -86,6 +86,24 @@
              color: <?php echo get_post_meta(get_the_ID(),'wpcc_color',true ); ?>;
          }
 
+         body .header #menu ul li a i {
+             background: <?php echo get_option( 'wpcc_icon_background' ); ?>;
+             color: <?php echo get_option( 'wpcc_icon_color' ); ?>
+         }
+         body .header #menu ul.circle-outline li a i,
+         body .header #menu ul.plain li a i {
+             color:<?php echo get_option( 'wpcc_icon_color' ); ?> !important;
+             border-color:<?php echo get_option( 'wpcc_icon_color' ); ?>;
+         }
+
+         .post-type-archive-card .footer.grid, .footer {
+             background:<?php echo get_option( 'wpcc_footer_background' ); ?>;
+         }
+
+         .post-type-archive-card .footer.grid p, .footer p {
+             color: <?php echo get_option( 'wpcc_footer_text' ); ?>;
+         }
+
 
          @media only screen and (min-width: 900px) {
             .header #menu ul li a i,
@@ -98,7 +116,7 @@
 </head>
 
 
-<body <?php body_class( 'wpchurch_center nojs'); ?>>
+<body <?php body_class( 'wpchurch_center nojs ' . get_option('wpcc_header_layout') ) ?>>
  
 <?php if( WPCC_LAYOUT_SWITCHING ===  true ){ 
     if (is_post_type_archive('card') || get_page_template_slug( get_the_ID() ) ){
@@ -138,7 +156,8 @@
         echo $layout;
     } else {
         echo 'list';
-    }  ?>
+    }
+    echo ' ' . get_option('wpcc_header_layout');  ?>
 
     <?php if( WPCC_LAYOUT_SWITCHING ===  true){ echo 'layoutSwitcher'; } ?>">
 	<a href="<?php wpcc_get_home_center_link(); ?>"><img src="<?php echo esc_html( get_option( 'wpcc_church_logo' ) ); ?>" alt="<?php echo esc_html( get_option( 'blogname' ) ); ?> Logo" id="logo"></a>
@@ -150,7 +169,7 @@
         <div id="menu" class="columns large-9">
 
         		<!-- Social Icons -->
-        		<ul class="socialMenu">
+        		<ul class="socialMenu <?php echo get_option('wpcc_icon_style'); ?>">
 
         			<?php if ( $churchLink = get_option( 'wpcc_church_url' ) ) { ?>
 					   <li><a href="<?php echo $churchLink; ?>"><i class="fa-logo fa-home"></i><span><?php echo esc_html( get_option( 'wpcc_church_name' ) ); ?> Website</span></a></li>

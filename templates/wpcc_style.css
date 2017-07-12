@@ -75,6 +75,14 @@ body {
 .header a.menuLink span {
   display: none;
 }
+.header.right > a {
+  float: right;
+  padding-right: 20px;
+}
+.header.right a.menuLink {
+  float: left;
+  padding-right: 0;
+}
 .header.card {
   position: fixed;
 }
@@ -163,6 +171,23 @@ body {
 }
 #menu .closeMenu span {
   display: none;
+}
+#menu ul.plain li a i {
+  background: none !important;
+  color: #444;
+  font-size: 24px;
+}
+#menu ul.circle-outline li a i {
+  background: none !important;
+  color: #444;
+  border: 2px solid #444;
+}
+#menu ul.circle-outline li a i:before {
+  position: relative;
+  top: -3px;
+}
+#menu ul.rounded-square li a i {
+  border-radius: 10px;
 }
 #menu:target {
   right: 0;
@@ -701,6 +726,59 @@ body {
   }
   .header #menu .closeMenu {
     display: none;
+  }
+  .header #menu ul.plain li a i {
+    background: none !important;
+    color: #fff;
+    font-size: 26px;
+    opacity: 1;
+    transition: opacity .4s ease;
+  }
+  .header #menu ul.plain li a i:before {
+    font-size: 26px;
+  }
+  .header #menu ul.plain li a:hover i {
+    opacity: 0.7;
+  }
+  .header #menu ul.circle-outline li a i {
+    background: none !important;
+    color: #eee;
+    border-color: #eee;
+    opacity: 1;
+    transition: opacity .4s ease;
+  }
+  .header #menu ul.circle-outline li a:hover i {
+    opacity: 0.7;
+  }
+  .header.right #menu {
+    float: left;
+    text-align: left;
+  }
+  .header.right #menu ul {
+    text-align: left;
+    padding-top: 5px;
+  }
+  .header.center {
+    padding-top: 5px;
+    height: 150px;
+  }
+  .header.center > a {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+  }
+  .header.center a.menuLink {
+    display: none;
+  }
+  .header.center #menu {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+  .header.center #menu ul {
+    text-align: center;
+    padding-top: 0;
   }
   .cardHolder.card,
   .nojs .cardHolder.card {
