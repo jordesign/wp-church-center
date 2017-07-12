@@ -58,7 +58,9 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 							<div class="topSection" style="background: url(<?php $image = get_field('wpcc_image'); echo wp_get_attachment_image_src( $image, 'card_image' )[0];?>) no-repeat 50% 50%; background-size:cover;">
 								
 							</div>
-							<span class="overlay" style="background-color: <?php the_field('wpcc_color'); ?>"></span>
+							
+								<span class="overlay" <?php if(get_option( 'wpcc_tinting' ) == 1) { ?>style="background-color: <?php the_field('wpcc_color'); ?>"<?php } ?>></span>
+							
 							<div class="bottomSection">
 								<div class="intro">
 									<h3 style="color: <?php the_field('wpcc_color'); ?>"><?php the_title(); ?></h3>

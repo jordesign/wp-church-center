@@ -18,7 +18,9 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 
 				<div class="cardHeader">
 					<div class="cardImage <?php if(get_option( 'wpcc_greyscale' ) == 1) { echo 'greyscale'; } ?>" style="background: url(<?php $image = get_field('wpcc_image'); echo wp_get_attachment_image_src( $image, 'card_hero_image' )[0];?>) no-repeat 50% 50%; background-size:cover;"></div>
-					<span class="overlay" style="background-color: <?php echo get_post_meta(get_the_ID(),'wpcc_color',true); ?>"></span>
+					<?php if(get_option( 'wpcc_tinting' ) == 1) { ?>
+						<span class="overlay" style="background-color: <?php echo get_post_meta(get_the_ID(),'wpcc_color',true); ?>"></span>
+					<?php } ?>
 
 					
 					

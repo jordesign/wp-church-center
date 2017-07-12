@@ -149,3 +149,17 @@ function cd_sort_staff( $query ) {
         }       
     }
 } 
+
+//Add an extra class for theming
+/**
+ * Adds classes to the array of body classes.
+ *
+ * @uses body_class() filter
+ */
+function wpcc_body_classes( $classes ) {
+     
+    $classes[] = 'wpcc_' . get_option('wpcc_theme');   
+     
+    return $classes;
+}
+add_filter( 'body_class', 'wpcc_body_classes' );
