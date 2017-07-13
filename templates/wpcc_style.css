@@ -214,6 +214,9 @@ body {
 .page-template-center_home .footer.card {
   display: none;
 }
+.cards {
+  clear: both;
+}
 .cardHolder {
   width: 100%;
 }
@@ -464,6 +467,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  width: 100%;
 }
 .wpchurch_center.single .singleCard .cardHeader .cardImage {
   position: absolute;
@@ -797,6 +801,9 @@ body {
   .header #menu ul.circle-outline li a:hover i {
     opacity: 0.7;
   }
+  .header.right > a {
+    text-align: right;
+  }
   .header.right #menu {
     float: left;
     text-align: left;
@@ -807,13 +814,14 @@ body {
   }
   .header.center {
     padding-top: 5px;
-    height: 150px;
+    height: 180px;
   }
   .header.center > a {
     float: none;
     margin-left: auto;
     margin-right: auto;
     max-width: 400px;
+    text-align: center;
   }
   .header.center a.menuLink {
     display: none;

@@ -270,6 +270,10 @@ body {
   display:none;
 }
 
+.cards {
+  clear:both;
+}
+
 .cardHolder {
   width: 100%;
   
@@ -574,6 +578,7 @@ body {
       justify-content: center;
       align-items: center;
       position:relative;
+      width: 100%;
       
       .cardImage {
         position:absolute;
@@ -1030,6 +1035,10 @@ body {
   }
 
   .header.right {
+
+    >a {
+      text-align:right;
+    }
     
     #menu {
       float:left;
@@ -1045,13 +1054,14 @@ body {
   .header.center {
 
       padding-top: 5px;
-      height: 150px;
+      height: 180px;
       
      > a {
        float:none;
        margin-left:auto;
        margin-right:auto;
        max-width: 400px;
+       text-align:center;
      }
 
      a.menuLink {
