@@ -49,7 +49,8 @@ Add a page which uses the 'Church Center Homepage' template
 
 v1.0.3
 - BUG FIX: remove hover background behind menu items
-- 
+- BUG FIX: Use a variable for our image field - so it works on older PHP versions
+- BUG FIX: Make body BG more specific so it overides installed theme
 
 v1.0.2
 - FEATURE: Flush rewrite rules on plugin activation/deactivation
