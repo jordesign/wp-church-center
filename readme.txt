@@ -19,6 +19,8 @@ Features include:
 
 Check out a demo at [http://wpchurch.center/hub/](http://wpchurch.center/hub/)
 
+You can also get support in our Facebook group - [https://www.facebook.com/groups/wpchurchcenter](https://www.facebook.com/groups/wpchurchcenter)
+
 == Installation ==
 1). Download the plugin
 
@@ -44,6 +46,10 @@ Add a page which uses the 'Church Center Homepage' template
 3. An example card
 
 == Changelog ==
+
+v1.0.3
+- BUG FIX: remove hover background behind menu items
+- 
 
 v1.0.2
 - FEATURE: Flush rewrite rules on plugin activation/deactivation
