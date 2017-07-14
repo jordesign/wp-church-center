@@ -1106,12 +1106,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/cpt.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/cpt.php",
-		"oF": 0
-		},
 	"\/customizer.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -1224,12 +1218,6 @@
 		"rFN": 0,
 		"uCM": 0
 		},
-	"\/readme.txt": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/readme.txt",
-		"oF": 0
-		},
 	"\/templates.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -1243,18 +1231,6 @@
 		"oAP": "\/templates\/ajax-loader.gif",
 		"oF": 0,
 		"opt": 0
-		},
-	"\/templates\/archive-card.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/templates\/archive-card.php",
-		"oF": 0
-		},
-	"\/templates\/center_home.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/templates\/center_home.php",
-		"oF": 0
 		},
 	"\/templates\/css\/wpcc_style.css": {
 		"aP": 1,
@@ -1306,22 +1282,10 @@
 		"oAP": "\/templates\/footer.php",
 		"oF": 0
 		},
-	"\/templates\/header.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/templates\/header.php",
-		"oF": 0
-		},
 	"\/templates\/pagetemplater.php": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/templates\/pagetemplater.php",
-		"oF": 0
-		},
-	"\/templates\/single-card.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/templates\/single-card.php",
 		"oF": 0
 		},
 	"\/templates\/slick-theme.less": {
@@ -1402,45 +1366,6 @@
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
-		},
-	"\/templates\/wpcc_style.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/templates\/wpcc_style-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/templates\/wpcc_style.css.map": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/templates\/wpcc_style.css.map",
-		"oF": 0
-		},
-	"\/templates\/wpcc_style.less": {
-		"aP": 0,
-		"bl": 0,
-		"dJ": 0,
-		"ft": 1,
-		"ie": 1,
-		"iI": 0,
-		"ma": 1,
-		"oA": 0,
-		"oAP": "\/templates\/wpcc_style.css",
-		"oF": 0,
-		"oS": 0,
-		"rU": 0,
-		"sI": 0,
-		"sM": 0,
-		"sU": 0
-		},
-	"\/wp-church-center.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wp-church-center.php",
-		"oF": 0
 		}
 	},
 "hooks": [

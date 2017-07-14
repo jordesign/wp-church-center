@@ -75,8 +75,8 @@
     <?php wp_head(); ?>
 
     <style>
-    	 body{
-    	 	background: <?php echo get_option( 'wpcc_background' ); ?>;
+    	 body.wpchurch_center{
+    	 	background: <?php echo get_option( 'wpcc_background' ); ?> !important;
     	 }
          #menu ul li a i {
              background: <?php echo get_option( 'wpcc_background' ); ?>;

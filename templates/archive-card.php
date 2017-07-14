@@ -46,7 +46,7 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 				<?php } else { ?>
 					<a class="card" href="<?php the_permalink(); ?>" tabindex="-1">
 						<div class="cardBody">
-							<div class="topSection" style="background: url(<?php $image = get_field('wpcc_image'); echo wp_get_attachment_image_src( $image, 'card_image' )[0];?>) no-repeat 50% 50%; background-size:cover;">
+							<div class="topSection" style="background: url(<?php $image = get_field('wpcc_image'); $image_obj =  wp_get_attachment_image_src( $image, 'card_image' ); echo $image_obj[0]; ?>) no-repeat 50% 50%; background-size:cover;">
 								
 							</div>
 							<span class="overlay" <?php if(get_option( 'wpcc_tinting' ) == 1) { ?>style="background-color: <?php the_field('wpcc_color'); ?>"<?php } ?>></span>
