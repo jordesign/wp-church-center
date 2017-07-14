@@ -49,6 +49,12 @@ v1.1
 - FEATURE: Add drag-and-drop sorting
 - FEATURE: Add option for scroll direction on small screens
 
+v1.0.3
+- BUG FIX: remove hover background behind menu items
+- BUG FIX: Use a variable for our image field - so it works on older PHP versions
+- BUG FIX: Make body BG more specific so it overides installed theme
+- BUG FIX: Simplify permalinks so they always work.
+
 v1.0.2
 - FEATURE: Flush rewrite rules on plugin activation/deactivation
 - FEATURE: Add styles for card view when 'swiping' isn't used.
