@@ -118,7 +118,8 @@
 
 <body <?php body_class( 'wpchurch_center nojs ' . get_option('wpcc_header_layout') ) ?>>
  
-<?php if( WPCC_LAYOUT_SWITCHING ===  true ){ 
+<?php if (defined('WPCC_LAYOUT_SWITCHING') ){
+    if( WPCC_LAYOUT_SWITCHING ===  true ){ 
     if (is_post_type_archive('card') || get_page_template_slug( get_the_ID() ) ){
 
         if( isset($_GET["layout"]) ) { 
@@ -134,6 +135,9 @@
                 <a href="?layout=list" class="<?php if ('list' == get_option('wpcc_layout') && $layout == false || 'list' == $layout ){ echo 'active'; } ?>">    
                     List
                 </a>
+                <a href="?layout=small-card" class="<?php if ('small-card' == get_option('wpcc_layout') && $layout == false || 'small-card' == $layout ){ echo 'active'; } ?>">
+                    Small Card
+                </a>
                 <a href="?layout=card" class="<?php if ('card' == get_option('wpcc_layout') && $layout == false || 'card' == $layout ){ echo 'active'; } ?>">
                     Card
                 </a>
@@ -142,10 +146,10 @@
         </div>
 
         <?php } 
-    }?>
+    } }?>
 
 
-<div class="wrapper <?php if( WPCC_LAYOUT_SWITCHING ===  true){ echo 'layoutSwitcher'; } ?>">
+<div class="wrapper <?php if( defined('WPCC_LAYOUT_SWITCHING') ) { if( WPCC_LAYOUT_SWITCHING ===  true){ echo 'layoutSwitcher'; } } ?>">
 <div class="skip-container">
     <a class="skip-link" tabindex="1" href="#main"><?php esc_html_e( '&darr; Skip to Main Content', 'wpcc' ); ?></a>
 </div><!-- .skip-container -->
@@ -159,7 +163,7 @@
     }
     echo ' ' . get_option('wpcc_header_layout');  ?>
 
-    <?php if( WPCC_LAYOUT_SWITCHING ===  true){ echo 'layoutSwitcher'; } ?>">
+    <?php if( defined('WPCC_LAYOUT_SWITCHING') ) { if( WPCC_LAYOUT_SWITCHING ===  true){ echo 'layoutSwitcher'; } } ?>">
 	<a href="<?php wpcc_get_home_center_link(); ?>"><img src="<?php echo esc_html( get_option( 'wpcc_church_logo' ) ); ?>" alt="<?php echo esc_html( get_option( 'blogname' ) ); ?> Logo" id="logo"></a>
 
 	<a href="#menu" aria-controls="menu" class="menuLink" tabindex="2">

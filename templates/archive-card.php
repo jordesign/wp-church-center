@@ -25,7 +25,7 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 				<?php if ( isset($_GET["layout"]) ) {
 						$layout = $_GET["layout"];
 					}
-					if ( get_option( 'wpcc_layout' ) == 'list' && $layout !='grid' && $layout !='card' ) { ?>
+					if ( get_option( 'wpcc_layout' ) == 'list' && $layout !='grid' && $layout !='card' && $layout != 'small-card' ) { ?>
 
 					<a class="card" href="<?php the_permalink(); ?>" style="background-color: <?php the_field('wpcc_color'); ?>">
 						<div class="cardBody">
@@ -35,7 +35,7 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 						<i class="fa fa-angle-circled-right" style="color: <?php the_field('wpcc_color'); ?>"></i>
 					</a>
 
-				<?php } elseif ( $layout=='list' ) { ?>
+				<?php } elseif ( $layout=='list' && $layout != 'small-card' ) { ?>
 					<a class="card" href="<?php the_permalink(); ?>" style="background-color: <?php the_field('wpcc_color'); ?>">
 						<div class="cardBody">
 							<h3><?php the_title(); ?></h3>
