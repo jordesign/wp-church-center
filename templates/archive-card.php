@@ -16,7 +16,7 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 
 	<?php if( WPCC_LAYOUT_SWITCHING ===  true){ echo 'layoutSwitching'; } ?>">
 
-	<div class="cards <?php if(get_option( 'wpcc_greyscale' ) == 1) { echo 'greyscale'; } if(get_option( 'wpcc_tinting' ) == 1) { echo 'tint'; } ?>">
+	<div class="cards <?php if(get_option( 'wpcc_greyscale' ) == 1) { echo 'greyscale'; } if(get_option( 'wpcc_tinting' ) == 1) { echo 'tint'; } if(get_option( 'wpcc_layout' ) == 'small-card') { echo 'js-masonry'; } ?>">
 
 	<?php if ( have_posts() ) {
 		while ( have_posts() ) {
@@ -25,7 +25,7 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 				<?php if ( isset($_GET["layout"]) ) {
 						$layout = $_GET["layout"];
 					}
-					if ( 'list' == get_option('wpcc_layout' ) && 'grid' != $layout && 'card' != $layout ){ ?>
+					if ( get_option( 'wpcc_layout' ) == 'list' && $layout !='grid' && $layout !='card' ) { ?>
 
 					<a class="card" href="<?php the_permalink(); ?>" style="background-color: <?php the_field('wpcc_color'); ?>">
 						<div class="cardBody">
@@ -35,13 +35,26 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 						<i class="fa fa-angle-circled-right" style="color: <?php the_field('wpcc_color'); ?>"></i>
 					</a>
 
-				<?php } elseif ( $layout=='list' ){ ?>
+				<?php } elseif ( $layout=='list' ) { ?>
 					<a class="card" href="<?php the_permalink(); ?>" style="background-color: <?php the_field('wpcc_color'); ?>">
 						<div class="cardBody">
 							<h3><?php the_title(); ?></h3>
 							<p><?php the_field('wpcc_subtitle'); ?></p>
 						</div>
 						<i class="fa fa-angle-circled-right" style="color: <?php the_field('wpcc_color'); ?>"></i>
+					</a>
+				<?php } elseif ( $layout=='small-card'  ) { ?>
+					<a class="card item" href="<?php the_permalink(); ?>">
+						<div class="cardBody">
+							<div class="cardImage" style="background: <?php the_field('wpcc_color'); ?> url(<?php $image = get_field('wpcc_image'); $image_obj =  wp_get_attachment_image_src( $image, 'card_image' ); echo $image_obj[0]; ?>) no-repeat 50% 50%; background-size:cover;">
+								
+							</div>
+							<div class="cardDetails">
+								<h3 style="color: <?php the_field('wpcc_color'); ?>"><?php the_title(); ?></h3>
+								<p><?php the_field('wpcc_subtitle'); ?></p>
+							</div>
+						</div>
+						
 					</a>
 				<?php } else { ?>
 					<a class="card" href="<?php the_permalink(); ?>" tabindex="-1">
@@ -49,7 +62,9 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 							<div class="topSection" style="background: url(<?php $image = get_field('wpcc_image'); $image_obj =  wp_get_attachment_image_src( $image, 'card_image' ); echo $image_obj[0]; ?>) no-repeat 50% 50%; background-size:cover;">
 								
 							</div>
-							<span class="overlay" <?php if(get_option( 'wpcc_tinting' ) == 1) { ?>style="background-color: <?php the_field('wpcc_color'); ?>"<?php } ?>></span>
+							
+								<span class="overlay" <?php if(get_option( 'wpcc_tinting' ) == 1) { ?>style="background-color: <?php the_field('wpcc_color'); ?>"<?php } ?>></span>
+							
 							<div class="bottomSection">
 								<div class="intro">
 									<h3 style="color: <?php the_field('wpcc_color'); ?>"><?php the_title(); ?></h3>

@@ -73,6 +73,7 @@ function wpcc_remove_default_scripts (){
 		   'nf-front-end-deps' , 	
 		   'nf-front-end' , 	
 		   'admin-bar' ,
+		   'masonry'
 		   
 		);
 
@@ -93,13 +94,18 @@ if( 1 == get_option( 'wpcc_disable_scripts' )  && !is_admin() ){
 	add_action('wp_print_scripts', 'wpcc_remove_default_scripts', 100);
 }
 
-//Now enqueue styles we want
+//Now enqueue styles we want 
 function wpcc_add_styles() {
 	if( is_singular( 'card' )  || is_post_type_archive('card') || get_page_template_slug( get_the_ID() ) =='center_home.php' ){
 		wp_enqueue_style( 'wpcc-style', plugins_url( '/templates/wpcc_style.css', __FILE__  ) );
 		if( get_option('wpcc_scroll_direction') =='horizontal' ) {
 			wp_enqueue_script( 'wpcc-scripts', plugins_url( '/templates/wpcc_script-min.js', __FILE__ ), array( 'jquery' ) );
 		}
+		if( get_option('wpcc_layout') =='small-card' ) {
+			// Pull Masonry from the core of WordPress
+			wp_enqueue_script( 'masonry' );
+		}
+		
 	}
 }
 add_action('wp_enqueue_scripts', 'wpcc_add_styles', 1000);

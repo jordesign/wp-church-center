@@ -52,6 +52,19 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 						</div>
 						<i class="fa fa-angle-circled-right" style="color: <?php the_field('wpcc_color'); ?>"></i>
 					</a>
+				<?php } elseif ( $layout=='small-card' ) { ?>
+					<a class="card small-card" href="<?php the_permalink(); ?>">
+						<div class="cardBody">
+							<div class="cardImage" style="background: <?php the_field('wpcc_color'); ?> url(<?php $image = get_field('wpcc_image'); $image_obj =  wp_get_attachment_image_src( $image, 'card_image' ); echo $image_obj[0]; ?>) no-repeat 50% 50%; background-size:cover;">
+								
+							</div>
+							<div class="cardDetails">
+								<h3 style="color: <?php the_field('wpcc_color'); ?>"><?php the_title(); ?></h3>
+								<p><?php the_field('wpcc_subtitle'); ?></p>
+							</div>
+						</div>
+						
+					</a>
 				<?php } else { ?>
 					<a class="card" href="<?php the_permalink(); ?>" tabindex="-1">
 						<div class="cardBody">

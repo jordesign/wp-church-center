@@ -2,12 +2,21 @@
 html {
   min-height: 100%;
 }
-body.wpchurch_center {
+body {
   padding: 0;
   margin: 0;
   font-family: 'helvetica neue', helvetica, calibri, arial, sans-serif;
+  font-weight: 400;
   background: #333;
   min-height: 100vh;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
 }
 .wrapper {
   position: relative;
@@ -454,6 +463,47 @@ body.wpchurch_center {
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
 }
+.cardHolder.small-card {
+  padding: 15px;
+}
+.cardHolder.small-card .card {
+  width: 100%;
+}
+.cardHolder.small-card .card .cardBody {
+  background: #f6f6f6;
+  border-radius: 10px;
+  min-height: 120px;
+  margin-bottom: 30px;
+  width: 100%;
+  float: left;
+  padding: 15px;
+  position: relative;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+}
+.cardHolder.small-card .card .cardImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 60%;
+  bottom: 0;
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.cardHolder.small-card .card .cardDetails {
+  padding-left: 45%;
+}
+.cardHolder.small-card .card .cardDetails h3 {
+  margin-bottom: 0px;
+}
+.cardHolder.small-card .card .cardDetails p {
+  margin-bottom: 0;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.3;
+}
 .wpchurch_center.single .header {
   position: relative;
 }
@@ -638,6 +688,19 @@ body.wpchurch_center {
     width: 50%;
     float: left;
     padding-top: 50%;
+  }
+  .cardHolder.small-card {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+  .cardHolder.small-card .card {
+    width: 50%;
+    float: left;
+    padding: 0 10px;
+  }
+  .cardHolder.small-card .card .cardBody {
+    margin-bottom: 20px;
   }
   .wppc_layout_switcher {
     height: 57px;
@@ -849,6 +912,9 @@ body.wpchurch_center {
     width: 33.333%;
     padding-top: 33%;
   }
+  .cardHolder.small-card .card {
+    width: 33.333%;
+  }
   .wpchurch_center.single .singleCard .cardHeader .cardTitle {
     bottom: 60px;
     max-width: 80%;
@@ -919,6 +985,12 @@ body.wpchurch_center {
   .cardHolder.grid .card {
     width: 25%;
     padding: 25% 20px 20px;
+  }
+  .cardHolder.small-card {
+    padding: 20px 0 0;
+  }
+  .cardHolder.small-card .card {
+    width: 25%;
   }
 }
 /* Slider */
