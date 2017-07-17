@@ -48,6 +48,9 @@ Add a page which uses the 'Church Center Homepage' template
 v1.1
 - FEATURE: Add drag-and-drop sorting
 - FEATURE: Add option for scroll direction on small screens
+- FEATURE: Add new 'Small Card' layout
+- FEATURE: Add a whole suite of new design/layout options
+- BUG FIX: Fix undefined_constant error that sometimes appears
 
 v1.0.3
 - BUG FIX: remove hover background behind menu items
