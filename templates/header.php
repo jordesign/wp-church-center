@@ -75,8 +75,8 @@
     <?php wp_head(); ?>
 
     <style>
-    	 body{
-    	 	background: <?php echo get_option( 'wpcc_background' ); ?>;
+    	 body.wpchurch_center{
+    	 	background: <?php echo get_option( 'wpcc_background' ); ?> !important;
     	 }
          #menu ul li a i {
              background: <?php echo get_option( 'wpcc_background' ); ?>;
@@ -98,36 +98,34 @@
 </head>
 
 
-<body <?php body_class( 'wpchurch_center nojs'); ?>>
+<body <?php body_class( 'wpchurch_center'); ?>>
  
-<?php if( WPCC_LAYOUT_SWITCHING ===  true ){ 
-    if (is_post_type_archive('card') || get_page_template_slug( get_the_ID() ) ){
+<?php if( defined( 'WPCC_LAYOUT_SWITCHING') && WPCC_LAYOUT_SWITCHING ===  true){ 
 
-        if( isset($_GET["layout"]) ) { 
-            $layout = $_GET["layout"];
-        } ?>
+    if( isset($_GET["layout"]) ) { 
+        $layout = $_GET["layout"];
+    } ?>
 
-        <div class="wppc_layout_switcher">
-            <p>
-                <span>Switch layout</span>
-                <a href="?layout=grid" class="<?php if ('grid' == get_option('wpcc_layout') && $layout == false || 'grid' == $layout ){ echo 'active'; } ?>">
-                    Grid
-                </a>
-                <a href="?layout=list" class="<?php if ('list' == get_option('wpcc_layout') && $layout == false || 'list' == $layout ){ echo 'active'; } ?>">    
-                    List
-                </a>
-                <a href="?layout=card" class="<?php if ('card' == get_option('wpcc_layout') && $layout == false || 'card' == $layout ){ echo 'active'; } ?>">
-                    Card
-                </a>
-                <a href="https://wordpress.org/plugins/wp-church-center/" class="downloadLink" target="_blank">Download Plugin</a>
-            </p>
-        </div>
+    <div class="wppc_layout_switcher">
+        <p>
+            <span>Switch layout</span>
+            <a href="?layout=grid" class="<?php if ('grid' == get_option('wpcc_layout') && $layout == false || 'grid' == $layout ){ echo 'active'; } ?>">
+                Grid
+            </a>
+            <a href="?layout=list" class="<?php if ('list' == get_option('wpcc_layout') && $layout == false || 'list' == $layout ){ echo 'active'; } ?>">    
+                List
+            </a>
+            <a href="?layout=card" class="<?php if ('card' == get_option('wpcc_layout') && $layout == false || 'card' == $layout ){ echo 'active'; } ?>">
+                Card
+            </a>
+            <a href="https://wordpress.org/plugins/wp-church-center/" class="downloadLink" target="_blank">Download Plugin</a>
+        </p>
+    </div>
 
-        <?php } 
-    }?>
+<?php } ?>
 
 
-<div class="wrapper <?php if( WPCC_LAYOUT_SWITCHING ===  true){ echo 'layoutSwitcher'; } ?>">
+<div class="wrapper">
 <div class="skip-container">
     <a class="skip-link" tabindex="1" href="#main"><?php esc_html_e( '&darr; Skip to Main Content', 'wpcc' ); ?></a>
 </div><!-- .skip-container -->
@@ -140,7 +138,7 @@
         echo 'list';
     }  ?>
 
-    <?php if( WPCC_LAYOUT_SWITCHING ===  true){ echo 'layoutSwitcher'; } ?>">
+    <?php if( defined( 'WPCC_LAYOUT_SWITCHING') && WPCC_LAYOUT_SWITCHING ===  true){ echo 'layoutSwitching'; } ?>">
 	<a href="<?php wpcc_get_home_center_link(); ?>"><img src="<?php echo esc_html( get_option( 'wpcc_church_logo' ) ); ?>" alt="<?php echo esc_html( get_option( 'blogname' ) ); ?> Logo" id="logo"></a>
 
 	<a href="#menu" aria-controls="menu" class="menuLink" tabindex="2">
