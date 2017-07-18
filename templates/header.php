@@ -45,20 +45,9 @@
 
         <?php if ( is_singular('card' ) ) { ?>
             <meta property="og:image" content="<?php $image = get_field('wpcc_image'); echo wp_get_attachment_image_src( $image, 'card_hero_image' )[0];?>">
-        <?php }else{ 
-            $wpcc_query = new WP_Query( array (
-                    'post_type' => 'card', 
-                    'posts_per_page' => 1
-                ) );
-
-                if ( $wpcc_query -> have_posts() ) {
-                    while ( $wpcc_query -> have_posts() ) {
-                        $wpcc_query -> the_post();  ?>
-                        <meta property="og:image" content="<?php $image = get_field('wpcc_image'); echo wp_get_attachment_image_src( $image, 'card_image' )[0]; ?> ">
-                    <?php } 
-                } 
-                wp_reset_query();
-            } ?>
+        <?php }else{ ?>
+                <meta property="og:image" content="http://s.wordpress.com/mshots/v1/<?php echo $_SERVER['REQUEST_URI']; ?>?w=600&amp;h=450" />
+            <?php } ?>
 
         <meta name="twitter:card" content="summary">
         

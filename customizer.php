@@ -99,10 +99,26 @@ $wp_customize->add_setting('wpcc_church_name', array(
 
 //add control for church website name
 $wp_customize->add_control( 'wpcc_church_name', array(
-   'label'   => 'Church Name',
+   'label'   => 'Church Center Title',
+   'description' => 'This will be used in the browser tab, and when shared on social media',
    'section' => 'wpcc_header',
    'type'    => 'text',
 ) );
+
+// add a setting for the site logo
+$wp_customize->add_setting('wpcc_center_image', array(
+     'type' => 'option', 
+     'capability' => 'manage_options',
+));
+
+// Add a control to upload the logo
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wpcc_center_image',
+array(
+'label' => 'Center Homepage Image',
+'description' => 'This image will be used when your center is shared on Social Media',
+'section' => 'wpcc_header',
+'settings' => 'wpcc_center_image',
+) ) );
 
 // add a setting for the church name
 $wp_customize->add_setting('wpcc_church_copyright', array(
@@ -406,6 +422,17 @@ function is_card_layout($control){
     }
 }
 
+function is_small_card_layout($control){
+    // Check if the selected layout is card'
+    if( $control->manager->get_setting('wpcc_layout')->value() != 'small-card' ){
+    // If it isn't - then it won't show the section/panel/control
+        return false;
+    } else {
+    // If it is, we do show it
+        return true;
+    }
+}
+
  //Add Control for Card Scroll Direction
  $wp_customize->add_setting( 'wpcc_scroll_direction', array(
   'capability' => 'manage_options',
@@ -422,6 +449,26 @@ $wp_customize->add_control( 'wpcc_scroll_direction', array(
   'choices' => array(
     'horizontal' => __( 'Horizontal Scroll' ),
     'vertical' => __( 'Vertical Scroll' ),
+  ),
+) );
+
+//Add Control for Card Scroll Direction
+ $wp_customize->add_setting( 'wpcc_corner_radius', array(
+  'capability' => 'manage_options',
+  'sanitize_callback' => 'wpcc_sanitize_select',
+  'type' => 'option',
+  'default' => '10px',
+) );
+
+$wp_customize->add_control( 'wpcc_corner_radius', array(
+  'type' => 'select',
+  'section' => 'wpcc_design', // Add a default or your own section
+  'active_callback' => 'is_small_card_layout',
+  'description' => __( 'Card Corner Style' ),
+  'choices' => array(
+    '10px' => __( 'Rounded Corners' ),
+    '3px' => __( 'Soft Corners' ),
+    '0px' => __( 'Sharp Corners' ),
   ),
 ) );
 
