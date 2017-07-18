@@ -50,6 +50,7 @@ v1.1
 - FEATURE: Add option for scroll direction on small screens
 - FEATURE: Add new 'Small Card' layout
 - FEATURE: Add a whole suite of new design/layout options
+- FEATURE: Add link to "Center home" in admin menu
 - BUG FIX: Fix undefined_constant error that sometimes appears
 
 v1.0.3

@@ -572,9 +572,11 @@ add_action('admin_menu', 'wpcc_extra_admin_menu');
 
 function wpcc_extra_admin_menu() {
     global $submenu;
-    $query['url'] = wpcc_get_home_center_link();
+    
     $query['autofocus[panel]'] = 'WP_Church_Center';
+    $query['url'] = wpcc_get_home_center_link();
     $url = add_query_arg( $query, admin_url( 'customize.php' ) );
 
+    $submenu['edit.php?post_type=card'][] = array('Your Church Center', 'manage_options', wpcc_get_home_center_link() );
     $submenu['edit.php?post_type=card'][] = array('Center Settings', 'manage_options', $url);
 }
