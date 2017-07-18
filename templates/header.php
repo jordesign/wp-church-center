@@ -8,9 +8,9 @@
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 
     <?php if ( is_singular('card') ) { ?>
-        <title><?php the_title();?> | <?php echo get_option( 'wpcc_church_name' ); ?> Center</title>
+        <title><?php the_title();?> | <?php echo get_option( 'wpcc_church_name' ); ?></title>
     <?php }else{ ?>
-        <title><?php echo get_option( 'wpcc_church_name' ); ?> Center</title>
+        <title><?php echo get_option( 'wpcc_church_name' ); ?></title>
     <?php } ?>
 
     
@@ -22,7 +22,7 @@
         <meta property="og:locale" content="en_US">
         <meta property="og:type" content="website">
         <?php if ( is_singular('card') ) { ?>
-            <meta property="og:title" content="<?php the_title();?> | <?php echo esc_html(get_option( 'wpcc_church_name' ) ); ?> Center">
+            <meta property="og:title" content="<?php the_title();?> | <?php echo esc_html(get_option( 'wpcc_church_name' ) ); ?>">
         <?php } else { ?>
             <meta property="og:title" content="<?php echo get_option( 'wpcc_church_name' ); ?> center">
         <?php } ?>
@@ -55,7 +55,7 @@
         <?php if ( is_singular('card') ) { ?>
             <meta name="twitter:title" content="<?php the_title();?> | <?php echo get_option( 'wpcc_church_name' ); ?> center">
         <?php } else { ?>
-            <meta name="twitter:title" content="<?php echo get_option( 'wpcc_church_name' ); ?> center">
+            <meta name="twitter:title" content="<?php echo get_option( 'wpcc_church_name' ); ?>">
         <?php } ?>
         <meta name="twitter:image" content="<?php $image = get_field('wpcc_image'); echo wp_get_attachment_image_src( $image, 'card_hero_image' )[0];?>">
     <?php } ?>
