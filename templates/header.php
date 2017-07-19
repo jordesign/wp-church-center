@@ -24,15 +24,15 @@
         <?php if ( is_singular('card') ) { ?>
             <meta property="og:title" content="<?php the_title();?> | <?php echo esc_html(get_option( 'wpcc_church_name' ) ); ?>">
         <?php } else { ?>
-            <meta property="og:title" content="<?php echo get_option( 'wpcc_church_name' ); ?> center">
+            <meta property="og:title" content="<?php echo get_option( 'wpcc_church_name' ); ?>">
         <?php } ?>
 
         <?php if ( is_singular('card' ) ) { ?>
             <meta property="og:description" content="<?php the_field('wpcc_subtitle'); ?>">
             <meta name="twitter:description" content="<?php the_field('wpcc_subtitle'); ?>">
         <?php } else { ?>
-            <meta property="og:description" content="Find out what is happening for members at <?php echo get_option( 'wpcc_church_name' ); ?>">
-            <meta name="twitter:description" content="Find out what is happening for members at <?php echo get_option( 'wpcc_church_name' ); ?>">
+            <meta property="og:description" content="<?php echo esc_html(get_option( 'wpcc_center_description' ) ); ?>">
+            <meta name="twitter:description" content="<?php echo esc_html(get_option( 'wpcc_center_description' ) ); ?>">
         <?php } ?>
         
         <?php if ( is_singular('card' ) ) { ?>
@@ -41,13 +41,29 @@
             <meta property="og:url" content="<?php wpcc_get_home_center_link(); ?>">
         <?php } ?>
 
-        <meta property="og:site_name" content="<?php echo get_option( 'wpcc_church_name' ); ?> center">
+        <meta property="og:site_name" content="<?php echo get_option( 'wpcc_church_name' ); ?>">
 
         <?php if ( is_singular('card' ) ) { ?>
             <meta property="og:image" content="<?php $image = get_field('wpcc_image'); echo wp_get_attachment_image_src( $image, 'card_hero_image' )[0];?>">
-        <?php }else{ ?>
-                <meta property="og:image" content="http://s.wordpress.com/mshots/v1/<?php echo $_SERVER['REQUEST_URI']; ?>?w=600&amp;h=450" />
-            <?php } ?>
+        <?php }else{ 
+            if( $center_home_image = get_option( 'wpcc_center_image' )) { ?>
+                <meta property="og:image" content="<?php echo esc_html($center_home_image); ?>">
+            <?php }else{
+                $wpcc_query = new WP_Query( array (
+                    'post_type' => 'card', 
+                    'posts_per_page' => 1
+                ) );
+
+                if ( $wpcc_query -> have_posts() ) {
+                    while ( $wpcc_query -> have_posts() ) {
+                        $wpcc_query -> the_post();  ?>
+                        <meta property="og:image" content="<?php $image = get_field('wpcc_image'); echo wp_get_attachment_image_src( $image, 'card_image' )[0]; ?> ">
+                    <?php } 
+                } 
+                wp_reset_query();
+            }
+               
+         } ?>
 
         <meta name="twitter:card" content="summary">
         

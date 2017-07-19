@@ -105,6 +105,22 @@ $wp_customize->add_control( 'wpcc_church_name', array(
    'type'    => 'text',
 ) );
 
+// add a setting for the Center Description
+$wp_customize->add_setting( 'wpcc_center_description', array(
+  'type' => 'option', 
+  'capability' => 'manage_options',
+  'default' => 'This is our Next Steps center',
+  'sanitize_callback' => 'sanitize_text_field',
+) );
+
+// add a setting for the Center Description
+$wp_customize->add_control( 'wpcc_center_description', array(
+  'type' => 'textarea',
+  'section' => 'wpcc_header', // // Add a default or your own section
+  'label' => __( 'Church Center description' ),
+  'description' => __( 'This will be used as the description in Search results, and when shared on social media' ),
+) );
+
 // add a setting for the site logo
 $wp_customize->add_setting('wpcc_center_image', array(
      'type' => 'option', 
