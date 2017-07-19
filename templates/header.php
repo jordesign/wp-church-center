@@ -182,9 +182,7 @@
     <?php if( defined('WPCC_LAYOUT_SWITCHING') && WPCC_LAYOUT_SWITCHING ===  true){ echo 'layoutSwitcher'; }  ?>">
 	<a href="<?php wpcc_get_home_center_link(); ?>"><img src="<?php echo esc_html( get_option( 'wpcc_church_logo' ) ); ?>" alt="<?php echo esc_html( get_option( 'blogname' ) ); ?> Logo" id="logo"></a>
 
-	<a href="#menu" aria-controls="menu" class="menuLink" tabindex="2">
-	  <i class="fa-logo fa-menu"></i><span>Menu</span>
-	</a>
+	
 
         <div id="menu" class="columns large-9">
 
@@ -232,4 +230,12 @@
                 <span>Close Menu</span>
             </a>  
         </div>
+
+        <?php if( $churchLink || $facebookLink || $twitterLink || $instaLink || $snapchatLink || $vimeoLink || $youtubeLink || $givingLink){ ?>
+
+            <a href="#menu" aria-controls="menu" class="menuLink" tabindex="2">
+              <i class="fa-logo fa-menu"></i><span>Menu</span>
+            </a>
+        <?php } ?>
+
     </div>
