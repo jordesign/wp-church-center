@@ -8,13 +8,17 @@
 /**  Load Header */
 require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 
-<div class="cardHolder <?php if ( isset($_GET["layout"]) ) { 
-		echo $_GET["layout"];
-	} elseif ( $layout = get_option( 'wpcc_layout' ) ) {
-		echo $layout;
+<div class="cardHolder 
+	<?php if( isset($_GET["layout"]) ) { 
+		echo esc_html( $_GET["layout"] );
+	} elseif ( $layout = get_option( 'wpcc_layout' ) ){
+		echo esc_html( $layout );
 	} else {
 		echo 'list';
-	}  ?>">
+	}  ?>
+
+	<?php if( defined( 'WPCC_LAYOUT_SWITCHING') && WPCC_LAYOUT_SWITCHING  ===  true){ echo 'layoutSwitching'; } ?>">
+
 <div class="cards <?php if(get_option( 'wpcc_greyscale' ) == 1) { echo 'greyscale'; } if(get_option( 'wpcc_tinting' ) == 1) { echo 'tint'; } if(get_option( 'wpcc_layout' ) == 'small-card') { echo 'js-masonry'; } ?>">
 
 	<?php
@@ -32,7 +36,7 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 			$wpcc_query -> the_post();  ?>
 			
 				<?php if ( isset($_GET["layout"]) ) {
-						$layout = $_GET["layout"];
+						$layout = esc_html( $_GET["layout"] );
 					}
 					if ( get_option( 'wpcc_layout' ) == 'list' && $layout !='grid' && $layout !='card' && $layout != 'small-card' ) { ?>
 
