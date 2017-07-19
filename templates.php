@@ -68,12 +68,12 @@ function wpcc_remove_default_scripts (){
 		global $wp_scripts;
 
 		$keep_scripts = array(
-		   'wpcc-scripts' ,
+		   'wpcc-scripts',
 		   'jquery' ,
 		   'nf-front-end-deps' , 	
 		   'nf-front-end' , 	
 		   'admin-bar' ,
-		   'masonry'
+		   'masonry',
 		   
 		);
 

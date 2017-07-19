@@ -120,12 +120,13 @@
             .backButton, .backButton:hover {
              color: <?php echo get_option( 'wpcc_background' ); ?>;
              
+             }
+
              body .header #menu ul.circle-outline li a i,
              body .header #menu ul.plain li a i {
                  color:<?php echo get_option( 'wpcc_icon_color' ); ?> !important;
                  border-color:<?php echo get_option( 'wpcc_icon_color' ); ?>;
             }
-         }
         }
     	</style>
 
