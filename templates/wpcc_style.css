@@ -186,12 +186,12 @@ h6 {
   color: #444;
   font-size: 24px;
 }
-#menu ul.circle-outline li a i {
+body .header #menu ul.circle-outline li a i {
   background: none !important;
   color: #444;
   border: 2px solid #444;
 }
-#menu ul.circle-outline li a i:before {
+body .header #menu ul.circle-outline li a i:before {
   position: relative;
   top: -3px;
 }

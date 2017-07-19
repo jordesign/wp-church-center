@@ -95,11 +95,7 @@
              background: <?php echo get_option( 'wpcc_icon_background' ); ?>;
              color: <?php echo get_option( 'wpcc_icon_color' ); ?>
          }
-         body .header #menu ul.circle-outline li a i,
-         body .header #menu ul.plain li a i {
-             color:<?php echo get_option( 'wpcc_icon_color' ); ?> !important;
-             border-color:<?php echo get_option( 'wpcc_icon_color' ); ?>;
-         }
+         
 
          .post-type-archive-card .footer.grid, .footer {
              background:<?php echo get_option( 'wpcc_footer_background' ); ?>;
@@ -123,6 +119,12 @@
             .header #menu ul li a i,
             .backButton, .backButton:hover {
              color: <?php echo get_option( 'wpcc_background' ); ?>;
+             
+             body .header #menu ul.circle-outline li a i,
+             body .header #menu ul.plain li a i {
+                 color:<?php echo get_option( 'wpcc_icon_color' ); ?> !important;
+                 border-color:<?php echo get_option( 'wpcc_icon_color' ); ?>;
+            }
          }
         }
     	</style>
