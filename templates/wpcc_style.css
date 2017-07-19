@@ -542,7 +542,8 @@ h6 {
   bottom: 0;
   opacity: 0.5;
 }
-.wpchurch_center.single .singleCard .cardHeader .backButton {
+.wpchurch_center.single .singleCard .cardHeader a.backButton,
+.wpchurch_center.single .singleCard .cardHeader a.backButton:hover {
   background: #fff;
   position: absolute;
   top: 0;
@@ -550,8 +551,10 @@ h6 {
   padding: 10px;
   font-size: 18px;
   line-height: 22px;
+  color: #333;
 }
-.wpchurch_center.single .singleCard .cardHeader .backButton i:before {
+.wpchurch_center.single .singleCard .cardHeader a.backButton i:before,
+.wpchurch_center.single .singleCard .cardHeader a.backButton:hover i:before {
   transform: rotate(180deg);
   font-size: 18px !important;
 }
