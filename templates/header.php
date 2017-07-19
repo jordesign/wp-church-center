@@ -109,6 +109,15 @@
              color: <?php echo get_option( 'wpcc_footer_text' ); ?>;
          }
 
+         .cardHolder.small-card .card .cardBody {
+             border-radius: <?php echo get_option( 'wpcc_corner_radius' ); ?>;
+         }
+
+         .cardHolder.small-card .card .cardImage {
+             border-top-left-radius: <?php echo get_option( 'wpcc_corner_radius' ); ?>;
+             border-bottom-left-radius: <?php echo get_option( 'wpcc_corner_radius' ); ?>;
+         }
+
 
          @media only screen and (min-width: 900px) {
             .header #menu ul li a i,
