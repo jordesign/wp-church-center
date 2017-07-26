@@ -44,7 +44,7 @@
         <meta property="og:site_name" content="<?php echo esc_html( get_option( 'wpcc_church_name' ) ); ?>">
 
         <?php if ( is_singular('card' ) ) { ?>
-            <meta property="og:image" content="<?php $image = get_field('wpcc_image'); echo wp_get_attachment_image_src( $image, 'card_hero_image' )[0];?>">
+            <meta property="og:image" content="<?php $image = get_field('wpcc_image'); $image_obj = wp_get_attachment_image_src( $image, 'card_hero_image' ); echo $image_obj[0];?>">
         <?php }else{ 
             if( $center_home_image = get_option( 'wpcc_center_image' )) { ?>
                 <meta property="og:image" content="<?php echo esc_html($center_home_image); ?>">
@@ -57,7 +57,7 @@
                 if ( $wpcc_query -> have_posts() ) {
                     while ( $wpcc_query -> have_posts() ) {
                         $wpcc_query -> the_post();  ?>
-                        <meta property="og:image" content="<?php $image = get_field('wpcc_image'); echo wp_get_attachment_image_src( $image, 'card_image' )[0]; ?> ">
+                        <meta property="og:image" content="<?php $image = get_field('wpcc_image'); $image_obj = wp_get_attachment_image_src( $image, 'card_image' ); echo $image_obj[0]; ?> ">
                     <?php } 
                 } 
                 wp_reset_query();

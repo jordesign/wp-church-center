@@ -49,9 +49,13 @@ v1.1
 - FEATURE: Add drag-and-drop sorting
 - FEATURE: Add option for scroll direction on small screens
 - FEATURE: Add new 'Small Card' layout
-- FEATURE: Add a whole suite of new design/layout options
+- FEATURE: Add a whole suite of new design/layout options for more variety
 - FEATURE: Add link to "Center home" in admin menu
 - BUG FIX: Fix undefined_constant error that sometimes appears
+- BUG FIX: More robust styles to overide custom themes
+- BUG FIX: Escape all the html (and urls) so things are secure
+- BUG FIX: Use a variable for our image field - so it works on older PHP versions 
+
 
 v1.0.3
 - BUG FIX: remove hover background behind menu items
