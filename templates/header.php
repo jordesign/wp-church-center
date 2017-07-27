@@ -109,7 +109,8 @@
              border-radius: <?php echo get_option( 'wpcc_corner_radius' ); ?>;
          }
 
-         .cardHolder.small-card .card .cardImage {
+         .cardHolder.small-card .card .cardImage,
+         .cardHolder.small-card .card  .overlay {
              border-top-left-radius: <?php echo get_option( 'wpcc_corner_radius' ); ?>;
              border-bottom-left-radius: <?php echo get_option( 'wpcc_corner_radius' ); ?>;
          }

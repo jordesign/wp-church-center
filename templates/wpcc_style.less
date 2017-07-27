@@ -100,11 +100,17 @@ h1, h2, h3, h4, h5, h6 {
   > a {
     float:right;
     padding-right: 20px;
+    justify-content: flex-end;
+    
+    img {
+      float:right;
+    }
     
   }
   a.menuLink {
     float:left;
     padding-right:0;
+    padding-left: 15px;
   }
 }
 
@@ -559,7 +565,8 @@ body .header #menu ul.circle-outline {
   }
 }
 
-.cards.greyscale .card .topSection {
+.cards.greyscale .card .topSection,
+.cards.greyscale .card .cardImage {
   filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale"); /* Firefox 10+, Firefox on Android */
     filter: gray; /* IE6-9 */
   -webkit-filter: grayscale(1);
@@ -597,6 +604,17 @@ body .header #menu ul.circle-outline {
       border-bottom-left-radius: 10px;
 
     }
+
+    .overlay {
+        position:absolute;
+        top:0;
+        left:0;
+        bottom:0;
+        opacity: 0.5;
+        right: 60%;  
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
 
     .cardDetails {
       padding-left: 45%;
@@ -1116,10 +1134,11 @@ body .header #menu ul.circle-outline {
     #menu {
       float:left;
       text-align:left;
+      min-height: 80px;
       
       ul {
         text-align:left;
-        padding-top:5px;
+        padding-top:25px;
       }
     }
   }
@@ -1135,6 +1154,7 @@ body .header #menu ul.circle-outline {
        margin-right:auto;
        max-width: 400px;
        text-align:center;
+       justify-content:center;
      }
 
      a.menuLink {

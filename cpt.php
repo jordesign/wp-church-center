@@ -115,6 +115,7 @@ if(function_exists("register_field_group"))
 				'save_format' => 'id',
 				'preview_size' => 'medium',
 				'library' => 'all',
+				'instructions' => 'Try and load an image at least 1000px wide'
 			),
 			array (
 				'key' => 'field_5908a904b3dac',
