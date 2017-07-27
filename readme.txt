@@ -54,7 +54,8 @@ v1.1
 - BUG FIX: Fix undefined_constant error that sometimes appears
 - BUG FIX: More robust styles to overide custom themes
 - BUG FIX: Escape all the html (and urls) so things are secure
-- BUG FIX: Use a variable for our image field - so it works on older PHP versions 
+- BUG FIX: Use a variable for our image field - so it works on older PHP versions
+- BUG FIX: Lots of small tweaks and bug fixes 
 
 
 v1.0.3

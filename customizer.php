@@ -596,18 +596,3 @@ function wpcc_extra_admin_menu() {
     $submenu['edit.php?post_type=card'][] = array('Your Church Center', 'manage_options', wpcc_get_home_center_link() );
     $submenu['edit.php?post_type=card'][] = array('Center Settings', 'manage_options', $url);
 }
-
-//Add Link to top Admin bar as well
-add_action('admin_bar_menu', 'wpcc_add_toolbar_items', 100);
-function wpcc_add_toolbar_items($admin_bar){
-    $admin_bar->add_menu( array(
-        'id'    => 'church-center',
-        'parent' => 'site-name',
-        'title' => 'Visit Your Church Center',
-        'href'  => wpcc_get_home_center_link(),
-        'meta'  => array(
-            'title' => __('Visit your Church Center'),
-            'target' => '_blank',
-        ),
-    ));
-}

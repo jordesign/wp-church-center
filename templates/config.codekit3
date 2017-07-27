@@ -17,18 +17,6 @@
 		"oF": 0,
 		"opt": 0
 		},
-	"\/archive-card.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/archive-card.php",
-		"oF": 0
-		},
-	"\/center_home.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/center_home.php",
-		"oF": 0
-		},
 	"\/css\/wpcc_style.css": {
 		"aP": 1,
 		"bl": 0,
@@ -77,12 +65,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/footer.php",
-		"oF": 0
-		},
-	"\/header.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/header.php",
 		"oF": 0
 		},
 	"\/pagetemplater.php": {
@@ -175,39 +157,6 @@
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
-		},
-	"\/wpcc_style.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/wpcc_style-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/wpcc_style.css.map": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wpcc_style.css.map",
-		"oF": 0
-		},
-	"\/wpcc_style.less": {
-		"aP": 0,
-		"bl": 0,
-		"dJ": 0,
-		"ft": 1,
-		"ie": 1,
-		"iI": 0,
-		"ma": 1,
-		"oA": 0,
-		"oAP": "\/wpcc_style.css",
-		"oF": 0,
-		"oS": 0,
-		"rU": 0,
-		"sI": 0,
-		"sM": 0,
-		"sU": 0
 		}
 	},
 "hooks": [
