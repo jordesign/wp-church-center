@@ -73,7 +73,7 @@
         <?php } else { ?>
             <meta name="twitter:title" content="<?php echo esc_html( get_option( 'wpcc_church_name' ) ); ?>">
         <?php } ?>
-        <meta name="twitter:image" content="<?php $image = get_field('wpcc_image'); echo wp_get_attachment_image_src( $image, 'card_hero_image' )[0];?>">
+        <meta name="twitter:image" content="<?php $image = get_field('wpcc_image'); $image_obj =  wp_get_attachment_image_src( $image, 'card_hero_image' );?>">
     <?php } ?>
 
     <!-- The mountain of stuff WP puts in -->
