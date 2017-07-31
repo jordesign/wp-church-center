@@ -488,6 +488,25 @@ $wp_customize->add_control( 'wpcc_corner_radius', array(
   ),
 ) );
 
+//Add Control for Card Scroll Direction
+ $wp_customize->add_setting( 'wpcc_small_card_columns', array(
+  'capability' => 'manage_options',
+  'sanitize_callback' => 'wpcc_sanitize_select',
+  'type' => 'option',
+  'default' => 'small_4_col',
+) );
+
+$wp_customize->add_control( 'wpcc_small_card_columns', array(
+  'type' => 'select',
+  'section' => 'wpcc_design', // Add a default or your own section
+  'active_callback' => 'is_small_card_layout',
+  'description' => __( 'Maximum number of columns' ),
+  'choices' => array(
+    'small_3_col' => __( '3 Columns' ),
+    'small_4_col' => __( '4 Columns' ),
+  ),
+) );
+
 function wpcc_sanitize_select( $input, $setting ) {
 
   // Ensure input is a slug.

@@ -935,6 +935,7 @@ body .header #menu ul.circle-outline li a i:before {
   }
   .cardHolder.small-card .card {
     width: 33.333%;
+    min-height: 150px;
   }
   .wpchurch_center.single .singleCard .cardHeader .cardTitle {
     bottom: 60px;
@@ -1010,7 +1011,7 @@ body .header #menu ul.circle-outline li a i:before {
   .cardHolder.small-card {
     padding: 20px 0 0;
   }
-  .cardHolder.small-card .card {
+  .cardHolder.smallCard .small_4_col .card {
     width: 25%;
   }
 }
