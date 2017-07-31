@@ -47,6 +47,8 @@ Add a page which uses the 'Church Center Homepage' template
 
 v1.1.2
 - FEATURE/BUG FIX: Use CDN version of icons
+- FEATURE: Add option for maximum number of columns on Small Card view
+- FEATURE: More robust type styles on cards
 
 v1.1.1
 - BUG FIX: Fix error on Twitter card image
