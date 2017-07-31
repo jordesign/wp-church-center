@@ -39,40 +39,6 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"\/font\/wpcc_font.eot": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/font\/wpcc_font.eot",
-		"oF": 0
-		},
-	"\/font\/wpcc_font.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/font\/wpcc_font.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/font\/wpcc_font.ttf": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/font\/wpcc_font.ttf",
-		"oF": 0
-		},
-	"\/font\/wpcc_font.woff": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/font\/wpcc_font.woff",
-		"oF": 0
-		},
-	"\/font\/wpcc_font.woff2": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/font\/wpcc_font.woff2",
-		"oF": 0
-		},
 	"\/footer.php": {
 		"ft": 8192,
 		"oA": 2,

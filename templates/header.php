@@ -76,6 +76,9 @@
         <meta name="twitter:image" content="<?php $image = get_field('wpcc_image'); $image_obj =  wp_get_attachment_image_src( $image, 'card_hero_image' );?>">
     <?php } ?>
 
+    <!-- Include the CDN version of FontAwesome -->
+    <script src="https://use.fontawesome.com/3be0bee871.js"></script>
+
     <!-- The mountain of stuff WP puts in -->
     <?php wp_head(); ?>
 
@@ -191,43 +194,43 @@
         		<ul class="socialMenu <?php echo esc_html( get_option('wpcc_icon_style') ); ?>">
 
         			<?php if ( $churchLink = esc_url( get_option( 'wpcc_church_url' ) ) ) { ?>
-					   <li><a href="<?php echo $churchLink; ?>"><i class="fa-logo fa-home"></i><span><?php echo esc_html( get_option( 'wpcc_church_name' ) ); ?> Website</span></a></li>
+					   <li><a href="<?php echo $churchLink; ?>"><i class="fa fa-home"></i><span><?php echo esc_html( get_option( 'wpcc_church_name' ) ); ?> Website</span></a></li>
         			<?php } ?>
 
 
         			<?php if ( $facebookLink = esc_url( get_option( 'wpcc_facebook' ) ) ) { ?>
-					   <li><a href="<?php echo $facebookLink; ?>" title="Facebook"><i class="fa-logo fa-facebook"></i><span>Facebook</span></a></li>
+					   <li><a href="<?php echo $facebookLink; ?>" title="Facebook"><i class="fa fa-facebook"></i><span>Facebook</span></a></li>
         			<?php } ?>
 
         			<?php if ( $twitterLink = esc_url( get_option( 'wpcc_twitter' ) ) ) { ?>
-					   <li><a href="<?php echo $twitterLink; ?>" title="Twitter"><i class="fa-logo fa-twitter"></i><span>Twitter</span></a></li>
+					   <li><a href="<?php echo $twitterLink; ?>" title="Twitter"><i class="fa fa-twitter"></i><span>Twitter</span></a></li>
         			<?php } ?>
 
         			<?php if ( $instaLink = esc_url( get_option( 'wpcc_instagram' ) ) ) { ?>
-					   <li><a href="<?php echo $instaLink; ?>" title="Instagram"><i class="fa-logo fa-instagram"></i><span>Instagram</span></a></li>
+					   <li><a href="<?php echo $instaLink; ?>" title="Instagram"><i class="fa fa-instagram"></i><span>Instagram</span></a></li>
         			<?php } ?>
 
         			<?php if ( $snapchatLink = esc_url( get_option( 'wpcc_snapchat' ) ) ) { ?>
-					   <li><a href="<?php echo $snapchatLink; ?>" title="Snapchat"><i class="fa-logo fa-snapchat-ghost"></i><span>Snapchat</span></a></li>
+					   <li><a href="<?php echo $snapchatLink; ?>" title="Snapchat"><i class="fa fa-snapchat-ghost"></i><span>Snapchat</span></a></li>
         			<?php } ?>
 
         			<?php if ( $vimeoLink = esc_url( get_option( 'wpcc_vimeo' ) ) ){ ?>
-					   <li><a href="<?php echo $vimeoLink; ?>" title="Vimeo"><i class="fa-logo fa-vimeo"></i><span>Vimeo</span></a></li>
+					   <li><a href="<?php echo $vimeoLink; ?>" title="Vimeo"><i class="fa fa-vimeo"></i><span>Vimeo</span></a></li>
         			<?php } ?>
 
         			<?php if ( $youtubeLink = esc_url( get_option( 'wpcc_youtube' ) ) ) { ?>
-					   <li><a href="<?php echo $youtubeLink; ?>" title="Youtube"><i class="fa-logo fa-youtube-play"></i><span>Youtube</span></a></li>
+					   <li><a href="<?php echo $youtubeLink; ?>" title="Youtube"><i class="fa fa-youtube-play"></i><span>Youtube</span></a></li>
         			<?php } ?>
 
         			<?php if ( $givingLink = esc_url( get_option( 'wpcc_giving' ) ) ) { ?>
-					   <li><a href="<?php echo $givingLink; ?>" title="Online Giving"><i class="fa-logo fa-money"></i><span>Online Giving</span></a></li>
+					   <li><a href="<?php echo $givingLink; ?>" title="Online Giving"><i class="fa fa-money"></i><span>Online Giving</span></a></li>
         			<?php } ?>
 
         		</ul>
 
             <!-- Close Menu -->
             <a href="#" class="closeMenu">
-                <i class="fa-logo fa-cancel"></i>
+                <i class="fa fa-close"></i>
                 <span>Close Menu</span>
             </a>  
         </div>
@@ -235,7 +238,7 @@
         <?php if( $churchLink || $facebookLink || $twitterLink || $instaLink || $snapchatLink || $vimeoLink || $youtubeLink || $givingLink){ ?>
 
             <a href="#menu" aria-controls="menu" class="menuLink" tabindex="2">
-              <i class="fa-logo fa-menu"></i><span>Menu</span>
+              <i class="fa fa-bars"></i><span>Menu</span>
             </a>
         <?php } ?>
 

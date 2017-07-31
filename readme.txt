@@ -2,7 +2,7 @@
 Contributors: jordesign, wpchurchteam
 Requires at least: 4.7
 Tested up to: 4.8
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPL2
 
 Create a 'Next Steps' hub for your church using WordPress! Setup in minutes, mobile first & responsive & designed to integrate with your existing WordPress site!
@@ -31,6 +31,8 @@ go to Plugins > Add New in the WordPress Admin and upload the .zip file.
 3). Activate the Plugin. You should see a 'Cards' menu item.
 You'll need to set up some settings for your centre in the 'Church Center' section of the Customizer (Appearance > Customizer). These will allow you to alter the appearance of your hub - editing the header, footer and other details of how things look.
 
+4). If you're having 'page not found' issues when trying to view single cards - try saving your permalinks under Settings > Permalinks.
+
 
 
 Add/Edit Cards in the same way you would with any other content
@@ -42,6 +44,9 @@ Add a page which uses the 'Church Center Homepage' template
 3. An example card
 
 == Changelog ==
+
+v1.1.2
+- FEATURE/BUG FIX: Use CDN version of icons
 
 v1.1.1
 - BUG FIX: Fix error on Twitter card image
