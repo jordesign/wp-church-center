@@ -55,13 +55,15 @@ function wpcc_post_type() {
 
 if(function_exists("register_field_group"))
 {
+
+
 	register_field_group(array (
 		'id' => 'acf_card-content',
 		'title' => 'Card Content',
 		'fields' => array (
-			array (
+		     array (
 				'key' => 'field_5908a41b36dd2',
-				'label' => 'Subtitle',
+				'label' => 'Card Subtitle',
 				'name' => 'wpcc_subtitle',
 				'type' => 'text',
 				'default_value' => '',
@@ -71,6 +73,48 @@ if(function_exists("register_field_group"))
 				'formatting' => 'html',
 				'maxlength' => '',
 			),
+
+		     array (
+				'key' => 'field_5994ca00ccd17',
+				'label' => 'Card Type',
+				'name' => 'wpcc_card_type',
+				'type' => 'radio',
+				'instructions' => 'What sort of Card would you like to create?',
+				'required' => 1,
+				'choices' => array (
+					'plain' => 'Plain Card',
+					'external' => 'External Link Card',
+				),
+				'other_choice' => 0,
+				'save_other_choice' => 0,
+				'default_value' => 'plain',
+				'layout' => 'horizontal',
+			),
+
+			array (
+				'key' => 'field_5908a59x36dd2',
+				'label' => 'External URL',
+				'name' => 'wpcc_external_url',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5994ca00ccd17',
+							'operator' => '==',
+							'value' => 'external',
+						),
+					),
+					'allorany' => 'all',
+				),
+			),
+
 			array (
 				'key' => 'field_5908a49ed36dd3',
 				'label' => 'Card Content',
@@ -79,6 +123,17 @@ if(function_exists("register_field_group"))
 				'default_value' => '',
 				'toolbar' => 'full',
 				'media_upload' => 'yes',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5994ca00ccd17',
+							'operator' => '==',
+							'value' => 'plain',
+						),
+					),
+					'allorany' => 'all',
+				),
 			),
 		),
 		'location' => array (
@@ -143,7 +198,7 @@ if(function_exists("register_field_group"))
 			'hide_on_screen' => array (
 			),
 		),
-		'menu_order' => 0,
+		'menu_order' => 2,
 	));
 }
 

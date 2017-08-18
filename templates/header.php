@@ -1,4 +1,11 @@
 <?php
+    //Redirceting 'In the Media' pages 
+    if ( is_singular('card') && get_field('wpcc_card_type') === 'external' ){
+        $redirectLocation = get_field('wpcc_external_url');
+        header( 'Location:' . $redirectLocation ) ;
+    }
+
+?><?php
 
 /* Header for WP Church Center Pages */
 ?>
