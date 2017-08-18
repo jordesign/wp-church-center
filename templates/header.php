@@ -2,7 +2,7 @@
     //Redirceting 'In the Media' pages 
     if ( is_singular('card') && get_field('wpcc_card_type') === 'external' ){
         $redirectLocation = get_field('wpcc_external_url');
-        header( 'Location:' . $redirectLocation ) ;
+        header( 'Location:' . esc_url($redirectLocation) ) ;
     }
 
 ?><?php

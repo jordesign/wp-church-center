@@ -37,7 +37,7 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 
 				<?php //set up the link for the card
 					if(get_field("wpcc_card_type") === 'external'){
-						$card_link = get_field('wpcc_external_url');
+						$card_link = esc_url(get_field('wpcc_external_url') );
 					}else{
 						$card_link = get_permalink($post->ID);
 					} ?>
