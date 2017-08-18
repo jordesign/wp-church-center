@@ -45,6 +45,10 @@ Add a page which uses the 'Church Center Homepage' template
 
 == Changelog ==
 
+v1.3
+- FEATURE: Add architecture to allow for WPCC Addons
+- FEATURE: Add new 'External Link' card type
+
 v1.1.2
 - FEATURE/BUG FIX: Use CDN version of icons
 - FEATURE: Add option for maximum number of columns on Small Card view
