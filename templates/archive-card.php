@@ -34,7 +34,7 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 					}
 					if ( get_option( 'wpcc_layout' ) == 'list' && $layout !='grid' && $layout !='card' && $layout != 'small-card' ) { ?>
 
-					<a class="card" href="<?php echo $card_link; ?>" style="background-color: <?php the_field('wpcc_color'); ?>">
+					<a class="card" href="<?php echo $card_link; ?>" style="background-color: <?php the_field('wpcc_color'); ?>" <?php if(get_field("wpcc_card_type") === 'external'){ echo 'target="_blank"';} ?>>
 						<div class="cardBody">
 							<h3><?php the_title(); ?></h3>
 							<p><?php the_field('wpcc_subtitle'); ?></p>
@@ -43,7 +43,7 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 					</a>
 
 				<?php } elseif ( $layout=='list' && $layout != 'small-card' ) { ?>
-					<a class="card" href="<?php echo $card_link; ?>" style="background-color: <?php the_field('wpcc_color'); ?>">
+					<a class="card" href="<?php echo $card_link; ?>" style="background-color: <?php the_field('wpcc_color'); ?>" <?php if(get_field("wpcc_card_type") === 'external'){ echo 'target="_blank"';} ?>>
 						<div class="cardBody">
 							<h3><?php the_title(); ?></h3>
 							<p><?php the_field('wpcc_subtitle'); ?></p>
@@ -51,7 +51,7 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 						<i class="fa fa-angle-circled-right" style="color: <?php the_field('wpcc_color'); ?>"></i>
 					</a>
 				<?php } elseif ( $layout=='small-card'  ) { ?>
-					<a class="card item" href="<?php echo $card_link; ?>">
+					<a class="card item" href="<?php echo $card_link; ?>" <?php if(get_field("wpcc_card_type") === 'external'){ echo 'target="_blank"';} ?>>
 						<div class="cardBody">
 							<div class="cardImage" style="background: <?php the_field('wpcc_color'); ?> url(<?php $image = get_field('wpcc_image'); $image_obj =  wp_get_attachment_image_src( $image, 'card_image' ); echo $image_obj[0]; ?>) no-repeat 50% 50%; background-size:cover;">
 								
@@ -65,7 +65,7 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 						
 					</a>
 				<?php } else { ?>
-					<a class="card" href="<?php echo $card_link; ?>" tabindex="-1">
+					<a class="card" href="<?php echo $card_link; ?>" tabindex="-1" <?php if(get_field("wpcc_card_type") === 'external'){ echo 'target="_blank"';} ?>>
 						<div class="cardBody">
 							<div class="topSection" style="background: url(<?php $image = get_field('wpcc_image'); $image_obj =  wp_get_attachment_image_src( $image, 'card_image' ); echo $image_obj[0]; ?>) no-repeat 50% 50%; background-size:cover;">
 								

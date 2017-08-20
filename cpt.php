@@ -114,6 +114,36 @@ if(function_exists("register_field_group"))
 					'allorany' => 'all',
 				),
 			),
+			array (
+			'key' => 'field_5996c9ef1c74d',
+			'label' => '',
+			'name' => 'wppc_external new_window',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5994ca00ccd17',
+							'operator' => '==',
+							'value' => 'external',
+						),
+					),
+					'allorany' => 'all',
+				),
+			'message' => 'Load link in new window',
+			'default_value' => 0,
+			'ui' => 0,
+			'ui_on_text' => '',
+			'ui_off_text' => '',
+		),
 
 			array (
 				'key' => 'field_5908a49ed36dd3',
