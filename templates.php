@@ -74,6 +74,7 @@ function wpcc_remove_default_scripts (){
 		   'nf-front-end' , 	
 		   'admin-bar' ,
 		   'masonry',
+		   'wp-mediaelement'
 		   
 		);
 
