@@ -37,5 +37,15 @@ jQuery(document).ready(function($){
 
 	  });
 	}
+
+	$('.menuLink').click(function(e){
+		e.preventDefault();
+		$('#menu').css('right', '0')
+	});
+
+	$('.closeMenu').click(function(e){
+		e.preventDefault();
+		$('#menu').css('right','-300px')
+	});
 });
 

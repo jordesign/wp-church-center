@@ -72,6 +72,7 @@ h6 {
   align-items: center;
   justify-content: center;
   min-height: 1px;
+  text-decoration: none !important;
 }
 .header a.menuLink i {
   height: 40px;
