@@ -117,7 +117,7 @@ if(function_exists("register_field_group"))
 			array (
 			'key' => 'field_5996c9ef1c74d',
 			'label' => '',
-			'name' => 'wppc_external new_window',
+			'name' => 'wppc_external_new_window',
 			'type' => 'true_false',
 			'instructions' => '',
 			'required' => 0,

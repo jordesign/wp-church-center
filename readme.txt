@@ -47,6 +47,7 @@ Add a page which uses the 'Church Center Homepage' template
 
 v1.2.1
 - CHANGED: More specific classes on header (.wpccHeader) & footer (.wpccFooter) for more robust styling
+- BUG: External links now open in new tab if option is selected
 
 v1.2
 - FEATURE: Add architecture to allow for WPCC Addons
