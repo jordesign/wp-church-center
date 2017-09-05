@@ -101,17 +101,17 @@
              color: <?php echo get_post_meta(get_the_ID(),'wpcc_color',true ); ?>;
          }
 
-         body .header #menu ul li a i {
+         body .wpccHeader #menu ul li a i {
              background: <?php echo get_option( 'wpcc_icon_background' ); ?>;
              color: <?php echo get_option( 'wpcc_icon_color' ); ?>
          }
          
 
-         .post-type-archive-card .footer.grid, .footer {
+         .post-type-archive-card .wpccFooter.grid, .wpccFooter {
              background:<?php echo get_option( 'wpcc_footer_background' ); ?>;
          }
 
-         .post-type-archive-card .footer.grid p, .footer p {
+         .post-type-archive-card .wpccFooter.grid p, .wpccFooter p {
              color: <?php echo get_option( 'wpcc_footer_text' ); ?>;
          }
 
@@ -127,14 +127,14 @@
 
 
          @media only screen and (min-width: 900px) {
-            .header #menu ul li a i,
+            .wpccHeader #menu ul li a i,
             .backButton, .backButton:hover {
              color: <?php echo get_option( 'wpcc_background' ); ?>;
              
              }
 
-             body .header #menu ul.circle-outline li a i,
-             body .header #menu ul.plain li a i {
+             body .wpccHeader #menu ul.circle-outline li a i,
+             body .wpccHeader #menu ul.plain li a i {
                  color:<?php echo get_option( 'wpcc_icon_color' ); ?> !important;
                  border-color:<?php echo get_option( 'wpcc_icon_color' ); ?>;
             }
@@ -181,7 +181,7 @@
     <a class="skip-link" tabindex="1" href="#main"><?php esc_html_e( '&darr; Skip to Main Content', 'wpcc' ); ?></a>
 </div><!-- .skip-container -->
 
-<div class="header <?php if ( isset($layout) ) { 
+<div class="wpccHeader <?php if ( isset($layout) ) { 
         echo $layout;
     } elseif ($layout = get_option( 'wpcc_layout' ) ) {
         echo $layout;
@@ -195,7 +195,7 @@
 
 	
 
-        <div id="menu" class="columns large-9">
+        <div id="menu" class="columns large-9 wpccMenu">
 
         		<!-- Social Icons -->
         		<ul class="socialMenu <?php echo esc_html( get_option('wpcc_icon_style') ); ?>">

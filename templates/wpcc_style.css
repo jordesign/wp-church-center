@@ -36,7 +36,7 @@ h6 {
 .skip-container {
   display: none;
 }
-.header {
+.wpccHeader {
   height: 80px;
   position: relative;
   z-index: 12;
@@ -44,7 +44,7 @@ h6 {
   left: 0;
   right: 0;
 }
-.header > a {
+.wpccHeader > a {
   display: flex;
   min-height: 80px;
   float: left;
@@ -53,13 +53,13 @@ h6 {
   align-items: center;
   padding: 10px;
 }
-.header img {
+.wpccHeader img {
   float: left;
   max-height: 60px;
   max-width: 100%;
   height: auto;
 }
-.header a.menuLink {
+.wpccHeader a.menuLink {
   float: right;
   height: 40px;
   width: auto;
@@ -74,37 +74,37 @@ h6 {
   min-height: 1px;
   text-decoration: none !important;
 }
-.header a.menuLink i {
+.wpccHeader a.menuLink i {
   height: 40px;
   line-height: 40px;
 }
-.header a.menuLink i:before {
+.wpccHeader a.menuLink i:before {
   height: 40px;
   line-height: 40px;
 }
-.header a.menuLink span {
+.wpccHeader a.menuLink span {
   display: none;
 }
-.header.right > a {
+.wpccHeader.right > a {
   float: right;
   padding-right: 20px;
   justify-content: flex-end;
 }
-.header.right > a img {
+.wpccHeader.right > a img {
   float: right;
 }
-.header.right a.menuLink {
+.wpccHeader.right a.menuLink {
   float: left;
   padding-right: 0;
   padding-left: 15px;
 }
-.header.card {
+.wpccHeader.card {
   position: fixed;
 }
-.admin-bar .header.card {
+.admin-bar .wpccHeader.card {
   top: 46px;
 }
-#menu {
+#menu.wpccMenu {
   position: fixed;
   top: 0;
   right: -300px;
@@ -115,26 +115,26 @@ h6 {
   z-index: 10;
   transition: right 0.2s ease-in-out;
 }
-#menu ul {
+#menu.wpccMenu ul {
   list-style: none;
   padding: 50px 0 0;
   margin: 0;
 }
-#menu ul li {
+#menu.wpccMenu ul li {
   min-height: 48px;
   clear: both;
   width: 100%;
   float: left;
   padding: 10px 0;
 }
-#menu ul li a {
+#menu.wpccMenu ul li a {
   padding: 0 15px 0px;
   font-size: 15px;
   color: #666;
   text-decoration: none;
   display: block;
 }
-#menu ul li a span {
+#menu.wpccMenu ul li a span {
   display: block;
   line-height: 42px;
   font-size: 15px;
@@ -142,7 +142,7 @@ h6 {
   margin-left: 42px;
   padding-top: 6px;
 }
-#menu ul li a i {
+#menu.wpccMenu ul li a i {
   float: left;
   width: 32px;
   height: 32px;
@@ -156,14 +156,14 @@ h6 {
   position: relative;
   top: -1px;
 }
-#menu ul li a i:before {
+#menu.wpccMenu ul li a i:before {
   line-height: 32px;
   height: 32px;
 }
-#menu ul li:hover {
+#menu.wpccMenu ul li:hover {
   background: #eee;
 }
-#menu .closeMenu {
+#menu.wpccMenu .closeMenu {
   position: absolute;
   top: 0;
   right: 0;
@@ -176,39 +176,39 @@ h6 {
   justify-content: center;
   color: #444;
 }
-#menu .closeMenu i {
+#menu.wpccMenu .closeMenu i {
   height: 50px;
   line-height: 50px;
 }
-#menu .closeMenu i:before {
+#menu.wpccMenu .closeMenu i:before {
   height: 50px;
   line-height: 50px;
 }
-#menu .closeMenu span {
+#menu.wpccMenu .closeMenu span {
   display: none;
 }
-#menu ul.plain li a i {
+#menu.wpccMenu ul.plain li a i {
   background: none !important;
   color: #444;
   font-size: 24px;
 }
-body .header #menu ul.circle-outline li a i {
+body .header #menu.wpccMenu ul.circle-outline li a i {
   background: none !important;
   color: #444;
   border: 2px solid #444;
 }
-body .header #menu ul.circle-outline li a i:before {
+body .header #menu.wpccMenu ul.circle-outline li a i:before {
   position: relative;
   top: -3px;
 }
-#menu ul.rounded-square li a i {
+#menu.wpccMenu ul.rounded-square li a i {
   border-radius: 10px;
 }
-#menu:target {
+#menu.wpccMenu:target {
   right: 0;
 }
-.post-type-archive-card .footer.grid,
-.footer {
+.post-type-archive-card .wpccFooter.grid,
+.wpccFooter {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -217,16 +217,16 @@ body .header #menu ul.circle-outline li a i:before {
   padding: 15px;
   clear: both;
 }
-.post-type-archive-card .footer.grid p,
-.footer p {
+.post-type-archive-card .wpccFooter.grid p,
+.wpccFooter p {
   color: #aaa;
   font-size: 12px;
   line-height: 15px;
   text-align: center;
   margin: 0;
 }
-.post-type-archive-card .footer.card,
-.page-template-center_home .footer.card {
+.post-type-archive-card .wpccFooter.card,
+.page-template-center_home .wpccFooter.card {
   display: none;
 }
 .cards {
@@ -522,7 +522,7 @@ body .header #menu ul.circle-outline li a i:before {
   font-size: 15px;
   line-height: 1.3;
 }
-.wpchurch_center.single .header {
+.wpchurch_center.single .wpccHeader {
   position: relative;
 }
 .wpchurch_center.single .singleCard {
@@ -633,11 +633,11 @@ body .header #menu ul.circle-outline li a i:before {
   background: #eee;
   color: #666;
 }
-.nojs .header.card {
+.nojs .wpccHeader.card {
   position: relative;
   top: 0;
 }
-.nojs .header.card.layoutSwitcher {
+.nojs .wpccHeader.card.layoutSwitcher {
   top: 0;
 }
 .nojs .layoutSwitcher .cardHolder.card {
@@ -663,10 +663,10 @@ body .header #menu ul.circle-outline li a i:before {
 .layoutSwitcher .cardHolder.card .card {
   height: 67vh;
 }
-.header.card.layoutSwitcher {
+.wpccHeader.card.layoutSwitcher {
   top: 70px;
 }
-.wpcc_light .header a.menuLink {
+.wpcc_light .wpccHeader a.menuLink {
   color: #333;
 }
 .wpcc_light .cardHolder.card .card {
@@ -728,15 +728,15 @@ body .header #menu ul.circle-outline li a i:before {
   }
 }
 @media only screen and (min-width: 667px) {
-  .header {
+  .wpccHeader {
     position: relative !important;
     padding: 0 4%;
     height: 80px;
   }
-  .header img {
+  .wpccHeader img {
     max-height: 75px;
   }
-  .header .menuLink {
+  .wpccHeader .menuLink {
     margin: 35px 0 0 0;
   }
   .cardHolder.card,
@@ -789,10 +789,10 @@ body .header #menu ul.circle-outline li a i:before {
   .cardHolder.card.layoutSwitching {
     padding-top: 0px;
   }
-  .header.card.layoutSwitching {
+  .wpccHeader.card.layoutSwitching {
     top: 0px;
   }
-  .header.card.layoutSwitcher {
+  .wpccHeader.card.layoutSwitcher {
     top: 0;
   }
   .layoutSwitcher .cardHolder.card {
@@ -800,18 +800,18 @@ body .header #menu ul.circle-outline li a i:before {
   }
 }
 @media only screen and (min-width: 900px) {
-  .header {
+  .wpccHeader {
     padding: 0 3% ;
     max-width: 1200px;
     margin: 0 auto;
   }
-  .header img {
+  .wpccHeader img {
     margin-top: 10px;
   }
-  .header a.menuLink {
+  .wpccHeader a.menuLink {
     display: none;
   }
-  .header #menu {
+  .wpccHeader #menu.wpccMenu {
     display: block;
     position: relative;
     right: 0;
@@ -820,23 +820,23 @@ body .header #menu ul.circle-outline li a i:before {
     width: 60%;
     box-shadow: none;
   }
-  .header #menu ul {
+  .wpccHeader #menu.wpccMenu ul {
     padding: 20px 0 0 0;
     text-align: right;
   }
-  .header #menu ul li {
+  .wpccHeader #menu.wpccMenu ul li {
     display: inline-block;
     width: auto;
     float: none;
   }
-  .header #menu ul li a {
+  .wpccHeader #menu.wpccMenu ul li a {
     padding: 0px;
     display: inline-block;
   }
-  .header #menu ul li a span {
+  .wpccHeader #menu.wpccMenu ul li a span {
     display: none;
   }
-  .header #menu ul li a i {
+  .wpccHeader #menu.wpccMenu ul li a i {
     background: #fff;
     width: 42px;
     height: 42px;
@@ -845,63 +845,63 @@ body .header #menu ul.circle-outline li a i:before {
     transition: all .4s ease;
     color: #333;
   }
-  .header #menu ul li a i:before {
+  .wpccHeader #menu.wpccMenu ul li a i:before {
     width: 32px;
     height: 42px;
     line-height: 42px;
     font-size: 21px;
     text-align: center;
   }
-  .header #menu ul li a:hover i {
+  .wpccHeader #menu.wpccMenu ul li a:hover i {
     background: #111;
     color: #fff !important;
   }
-  .header #menu ul li:hover {
+  .wpccHeader #menu.wpccMenu ul li:hover {
     background: none;
   }
-  .header #menu .closeMenu {
+  .wpccHeader #menu.wpccMenu .closeMenu {
     display: none;
   }
-  .header #menu ul.plain li a i {
+  .wpccHeader #menu.wpccMenu ul.plain li a i {
     background: none !important;
     color: #fff;
     font-size: 26px;
     opacity: 1;
     transition: opacity .4s ease;
   }
-  .header #menu ul.plain li a i:before {
+  .wpccHeader #menu.wpccMenu ul.plain li a i:before {
     font-size: 26px;
   }
-  .header #menu ul.plain li a:hover i {
+  .wpccHeader #menu.wpccMenu ul.plain li a:hover i {
     opacity: 0.7;
   }
-  .header #menu ul.circle-outline li a i {
+  .wpccHeader #menu.wpccMenu ul.circle-outline li a i {
     background: none !important;
     color: #eee;
     border-color: #eee;
     opacity: 1;
     transition: opacity .4s ease;
   }
-  .header #menu ul.circle-outline li a:hover i {
+  .wpccHeader #menu.wpccMenu ul.circle-outline li a:hover i {
     opacity: 0.7;
   }
-  .header.right > a {
+  .wpccHeader.right > a {
     text-align: right;
   }
-  .header.right #menu {
+  .wpccHeader.right #menu.wpccMenu {
     float: left;
     text-align: left;
     min-height: 80px;
   }
-  .header.right #menu ul {
+  .wpccHeader.right #menu.wpccMenu ul {
     text-align: left;
     padding-top: 25px;
   }
-  .header.center {
+  .wpccHeader.center {
     padding-top: 5px;
     height: 180px;
   }
-  .header.center > a {
+  .wpccHeader.center > a {
     float: none;
     margin-left: auto;
     margin-right: auto;
@@ -909,15 +909,15 @@ body .header #menu ul.circle-outline li a i:before {
     text-align: center;
     justify-content: center;
   }
-  .header.center a.menuLink {
+  .wpccHeader.center a.menuLink {
     display: none;
   }
-  .header.center #menu {
+  .wpccHeader.center #menu.wpccMenu {
     width: 100%;
     float: none;
     text-align: center;
   }
-  .header.center #menu ul {
+  .wpccHeader.center #menu.wpccMenu ul {
     text-align: center;
     padding-top: 0;
   }
@@ -992,10 +992,10 @@ body .header #menu ul.circle-outline li a i:before {
   }
 }
 @media only screen and (min-width: 1100px) {
-  .header {
+  .wpccHeader {
     padding: 0 1.5% 4%;
   }
-  .header #menu ul {
+  .wpccHeader #menu.wpccMenu ul {
     padding-right: 0;
   }
   .cardHolder.card .card,

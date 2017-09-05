@@ -4,7 +4,7 @@
 ?>
 
 <?php if ( $footerText = get_option( 'wpcc_church_copyright' ) ){ ?>
-  <div class="footer <?php if ( isset($_GET["layout"]) ) { 
+  <div class="wpccFooter <?php if ( isset($_GET["layout"]) ) { 
     echo $_GET["layout"];
   } elseif ( $layout = get_option( 'wpcc_layout' ) ){
     echo $layout;

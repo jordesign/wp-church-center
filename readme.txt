@@ -2,7 +2,7 @@
 Contributors: jordesign, wpchurchteam
 Requires at least: 4.7
 Tested up to: 4.8
-Stable tag: 1.2
+Stable tag: 1.2.1
 License: GPL2
 
 Create a 'Next Steps' hub for your church using WordPress! Setup in minutes, mobile first & responsive & designed to integrate with your existing WordPress site!
@@ -44,6 +44,9 @@ Add a page which uses the 'Church Center Homepage' template
 3. An example card
 
 == Changelog ==
+
+v1.2.1
+- CHANGED: More specific classes on header (.wpccHeader) & footer (.wpccFooter) for more robust styling
 
 v1.2
 - FEATURE: Add architecture to allow for WPCC Addons

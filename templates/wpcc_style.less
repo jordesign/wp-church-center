@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 //Header 
-.header {
+.wpccHeader {
   height: 80px;
   position:relative;
   z-index: 12;
@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.header.right {
+.wpccHeader.right {
   > a {
     float:right;
     padding-right: 20px;
@@ -117,16 +117,16 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-.header.card {
+.wpccHeader.card {
   position:fixed;
 }
 
-.admin-bar .header.card {
+.admin-bar .wpccHeader.card {
   top: 46px;
 }
 
 //Menu 
-#menu {
+#menu.wpccMenu {
   position:fixed;
   top:0;
   right:-300px;
@@ -224,7 +224,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-#menu ul.plain {
+#menu.wpccMenu ul.plain {
   li a i {
     background:none !important;
     color:#444;
@@ -232,7 +232,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-body .header #menu ul.circle-outline {
+body .header #menu.wpccMenu ul.circle-outline {
   li a i {
     background:none !important;
     color:#444;
@@ -244,20 +244,20 @@ body .header #menu ul.circle-outline {
   }
 }
 
-#menu ul.rounded-square {
+#menu.wpccMenu ul.rounded-square {
   li a i {
     border-radius: 10px;
   }
   
 }
 
-#menu:target {
+#menu.wpccMenu:target {
   right: 0;
 }
 
 //Footer
-.post-type-archive-card .footer.grid,
-.footer {
+.post-type-archive-card .wpccFooter.grid,
+.wpccFooter {
   position:absolute;
   bottom:0;
   left:0;
@@ -277,8 +277,8 @@ body .header #menu ul.circle-outline {
 
 }
 
-.post-type-archive-card .footer.card,
-.page-template-center_home .footer.card {
+.post-type-archive-card .wpccFooter.card,
+.page-template-center_home .wpccFooter.card {
   display:none;
 }
 
@@ -639,7 +639,7 @@ body .header #menu ul.circle-outline {
 //Single Cards 
 .wpchurch_center.single {
 
-  .header {
+  .wpccHeader {
     position:relative;
   }
 
@@ -783,12 +783,12 @@ body .header #menu ul.circle-outline {
 //Card Styles when slick isn't included (just in case)
 .nojs {
 
-  .header.card {
+  .wpccHeader.card {
     position:relative;
     top:0;
   }
 
-  .header.card.layoutSwitcher {
+  .wpccHeader.card.layoutSwitcher {
     top:0;
   }
 
@@ -824,7 +824,7 @@ body .header #menu ul.circle-outline {
   }
 }
 
-.header.card.layoutSwitcher {
+.wpccHeader.card.layoutSwitcher {
   top: 70px;
 }
 
@@ -833,7 +833,7 @@ body .header #menu ul.circle-outline {
 
 .wpcc_light {
   
-  .header a.menuLink {
+  .wpccHeader a.menuLink {
     color:#333;
   }
 
@@ -916,7 +916,7 @@ body .header #menu ul.circle-outline {
 
 @media only screen and (min-width: 667px) {
 
-.header {
+.wpccHeader {
   position:relative !important;
   padding: 0 4%;
   height: 80px;
@@ -1000,12 +1000,12 @@ body .header #menu ul.circle-outline {
     padding-top: 0px;
   }
 
-  .header.card.layoutSwitching {
+  .wpccHeader.card.layoutSwitching {
     top: 0px;
   }
 
   //Card Syles when the layout switcher is shown
-  .header.card.layoutSwitcher {
+  .wpccHeader.card.layoutSwitcher {
     top:0;
   }
 
@@ -1019,7 +1019,7 @@ body .header #menu ul.circle-outline {
 
 @media only screen and (min-width: 900px) {
 
-.header {
+.wpccHeader {
   padding: 0 3% ;
   max-width: 1200px;
   margin:0 auto;
@@ -1032,7 +1032,7 @@ body .header #menu ul.circle-outline {
       display:none;
     }
 
-    #menu {
+    #menu.wpccMenu {
       display:block;
       position:relative;
       right:0;
@@ -1095,7 +1095,7 @@ body .header #menu ul.circle-outline {
       }
     }
 
-    #menu ul.plain {
+    #menu.wpccMenu ul.plain {
       li a i {
         background:none !important;
         color:#fff;
@@ -1111,7 +1111,7 @@ body .header #menu ul.circle-outline {
       }
     }
 
-    #menu ul.circle-outline {
+    #menu.wpccMenu ul.circle-outline {
       li a i {
         background:none !important;
         color:#eee;
@@ -1127,13 +1127,13 @@ body .header #menu ul.circle-outline {
 
   }
 
-  .header.right {
+  .wpccHeader.right {
 
     >a {
       text-align:right;
     }
     
-    #menu {
+    #menu.wpccMenu {
       float:left;
       text-align:left;
       min-height: 80px;
@@ -1145,7 +1145,7 @@ body .header #menu ul.circle-outline {
     }
   }
 
-  .header.center {
+  .wpccHeader.center {
 
       padding-top: 5px;
       height: 180px;
@@ -1163,7 +1163,7 @@ body .header #menu ul.circle-outline {
        display:none;
      }
 
-     #menu {
+     #menu.wpccMenu {
        width: 100%;
        float:none;
        text-align:center;
@@ -1283,10 +1283,10 @@ body .header #menu ul.circle-outline {
 
 @media only screen and (min-width: 1100px) {
 
-  .header {
+  .wpccHeader {
     padding: 0 1.5% 4%;
     
-    #menu ul {
+    #menu.wpccMenu ul {
       padding-right:0;
     }
   }
