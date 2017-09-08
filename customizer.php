@@ -92,6 +92,21 @@ array(
 ) ) );
 
 // add a setting for the church name
+$wp_customize->add_setting('wpcc_logo_link', array(
+     'type' => 'option', 
+     'capability' => 'manage_options',
+));
+
+//add control for church website name
+$wp_customize->add_control( 'wpcc_logo_link', array(
+   'label'   => 'Custom Link for Logo',
+   'description' => 'Link the logo to a custom URL. If left empty, it will link to the Center home page.',
+   'section' => 'wpcc_header',
+   'type'    => 'text',
+) );
+
+
+// add a setting for the church name
 $wp_customize->add_setting('wpcc_church_name', array(
      'type' => 'option', 
      'capability' => 'manage_options',

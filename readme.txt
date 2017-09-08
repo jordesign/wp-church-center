@@ -46,8 +46,10 @@ Add a page which uses the 'Church Center Homepage' template
 == Changelog ==
 
 v1.2.1
+- FEATURE: Added option to have a custom URL on the site logo
 - CHANGED: More specific classes on header (.wpccHeader) & footer (.wpccFooter) for more robust styling
 - BUG: External links now open in new tab if option is selected
+- BUG: Disappearing toolbar buttons now show correctly
 
 v1.2
 - FEATURE: Add architecture to allow for WPCC Addons
