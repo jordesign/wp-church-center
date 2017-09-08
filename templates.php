@@ -170,3 +170,9 @@ function wpcc_body_classes( $classes ) {
     return $classes;
 }
 add_filter( 'body_class', 'wpcc_body_classes' );
+
+//Include editor.min.css even if there is no text editor
+function wpcc_add_admin_editor_styles() {
+    wp_register_style($handle = 'wpcc-theme-admin-styles', $src = site_url() . '/wp-includes/css/editor.min.css', $deps = array(), $ver = '1.0.0', $media = 'all');
+    wp_enqueue_style('wpcc-theme-admin-styles');}
+    add_action('admin_print_styles', 'wpcc_add_admin_editor_styles');
