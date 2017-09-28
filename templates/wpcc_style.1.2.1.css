@@ -52,6 +52,8 @@ h6 {
   max-width: 320px;
   align-items: center;
   padding: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .wpccHeader img {
   float: left;

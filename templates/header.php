@@ -193,9 +193,13 @@
     <?php if( defined('WPCC_LAYOUT_SWITCHING') && WPCC_LAYOUT_SWITCHING ===  true){ echo 'layoutSwitcher'; }  ?>">
 
     <?php if ($customHomeLink = get_option('wpcc_logo_link') ){ ?>
-        <a href="<?php echo $customHomeLink; ?>"><img src="<?php echo esc_html( get_option( 'wpcc_church_logo' ) ); ?>" alt="<?php echo esc_html( get_option( 'blogname' ) ); ?> Logo" id="logo"></a>
+		<a href="<?php echo $customHomeLink; ?>" style="background-image:url('<?php echo esc_html( get_option( 'wpcc_church_logo' ) ); ?>');">
+			<span class="sr-only"><?php echo esc_html( get_option( 'blogname' ) ); ?></span>
+		</a>
     <?php }else{ ?>
-        <a href="<?php wpcc_get_home_center_link(); ?>"><img src="<?php echo esc_html( get_option( 'wpcc_church_logo' ) ); ?>" alt="<?php echo esc_html( get_option( 'blogname' ) ); ?> Logo" id="logo"></a>
+		<a href="<?php wpcc_get_home_center_link(); ?>" style="background-image:url('<?php echo esc_html( get_option( 'wpcc_church_logo' ) ); ?>');">
+			<span class="sr-only"><?php echo esc_html( get_option( 'blogname' ) ); ?></span>
+		</a>
     <?php } ?>
 
 	
