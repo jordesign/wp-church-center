@@ -194,11 +194,11 @@
 
     <?php if ($customHomeLink = get_option('wpcc_logo_link') ){ ?>
 		<a href="<?php echo $customHomeLink; ?>" style="background-image:url('<?php echo esc_html( get_option( 'wpcc_church_logo' ) ); ?>');">
-			<span class="sr-only"><?php echo esc_html( get_option( 'blogname' ) ); ?></span>
+			<span><?php echo esc_html( get_option( 'blogname' ) ); ?></span>
 		</a>
     <?php }else{ ?>
 		<a href="<?php wpcc_get_home_center_link(); ?>" style="background-image:url('<?php echo esc_html( get_option( 'wpcc_church_logo' ) ); ?>');">
-			<span class="sr-only"><?php echo esc_html( get_option( 'blogname' ) ); ?></span>
+			<span><?php echo esc_html( get_option( 'blogname' ) ); ?></span>
 		</a>
     <?php } ?>
 

@@ -7,7 +7,7 @@
 		"uuidString": "D3669D3D-36E7-4544-BA81-F2266E40772E"
 		}
 	],
-"creatorBuild": "25849",
+"creatorBuild": "25900",
 "files": {
 	"\/advanced-custom-fields\/acf.php": {
 		"ft": 8192,
@@ -268,6 +268,7 @@
 		},
 	"\/advanced-custom-fields\/core\/fields\/date_picker\/jquery.ui.datepicker.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/advanced-custom-fields\/core\/fields\/date_picker\/jquery.ui.datepicker-min.js",
@@ -605,6 +606,7 @@
 		},
 	"\/advanced-custom-fields\/js\/field-group.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/advanced-custom-fields\/js\/field-group-min.js",
@@ -614,6 +616,7 @@
 		},
 	"\/advanced-custom-fields\/js\/field-group.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/advanced-custom-fields\/js\/field-group.min-min.js",
@@ -623,6 +626,7 @@
 		},
 	"\/advanced-custom-fields\/js\/input.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/advanced-custom-fields\/js\/input-min.js",
@@ -632,6 +636,7 @@
 		},
 	"\/advanced-custom-fields\/js\/input.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/advanced-custom-fields\/js\/input.min-min.js",
@@ -641,6 +646,7 @@
 		},
 	"\/advanced-custom-fields\/js\/input\/_listener.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/advanced-custom-fields\/js\/input\/_listener-min.js",
@@ -650,6 +656,7 @@
 		},
 	"\/advanced-custom-fields\/js\/input\/_listener.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/advanced-custom-fields\/js\/input\/_listener.min-min.js",
@@ -659,6 +666,7 @@
 		},
 	"\/advanced-custom-fields\/js\/input\/acf.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/advanced-custom-fields\/js\/input\/acf-min.js",
@@ -668,6 +676,7 @@
 		},
 	"\/advanced-custom-fields\/js\/input\/ajax.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/advanced-custom-fields\/js\/input\/ajax-min.js",
@@ -677,6 +686,7 @@
 		},
 	"\/advanced-custom-fields\/js\/input\/color-picker.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/advanced-custom-fields\/js\/input\/color-picker-min.js",
@@ -686,6 +696,7 @@
 		},
 	"\/advanced-custom-fields\/js\/input\/date-picker.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/advanced-custom-fields\/js\/input\/date-picker-min.js",
@@ -695,6 +706,7 @@
 		},
 	"\/advanced-custom-fields\/js\/input\/file.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/advanced-custom-fields\/js\/input\/file-min.js",
@@ -704,6 +716,7 @@
 		},
 	"\/advanced-custom-fields\/js\/input\/google-map.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/advanced-custom-fields\/js\/input\/google-map-min.js",
@@ -713,6 +726,7 @@
 		},
 	"\/advanced-custom-fields\/js\/input\/image.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/advanced-custom-fields\/js\/input\/image-min.js",
@@ -722,6 +736,7 @@
 		},
 	"\/advanced-custom-fields\/js\/input\/radio.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/advanced-custom-fields\/js\/input\/radio-min.js",
@@ -731,6 +746,7 @@
 		},
 	"\/advanced-custom-fields\/js\/input\/relationship.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/advanced-custom-fields\/js\/input\/relationship-min.js",
@@ -740,6 +756,7 @@
 		},
 	"\/advanced-custom-fields\/js\/input\/tab.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/advanced-custom-fields\/js\/input\/tab-min.js",
@@ -749,6 +766,7 @@
 		},
 	"\/advanced-custom-fields\/js\/input\/validation.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/advanced-custom-fields\/js\/input\/validation-min.js",
@@ -758,6 +776,7 @@
 		},
 	"\/advanced-custom-fields\/js\/input\/wysiwyg.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/advanced-custom-fields\/js\/input\/wysiwyg-min.js",
@@ -767,6 +786,7 @@
 		},
 	"\/advanced-custom-fields\/js\/tinymce.code.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/advanced-custom-fields\/js\/tinymce.code.min-min.js",
@@ -1106,6 +1126,12 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/cpt.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/cpt.php",
+		"oF": 0
+		},
 	"\/customizer.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -1178,6 +1204,7 @@
 		},
 	"\/page-ordering\/simple-page-ordering.dev.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/page-ordering\/simple-page-ordering.dev-min.js",
@@ -1187,6 +1214,7 @@
 		},
 	"\/page-ordering\/simple-page-ordering.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/page-ordering\/simple-page-ordering-min.js",
@@ -1218,6 +1246,12 @@
 		"rFN": 0,
 		"uCM": 0
 		},
+	"\/readme.txt": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/readme.txt",
+		"oF": 0
+		},
 	"\/templates.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -1232,6 +1266,18 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/templates\/archive-card.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/archive-card.php",
+		"oF": 0
+		},
+	"\/templates\/center_home.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/center_home.php",
+		"oF": 0
+		},
 	"\/templates\/css\/wpcc_style.css": {
 		"aP": 1,
 		"bl": 0,
@@ -1242,50 +1288,28 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"\/templates\/font\/wpcc_font.eot": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/templates\/font\/wpcc_font.eot",
-		"oF": 0
-		},
-	"\/templates\/font\/wpcc_font.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/templates\/font\/wpcc_font.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/templates\/font\/wpcc_font.ttf": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/templates\/font\/wpcc_font.ttf",
-		"oF": 0
-		},
-	"\/templates\/font\/wpcc_font.woff": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/templates\/font\/wpcc_font.woff",
-		"oF": 0
-		},
-	"\/templates\/font\/wpcc_font.woff2": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/templates\/font\/wpcc_font.woff2",
-		"oF": 0
-		},
 	"\/templates\/footer.php": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/templates\/footer.php",
 		"oF": 0
 		},
+	"\/templates\/header.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/header.php",
+		"oF": 0
+		},
 	"\/templates\/pagetemplater.php": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/templates\/pagetemplater.php",
+		"oF": 0
+		},
+	"\/templates\/single-card.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/single-card.php",
 		"oF": 0
 		},
 	"\/templates\/slick-theme.less": {
@@ -1324,6 +1348,7 @@
 		},
 	"\/templates\/wpcc_customizer-ck.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/templates\/wpcc_customizer-ck-min.js",
@@ -1333,6 +1358,7 @@
 		},
 	"\/templates\/wpcc_customizer.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/templates\/wpcc_customizer-min.js",
@@ -1340,32 +1366,74 @@
 		"sC": 1,
 		"tS": 0
 		},
-	"\/templates\/wpcc_script-ck.js": {
+	"\/templates\/wpcc_script-ck.1.2.3.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/templates\/wpcc_script-ck-min.js",
+		"oAP": "\/templates\/wpcc_script-ck.1.2.3-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"\/templates\/wpcc_script-min.js": {
+	"\/templates\/wpcc_script-min.1.2.3.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/templates\/wpcc_script-min-min.js",
+		"oAP": "\/templates\/wpcc_script-min.1.2.3-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"\/templates\/wpcc_script.js": {
+	"\/templates\/wpcc_script.1.2.3.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/templates\/wpcc_script-min.js",
+		"oAP": "\/templates\/wpcc_script.1.2.3-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
+		},
+	"\/templates\/wpcc_style.1.2.3.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/templates\/wpcc_style.1.2.3-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/templates\/wpcc_style.1.2.3.css.map": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/templates\/wpcc_style.1.2.3.css.map",
+		"oF": 0
+		},
+	"\/templates\/wpcc_style.1.2.3.less": {
+		"aP": 0,
+		"bl": 0,
+		"dJ": 0,
+		"ft": 1,
+		"ie": 1,
+		"iI": 0,
+		"ma": 1,
+		"oA": 0,
+		"oAP": "\/templates\/wpcc_style.1.2.3.css",
+		"oF": 0,
+		"oS": 0,
+		"rU": 0,
+		"sI": 0,
+		"sM": 0,
+		"sU": 0
+		},
+	"\/wp-church-center.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/wp-church-center.php",
+		"oF": 0
 		}
 	},
 "hooks": [
@@ -1780,6 +1848,10 @@
 			"active": 0,
 			"optionString": "{'setWithoutGet': true, 'getWithoutSet': false}"
 			},
+		"array-bracket-newline": {
+			"active": 0,
+			"optionString": "{'multiline': true, 'minItems': null}"
+			},
 		"array-bracket-spacing": {
 			"active": 0,
 			"optionString": "'never', {'singleValue': false, 'objectsInArrays': false, 'arraysInArrays': false}"
@@ -1787,6 +1859,10 @@
 		"array-callback-return": {
 			"active": 0,
 			"optionString": ""
+			},
+		"array-element-newline": {
+			"active": 0,
+			"optionString": "'always'"
 			},
 		"arrow-body-style": {
 			"active": 0,
@@ -1884,6 +1960,10 @@
 			"active": 0,
 			"optionString": "'always', {'null': 'always'}"
 			},
+		"for-direction": {
+			"active": 0,
+			"optionString": ""
+			},
 		"func-call-spacing": {
 			"active": 0,
 			"optionString": "'never'"
@@ -1903,6 +1983,10 @@
 		"generator-star-spacing": {
 			"active": 0,
 			"optionString": "{'before': true, 'after': false}"
+			},
+		"getter-return": {
+			"active": 0,
+			"optionString": "{'allowImplicit': false}"
 			},
 		"global-require": {
 			"active": 0,
@@ -2031,6 +2115,10 @@
 		"no-bitwise": {
 			"active": 0,
 			"optionString": "{'allow': ['~'], 'int32Hint': true}"
+			},
+		"no-buffer-constructor": {
+			"active": 0,
+			"optionString": ""
 			},
 		"no-caller": {
 			"active": 0,
@@ -2576,6 +2664,10 @@
 			"active": 0,
 			"optionString": "{'blocks': 'always', 'switches': 'always', 'classes': 'always'}"
 			},
+		"padding-line-between-statements": {
+			"active": 0,
+			"optionString": "{blankLine: 'always', prev:'*', next:'return'}"
+			},
 		"prefer-arrow-callback": {
 			"active": 0,
 			"optionString": ""
@@ -2644,6 +2736,10 @@
 			"active": 0,
 			"optionString": "{'before': false, 'after': true}"
 			},
+		"semi-style": {
+			"active": 0,
+			"optionString": "'last'"
+			},
 		"sort-imports": {
 			"active": 0,
 			"optionString": "{'ignoreCase': false, 'ignoreMemberSort': true, 'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single']}"
@@ -2683,6 +2779,10 @@
 		"strict": {
 			"active": 0,
 			"optionString": "'safe'"
+			},
+		"switch-colon-spacing": {
+			"active": 0,
+			"optionString": "{'after': true, 'before': false}"
 			},
 		"symbol-description": {
 			"active": 0,
@@ -3316,6 +3416,7 @@
 	"previewPathAddition": "",
 	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules",
 	"sourceFolderName": "source",
+	"susyVersion": 3,
 	"uglifyDefinesString": "",
 	"uglifyFlags2": {
 		"ascii-only": {

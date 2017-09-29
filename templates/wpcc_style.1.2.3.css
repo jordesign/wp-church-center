@@ -37,12 +37,13 @@ h6 {
   display: none;
 }
 .wpccHeader {
-  height: 80px;
+  height: 90px;
   position: relative;
   z-index: 12;
   top: 0;
   left: 0;
   right: 0;
+  padding: 10px 0 0 15px;
 }
 .wpccHeader > a {
   display: flex;
@@ -54,6 +55,12 @@ h6 {
   padding: 10px;
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: left center;
+}
+.wpccHeader > a span {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .wpccHeader img {
   float: left;
@@ -715,7 +722,7 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
   .cardHolder.small-card {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 10px;
+    padding: 15px 10px 0;
   }
   .cardHolder.small-card .card {
     width: 50%;
@@ -732,8 +739,8 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
 @media only screen and (min-width: 667px) {
   .wpccHeader {
     position: relative !important;
-    padding: 0 4%;
-    height: 80px;
+    padding: 10px 4% 15px;
+    height: 90px;
   }
   .wpccHeader img {
     max-height: 75px;
@@ -803,7 +810,7 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
 }
 @media only screen and (min-width: 900px) {
   .wpccHeader {
-    padding: 0 3% ;
+    padding: 10px 3% 15px ;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -823,7 +830,7 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
     box-shadow: none;
   }
   .wpccHeader #menu.wpccMenu ul {
-    padding: 20px 0 0 0;
+    padding: 10px 0 0 0;
     text-align: right;
   }
   .wpccHeader #menu.wpccMenu ul li {
@@ -897,7 +904,7 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
   }
   .wpccHeader.right #menu.wpccMenu ul {
     text-align: left;
-    padding-top: 25px;
+    padding-top: 10px;
   }
   .wpccHeader.center {
     padding-top: 5px;
@@ -905,11 +912,11 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
   }
   .wpccHeader.center > a {
     float: none;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10px auto 15px;
     max-width: 400px;
-    text-align: center;
     justify-content: center;
+    text-align: center;
+    background-position: 50% 50%;
   }
   .wpccHeader.center a.menuLink {
     display: none;
@@ -995,7 +1002,7 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
 }
 @media only screen and (min-width: 1100px) {
   .wpccHeader {
-    padding: 0 1.5% 4%;
+    padding: 10px 1.5% 4%;
   }
   .wpccHeader #menu.wpccMenu ul {
     padding-right: 0;
@@ -1245,4 +1252,4 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
   color: black;
   opacity: 0.75;
 }
-/*# sourceMappingURL=wpcc_style.css.map */
+/*# sourceMappingURL=wpcc_style.1.2.3.css.map */

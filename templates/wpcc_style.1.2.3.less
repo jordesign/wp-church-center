@@ -39,12 +39,13 @@ h1, h2, h3, h4, h5, h6 {
 
 //Header 
 .wpccHeader {
-  height: 80px;
+  height: 90px;
   position:relative;
   z-index: 12;
   top:0;
   left:0;
   right:0;
+  padding: 10px 0 0 15px; 
   
   > a {
     display:flex;
@@ -56,6 +57,13 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px;
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: left center;
+    
+    span {
+      text-indent: 100%;
+      white-space:nowrap;
+      overflow:hidden;
+    }
   }
 
   
@@ -895,7 +903,7 @@ body .header #menu.wpccMenu ul.circle-outline {
   .cardHolder.small-card {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 10px;
+    padding: 15px 10px 0;
     
     .card {
       width: 50%;
@@ -920,8 +928,8 @@ body .header #menu.wpccMenu ul.circle-outline {
 
 .wpccHeader {
   position:relative !important;
-  padding: 0 4%;
-  height: 80px;
+  padding: 10px 4% 15px;
+  height: 90px;
   
   img {
     max-height: 75px;
@@ -1022,7 +1030,7 @@ body .header #menu.wpccMenu ul.circle-outline {
 @media only screen and (min-width: 900px) {
 
 .wpccHeader {
-  padding: 0 3% ;
+  padding: 10px 3% 15px ;
   max-width: 1200px;
   margin:0 auto;
   
@@ -1044,7 +1052,7 @@ body .header #menu.wpccMenu ul.circle-outline {
       box-shadow:none;
       
       ul {
-        padding: 20px 0 0 0;
+        padding: 10px 0 0 0;
         text-align:right;
         
         li {
@@ -1142,7 +1150,7 @@ body .header #menu.wpccMenu ul.circle-outline {
       
       ul {
         text-align:left;
-        padding-top:25px;
+        padding-top:10px;
       }
     }
   }
@@ -1154,11 +1162,12 @@ body .header #menu.wpccMenu ul.circle-outline {
       
      > a {
        float:none;
-       margin-left:auto;
-       margin-right:auto;
+       margin: 10px auto 15px;
        max-width: 400px;
        text-align:center;
        justify-content:center;
+       text-align:center;
+       background-position: 50% 50%;
      }
 
      a.menuLink {
@@ -1286,7 +1295,7 @@ body .header #menu.wpccMenu ul.circle-outline {
 @media only screen and (min-width: 1100px) {
 
   .wpccHeader {
-    padding: 0 1.5% 4%;
+    padding: 10px 1.5% 4%;
     
     #menu.wpccMenu ul {
       padding-right:0;
