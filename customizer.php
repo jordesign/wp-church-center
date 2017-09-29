@@ -53,9 +53,10 @@ $wp_customize->add_section('wpcc_settings', array(
 /**   Add Settings and Controls for 'Your Church Details'   */
 
 //Heading for the logo section
-add_action( 'customize_render_control_wpcc_header_layout', function(){
-    printf( '<h2 style="margin: 30px 0 10px; color:#333; font-size:16px;">%s</h2>', __( 'Logo options', 'wpcc' ) );
-});
+function wpcc_customizer_logo_title(){
+  printf( '<h2 style="margin: 30px 0 10px; color:#333; font-size:16px;">%s</h2>', __( 'Logo options', 'wpcc' ) );
+}
+add_action( 'customize_render_control_wpcc_header_layout', 'wpcc_customizer_logo_title' );
 
 //Add Control for Header Layout
  $wp_customize->add_setting( 'wpcc_header_layout', array(
@@ -158,9 +159,10 @@ $wp_customize->add_setting('wpcc_church_copyright', array(
 ));
 
 //Heading for the Menu section
-add_action( 'customize_render_control_wpcc_icon_style', function(){
-    printf( '<h2 style="margin: 0px 0 10px; padding-top: 35px; color:#333; font-size:16px;clear:both;">%s</h2>', __( 'Menu options', 'wpcc' ) );
-});
+function wpcc_customizer_menu_title(){
+  printf( '<h2 style="margin: 0px 0 10px; padding-top: 35px; color:#333; font-size:16px;clear:both;">%s</h2>', __( 'Menu options', 'wpcc' ) );
+}
+add_action( 'customize_render_control_wpcc_icon_style', 'wpcc_customizer_menu_title');
 
 //Add Control for Icon Style
  $wp_customize->add_setting( 'wpcc_icon_style', array(
@@ -416,9 +418,10 @@ $wp_customize->add_setting( 'wpcc_background', array(
  ) );
 
  //Heading for the Card view section
-add_action( 'customize_render_control_wpcc_layout', function(){
-    printf( '<h2 style="margin: 30px 0 10px; color:#333;clear:both; font-size:16px;padding-top: 50px;">%s</h2>', __( 'Card / List View', 'wpcc' ) );
-});
+ function wpcc_customizer_view_title(){
+  printf( '<h2 style="margin: 30px 0 10px; color:#333;clear:both; font-size:16px;padding-top: 50px;">%s</h2>', __( 'Card / List View', 'wpcc' ) );
+ }
+add_action( 'customize_render_control_wpcc_layout', 'wpcc_customizer_view_title');
 
  //Add Control for layout type
  $wp_customize->add_setting( 'wpcc_layout', array(
@@ -535,9 +538,10 @@ function wpcc_sanitize_select( $input, $setting ) {
 }
 
  //Heading for the Image Control section
-add_action( 'customize_render_control_wpcc_greyscale', function(){
-    printf( '<h2 style="margin: 30px 0 10px; color:#333;clear:both; font-size:16px;padding-top: 50px;">%s</h2>', __( 'Image Options', 'wpcc' ) );
-});
+function wpcc_customizer_image_title() {
+   printf( '<h2 style="margin: 30px 0 10px; color:#333;clear:both; font-size:16px;padding-top: 50px;">%s</h2>', __( 'Image Options', 'wpcc' ) );
+}
+add_action( 'customize_render_control_wpcc_greyscale', 'wpcc_customizer_image_title');
 
 // Add settings for greyscale images
     $wp_customize->add_setting( 'wpcc_greyscale', array(
