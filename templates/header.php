@@ -11,7 +11,7 @@
 ?>
 
 <!DOCTYPE html> 
-<html <?php language_attributes(); ?> prefix="og: http://ogp.me/ns#">
+<html <?php language_attributes(); ?> prefix="og: http://ogp.me/ns#" class="wpchurch_center">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 
     <?php if ( is_singular('card') ) { ?>
