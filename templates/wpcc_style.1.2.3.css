@@ -601,6 +601,12 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
   color: #333;
   text-transform: uppercase;
 }
+.wpchurch_center.single .singleCard .cardInfo ul {
+  list-style-type: disc;
+}
+.wpchurch_center.single .singleCard .cardInfo ol {
+  list-style-type: decimal;
+}
 .cardInfo p,
 .cardInfo td,
 .cardInfo li {

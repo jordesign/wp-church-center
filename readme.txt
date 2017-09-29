@@ -48,6 +48,7 @@ Add a page which uses the 'Church Center Homepage' template
 v1.2.3
 - BUG FIX: Logos no longer stretch out of shape in header (thanks @maco)
 - BUG FIX: Remove anonymous functions that choke old PHP versions
+- BUG FIX: specific list styles to allow for DIVI
 - 
 
 v1.2.2
