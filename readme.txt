@@ -45,6 +45,10 @@ Add a page which uses the 'Church Center Homepage' template
 
 == Changelog ==
 
+v1.2.3
+- BUG FIX: Logos no longer stretch out of shape in header (thanks @maco)
+- 
+
 v1.2.2
 - CHANGED: Start using a version number on our stylesheet and scripts to get around aggresive caching
 - BUG FIX: Make sure stylesheet for MediaElement isn't disabled
