@@ -210,7 +210,13 @@
         		<ul class="socialMenu <?php echo esc_html( get_option('wpcc_icon_style') ); ?>">
 
         			<?php if ( $churchLink = esc_url( get_option( 'wpcc_church_url' ) ) ) { ?>
-					   <li><a href="<?php echo $churchLink; ?>"><i class="fa fa-home"></i><span><?php echo esc_html( get_option( 'wpcc_church_name' ) ); ?> Website</span></a></li>
+					   <li><a href="<?php echo $churchLink; ?>"><i class="fa fa-home"></i><span>
+                        <?php if($church_website_name = esc_html( get_option( 'wpcc_church_url_title' ) ) ){
+                            echo $church_website_name;
+                        }else{
+                            echo 'Main Church Website';
+                        } ?>
+                            </span></a></li>
         			<?php } ?>
 
 

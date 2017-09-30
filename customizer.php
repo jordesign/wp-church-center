@@ -283,6 +283,19 @@ $wp_customize->add_control( 'wpcc_church_url', array(
    'type'    => 'text',
 ) );
 
+// add a setting for the church website link
+$wp_customize->add_setting('wpcc_church_url_title', array(
+     'type' => 'option', 
+     'capability' => 'manage_options',
+));
+
+//add control for church website link
+$wp_customize->add_control( 'wpcc_church_url_title', array(
+   'label'   => 'Church Website Title',
+   'section' => 'wpcc_links',
+   'type'    => 'text',
+) );
+
 // add a setting for the Facebook link
 $wp_customize->add_setting('wpcc_facebook', array(
      'type' => 'option', 

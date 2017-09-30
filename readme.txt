@@ -2,7 +2,7 @@
 Contributors: jordesign, wpchurchteam
 Requires at least: 4.7
 Tested up to: 4.8.1
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GPL2
 
 Create a 'Next Steps' hub for your church using WordPress! Setup in minutes, mobile first & responsive & designed to integrate with your existing WordPress site!
@@ -49,7 +49,9 @@ v1.2.3
 - BUG FIX: Logos no longer stretch out of shape in header (thanks @maco)
 - BUG FIX: Remove anonymous functions that choke old PHP versions
 - BUG FIX: specific list styles to allow for DIVI
-- 
+- BUG FIX: Add class and styling to <html> for when weird styles are applied in some themes
+- BUG FIX: Now an option to set a title on the 'church website' link in the menu
+- BUG FIX: More robust styling for 'cards' view on small screens
 
 v1.2.2
 - CHANGED: Start using a version number on our stylesheet and scripts to get around aggresive caching
