@@ -471,11 +471,18 @@ body .header #menu.wpccMenu ul.circle-outline {
 
 .cardHolder.card {
   position:fixed;
-  top:0;
+  top:110px;
   left:0;
-  bottom:0;
+  bottom:60px;
   right:0;
-  padding: 90px 0 60px 1px ;
+  padding: 0px 0 0px 1px ;
+  
+  .slick-slider {
+    position: absolute;
+    top:0;
+    bottom:0;
+    width: 100vw;
+  }
   
   .slick-arrow {
     display:none;
@@ -494,10 +501,11 @@ body .header #menu.wpccMenu ul.circle-outline {
   .slick-track {
       display: flex;
       flex: 1 0 auto;
+      height: 100%;
   }
 
   .slick-dots {
-    bottom: -40px;
+    bottom: -30px;
     
     li {
       margin: 0 2px;
@@ -519,7 +527,7 @@ body .header #menu.wpccMenu ul.circle-outline {
     box-shadow: 0 30px 50px rgba(0,0,0,0.62);
     border-radius: 3px;
     text-decoration:none;
-    height: 80vh;
+    height: 70vh;
     
     .cardBody {
       outline: none;
@@ -958,6 +966,7 @@ body .header #menu.wpccMenu ul.circle-outline {
   position: relative;
   padding: 20px 10px;
   clear:both;
+ top:10px;
   
   .card {
     width: 42%;
