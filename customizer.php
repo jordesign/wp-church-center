@@ -608,7 +608,7 @@ add_action( 'customize_render_control_wpcc_greyscale', 'wpcc_customizer_image_ti
         'section'    => 'wpcc_settings',
         'type'       => 'checkbox',
         'std'         => '1',
-        'description' => 'This removes unecessary stylesheets to help load your center faster. If some content appears incorrectly, you may need to disable this setting.',
+        'description' => 'This removes unnecessary stylesheets to help load your center faster. If some content appears incorrectly, you may need to disable this setting.',
     ) );
 
     // Add settings for disabling scripts
@@ -625,7 +625,7 @@ add_action( 'customize_render_control_wpcc_greyscale', 'wpcc_customizer_image_ti
         'section'    => 'wpcc_settings',
         'type'       => 'checkbox',
         'std'         => '1',
-        'description' => 'This removes unecessary scripts to help load your center faster. If some content appears incorrectly, you may need to disable this setting.',
+        'description' => 'This removes unnecessary scripts to help load your center faster. If some content appears incorrectly, you may need to disable this setting.',
     ) );
 
 
