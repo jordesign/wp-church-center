@@ -248,6 +248,14 @@
 					   <li><a href="<?php echo $givingLink; ?>" title="Online Giving"><i class="fa fa-money"></i><span>Online Giving</span></a></li>
         			<?php } ?>
 
+                    <?php if ( $livestreamLink = esc_url( get_option( 'wpcc_online_church' ) ) ) { ?>
+                       <li><a href="<?php echo $livestreamLink; ?>" title="Livestream"><i class="fa fa-tv"></i><span>Livestream</span></a></li>
+                    <?php } ?>
+
+                    <?php if ( $membersLink = esc_url( get_option( 'wpcc_members' ) ) ) { ?>
+                       <li><a href="<?php echo $givingLink; ?>" title="Members Login"><i class="fa fa-vcard"></i><span>Members Login</span></a></li>
+                    <?php } ?>
+
         		</ul>
 
             <!-- Close Menu -->
