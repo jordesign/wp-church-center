@@ -803,8 +803,8 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
     position: relative;
     z-index: 10;
   }
-  .post-type-archive-card .footer.card,
-  .page-template-center_home .footer.card {
+  .post-type-archive-card .wpccFooter.card,
+  .page-template-center_home .wpccFooter.card {
     display: block;
   }
   .admin-bar .header.card {

@@ -47,6 +47,7 @@ Add a page which uses the 'Church Center Homepage' template
 
 v1.2.4
 - UPDATED: Updated Advanced Custom Fields to v4.4.12
+- BUG FIX: Return footer to desktop view of Card home page
 
 v1.2.3
 - BUG FIX: Logos no longer stretch out of shape in header (thanks @maco)
