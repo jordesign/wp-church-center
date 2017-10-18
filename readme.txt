@@ -48,6 +48,9 @@ Add a page which uses the 'Church Center Homepage' template
 v1.2.4
 - UPDATED: Updated Advanced Custom Fields to v4.4.12
 - BUG FIX: Return footer to desktop view of Card home page
+- BUG FIX: Only include <p> tag for Subtitle if there is one
+- BUG FIX: Fix permalink refresh on activation
+- FEATURE: Add FitVids.js to make sure videos maintain aspect ratio
 
 v1.2.3
 - BUG FIX: Logos no longer stretch out of shape in header (thanks @maco)

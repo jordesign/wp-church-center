@@ -1011,6 +1011,9 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
     max-width: 800px;
     margin: -150px auto 0;
   }
+  .wpchurch_center.single .singleCard .cardInfo iframe {
+    width: 100% !important;
+  }
   .wpcc_light .singleCard .cardHeader .backButton {
     color: #333 !important;
   }

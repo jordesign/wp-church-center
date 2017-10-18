@@ -50,7 +50,9 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 					<a class="card" href="<?php echo $card_link; ?>" style="background-color: <?php the_field('wpcc_color'); ?>" <?php if(get_field("wppc_external_new_window") == '1'){ echo 'target="_blank"';} ?>>
 						<div class="cardBody">
 							<h3><?php the_title(); ?></h3>
-							<p><?php the_field('wpcc_subtitle'); ?></p>
+							<?php if ($cardSubtitle = get_field('wpcc_subtitle') ){ ?>
+								<p><?php echo $cardSubtitle; ?></p>
+							<?php } ?>
 						</div>
 						<i class="fa fa-angle-circled-right" style="color: <?php the_field('wpcc_color'); ?>"></i>
 					</a>
@@ -60,7 +62,9 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 					<a class="card" href="<?php echo $card_link; ?>" style="background-color: <?php the_field('wpcc_color'); ?>" <?php if(get_field("wppc_external_new_window") == '1'){ echo 'target="_blank"';} ?>>
 						<div class="cardBody">
 							<h3><?php the_title(); ?></h3>
-							<p><?php the_field('wpcc_subtitle'); ?></p>
+							<?php if ($cardSubtitle = get_field('wpcc_subtitle') ){ ?>
+								<p><?php echo $cardSubtitle; ?></p>
+							<?php } ?>
 						</div>
 						<i class="fa fa-angle-circled-right" style="color: <?php the_field('wpcc_color'); ?>"></i>
 					</a>
@@ -74,7 +78,9 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 							<div class="cardDetails">
 
 								<h3 style="color: <?php the_field('wpcc_color'); ?>"><?php the_title(); ?></h3>
-								<p><?php the_field('wpcc_subtitle'); ?></p>
+								<?php if ($cardSubtitle = get_field('wpcc_subtitle') ){ ?>
+								<p><?php echo $cardSubtitle; ?></p>
+							<?php } ?>
 							</div>
 						</div>
 						
@@ -91,7 +97,9 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 							<div class="bottomSection">
 								<div class="intro">
 									<h3 style="color: <?php the_field('wpcc_color'); ?>"><?php the_title(); ?></h3>
-									<p><?php the_field('wpcc_subtitle'); ?></p>
+									<?php if ($cardSubtitle = get_field('wpcc_subtitle') ){ ?>
+								<p><?php echo $cardSubtitle; ?></p>
+							<?php } ?>
 								</div>
 							</div>
 						</div>

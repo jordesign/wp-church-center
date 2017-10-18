@@ -51,6 +51,16 @@ function wpcc_post_type() {
 		'capability_type'       => 'page',
 	);
 	register_post_type( 'card', $args );
+}
+
+add_action( 'init', 'wpcc_post_type', 0 );
+
+//Flush Rewrite Rules on activation
+function wpcc_flush_rewrite_rules() {
+    wpcc_post_type();
+    flush_rewrite_rules();
+}
+register_activation_hook( __FILE__, 'wpcc_flush_rewrite_rules' );
 
 
 if(function_exists("register_field_group"))
@@ -232,19 +242,6 @@ if(function_exists("register_field_group"))
 	));
 }
 
-}
-add_action( 'init', 'wpcc_post_type', 0 );
-
-
-//Flush the rewrite rules on plugin activation (and deactivation)
-//This should mean that /card-name/ just works 
-register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
-register_activation_hook( __FILE__, 'wpcc_flush_rewrites' );
-function wpcc_flush_rewrites() {
-	// call your CPT registration function here (it should also be hooked into 'init')
-	wpcc_post_type();
-	flush_rewrite_rules(false);
-}
 
 
 function wpcc_get_home_center_link(){

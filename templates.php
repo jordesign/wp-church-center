@@ -99,9 +99,9 @@ if( 1 == get_option( 'wpcc_disable_scripts' )  && !is_admin() ){
 //Now enqueue styles we want 
 function wpcc_add_styles() {
 	if( is_singular( 'card' )  || is_post_type_archive('card') || get_page_template_slug( get_the_ID() ) =='center_home.php' ){
-		wp_enqueue_style( 'wpcc-style', plugins_url( '/templates/wpcc_style.1.2.3.css', __FILE__  ) );
+		wp_enqueue_style( 'wpcc-style', plugins_url( '/templates/wpcc_style.1.2.4.css', __FILE__  ) );
 		//if( get_option('wpcc_scroll_direction') =='horizontal' ) {
-			wp_enqueue_script( 'wpcc-scripts', plugins_url( '/templates/wpcc_script-min.1.2.3.js', __FILE__ ), array( 'jquery' ) );
+			wp_enqueue_script( 'wpcc-scripts', plugins_url( '/templates/wpcc_script.1.2.4-min.js', __FILE__ ), array( 'jquery' ) );
 		//}
 		if( get_option('wpcc_layout') =='small-card' ) {
 			// Pull Masonry from the core of WordPress

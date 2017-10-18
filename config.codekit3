@@ -1200,53 +1200,43 @@
 		"sC": 1,
 		"tS": 0
 		},
-	"\/templates\/wpcc_script-ck.1.2.3.js": {
+	"\/templates\/wpcc_script.1.2.4-min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/templates\/wpcc_script-ck.1.2.3-min.js",
+		"oAP": "\/templates\/wpcc_script.1.2.4-min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"\/templates\/wpcc_script-min.1.2.3.js": {
+	"\/templates\/wpcc_script.1.2.4.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/templates\/wpcc_script-min.1.2.3-min.js",
+		"oAP": "\/templates\/wpcc_script.1.2.4-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"\/templates\/wpcc_script.1.2.3.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/templates\/wpcc_script.1.2.3-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/templates\/wpcc_style.1.2.3.css": {
+	"\/templates\/wpcc_style.1.2.4.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/templates\/wpcc_style.1.2.3-min.css",
+		"oAP": "\/templates\/wpcc_style.1.2.4-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/templates\/wpcc_style.1.2.3.css.map": {
+	"\/templates\/wpcc_style.1.2.4.css.map": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/templates\/wpcc_style.1.2.3.css.map",
+		"oAP": "\/templates\/wpcc_style.1.2.4.css.map",
 		"oF": 0
 		},
-	"\/templates\/wpcc_style.1.2.3.less": {
+	"\/templates\/wpcc_style.1.2.4.less": {
 		"aP": 0,
 		"bl": 0,
 		"dJ": 0,
@@ -1255,7 +1245,7 @@
 		"iI": 0,
 		"ma": 1,
 		"oA": 0,
-		"oAP": "\/templates\/wpcc_style.1.2.3.css",
+		"oAP": "\/templates\/wpcc_style.1.2.4.css",
 		"oF": 0,
 		"oS": 0,
 		"rU": 0,
