@@ -392,32 +392,6 @@ $wp_customize->add_control( 'wpcc_giving', array(
    'type'    => 'text',
 ) );
 
-// add a setting for the Snapchat link
-$wp_customize->add_setting('wpcc_online_church', array(
-     'type' => 'option', 
-     'capability' => 'manage_options',
-));
-
-//add control for Facebook link
-$wp_customize->add_control( 'wpcc_online_church', array(
-   'label'   => 'Online Church/Livestreaming URL',
-   'section' => 'wpcc_links',
-   'type'    => 'text',
-) );
-
-// add a setting for the Snapchat link
-$wp_customize->add_setting('wpcc_members', array(
-     'type' => 'option', 
-     'capability' => 'manage_options',
-));
-
-//add control for Facebook link
-$wp_customize->add_control( 'wpcc_members', array(
-   'label'   => 'Members/Database Login',
-   'section' => 'wpcc_links',
-   'type'    => 'text',
-) );
-
 //Add Control Overall theme
  $wp_customize->add_setting( 'wpcc_theme', array(
   'capability' => 'manage_options',

@@ -1132,12 +1132,6 @@
 		"oAP": "\/cpt.php",
 		"oF": 0
 		},
-	"\/customizer.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/customizer.php",
-		"oF": 0
-		},
 	"\/page-ordering\/localization\/simple-page-ordering-de_DE.mo": {
 		"ft": 8192,
 		"oA": 2,
@@ -1246,12 +1240,6 @@
 		"rFN": 0,
 		"uCM": 0
 		},
-	"\/readme.txt": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/readme.txt",
-		"oF": 0
-		},
 	"\/templates.php": {
 		"ft": 8192,
 		"oA": 2,
@@ -1292,12 +1280,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/templates\/footer.php",
-		"oF": 0
-		},
-	"\/templates\/header.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/templates\/header.php",
 		"oF": 0
 		},
 	"\/templates\/pagetemplater.php": {
@@ -1418,12 +1400,6 @@
 		"sI": 0,
 		"sM": 0,
 		"sU": 0
-		},
-	"\/wp-church-center.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/wp-church-center.php",
-		"oF": 0
 		}
 	},
 "hooks": [

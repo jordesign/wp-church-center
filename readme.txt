@@ -51,7 +51,6 @@ v1.2.4
 - BUG FIX: Only include <p> tag for Subtitle if there is one
 - BUG FIX: Fix permalink refresh on activation
 - FEATURE: Add FitVids.js to make sure videos maintain aspect ratio
-- FEATURE: Add Menu fields for Livestreaming and Members/Database
 
 v1.2.3
 - BUG FIX: Logos no longer stretch out of shape in header (thanks @maco)
