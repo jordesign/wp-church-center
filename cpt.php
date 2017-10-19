@@ -51,19 +51,8 @@ function wpcc_post_type() {
 		'capability_type'       => 'page',
 	);
 	register_post_type( 'card', $args );
-}
 
-add_action( 'init', 'wpcc_post_type', 0 );
-
-//Flush Rewrite Rules on activation
-function wpcc_flush_rewrite_rules() {
-    wpcc_post_type();
-    flush_rewrite_rules();
-}
-register_activation_hook( __FILE__, 'wpcc_flush_rewrite_rules' );
-
-
-if(function_exists("register_field_group"))
+	if(function_exists("register_field_group"))
 {
 
 
@@ -241,6 +230,19 @@ if(function_exists("register_field_group"))
 		'menu_order' => 2,
 	));
 }
+}
+
+add_action( 'init', 'wpcc_post_type', 0 );
+
+//Flush Rewrite Rules on activation
+function wpcc_flush_rewrite_rules() {
+    wpcc_post_type();
+    flush_rewrite_rules();
+}
+register_activation_hook( __FILE__, 'wpcc_flush_rewrite_rules' );
+
+
+
 
 
 
