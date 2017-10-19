@@ -46,13 +46,6 @@ require_once plugin_dir_path( __FILE__ ) . 'page-ordering/simple-page-ordering.p
 
 add_action( 'after_setup_theme', 'wpcc_acf_setup' );
 
-/**
- * Enable ACF 5 early access
- * Requires at least version ACF 4.4.12 to work
- */
-//define('ACF_EARLY_ACCESS', '5');
-
-
 function wpcc_acf_setup() {
 	/**   Check if ACF is used with another plugin, if not already called, use this one */
 	if( ! class_exists('acf') ) {
@@ -63,7 +56,7 @@ function wpcc_acf_setup() {
 		function wpcc_acf_settings_path( $path ) {
 		 
 		    // update path
-		    $path = dirname( __FILE__ ) . '/advanced-custom-fields/';
+		    $path = plugin_dir_path( __FILE__ ) . '/advanced-custom-fields/';
 		    
 		    // return
 		    return $path;
@@ -76,7 +69,7 @@ function wpcc_acf_setup() {
 		function wpcc_acf_settings_dir( $dir ) {
 		 
 		    // update path
-		    $dir = dirname( __FILE__ ) . '/advanced-custom-fields/';
+		    $dir = plugin_dir_path( __FILE__ ) . '/advanced-custom-fields/';
 		    
 		    // return
 		    return $dir;

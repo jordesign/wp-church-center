@@ -93,12 +93,6 @@
 		"oAP": "\/advanced-custom-fields\/core\/controllers\/upgrade.php",
 		"oF": 0
 		},
-	"\/advanced-custom-fields\/core\/early-access.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/advanced-custom-fields\/core\/early-access.php",
-		"oF": 0
-		},
 	"\/advanced-custom-fields\/core\/fields\/_base.php": {
 		"ft": 8192,
 		"oA": 1,
@@ -650,6 +644,146 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/advanced-custom-fields\/js\/input\/_listener.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/advanced-custom-fields\/js\/input\/_listener-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/advanced-custom-fields\/js\/input\/_listener.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/advanced-custom-fields\/js\/input\/_listener.min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/advanced-custom-fields\/js\/input\/acf.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/advanced-custom-fields\/js\/input\/acf-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/advanced-custom-fields\/js\/input\/ajax.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/advanced-custom-fields\/js\/input\/ajax-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/advanced-custom-fields\/js\/input\/color-picker.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/advanced-custom-fields\/js\/input\/color-picker-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/advanced-custom-fields\/js\/input\/date-picker.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/advanced-custom-fields\/js\/input\/date-picker-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/advanced-custom-fields\/js\/input\/file.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/advanced-custom-fields\/js\/input\/file-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/advanced-custom-fields\/js\/input\/google-map.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/advanced-custom-fields\/js\/input\/google-map-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/advanced-custom-fields\/js\/input\/image.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/advanced-custom-fields\/js\/input\/image-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/advanced-custom-fields\/js\/input\/radio.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/advanced-custom-fields\/js\/input\/radio-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/advanced-custom-fields\/js\/input\/relationship.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/advanced-custom-fields\/js\/input\/relationship-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/advanced-custom-fields\/js\/input\/tab.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/advanced-custom-fields\/js\/input\/tab-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/advanced-custom-fields\/js\/input\/validation.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/advanced-custom-fields\/js\/input\/validation-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/advanced-custom-fields\/js\/input\/wysiwyg.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/advanced-custom-fields\/js\/input\/wysiwyg-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/advanced-custom-fields\/js\/tinymce.code.min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -852,18 +986,6 @@
 		"oAP": "\/advanced-custom-fields\/lang\/acf-pt_PT.po",
 		"oF": 0
 		},
-	"\/advanced-custom-fields\/lang\/acf-ro_RO.mo": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/advanced-custom-fields\/lang\/acf-ro_RO.mo",
-		"oF": 0
-		},
-	"\/advanced-custom-fields\/lang\/acf-ro_RO.po": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/advanced-custom-fields\/lang\/acf-ro_RO.po",
-		"oF": 0
-		},
 	"\/advanced-custom-fields\/lang\/acf-ru_RU.mo": {
 		"ft": 8192,
 		"oA": 2,
@@ -959,6 +1081,50 @@
 		"oA": 2,
 		"oAP": "\/advanced-custom-fields\/readme.txt",
 		"oF": 0
+		},
+	"\/advanced-custom-fields\/screenshot-1.png": {
+		"ft": 32768,
+		"iS": 46160,
+		"oA": 0,
+		"oAP": "\/advanced-custom-fields\/screenshot-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/advanced-custom-fields\/screenshot-2.png": {
+		"ft": 32768,
+		"iS": 56929,
+		"oA": 0,
+		"oAP": "\/advanced-custom-fields\/screenshot-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/advanced-custom-fields\/screenshot-3.png": {
+		"ft": 32768,
+		"iS": 39151,
+		"oA": 0,
+		"oAP": "\/advanced-custom-fields\/screenshot-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/advanced-custom-fields\/screenshot-4.png": {
+		"ft": 32768,
+		"iS": 25740,
+		"oA": 0,
+		"oAP": "\/advanced-custom-fields\/screenshot-4.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/cpt.php": {
 		"ft": 8192,
