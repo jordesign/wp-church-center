@@ -253,7 +253,7 @@
                     <?php } ?>
 
                     <?php if ( $membersLink = esc_url( get_option( 'wpcc_members' ) ) ) { ?>
-                       <li><a href="<?php echo $givingLink; ?>" title="Members Login"><i class="fa fa-vcard"></i><span>Members Login</span></a></li>
+                       <li><a href="<?php echo $membersLink; ?>" title="Members Login"><i class="fa fa-vcard"></i><span>Members Login</span></a></li>
                     <?php } ?>
 
         		</ul>
