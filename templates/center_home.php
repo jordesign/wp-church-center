@@ -40,6 +40,11 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 						$card_link = esc_url(get_field('wpcc_external_url') );
 					}else{
 						$card_link = get_permalink($post->ID);
+					}
+
+					//Add a filter on $card_link to let plugins change it
+					if(has_filter('wpcc_card_link')) {
+						$card_link = apply_filters('wpcc_card_link', $card_link);
 					} ?>
 			
 				<?php if ( isset($_GET["layout"]) ) {
