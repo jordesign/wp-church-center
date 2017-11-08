@@ -52,12 +52,21 @@ function wpcc_post_type() {
 	);
 	register_post_type( 'card', $args );
 
-	if(function_exists("register_field_group"))
+	
+}
+
+add_action( 'init', 'wpcc_post_type', 0 );
+
+
+//Load Custom Fields
+function wpcc_load_custom_fields() {
+	if(function_exists("acf_add_local_field_group"))
 {
 
 
-	register_field_group(array (
-		'id' => 'acf_card-content',
+	acf_add_local_field_group(array (
+		
+		'key' => 'acf_card-content',
 		'title' => 'Card Content',
 		'fields' => array (
 		     array (
@@ -232,7 +241,7 @@ function wpcc_post_type() {
 }
 }
 
-add_action( 'init', 'wpcc_post_type', 0 );
+add_action( 'acf/init', 'wpcc_load_custom_fields', 10 );
 
 //Flush Rewrite Rules on activation
 function wpcc_flush_rewrite_rules() {
@@ -273,3 +282,4 @@ function wpcc_get_home_center_link(){
 	}
 	 
 }
+

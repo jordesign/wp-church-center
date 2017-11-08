@@ -29,20 +29,12 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-/**  Custom Post Type */
-require_once plugin_dir_path( __FILE__ ) . 'cpt.php';
 
-/**  Customizer Panels */
-require_once plugin_dir_path( __FILE__ ) . 'customizer.php';
-
-/**  PageTemplater Class to add Page Template */
-require_once plugin_dir_path( __FILE__ ) . 'templates/pagetemplater.php';
-
-/**  Archive Page Templates */
-require_once plugin_dir_path( __FILE__ ) . 'templates.php';
-
-/**  Page Ordering */
-require_once plugin_dir_path( __FILE__ ) . 'page-ordering/simple-page-ordering.php';
+/**
+ * Enable ACF 5 early access
+ * Requires at least version ACF 4.4.12 to work
+ */
+define('ACF_EARLY_ACCESS', '5');
 
 add_action( 'after_setup_theme', 'wpcc_acf_setup' );
 
@@ -67,13 +59,13 @@ function wpcc_acf_setup() {
 		add_filter('acf/settings/dir', 'wpcc_acf_settings_dir');
 		 
 		function wpcc_acf_settings_dir( $dir ) {
-		 
-		    // update path
-		    $dir = plugin_dir_path( __FILE__ ) . '/advanced-custom-fields/';
-		    
-		    // return
-		    return $dir;
-		    
+
+			// update path
+			$dir = plugin_dir_url( __FILE__ ) . '/advanced-custom-fields/';
+			
+			// return
+			return $dir;
+
 		}
 
 		// 3. Hide ACF field group menu item
@@ -83,3 +75,17 @@ function wpcc_acf_setup() {
 	}
 }
 
+/**  Custom Post Type */
+require_once plugin_dir_path( __FILE__ ) . 'cpt.php';
+
+/**  Customizer Panels */
+require_once plugin_dir_path( __FILE__ ) . 'customizer.php';
+
+/**  PageTemplater Class to add Page Template */
+require_once plugin_dir_path( __FILE__ ) . 'templates/pagetemplater.php';
+
+/**  Archive Page Templates */
+require_once plugin_dir_path( __FILE__ ) . 'templates.php';
+
+/**  Page Ordering */
+require_once plugin_dir_path( __FILE__ ) . 'page-ordering/simple-page-ordering.php';
