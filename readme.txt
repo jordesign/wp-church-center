@@ -1,7 +1,7 @@
 === WP Church Center ===
 Contributors: jordesign, wpchurchteam
 Requires at least: 4.7
-Tested up to: 4.8.2
+Tested up to: 4.9
 Stable tag: 1.2.5
 License: GPL2
 
@@ -44,6 +44,11 @@ Add a page which uses the 'Church Center Homepage' template
 3. An example card
 
 == Changelog ==
+
+v1.2.5
+- UPDATED: Tested up to WP 4.9
+- UPDATED: Add filter to allow for new PCO giving plugin
+- UPDATED: Update to v5.x of Advanced Custom Fields
 
 v1.2.4
 - UPDATED: Updated Advanced Custom Fields to v4.4.12

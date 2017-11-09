@@ -44,7 +44,9 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 
 					//Add a filter on $card_link to let plugins change it
 					if(has_filter('wpcc_card_link')) {
-						$card_link = apply_filters('wpcc_card_link', $card_link);
+						if (get_field('wpcc_card_type') === 'pco_giving'){
+							$card_link = apply_filters('wpcc_card_link', $card_link);
+						}
 					} ?>
 			
 				<?php if ( isset($_GET["layout"]) ) {
