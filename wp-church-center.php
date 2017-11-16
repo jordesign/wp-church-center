@@ -16,7 +16,7 @@
  * Plugin Name:       WP Church Center
  * Plugin URI:        http://wpchurch.center
  * Description:       Provides a 'Next Steps' Center for your Church.
- * Version:           1.2.6
+ * Version:           1.2.7
  * Author:            Jordesign, WP Church Team
  * Author URI:        http://wpchurch.team/
  * License:           GPL-2.0+
@@ -89,3 +89,12 @@ require_once plugin_dir_path( __FILE__ ) . 'templates.php';
 
 /**  Page Ordering */
 require_once plugin_dir_path( __FILE__ ) . 'page-ordering/simple-page-ordering.php';
+
+/** Enqueue Media Scripts and Styles **/
+function wpcc_enqueue_media() {
+    if( function_exists( 'wp_enqueue_media' ) ) {
+        wp_enqueue_media();
+    }
+}
+
+add_action('admin_enqueue_scripts', 'wpcc_enqueue_media');

@@ -2,7 +2,7 @@
 Contributors: jordesign, wpchurchteam
 Requires at least: 4.7
 Tested up to: 4.9
-Stable tag: 1.2.6
+Stable tag: 1.2.7
 License: GPL2
 
 Create a 'Next Steps' hub for your church using WordPress! Setup in minutes, mobile first & responsive & designed to integrate with your existing WordPress site!
@@ -44,6 +44,13 @@ Add a page which uses the 'Church Center Homepage' template
 3. An example card
 
 == Changelog ==
+
+v1.2.7
+- Add extra actions and filters to allow addons to change card behaviours
+- Manually include WordPress' Media management scripts
+
+v1.2.6
+- Add filter for Card Link
 
 v1.2.5
 - UPDATED: Tested up to WP 4.9
