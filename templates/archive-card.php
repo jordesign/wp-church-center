@@ -31,9 +31,9 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 
 					//Add a filter on $card_link to let plugins change it
 					if(has_filter('wpcc_card_link')) {
-						if (get_field('wpcc_card_type') === 'pco_giving'){
-							$card_link = apply_filters('wpcc_card_link', $card_link);
-						}
+						
+						$card_link = apply_filters('wpcc_card_link', $card_link);
+						
 					} ?>
 			
 				<?php if ( isset($_GET["layout"]) ) {
@@ -41,7 +41,20 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 					}
 					if ( get_option( 'wpcc_layout' ) == 'list' && $layout !='grid' && $layout !='card' && $layout != 'small-card' ) { ?>
 
-					<a class="card" href="<?php echo $card_link; ?>" style="background-color: <?php the_field('wpcc_color'); ?>" <?php if(get_field("wppc_external_new_window") == '1'){ echo 'target="_blank"';} ?>>
+					<?php do_action('wpcc_before_card'); ?>
+
+					<a class="card <?php do_action('wpcc_card_link_classes'); ?>" 
+						href="<?php echo $card_link; ?>" 
+						style="background-color: <?php the_field('wpcc_color'); ?>" 
+						<?php if(get_field("wppc_external_new_window") == '1'){ 
+							echo 'target="_blank"';
+						} ?>   
+
+						<?php //Action to add additional attributes to the anchor
+						do_action('wpcc_card_link_attr'); 
+						?>
+
+					>
 						<div class="cardBody">
 							<h3><?php the_title(); ?></h3>
 							<?php if ( $cardSubtitle = get_field('wpcc_subtitle') ){ ?>
@@ -52,8 +65,24 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 						<i class="fa fa-angle-circled-right" style="color: <?php the_field('wpcc_color'); ?>"></i>
 					</a>
 
+					<?php do_action('wpcc_after_card'); ?>
+
 				<?php } elseif ( $layout=='list' && $layout != 'small-card' ) { ?>
-					<a class="card" href="<?php echo $card_link; ?>" style="background-color: <?php the_field('wpcc_color'); ?>" <?php if(get_field("wppc_external_new_window") == '1'){ echo 'target="_blank"';} ?>>
+
+					<?php do_action('wpcc_before_card'); ?>
+
+					<a class="card <?php do_action('wpcc_card_link_classes'); ?>" 
+						href="<?php echo $card_link; ?>" 
+						style="background-color: <?php the_field('wpcc_color'); ?>" 
+						<?php if(get_field("wppc_external_new_window") == '1'){ 
+							echo 'target="_blank"';
+						}  ?>
+						
+						<?php //Action to add additional attributes to the anchor
+						do_action('wpcc_card_link_attr');  
+						?>
+					>
+						
 						<div class="cardBody">
 							<h3><?php the_title(); ?></h3>
 							<?php if ( $cardSubtitle = get_field('wpcc_subtitle') ){ ?>
@@ -62,8 +91,23 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 						</div>
 						<i class="fa fa-angle-circled-right" style="color: <?php the_field('wpcc_color'); ?>"></i>
 					</a>
+
+					<?php do_action('wpcc_after_card'); ?>
+
 				<?php } elseif ( $layout=='small-card'  ) { ?>
-					<a class="card item" href="<?php echo $card_link; ?>" <?php if(get_field("wppc_external_new_window") == '1'){ echo 'target="_blank"';} ?>>
+
+					<?php do_action('wpcc_before_card'); ?>
+
+					<a class="card small-card item <?php do_action('wpcc_card_link_classes'); ?>" 
+						href="<?php echo $card_link; ?>" 
+						<?php if(get_field("wppc_external_new_window") == '1'){ 
+							echo 'target="_blank"';
+						} ?>
+
+						<?php //Action to add additional attributes to the anchor
+						do_action('wpcc_card_link_attr');  
+						?>
+					>
 						<div class="cardBody">
 							<div class="cardImage" style="background: <?php the_field('wpcc_color'); ?> url(<?php $image = get_field('wpcc_image'); $image_obj =  wp_get_attachment_image_src( $image, 'card_image' ); echo $image_obj[0]; ?>) no-repeat 50% 50%; background-size:cover;">
 								
@@ -78,8 +122,24 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 						</div>
 						
 					</a>
+
+					<?php do_action('wpcc_after_card'); ?>
+
 				<?php } else { ?>
-					<a class="card" href="<?php echo $card_link; ?>" tabindex="-1" <?php if(get_field("wppc_external_new_window") == '1'){ echo 'target="_blank"';} ?>>
+
+					<?php do_action('wpcc_before_card'); ?>
+
+					<a class="card <?php do_action('wpcc_card_link_classes'); ?>" 
+						href="<?php echo $card_link; ?>" 
+						tabindex="-1" 
+						<?php if(get_field("wppc_external_new_window") == '1'){ 
+							echo 'target="_blank"';
+						} ?> 
+
+						<?php //Action to add additional attributes to the anchor
+							do_action('wpcc_card_link_attr');  
+						?>
+					>
 						<div class="cardBody">
 							<div class="topSection" style="background: url(<?php $image = get_field('wpcc_image'); $image_obj =  wp_get_attachment_image_src( $image, 'card_image' ); echo $image_obj[0]; ?>) no-repeat 50% 50%; background-size:cover;">
 								
@@ -97,6 +157,9 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 							</div>
 						</div>
 					</a>
+
+					<?php do_action('wpcc_after_card'); ?>
+
 				<?php } ?>
 
 		<?php } 
