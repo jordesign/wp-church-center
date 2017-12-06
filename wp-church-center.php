@@ -14,7 +14,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       WP Church Center
- * Plugin URI:        http://wpchurch.center
+ * Plugin URI:        https://wpchurch.center
  * Description:       Provides a 'Next Steps' Center for your Church.
  * Version:           1.2.7
  * Author:            Jordesign, WP Church Team
