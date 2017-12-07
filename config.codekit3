@@ -9,6 +9,33 @@
 	],
 "creatorBuild": "26148",
 "files": {
+	"\/admin\/admin.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/admin\/admin.php",
+		"oF": 0
+		},
+	"\/admin\/wpcc-admin-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/admin\/wpcc-admin-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/admin\/wpcc-admin.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/admin\/wpcc-admin-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/advanced-custom-fields\/acf.php": {
 		"cB": 0,
 		"ft": 8192,

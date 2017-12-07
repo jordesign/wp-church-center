@@ -3,6 +3,7 @@ html.wpchurch_center {
   min-height: 100%;
   width: 100%;
   height: auto;
+  min-width: 0 !important;
 }
 body.wpchurch_center {
   padding: 0;
@@ -11,6 +12,7 @@ body.wpchurch_center {
   font-weight: 400;
   background: #333;
   min-height: 100vh;
+  min-width: 0 !important;
 }
 h1,
 h2,
@@ -617,6 +619,11 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
 .wpchurch_center.single .singleCard .cardInfo ol {
   list-style-type: decimal;
   padding: 0 0 0 1em;
+}
+.wpchurch_center.single .singleCard .cardInfo:after {
+  clear: both;
+  content: '';
+  display: table;
 }
 .cardInfo p,
 .cardInfo td,
@@ -1273,4 +1280,4 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
   color: black;
   opacity: 0.75;
 }
-/*# sourceMappingURL=wpcc_style.1.2.3.css.map */
+/*# sourceMappingURL=wpcc_style.1.2.4.css.map */

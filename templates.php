@@ -75,7 +75,9 @@ function wpcc_remove_default_scripts (){
 		   'nf-front-end' , 	
 		   'admin-bar' ,
 		   'masonry',
-		   'wp-mediaelement'
+		   'wp-mediaelement',
+		   'wpcc-tithely-giving',
+		   'wpcc-pco-giving',
 		   
 		);
 
