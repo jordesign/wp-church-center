@@ -2,7 +2,7 @@
 Contributors: jordesign, wpchurchteam
 Requires at least: 4.7
 Tested up to: 4.9
-Stable tag: 1.2.8
+Stable tag: 1.2.9
 License: GPL2
 
 Create a 'Next Steps' hub for your church using WordPress! Setup in minutes, mobile first & responsive & designed to integrate with your existing WordPress site!
