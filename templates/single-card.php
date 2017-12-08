@@ -31,13 +31,38 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 				
 				<div class="cardInfo" >
 					<div class="cardTitle">
+
+						<?php //set up title with a filter so we can change it with addons
+
+						$cardTitle = get_the_title();
+						if(has_filter('wpcc_card_title')) {
 						
-						<h1 style="color: <?php echo get_post_meta(get_the_ID(),'wpcc_color',true); ?>"><?php echo get_the_title(); ?></h1>
-						<p><?php echo get_post_meta(get_the_ID(get_the_ID()),'wpcc_subtitle',true); ?></p>
+							$cardTitle = apply_filters('wpcc_card_link', $cardTitle);
+							
+						}  ?>
+						
+						<h1 style="color: <?php echo get_post_meta(get_the_ID(),'wpcc_color',true); ?>"><?php echo $cardTitle ?></h1>
+
+						<?php //set up the subtitle with a filter so we can change it with addons
+						$cardSubtitle = get_post_meta(get_the_ID(get_the_ID()),'wpcc_subtitle',true);
+						if(has_filter('wpcc_card_subtitle')) {
+						
+							$cardSubtitle = apply_filters('wpcc_card_subtitle', $cardSubtitle);
+							
+						}  ?>
+
+						<p><?php echo $cardSubtitle ?></p>
 					</div>
 
-					<?php $content = get_post_meta(get_the_ID(),'wpcc_content',true); 
-					echo apply_filters( 'the_content', $content ); ?>
+					<?php //set up the content so we can filter it with an addon
+					$cardContent =  apply_filters( 'the_content', get_post_meta(get_the_ID(),'wpcc_content',true) );
+
+					if(has_filter('wpcc_card_content')) {
+						
+						$cardContent = apply_filters('wpcc_card_content', $$cardContent);
+							
+					}
+					echo $cardContent; ?>
 	
 				
 			</div>
