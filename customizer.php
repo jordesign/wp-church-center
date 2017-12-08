@@ -185,7 +185,7 @@ $wp_customize->add_control( 'wpcc_icon_style', array(
 
 ) );
 
-//Add Setting for Icon  Colour
+//Add Setting for Icon Colour
 $wp_customize->add_setting( 'wpcc_icon_color', array(
        'default'    => '#333', 
        'type'       => 'option', 
@@ -439,7 +439,7 @@ $wp_customize->add_control( 'wpcc_theme', array(
   ),
 ) );
 
-//Add Setting for Background COlour
+//Add Setting for Background Colour
 $wp_customize->add_setting( 'wpcc_background', array(
        'default'    => '#333333', 
        'type'       => 'option', 
@@ -487,7 +487,7 @@ $wp_customize->add_control( 'wpcc_layout', array(
 ) );
 
 function is_card_layout($control){
-    // Check if the selected layout is card'
+    // Check if the selected layout is card
     if( $control->manager->get_setting('wpcc_layout')->value() != 'card' ){
     // If it isn't - then it won't show the section/panel/control
         return false;
@@ -498,7 +498,7 @@ function is_card_layout($control){
 }
 
 function is_small_card_layout($control){
-    // Check if the selected layout is card'
+    // Check if the selected layout is card
     if( $control->manager->get_setting('wpcc_layout')->value() != 'small-card' ){
     // If it isn't - then it won't show the section/panel/control
         return false;

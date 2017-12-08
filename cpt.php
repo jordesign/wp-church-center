@@ -257,7 +257,7 @@ register_activation_hook( __FILE__, 'wpcc_flush_rewrite_rules' );
 
 function wpcc_get_home_center_link(){
 
-	//Get the  Church Center Home link
+	//Get the Church Center Home link
 	$centerHomeQuery = new WP_Query( array(
 	    'post_type'  => 'page',
 	    'meta_key'   => '_wp_page_template',

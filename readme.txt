@@ -79,7 +79,7 @@ v1.2.3
 - BUG FIX: More robust styling for 'cards' view on small screens
 
 v1.2.2
-- CHANGED: Start using a version number on our stylesheet and scripts to get around aggresive caching
+- CHANGED: Start using a version number on our stylesheet and scripts to get around aggressive caching
 - BUG FIX: Make sure stylesheet for MediaElement isn't disabled
 
 v1.2.1
@@ -108,7 +108,7 @@ v1.1
 - FEATURE: Add a whole suite of new design/layout options for more variety
 - FEATURE: Add link to "Center home" in admin menu
 - BUG FIX: Fix undefined_constant error that sometimes appears
-- BUG FIX: More robust styles to overide custom themes
+- BUG FIX: More robust styles to override custom themes
 - BUG FIX: Escape all the html (and urls) so things are secure
 - BUG FIX: Use a variable for our image field - so it works on older PHP versions
 - BUG FIX: Lots of small tweaks and bug fixes 
@@ -117,7 +117,7 @@ v1.1
 v1.0.3
 - BUG FIX: remove hover background behind menu items
 - BUG FIX: Use a variable for our image field - so it works on older PHP versions
-- BUG FIX: Make body BG more specific so it overides installed theme
+- BUG FIX: Make body BG more specific so it overrides installed theme
 - BUG FIX: Simplify permalinks so they always work.
 
 v1.0.2
