@@ -8,7 +8,7 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              http://wpchurch.team
+ * @link              https://wpchurch.team
  * @since             1.0.0
  * @package           WP_Church_Center
  *
@@ -18,7 +18,7 @@
  * Description:       Provides a 'Next Steps' Center for your Church.
  * Version:           1.2.7
  * Author:            Jordesign, WP Church Team
- * Author URI:        http://wpchurch.team/
+ * Author URI:        https://wpchurch.team/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       WP_Church_Center
