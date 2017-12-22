@@ -54,12 +54,12 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 						<p><?php echo $cardSubtitle ?></p>
 					</div>
 
-					<?php //set up the content so we can filter it with an addon
-					$cardContent =  apply_filters( 'the_content', get_post_meta(get_the_ID(),'wpcc_content',true) );
+					<?php //set up the content so we can filter it with any addons
+					$cardContent =  get_field('wpcc_content', get_the_ID() );
 
 					if(has_filter('wpcc_card_content')) {
 						
-						$cardContent = apply_filters('wpcc_card_content', $$cardContent);
+						$cardContent = apply_filters('wpcc_card_content', $cardContent);
 							
 					}
 					echo $cardContent; ?>

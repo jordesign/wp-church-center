@@ -2157,6 +2157,20 @@
 		"oAP": "\/advanced-custom-fields\/readme.txt",
 		"oF": 0
 		},
+	"\/cpt.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/cpt.php",
+		"oF": 0
+		},
+	"\/customizer.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/customizer.php",
+		"oF": 0
+		},
 	"\/page-ordering\/localization\/simple-page-ordering-de_DE.mo": {
 		"cB": 0,
 		"ft": 8192,
@@ -2274,6 +2288,13 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
+		},
+	"\/readme.txt": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/readme.txt",
+		"oF": 0
 		},
 	"\/templates.php": {
 		"cB": 0,
