@@ -3,7 +3,7 @@
 define( 'wpcc_PLUGIN_PATH', dirname(__FILE__) );
 
 //Use Filters to direct the 'card' CPT to use the templates in our plugin
-add_filter( 'single_template' , 'wpcc_single_template' );
+add_filter( 'single_template' , 'wpcc_single_template', 20 );
 add_filter( 'archive_template' , 'wpcc_archive_template' );
 
 //route single-template
