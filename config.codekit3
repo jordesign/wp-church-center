@@ -2427,16 +2427,6 @@
 		"sC": 1,
 		"tS": 0
 		},
-	"\/templates\/wpcc_script.1.2.4.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/templates\/wpcc_script.1.2.4-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
 	"\/templates\/wpcc_style.1.2.4.css": {
 		"aP": 1,
 		"bl": 0,

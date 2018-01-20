@@ -62,7 +62,11 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 						$cardContent = apply_filters('wpcc_card_content', $cardContent);
 							
 					}
-					echo $cardContent; ?>
+					if ( ! post_password_required() ) {
+						echo $cardContent;
+
+					}
+					the_content(); ?>
 	
 				
 			</div>
