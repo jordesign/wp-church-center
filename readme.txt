@@ -50,6 +50,8 @@ v1.2.9
 - UPDATED: Introduce new style for selecting Card Type.
 - UPDATED: Add filters to the single card so we can change it addons?
 - UPDATED: Change the way we output content within the cards.
+- UPDATED: Allow Cards to be Password Protected
+- BUG: Stop changing the order on all taxonomies in the site
 
 v1.2.8
 - BUG: make addon scripts exempt from being disabled

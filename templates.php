@@ -150,10 +150,10 @@ function active( $plugin ) {
 }
 
 //Change sort order of post type archive
-add_action( 'pre_get_posts', 'cd_sort_staff' );
-function cd_sort_staff( $query ) {
+add_action( 'pre_get_posts', 'wpcc_sort_cards' );
+function wpcc_sort_cards( $query ) {
     if ( $query->is_main_query() && !is_admin() ) {
-        if ( $query->is_tax() || $query->is_post_type_archive('card') ) {
+        if (  $query->is_post_type_archive('card') ) {
             $query->set('orderby', 'menu_order');  
             $query->set('order', 'ASC'); 
         }       
