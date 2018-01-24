@@ -48,10 +48,11 @@ Add a page which uses the 'Church Center Homepage' template
 v1.2.9
 - UPDATED: Higher priority for our custom 'single' template so it overides some themes with 'builder' templates
 - UPDATED: Introduce new style for selecting Card Type.
-- UPDATED: Add filters to the single card so we can change it addons?
+- UPDATED: Add filters to the single card so we can change it with addons?
 - UPDATED: Change the way we output content within the cards.
 - UPDATED: Allow Cards to be Password Protected
 - BUG: Stop changing the order on all taxonomies in the site
+- BUG: Don't disable stylesheets in admin
 
 v1.2.8
 - BUG: make addon scripts exempt from being disabled

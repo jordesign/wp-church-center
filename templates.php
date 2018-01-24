@@ -55,7 +55,7 @@ function wpcc_remove_default_styles (){
 	}
 }
 
-if( 1 == get_option( 'wpcc_disable_styles' ) ){
+if( 1 == get_option( 'wpcc_disable_styles' ) && !is_admin() ){
 	add_action('wp_print_scripts', 'wpcc_remove_default_styles', 100);
 
 }
@@ -63,7 +63,7 @@ if( 1 == get_option( 'wpcc_disable_styles' ) ){
 // De-Queue all Scripts
 function wpcc_remove_default_scripts (){
 
-	if ( get_post_type() == 'card' || is_post_type_archive('card') || is_page_template('center_home.php' ) ){
+	if (  get_post_type() == 'card' || is_post_type_archive('card') || is_page_template('center_home.php' ) ){
 
 		// get all styles data
 		global $wp_scripts;
