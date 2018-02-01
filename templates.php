@@ -130,11 +130,11 @@ function wpcc_remove_title()
 
 //Definitely Hide admin bar when not logged in
 add_filter( 'show_admin_bar', 'wpct_hide_adminbar' );
-function wpct_hide_adminbar(){
+function wpct_hide_adminbar($status){
     if( !is_user_logged_in() ){
         return false;
     }
-    return true;
+    return $status;
 }
 
 //Function to check if certain plugins are active

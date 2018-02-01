@@ -34,24 +34,28 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 
 						<?php //set up title with a filter so we can change it with addons
 
-						$cardTitle = get_the_title();
+						$cardTitle = '<h1 style="color:' .  get_post_meta(get_the_ID(),'wpcc_color',true) . ';">';
+						$cardTitle .= get_the_title();
+						$cardTitle .= '</h1>';
+
 						if(has_filter('wpcc_card_title')) {
 						
-							$cardTitle = apply_filters('wpcc_card_link', $cardTitle);
+							$cardTitle = apply_filters('wpcc_card_title', $cardTitle);
 							
-						}  ?>
-						
-						<h1 style="color: <?php echo get_post_meta(get_the_ID(),'wpcc_color',true); ?>"><?php echo $cardTitle ?></h1>
+						}  
+
+						echo $cardTitle;
+						?>
 
 						<?php //set up the subtitle with a filter so we can change it with addons
-						$cardSubtitle = get_post_meta(get_the_ID(get_the_ID()),'wpcc_subtitle',true);
+						$cardSubtitle = '<p>' . get_post_meta(get_the_ID(get_the_ID()),'wpcc_subtitle',true) . '</p>';
 						if(has_filter('wpcc_card_subtitle')) {
 						
 							$cardSubtitle = apply_filters('wpcc_card_subtitle', $cardSubtitle);
 							
 						}  ?>
 
-						<p><?php echo $cardSubtitle ?></p>
+						<?php echo $cardSubtitle ?>
 					</div>
 
 					<?php //set up the content so we can filter it with any addons
@@ -66,7 +70,10 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 						echo $cardContent;
 
 					}
-					the_content(); ?>
+					//include this so password protected stuff works
+					the_content(); 
+
+					?>
 	
 				
 			</div>

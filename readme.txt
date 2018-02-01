@@ -45,6 +45,11 @@ Add a page which uses the 'Church Center Homepage' template
 
 == Changelog ==
 
+v1.2.10
+- BUG: Make sure admin bar can be hidden
+- UPDATED: Set up card title and single titles to be filtered by plugins
+- UPDATED: Better title styles for Small Cards
+
 v1.2.9
 - UPDATED: Higher priority for our custom 'single' template so it overides some themes with 'builder' templates
 - UPDATED: Introduce new style for selecting Card Type.

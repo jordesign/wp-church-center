@@ -535,6 +535,8 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
 }
 .cardHolder.small-card .card .cardDetails h3 {
   margin-bottom: 0px;
+  line-height: 1.2;
+  margin-bottom: 5px;
 }
 .cardHolder.small-card .card .cardDetails p {
   margin-bottom: 0;

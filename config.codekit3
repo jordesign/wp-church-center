@@ -2234,6 +2234,26 @@
 		"oAP": "\/page-ordering\/readme.txt",
 		"oF": 0
 		},
+	"\/page-ordering\/simple-page-ordering-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/page-ordering\/simple-page-ordering-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/page-ordering\/simple-page-ordering-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/page-ordering\/simple-page-ordering-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/page-ordering\/simple-page-ordering.css": {
 		"aP": 1,
 		"bl": 0,
@@ -2243,6 +2263,16 @@
 		"oAP": "\/page-ordering\/simple-page-ordering-min.css",
 		"oF": 0,
 		"oS": 3
+		},
+	"\/page-ordering\/simple-page-ordering.dev-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/page-ordering\/simple-page-ordering.dev-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
 		},
 	"\/page-ordering\/simple-page-ordering.dev.js": {
 		"ft": 64,
@@ -2269,6 +2299,13 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/page-ordering\/simple-page-ordering.php",
+		"oF": 0
+		},
+	"\/README.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/README.html",
 		"oF": 0
 		},
 	"\/README.md": {
