@@ -47,8 +47,11 @@ Add a page which uses the 'Church Center Homepage' template
 
 v1.2.10
 - BUG: Make sure admin bar can be hidden
+- BUG: Make sure the_content() never displays
 - UPDATED: Set up card title and single titles to be filtered by plugins
 - UPDATED: Better title styles for Small Cards
+- UPDATED: Change the filtering of content and titles on the single-card views
+- UPDATED: Add filters to OG:tags and Twitter tags 
 
 v1.2.9
 - UPDATED: Higher priority for our custom 'single' template so it overides some themes with 'builder' templates

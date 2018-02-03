@@ -627,6 +627,12 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
   content: '';
   display: table;
 }
+.wpchurch_center.single .singleCard .cardInfo .passwordBlock > * {
+  display: none;
+}
+.wpchurch_center.single .singleCard .cardInfo .passwordBlock form {
+  display: block;
+}
 .cardInfo p,
 .cardInfo td,
 .cardInfo li {

@@ -71,7 +71,9 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 
 					}
 					//include this so password protected stuff works
+					echo '<div class="passwordBlock">';
 					the_content(); 
+					echo '</div>';
 
 					?>
 	

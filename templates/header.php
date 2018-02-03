@@ -24,19 +24,37 @@
     <meta charset="<?php bloginfo('charset'); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <?php //Set up title and description to be filterable
+    if ( is_singular('card' ) ) {
+        
+        $singleCardTitle = get_the_title();
+        if(has_filter('wpcc_card_seo_title')) {
+                        
+            $singleCardTitle = apply_filters('wpcc_card_seo_title', $singleCardTitle);
+            
+        }
+
+        $singleCardDescription = get_field('wpcc_subtitle');
+        if(has_filter('wpcc_card_seo_description')) {
+                        
+            $singleCardDescription = apply_filters('wpcc_card_seo_description', $singleCardDescription);
+            
+        }
+    }  ?>  
+
     <!-- Meta Tags if YOAST SEO is not enabled -->
     <?php if ( !active( 'wordpress-seo/wp-seo.php' ) ) { ?>
         <meta property="og:locale" content="en_US">
         <meta property="og:type" content="website">
         <?php if ( is_singular('card') ) { ?>
-            <meta property="og:title" content="<?php the_title();?> | <?php echo esc_html(get_option( 'wpcc_church_name' ) ); ?>">
+            <meta property="og:title" content="<?php echo $singleCardTitle;?> | <?php echo esc_html(get_option( 'wpcc_church_name' ) ); ?>">
         <?php } else { ?>
             <meta property="og:title" content="<?php echo esc_html(get_option( 'wpcc_church_name' ) ); ?>">
         <?php } ?>
 
         <?php if ( is_singular('card' ) ) { ?>
-            <meta property="og:description" content="<?php the_field('wpcc_subtitle'); ?>">
-            <meta name="twitter:description" content="<?php the_field('wpcc_subtitle'); ?>">
+            <meta property="og:description" content="<?php echo $singleCardDescription; ?>">
+            <meta name="twitter:description" content="<?php echo $singleCardDescription; ?>">
         <?php } else { ?>
             <meta property="og:description" content="<?php echo esc_html(get_option( 'wpcc_center_description' ) ); ?>">
             <meta name="twitter:description" content="<?php echo esc_html(get_option( 'wpcc_center_description' ) ); ?>">
@@ -76,7 +94,7 @@
         
 
         <?php if ( is_singular('card') ) { ?>
-            <meta name="twitter:title" content="<?php the_title();?> | <?php echo esc_html( get_option( 'wpcc_church_name' ) ); ?>">
+            <meta name="twitter:title" content="<?php echo $singleCardTitle;?> | <?php echo esc_html( get_option( 'wpcc_church_name' ) ); ?>">
         <?php } else { ?>
             <meta name="twitter:title" content="<?php echo esc_html( get_option( 'wpcc_church_name' ) ); ?>">
         <?php } ?>

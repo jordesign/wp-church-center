@@ -456,6 +456,13 @@ body {
 .cardInfo p {
   margin-bottom: 28px;
 }
+
+.cardInfo .passwordBlock * {
+  display:none;
+}
+.cardInfo .passwordBlock form {
+  display:block;
+}
 @media only screen and (min-width: 480px) {
   .cardHolder.grid {
     max-width: 1200px;
