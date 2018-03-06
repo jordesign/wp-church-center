@@ -63,14 +63,16 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 								
 							} ?>
 							<h3 style="color: <?php the_field('wpcc_color'); ?>"><?php echo $cardTitle; ?></h3>
-							<?php if ($cardSubtitle = get_field('wpcc_subtitle') ){ 
+							<?php $cardSubtitle = get_field('wpcc_subtitle');
 								if(has_filter('wpcc_archive_card_subtitle')) {
 						
-								$cardSubtitle = apply_filters('wpcc_archive_card_subtitle', $cardSubtitle);
+									$cardSubtitle = apply_filters('wpcc_archive_card_subtitle', $cardSubtitle);
 								
-							}?>
-								<p><?php echo $cardSubtitle; ?></p>
-							<?php } ?>
+								}
+
+								if($cardSubtitle){ ?>
+									<p><?php echo $cardSubtitle; ?></p>
+								<?php } ?>
 							
 						</div>
 						<i class="fa fa-angle-circled-right" style="color: <?php the_field('wpcc_color'); ?>"></i>
@@ -102,14 +104,16 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 								
 							} ?>
 							<h3><?php echo $cardTitle; ?></h3>
-							<?php if ($cardSubtitle = get_field('wpcc_subtitle') ){ 
+							<?php $cardSubtitle = get_field('wpcc_subtitle');
 								if(has_filter('wpcc_archive_card_subtitle')) {
 						
-								$cardSubtitle = apply_filters('wpcc_archive_card_subtitle', $cardSubtitle);
+									$cardSubtitle = apply_filters('wpcc_archive_card_subtitle', $cardSubtitle);
 								
-							}?>
-								<p><?php echo $cardSubtitle; ?></p>
-							<?php } ?>
+								}
+
+								if($cardSubtitle){ ?>
+									<p><?php echo $cardSubtitle; ?></p>
+								<?php } ?>
 						</div>
 						<i class="fa fa-angle-circled-right" style="color: <?php the_field('wpcc_color'); ?>"></i>
 					</a>
@@ -143,14 +147,16 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 								
 							} ?>
 							<h3 style="color: <?php the_field('wpcc_color'); ?>"><?php echo $cardTitle; ?></h3>
-							<?php if ($cardSubtitle = get_field('wpcc_subtitle') ){ 
+							<?php $cardSubtitle = get_field('wpcc_subtitle');
 								if(has_filter('wpcc_archive_card_subtitle')) {
 						
-								$cardSubtitle = apply_filters('wpcc_archive_card_subtitle', $cardSubtitle);
+									$cardSubtitle = apply_filters('wpcc_archive_card_subtitle', $cardSubtitle);
 								
-							}?>
-								<p><?php echo $cardSubtitle; ?></p>
-							<?php } ?>
+								}
+
+								if($cardSubtitle){ ?>
+									<p><?php echo $cardSubtitle; ?></p>
+								<?php } ?>
 							</div>
 						</div>
 						
@@ -189,14 +195,18 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 								
 							} ?>
 							<h3 style="color: <?php the_field('wpcc_color'); ?>"><?php echo $cardTitle; ?></h3>
-							<?php if ($cardSubtitle = get_field('wpcc_subtitle') ){ 
+							<?php $cardSubtitle = get_field('wpcc_subtitle');
 								if(has_filter('wpcc_archive_card_subtitle')) {
 						
-								$cardSubtitle = apply_filters('wpcc_archive_card_subtitle', $cardSubtitle);
+									$cardSubtitle = apply_filters('wpcc_archive_card_subtitle', $cardSubtitle);
 								
-							}?>
-								<p><?php echo $cardSubtitle; ?></p>
-							<?php } ?>
+								}
+
+								if($cardSubtitle){ ?>
+									<p><?php echo $cardSubtitle; ?></p>
+								<?php } ?>
+
+						
 								</div>
 							</div>
 						</div>
