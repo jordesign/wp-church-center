@@ -47,7 +47,8 @@ Add a page which uses the 'Church Center Homepage' template
 
 v1.2.10
 - BUG: Make sure admin bar can be hidden
-- BUG: Make sure the_content() never displays
+- BUG: Make sure the_content() never displays within cards
+- BUG: Ensure that iframes and images with captions are contained by the card
 - UPDATED: Set up card title and single titles to be filtered by plugins
 - UPDATED: Better title styles for Small Cards
 - UPDATED: Change the filtering of content and titles on the single-card views

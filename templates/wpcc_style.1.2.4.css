@@ -642,6 +642,10 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
 .cardInfo p {
   margin-bottom: 28px;
 }
+.cardInfo .wp-caption,
+.cardInfo iframe {
+  max-width: 100%;
+}
 .wppc_layout_switcher {
   padding: 0 10px;
   height: 80px;

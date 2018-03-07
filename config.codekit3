@@ -7,7 +7,7 @@
 		"uuidString": "D3669D3D-36E7-4544-BA81-F2266E40772E"
 		}
 	],
-"creatorBuild": "26148",
+"creatorBuild": "26268",
 "files": {
 	"\/admin\/admin.php": {
 		"cB": 0,
@@ -2362,6 +2362,16 @@
 		"oAP": "\/templates\/center_home.php",
 		"oF": 0
 		},
+	"\/templates\/css\/wpcc_style-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/templates\/css\/wpcc_style-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/templates\/css\/wpcc_style.css": {
 		"aP": 1,
 		"bl": 0,
@@ -2522,6 +2532,7 @@
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
+	"autoprefixerEnableIEGrid": 0,
 	"babelAuxiliaryCommentAfter": "",
 	"babelAuxiliaryCommentBefore": "",
 	"babelConfigFileHandlingType": 0,
@@ -3085,6 +3096,10 @@
 		"id-match": {
 			"active": 0,
 			"optionString": "'^[a-z]+([A-Z][a-z]+)*$', {'properties': false, 'onlyDeclarations': true}"
+			},
+		"implicit-arrow-linebreak": {
+			"active": 0,
+			"optionString": "'beside'"
 			},
 		"indent": {
 			"active": 0,
