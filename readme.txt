@@ -1,7 +1,7 @@
 === WP Church Center ===
 Contributors: jordesign, wpchurchteam
 Requires at least: 4.7
-Tested up to: 4.9.3
+Tested up to: 4.9.4
 Stable tag: 1.2.10
 License: GPL2
 
