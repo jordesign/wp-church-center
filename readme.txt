@@ -45,6 +45,9 @@ Add a page which uses the 'Church Center Homepage' template
 
 == Changelog ==
 
+v1.2.11
+- UPDATED: More robust styles for the mobile menu
+
 v1.2.10
 - BUG: Make sure admin bar can be hidden
 - BUG: Make sure the_content() never displays within cards

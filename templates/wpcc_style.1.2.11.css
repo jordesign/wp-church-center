@@ -127,6 +127,9 @@ h6 {
   box-shadow: 0px 0px 28px -1px rgba(0, 0, 0, 0.62);
   z-index: 10;
   transition: right 0.2s ease-in-out;
+  transform: none;
+  border-radius: 0;
+  padding: 0;
 }
 #menu.wpccMenu ul {
   list-style: none;
@@ -1292,4 +1295,4 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
   color: black;
   opacity: 0.75;
 }
-/*# sourceMappingURL=wpcc_style.1.2.4.css.map */
+/*# sourceMappingURL=wpcc_style.1.2.10.css.map */

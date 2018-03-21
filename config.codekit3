@@ -2444,34 +2444,34 @@
 		"sC": 1,
 		"tS": 0
 		},
-	"\/templates\/wpcc_script.1.2.10-min.js": {
+	"\/templates\/wpcc_script.1.2.11-min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/templates\/wpcc_script.1.2.10-min-min.js",
+		"oAP": "\/templates\/wpcc_script.1.2.11-min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"\/templates\/wpcc_style.1.2.10.css": {
+	"\/templates\/wpcc_style.1.2.11.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/templates\/wpcc_style.1.2.10-min.css",
+		"oAP": "\/templates\/wpcc_style.1.2.11-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/templates\/wpcc_style.1.2.10.css.map": {
+	"\/templates\/wpcc_style.1.2.11.css.map": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/templates\/wpcc_style.1.2.10.css.map",
+		"oAP": "\/templates\/wpcc_style.1.2.11.css.map",
 		"oF": 0
 		},
-	"\/templates\/wpcc_style.1.2.10.less": {
+	"\/templates\/wpcc_style.1.2.11.less": {
 		"aP": 0,
 		"bl": 0,
 		"dJ": 0,
@@ -2480,7 +2480,7 @@
 		"iI": 0,
 		"ma": 1,
 		"oA": 0,
-		"oAP": "\/templates\/wpcc_style.1.2.10.css",
+		"oAP": "\/templates\/wpcc_style.1.2.11.css",
 		"oF": 0,
 		"oS": 0,
 		"rU": 0,
