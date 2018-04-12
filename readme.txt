@@ -19,7 +19,7 @@ Features include:
 - Mobile first and fully responsive
 - Works as standalone site, or as part of your existing WordPress site
 
-Check out a demo at [http://wpchurch.center/hub/](http://wpchurch.center/hub/)
+Check out a demo at [https://wpchurch.center/hub/](https://wpchurch.center/hub/)
 
 == Installation ==
 1). Download the plugin
