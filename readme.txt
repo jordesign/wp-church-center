@@ -2,7 +2,7 @@
 Contributors: jordesign, wpchurchteam
 Requires at least: 4.7
 Tested up to: 4.9.4
-Stable tag: 1.2.10
+Stable tag: 1.2.11
 License: GPL2
 
 Create a 'Next Steps' hub for your church using WordPress! Setup in minutes, mobile first & responsive & designed to integrate with your existing WordPress site!
@@ -47,6 +47,8 @@ Add a page which uses the 'Church Center Homepage' template
 
 v1.2.11
 - UPDATED: More robust styles for the mobile menu
+- UPDATED: Tidy up php files to remove additional headers
+- 
 
 v1.2.10
 - BUG: Make sure admin bar can be hidden
