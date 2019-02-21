@@ -137,19 +137,34 @@ $wp_customize->add_control( 'wpcc_center_description', array(
   'description' => __( 'This will be used as the description in Search results, and when shared on social media' ),
 ) );
 
-// add a setting for the site logo
+// add a setting for the Center Home OG:Image
 $wp_customize->add_setting('wpcc_center_image', array(
      'type' => 'option', 
      'capability' => 'manage_options',
 ));
 
-// Add a control to upload the logo
+// Add a control to upload the Center Home OG:Image
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wpcc_center_image',
 array(
 'label' => 'Center Homepage Image',
 'description' => 'This image will only be used when your center is shared on Social Media',
 'section' => 'wpcc_header',
 'settings' => 'wpcc_center_image',
+) ) );
+
+// add a setting for the site Favicon
+$wp_customize->add_setting('wpcc_favicon', array(
+     'type' => 'option', 
+     'capability' => 'manage_options',
+));
+
+// Add a control to upload the Favicon
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wpcc_favicon',
+array(
+'label' => 'Center Favicon',
+'description' => 'Upload a Favicon (32 x 32px) to be used for your Center pages',
+'section' => 'wpcc_header',
+'settings' => 'wpcc_favicon',
 ) ) );
 
 // add a setting for the church name
