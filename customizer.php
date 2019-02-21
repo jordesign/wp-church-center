@@ -622,6 +622,21 @@ add_action( 'customize_render_control_wpcc_greyscale', 'wpcc_customizer_image_ti
         'description' => 'This will cause the image to be tinted with the selected feature color from the card',
     ) );
 
+    // add a setting for the card slug
+$wp_customize->add_setting('wpcc_custom_slug', array(
+     'type' => 'option', 
+     'capability' => 'manage_options',
+));
+
+//add control for card slug
+$wp_customize->add_control( 'wpcc_custom_slug', array(
+   'label'   => 'Custom Slug for card',
+   'description' => 'Enter the string you would like to replace "card" in URLs (like /card/my-awesome-card/").',
+   'section' => 'wpcc_settings',
+   'type'    => 'text',
+   'placeholder' => 'card',
+) );
+
   // Add settings for disabling styles
     $wp_customize->add_setting( 'wpcc_disable_styles', array(
         'default'    => '',
@@ -638,6 +653,12 @@ add_action( 'customize_render_control_wpcc_greyscale', 'wpcc_customizer_image_ti
         'std'         => '1',
         'description' => 'This removes unnecessary stylesheets to help load your center faster. If some content appears incorrectly, you may need to disable this setting.',
     ) );
+
+    //Heading for the Menu section
+function wpcc_customizer_theme_compatability_title(){
+  printf( '<h2 style="margin: 0px 0 10px; padding-top: 35px; color:#333; font-size:16px;clear:both;">%s</h2>', __( 'Theme Compatibility', 'wpcc' ) );
+}
+add_action( 'customize_render_control_wpcc_disable_styles', 'wpcc_customizer_theme_compatability_title');
 
     // Add settings for disabling scripts
     $wp_customize->add_setting( 'wpcc_disable_scripts', array(
@@ -666,10 +687,11 @@ add_action('customize_register', 'wpcc_new_customizer_settings');
 add_action('admin_menu', 'wpcc_extra_admin_menu');
 
 function wpcc_extra_admin_menu() {
+    $homeURL = wpcc_get_home_center_link();
     global $submenu;
-    
+    $query['url'] = $homeURL;
     $query['autofocus[panel]'] = 'WP_Church_Center';
-    $query['url'] = wpcc_get_home_center_link();
+
     $url = add_query_arg( $query, admin_url( 'customize.php' ) );
 
     $submenu['edit.php?post_type=card'][] = array('Your Church Center', 'manage_options', wpcc_get_home_center_link() );

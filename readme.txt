@@ -1,8 +1,8 @@
 === WP Church Center ===
 Contributors: jordesign, wpchurchteam
 Requires at least: 4.7
-Tested up to: 4.9.4
-Stable tag: 1.2.11
+Tested up to: 5.0.2
+Stable tag: 1.3
 License: GPL2
 
 Create a 'Next Steps' hub for your church using WordPress! Setup in minutes, mobile first & responsive & designed to integrate with your existing WordPress site!
@@ -44,6 +44,16 @@ Add a page which uses the 'Church Center Homepage' template
 3. An example card
 
 == Changelog ==
+
+v1.3
+- FEATURE: You can use a custom slug in the URL instead of "/card/"
+- UPDATED: Update bundled ACF version to 5.7.9
+- BUG: Fix Vertical scroll for cards on small screens
+- BUG: Tidy up styles for list view
+
+
+v1.2.12
+- UPDATED: updated bundled version of ACF to support WordPress 5.0
 
 v1.2.11
 - UPDATED: More robust styles for the mobile menu

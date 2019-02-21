@@ -4,7 +4,7 @@
  * Plugin Name:       WP Church Center
  * Plugin URI:        http://wpchurch.center
  * Description:       Provides a 'Next Steps' Center for your Church.
- * Version:           1.2.11
+ * Version:           1.3
  * Author:            Jordesign, WP Church Team
  * Author URI:        http://wpchurch.team/
  * License:           GPL-2.0+
@@ -19,10 +19,8 @@ if ( ! defined( 'WPINC' ) ) {
 
 
 /**
- * Enable ACF 5 early access
- * Requires at least version ACF 4.4.12 to work
+ * Include ACF. Current version bundled is 5.7.8
  */
-define('ACF_EARLY_ACCESS', '5');
 
 add_action( 'after_setup_theme', 'wpcc_acf_setup' );
 

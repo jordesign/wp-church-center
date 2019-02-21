@@ -282,3 +282,24 @@ function wpcc_get_home_center_link(){
 	}
 	 
 }
+
+/*   Allow change of the /card/ slug */
+add_filter('register_post_type_args', 'wpcc_change_card_slug', 10, 2);
+function wpcc_change_card_slug($args, $post_type){
+ 
+    if ($post_type == 'card'){
+    	if ( '' != get_option( 'wpcc_custom_slug' )){
+        $args['rewrite']['slug'] = get_option( 'wpcc_custom_slug' );
+    }
+}
+ 
+    return $args;
+}
+
+/*  Refresh rewrite/permalinks when a new slug is selected */
+add_action( 'update_option_wpcc_custom_slug', 'wpcc_change_card_slug_refresh', 10, 2 );
+
+function wpcc_change_card_slug_refresh( $old_value, $new_value )
+{
+    flush_rewrite_rules();
+}
