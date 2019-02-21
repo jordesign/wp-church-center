@@ -630,8 +630,8 @@ $wp_customize->add_setting('wpcc_custom_slug', array(
 
 //add control for card slug
 $wp_customize->add_control( 'wpcc_custom_slug', array(
-   'label'   => 'Custom Slug for card',
-   'description' => 'Enter the string you would like to replace "card" in URLs (like /card/my-awesome-card/").',
+   'label'   => 'Custom Slug for Cards',
+   'description' => 'Enter the string you would like to replace "card" in URLs (like /card/my-awesome-card/"). If you have problems with 404 errors after changing this try visiting Settings > Permalinks and hitting "Save".',
    'section' => 'wpcc_settings',
    'type'    => 'text',
    'placeholder' => 'card',
