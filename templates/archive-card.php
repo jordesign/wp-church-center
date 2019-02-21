@@ -224,4 +224,4 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 
 
 <?php /**  Load Footer */
-require_once plugin_dir_path( __FILE__ ) . 'footer.php'; ?>
+require_once plugin_dir_path( __FILE__ ) . 'footer.php'; 

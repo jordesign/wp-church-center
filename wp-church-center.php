@@ -1,18 +1,6 @@
 <?php
 
 /**
- * The plugin bootstrap file
- *
- * This file is read by WordPress to generate the plugin information in the plugin
- * admin area. This file also includes all of the dependencies used by the plugin,
- * registers the activation and deactivation functions, and defines a function
- * that starts the plugin.
- *
- * @link              http://wpchurch.team
- * @since             1.0.0
- * @package           WP_Church_Center
- *
- * @wordpress-plugin
  * Plugin Name:       WP Church Center
  * Plugin URI:        http://wpchurch.center
  * Description:       Provides a 'Next Steps' Center for your Church.
@@ -92,4 +80,3 @@ require_once plugin_dir_path( __FILE__ ) . 'page-ordering/simple-page-ordering.p
 
 /**  Stuff for the Admin */
 require_once plugin_dir_path( __FILE__ ) . 'admin/admin.php';
-

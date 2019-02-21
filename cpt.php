@@ -282,4 +282,3 @@ function wpcc_get_home_center_link(){
 	}
 	 
 }
-

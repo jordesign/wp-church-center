@@ -2150,13 +2150,6 @@
 		"oAP": "\/advanced-custom-fields\/pro\/updates.php",
 		"oF": 0
 		},
-	"\/advanced-custom-fields\/readme.txt": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/advanced-custom-fields\/readme.txt",
-		"oF": 0
-		},
 	"\/cpt.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2227,13 +2220,6 @@
 		"oAP": "\/page-ordering\/localization\/simple-page-ordering-pt_BR.po",
 		"oF": 0
 		},
-	"\/page-ordering\/readme.txt": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/page-ordering\/readme.txt",
-		"oF": 0
-		},
 	"\/page-ordering\/simple-page-ordering-min.css": {
 		"aP": 1,
 		"bl": 0,
@@ -2299,13 +2285,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/page-ordering\/simple-page-ordering.php",
-		"oF": 0
-		},
-	"\/README.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/README.html",
 		"oF": 0
 		},
 	"\/README.md": {
