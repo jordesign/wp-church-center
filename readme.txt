@@ -47,7 +47,9 @@ Add a page which uses the 'Church Center Homepage' template
 
 v1.3
 - FEATURE: You can use a custom slug in the URL instead of "/card/"
+- FEATURE: You can now add a Favicon for your center
 - UPDATED: Update bundled ACF version to 5.7.9
+- UPDATED: Moved Customizer settings and Added SEO area
 - BUG: Fix Vertical scroll for cards on small screens
 - BUG: Tidy up styles for list view
 
