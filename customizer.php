@@ -162,7 +162,7 @@ $wp_customize->add_setting('wpcc_favicon', array(
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wpcc_favicon',
 array(
 'label' => 'Center Favicon',
-'description' => 'Upload a Favicon (32 x 32px) to be used for your Center pages',
+'description' => 'Upload a Favicon (32 x 32px PNG file) to be used for your Center pages',
 'section' => 'wpcc_header',
 'settings' => 'wpcc_favicon',
 ) ) );
