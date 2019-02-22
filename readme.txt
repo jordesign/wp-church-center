@@ -50,6 +50,7 @@ v1.3
 - FEATURE: You can now add a Favicon for your center
 - UPDATED: Update bundled ACF version to 5.7.9
 - UPDATED: Moved Customizer settings and Added SEO area
+- UPDATED: Ensure social icons work with FontAwesome 5
 - BUG: Fix Vertical scroll for cards on small screens
 - BUG: Tidy up styles for list view
 
