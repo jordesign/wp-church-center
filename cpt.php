@@ -303,3 +303,43 @@ function wpcc_change_card_slug_refresh( $old_value, $new_value )
 {
     flush_rewrite_rules();
 }
+
+
+// Add 'Card Group' taxonomy
+function wpcc_add_card_group() {
+
+	$labels = array(
+		'name'                       => _x( 'Card Groups', 'Taxonomy General Name', 'wpcc' ),
+		'singular_name'              => _x( 'Card Group', 'Taxonomy Singular Name', 'wpcc' ),
+		'menu_name'                  => __( 'Card Groups', 'wpcc' ),
+		'all_items'                  => __( 'All Card Groups', 'wpcc' ),
+		'parent_item'                => __( 'Parent Card Group', 'wpcc' ),
+		'parent_item_colon'          => __( 'Parent Card Group:', 'wpcc' ),
+		'new_item_name'              => __( 'New Card Group Name', 'wpcc' ),
+		'add_new_item'               => __( 'Add New Card Group', 'wpcc' ),
+		'edit_item'                  => __( 'Edit Card Group', 'wpcc' ),
+		'update_item'                => __( 'Update Card Group', 'wpcc' ),
+		'view_item'                  => __( 'View Card Group', 'wpcc' ),
+		'separate_items_with_commas' => __( 'Separate Card Groups with commas', 'wpcc' ),
+		'add_or_remove_items'        => __( 'Add or remove Card Groups', 'wpcc' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'wpcc' ),
+		'popular_items'              => __( 'Popular Card Groups', 'wpcc' ),
+		'search_items'               => __( 'Search Card Groups', 'wpcc' ),
+		'not_found'                  => __( 'Not Found', 'wpcc' ),
+		'no_terms'                   => __( 'No items', 'wpcc' ),
+		'items_list'                 => __( 'Card Groups list', 'wpcc' ),
+		'items_list_navigation'      => __( 'Card Groups list navigation', 'wpcc' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => false,
+	);
+	register_taxonomy( 'card_group', array( 'card' ), $args );
+
+}
+add_action( 'init', 'wpcc_add_card_group', 0 );
