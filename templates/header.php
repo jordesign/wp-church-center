@@ -101,12 +101,6 @@
         <meta name="twitter:image" content="<?php $image = get_field('wpcc_image'); $image_obj =  wp_get_attachment_image_src( $image, 'card_hero_image' );?>">
     <?php } ?>
 
-    <?php // Add Favicon if it is set
-    if( $center_favicon = get_option( 'wpcc_favicon' )) { ?>
-                <link rel="shortcut icon" type="image/png" href="<?php echo $center_favicon; ?>">
-    <?php } ?>
-
-
     <!-- Include the CDN version of FontAwesome -->
     <script src="https://use.fontawesome.com/3be0bee871.js"></script>
 

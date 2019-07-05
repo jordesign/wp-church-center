@@ -8,7 +8,7 @@ if( ! class_exists('ACF') ) :
 class ACF {
 	
 	/** @var string The plugin version number */
-	var $version = '5.7.9';
+	var $version = '5.7.8';
 	
 	/** @var array The plugin settings array */
 	var $settings = array();
@@ -160,7 +160,6 @@ class ACF {
 		acf_include('includes/forms/form-front.php');
 		acf_include('includes/forms/form-nav-menu.php');
 		acf_include('includes/forms/form-post.php');
-		acf_include('includes/forms/form-gutenberg.php');
 		acf_include('includes/forms/form-taxonomy.php');
 		acf_include('includes/forms/form-user.php');
 		acf_include('includes/forms/form-widget.php');

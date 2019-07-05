@@ -268,14 +268,7 @@ if( $this->view == 'add' ): ?>
 	// vars
 	var $form = $('#addtag');
 	var $fields = $('#acf-term-fields');
-	var html = '';
-	
-	// Store a copy of the $fields html used later to replace after AJAX request.
-	// Hook into 'prepare' action to allow ACF core helpers to first modify DOM.
-	// Fixes issue where hidden #acf-hidden-wp-editor is initialized again.
-	acf.addAction('prepare', function(){
-		html = $fields.html();
-	}, 6);
+	var html = $fields.html();
 		
 	// WP triggers click as primary action
 	$submit.on('click', function( e ){

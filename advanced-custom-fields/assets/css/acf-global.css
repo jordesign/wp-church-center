@@ -190,7 +190,7 @@
   border-bottom-width: 0;
 }
 .acf-tooltip.right {
-  margin-left: 8px;
+  margin-right: -8px;
 }
 .acf-tooltip.right:before {
   top: 50%;
@@ -200,7 +200,7 @@
   border-left-width: 0;
 }
 .acf-tooltip.bottom {
-  margin-top: 8px;
+  margin-bottom: -8px;
 }
 .acf-tooltip.bottom:before {
   bottom: 100%;

@@ -203,10 +203,14 @@ class acf_field_user extends acf_field {
 				
 			}
 			
-			// optgroup or single
-			if( !empty($args['role']) && count($args['role']) == 1 ) {
-				$results = $results[0]['children'];
-			}
+			
+		}
+		
+		// optgroup or single
+		if( !empty($args['role']) && count($args['role']) == 1 ) {
+			
+			$results = $results[0]['children'];
+			
 		}
 		
 		

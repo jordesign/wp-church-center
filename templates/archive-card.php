@@ -12,11 +12,7 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 		echo esc_html( $layout );
 	} else {
 		echo 'list';
-	}  
-
-	if(get_option( 'wpcc_layout' ) == 'card') { echo ' ' . get_option( 'wpcc_scroll_direction' ); }
-
-	?>
+	}  ?>
 
 	<?php if( defined( 'WPCC_LAYOUT_SWITCHING') && WPCC_LAYOUT_SWITCHING  ===  1){ echo 'layoutSwitching'; } ?>">
 

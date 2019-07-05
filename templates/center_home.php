@@ -15,15 +15,11 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 		echo esc_html( $layout );
 	} else {
 		echo 'list';
-	}  
-
-	if(get_option( 'wpcc_layout' ) == 'card') { echo ' ' . get_option( 'wpcc_scroll_direction' ); }
-
-	?>
+	}  ?>
 
 	<?php if( defined( 'WPCC_LAYOUT_SWITCHING') && WPCC_LAYOUT_SWITCHING  ===  1){ echo 'layoutSwitching'; } ?>">
 
-<div class="cards <?php if(get_option( 'wpcc_greyscale' ) == 1) { echo 'greyscale '; } if(get_option( 'wpcc_tinting ' ) == 1) { echo 'tint '; }  if(get_option( 'wpcc_layout' ) == 'small-card') { echo 'js-masonry ' . get_option('wpcc_small_card_columns'); } ?>">
+<div class="cards <?php if(get_option( 'wpcc_greyscale' ) == 1) { echo 'greyscale '; } if(get_option( 'wpcc_tinting ' ) == 1) { echo 'tint '; } if(get_option( 'wpcc_layout' ) == 'small-card') { echo 'js-masonry ' . get_option('wpcc_small_card_columns'); } ?>">
 
 	<?php
 

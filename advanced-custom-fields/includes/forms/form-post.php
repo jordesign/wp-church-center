@@ -336,9 +336,10 @@ class ACF_Form_Post {
 			return $post_id;
 		}
 		
-		// Validate and display errors for published post.
-		// - Allows draft to save without validation.
+		// validate for published post (allow draft to save without validation)
 		if( $post->post_status == 'publish' ) {
+			
+			// show errors
 			acf_validate_save_post( true );
 		}
 		

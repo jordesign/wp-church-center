@@ -413,7 +413,6 @@ function have_rows( $selector, $post_id = false ) {
 				// case: Change in $post_id was due to a nested loop ending
 				// action: move up one level through the loops
 				acf_remove_loop('active');
-				$active_loop = $previous_loop;
 			
 			} else {
 				
@@ -436,7 +435,6 @@ function have_rows( $selector, $post_id = false ) {
 				// case: Change in $field_name was due to a nested loop ending
 				// action: move up one level through the loops
 				acf_remove_loop('active');
-				$active_loop = $previous_loop;
 				
 			} else {
 				
