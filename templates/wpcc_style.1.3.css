@@ -223,6 +223,9 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
 #menu.wpccMenu:target {
   right: 0;
 }
+#menu.wpccMenu .fa {
+  font: normal normal normal 14px/1 FontAwesome;
+}
 .post-type-archive-card .wpccFooter.grid,
 .wpccFooter {
   position: absolute;
@@ -798,14 +801,16 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
     margin: 35px 0 0 0;
   }
   .cardHolder.card,
-  .nojs .cardHolder.card {
+  .nojs .cardHolder.card,
+  .cardHolder.card.horizontal {
     position: relative;
     padding: 20px 10px;
     clear: both;
     top: 10px;
   }
   .cardHolder.card .card,
-  .nojs .cardHolder.card .card {
+  .nojs .cardHolder.card .card,
+  .cardHolder.card.horizontal .card {
     width: 42%;
     margin: 0 4% 8%;
     height: 400px;
@@ -813,7 +818,8 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
     float: left;
   }
   .cardHolder.card .card:hover,
-  .nojs .cardHolder.card .card:hover {
+  .nojs .cardHolder.card .card:hover,
+  .cardHolder.card.horizontal .card:hover {
     transform: scale(0.97);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.62);
   }
@@ -981,12 +987,14 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
     padding-top: 0;
   }
   .cardHolder.card,
-  .nojs .cardHolder.card {
+  .nojs .cardHolder.card,
+  .cardHolder.card.horizontal {
     max-width: 1200px;
     margin: 0 auto;
   }
   .cardHolder.card .card,
-  .nojs .cardHolder.card .card {
+  .nojs .cardHolder.card .card,
+  .cardHolder.card.horizontal .card {
     width: 29%;
     margin: 0 2% 4%;
   }
@@ -1061,7 +1069,8 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
     padding-right: 0;
   }
   .cardHolder.card .card,
-  .nojs .cardHolder.card .card {
+  .nojs .cardHolder.card .card,
+  .cardHolder.card.horizontal .card {
     width: 22%;
     margin: 0 1.5% 3%;
   }
