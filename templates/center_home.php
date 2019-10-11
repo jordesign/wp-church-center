@@ -31,7 +31,12 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
                     'post_type' => 'card', 
                     'posts_per_page' => -1,
                     'orderby' => 'menu_order',
-                    'order' => 'ASC'
+                    'order' => 'ASC',
+                    'meta_query' => array(
+                        	'key' => 'wpcc_unlisted',
+	            		'value' => '1',
+	            		'compare' => '!='
+                    ),
      ) );
 
 	

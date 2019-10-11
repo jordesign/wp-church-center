@@ -35,7 +35,7 @@ function wpcc_post_type() {
 		'label'                 => __( 'Card', 'WP_Church_Center' ),
 		'description'           => __( 'Cards for the Church Hub', 'WP_Church_Center' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', ),
+		'supports'              => array( 'title', 'editor' ),
 		'hierarchical'          => true,
 		'public'                => true,
 		'show_ui'               => true,
@@ -200,6 +200,13 @@ function wpcc_load_custom_fields() {
 		'id' => 'acf_card-presentation',
 		'title' => 'Card Presentation',
 		'fields' => array (
+		     array (
+				'key' => 'field_5hh883e2b3dab',
+				'label' => 'Unlisted Card',
+				'name' => 'wpcc_unlisted',
+				'type' => 'true_false',
+				'message' => 'Hide from card lists/grids'
+			),
 			array (
 				'key' => 'field_5908a8e2b3dab',
 				'label' => 'Card Image',

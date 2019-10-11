@@ -160,6 +160,39 @@ function wpcc_sort_cards( $query ) {
     }
 } 
 
+// Don't show unlisted cards in Archive/Category queries
+add_action( 'pre_get_posts', 'wpcc_exclude_unlisted_cards' );
+function wpcc_exclude_unlisted_cards( $query ) {
+    if ( $query->is_main_query() && !is_admin() ) {
+        if (  $query->is_post_type_archive('card') ) {
+	        // in case for some reason there's already a meta query set from other plugin
+	        $meta_query = $query->get('meta_query')? : [];
+
+	        // append yours
+	        $meta_query[] = [
+	        'relation' => 'OR',
+	        array(
+  			'key' => 'wpcc_unlisted',
+	          'compare' => 'NOT EXISTS'
+	        ),
+	        array(
+  			'key' => 'wpcc_unlisted',
+  			'value' => '0',
+	          'compare' => '==',
+	        ),
+
+	            
+	        ];
+
+	        $query->set('meta_query', $meta_query);
+
+	      	//echo '<pre>'; print_r( $query ); echo '</pre>';
+
+	    }
+	}
+}
+
+
 //Add an extra class for theming
 /**
  * Adds classes to the array of body classes.
