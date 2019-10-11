@@ -33,9 +33,16 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
                     'orderby' => 'menu_order',
                     'order' => 'ASC',
                     'meta_query' => array(
-                        	'key' => 'wpcc_unlisted',
-	            		'value' => '1',
-	            		'compare' => '!='
+                       'relation' => 'OR',
+			        array(
+		  			'key' => 'wpcc_unlisted',
+			          'compare' => 'NOT EXISTS'
+			        ),
+			        array(
+		  			'key' => 'wpcc_unlisted',
+		  			'value' => '0',
+			          'compare' => '==',
+			        ),
                     ),
      ) );
 
