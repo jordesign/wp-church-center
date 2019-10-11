@@ -48,6 +48,7 @@ Add a page which uses the 'Church Center Homepage' template
 v1.3
 - FEATURE: You can use a custom slug in the URL instead of "/card/"
 - FEATURE: Cards can now be grouped in a 'Card Group' taxonomy
+- FEATURE: Cards can now be 'unlisted' so they don't show in card lists or grids
 - FEATURE: You can now add a Favicon for your center
 - UPDATED: Update bundled ACF version to 5.7.9
 - UPDATED: Moved Customizer settings and Added SEO area
