@@ -70,7 +70,7 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 					}
 					if ( get_option( 'wpcc_layout' ) == 'list' && $layout !='grid' && $layout !='card' && $layout != 'small-card' ) { ?>
 
-					<?php do_action('wpcc_after_card'); ?>
+					<?php do_action('wpcc_before_card'); ?>
 
 					<a class="card <?php do_action('wpcc_card_link_classes'); ?>" 
 						href="<?php echo $card_link; ?>" 
