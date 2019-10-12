@@ -2779,6 +2779,14 @@
 		"oAP": "/readme.txt",
 		"oF": 0
 		},
+	"/shortcodes.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 2,
+		"oAP": "/shortcodes.php",
+		"oF": 0
+		},
 	"/templates.php": {
 		"cB": 0,
 		"ft": 8192,
