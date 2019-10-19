@@ -10,7 +10,7 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php'; ?>
 		echo esc_html( $_GET["layout"] );
 	} elseif ( $layout = get_option( 'wpcc_layout' ) ){
 		echo esc_html( $layout );
-	} else {
+	} else { 
 		echo 'list';
 	}  
 

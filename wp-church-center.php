@@ -76,6 +76,9 @@ require_once plugin_dir_path( __FILE__ ) . 'templates.php';
 /**  Shortcodes */
 require_once plugin_dir_path( __FILE__ ) . 'shortcodes.php';
 
+/**  Function for dispaying the cards */
+require_once plugin_dir_path( __FILE__ ) . 'card-loop.php';
+
 /**  Page Ordering */
 require_once plugin_dir_path( __FILE__ ) . 'page-ordering/simple-page-ordering.php';
 

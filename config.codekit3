@@ -2600,6 +2600,14 @@
 		"oAP": "/advanced-custom-fields/pro/updates.php",
 		"oF": 0
 		},
+	"/card-loop.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 2,
+		"oAP": "/card-loop.php",
+		"oF": 0
+		},
 	"/cpt.php": {
 		"cB": 0,
 		"ft": 8192,

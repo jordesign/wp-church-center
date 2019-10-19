@@ -100,7 +100,8 @@ if( 1 == get_option( 'wpcc_disable_scripts' )  && !is_admin() ){
 
 //Now enqueue styles we want 
 function wpcc_add_styles() {
-	if( is_singular( 'card' )  || is_post_type_archive('card') || get_page_template_slug( get_the_ID() ) =='center_home.php' ){
+	global $post;
+	if( is_singular( 'card' )  || is_post_type_archive('card') || get_page_template_slug( get_the_ID() ) =='center_home.php' || has_shortcode( $post->post_content, 'wpcc') ){
 		wp_enqueue_style( 'wpcc-style', plugins_url( '/templates/wpcc_style.1.3.css', __FILE__  ) );
 		//if( get_option('wpcc_scroll_direction') =='horizontal' ) {
 			wp_enqueue_script( 'wpcc-scripts', plugins_url( '/templates/wpcc_script.1.3-min.js', __FILE__ ), array( 'jquery' ) );
