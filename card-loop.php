@@ -1,6 +1,6 @@
 <?php // The loop for displaying cards 
 
-function wpcc_card_display(){ 
+function wpcc_card_display($wpcc_display_query){ 
 
 // Construct outer 'cardHolder' DIV with classes
 $wpcc_card_output= '<div class="cardHolder ';
@@ -39,31 +39,10 @@ $wpcc_card_output.= '<div class="cards ';
 
 $wpcc_card_output.= '">';
 
-	
-// Set up query	
-$wpcc_query = new WP_Query( array (
-     'post_type' => 'card', 
-     'posts_per_page' => -1,
-     'orderby' => 'menu_order',
-     'order' => 'ASC',
-     'meta_query' => array(
-        'relation' => 'OR',
-        array(
-			'key' => 'wpcc_unlisted',
-          'compare' => 'NOT EXISTS'
-        ),
-        array(
-			'key' => 'wpcc_unlisted',
-			'value' => '0',
-          'compare' => '==',
-        ),
-     ),
-) );
-
 // The Loop	
-if ( $wpcc_query -> have_posts() ) {
-	while ( $wpcc_query -> have_posts() ) {
-		$wpcc_query -> the_post();
+if ( $wpcc_display_query -> have_posts() ) {
+	while ( $wpcc_display_query -> have_posts() ) {
+		$wpcc_display_query -> the_post();
 
 				
 		//set up the link for the card
