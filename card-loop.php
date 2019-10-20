@@ -56,8 +56,22 @@ if ( $wpcc_display_query -> have_posts() ) {
 		if(has_filter('wpcc_card_link')) {
 			$card_link = apply_filters('wpcc_card_link', $card_link);
 		} 
+
+		// Set Card Title	
+		$cardTitle = get_the_title(); 
+
+		if(has_filter('wpcc_archive_card_title')) {
+			$cardTitle = apply_filters('wpcc_archive_card_title', $cardTitle);		
+		}
+
+		// Set Card Subtitle
+		$cardSubtitle = get_field('wpcc_subtitle');
+
+		if(has_filter('wpcc_archive_card_subtitle')) {
+			$cardSubtitle = apply_filters('wpcc_archive_card_subtitle', $cardSubtitle);
+		}
 		
-		// Set layout type	
+		// Check URL vars for layout	
 		if ( isset($_GET["layout"]) ) {
 			$layout = esc_html( $_GET["layout"] );
 		}
@@ -90,22 +104,9 @@ if ( $wpcc_display_query -> have_posts() ) {
 				// Card List Body DIV
 				$wpcc_card_output.= '<div class="cardBody">';
 					
-					// Set Card Title	
-					$cardTitle = get_the_title(); 
 
-					if(has_filter('wpcc_archive_card_title')) {
-						$cardTitle = apply_filters('wpcc_archive_card_title', $cardTitle);		
-					}
-					
 					// Output Card Title		
 					$wpcc_card_output.= '<h3 style="color: ' . get_field('wpcc_color') . '">' . $cardTitle . '</h3>';
-					
-					// Set Card Subtitle
-					$cardSubtitle = get_field('wpcc_subtitle');
-
-					if(has_filter('wpcc_archive_card_subtitle')) {
-						$cardSubtitle = apply_filters('wpcc_archive_card_subtitle', $cardSubtitle);
-					}
 
 					// Output Card Subtitle
 					if($cardSubtitle){ 
@@ -152,23 +153,9 @@ if ( $wpcc_display_query -> have_posts() ) {
 				// Card List Body DIV
 				$wpcc_card_output.= '<div class="cardBody">';
 					
-					// Set Card Title	
-					$cardTitle = get_the_title(); 
-
-					if(has_filter('wpcc_archive_card_title')) {
-						$cardTitle = apply_filters('wpcc_archive_card_title', $cardTitle);		
-					}
-					
 					// Output Card Title		
 					$wpcc_card_output.= '<h3 style="color: ' . get_field('wpcc_color') . '">' . $cardTitle . '</h3>';
 					
-					// Set Card Subtitle
-					$cardSubtitle = get_field('wpcc_subtitle');
-
-					if(has_filter('wpcc_archive_card_subtitle')) {
-						$cardSubtitle = apply_filters('wpcc_archive_card_subtitle', $cardSubtitle);
-					}
-
 					// Output Card Subtitle
 					if($cardSubtitle){ 
 						$wpcc_card_output.= '<p>' . $cardSubtitle . '</p>';
@@ -234,23 +221,9 @@ if ( $wpcc_display_query -> have_posts() ) {
 					// Card Details DIV
 					$wpcc_card_output.= '<div class="cardDetails">';
 
-						// Set Card Title	
-						$cardTitle = get_the_title(); 
-
-						if(has_filter('wpcc_archive_card_title')) {
-							$cardTitle = apply_filters('wpcc_archive_card_title', $cardTitle);		
-						}
-						
 						// Output Card Title		
 						$wpcc_card_output.= '<h3 style="color: ' . get_field('wpcc_color') . '">' . $cardTitle . '</h3>';
 						
-						// Set Card Subtitle
-						$cardSubtitle = get_field('wpcc_subtitle');
-
-						if(has_filter('wpcc_archive_card_subtitle')) {
-							$cardSubtitle = apply_filters('wpcc_archive_card_subtitle', $cardSubtitle);
-						}
-
 						// Output Card Subtitle
 						if($cardSubtitle){ 
 							$wpcc_card_output.= '<p>' . $cardSubtitle . '</p>';
@@ -315,23 +288,9 @@ if ( $wpcc_display_query -> have_posts() ) {
 					$wpcc_card_output.= '<div class="bottomSection">';
 
 						$wpcc_card_output.= '<div class="intro">';
-						
-							// Set Card Title	
-							$cardTitle = get_the_title(); 
-
-							if(has_filter('wpcc_archive_card_title')) {
-								$cardTitle = apply_filters('wpcc_archive_card_title', $cardTitle);		
-							}
 							
 							// Output Card Title		
 							$wpcc_card_output.= '<h3 style="color: ' . get_field('wpcc_color') . '">' . $cardTitle . '</h3>';
-
-							// Set Card Subtitle
-							$cardSubtitle = get_field('wpcc_subtitle');
-
-							if(has_filter('wpcc_archive_card_subtitle')) {
-								$cardSubtitle = apply_filters('wpcc_archive_card_subtitle', $cardSubtitle);
-							}
 
 							// Output Card Subtitle
 							if($cardSubtitle){ 
