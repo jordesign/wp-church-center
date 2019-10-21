@@ -269,7 +269,7 @@ if ( $wpcc_display_query -> have_posts() ) {
 wp_reset_query();
 
 $wpcc_card_output.= '</div>';
-$wpcc_card_output.= '</div>';
+$wpcc_card_output.= '</div></div>';
 
 return $wpcc_card_output;
 

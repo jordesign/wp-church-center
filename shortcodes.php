@@ -32,7 +32,7 @@ function wpcc_shortcode( $atts ) {
 	     ),
 	) );
 
-	return wpcc_card_display($wpcc_query);
+	return wpcc_card_display($wpcc_query,NULL);
 
 }
 add_shortcode( 'wpcc', 'wpcc_shortcode' );
