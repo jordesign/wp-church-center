@@ -85,11 +85,18 @@ if ( $wpcc_display_query -> have_posts() ) {
 
 			do_action('wpcc_before_card');
 
-			// Card Link Classes
-			$wpcc_card_output.= '<a class="card ' . do_action('wpcc_card_link_classes') . '" '; 
+			// Card Link
+			$wpcc_card_output.= '<a class="card ';
+
+				// Card Link Classes
+				ob_start();
+				do_action('wpcc_card_link_classes'); 
+				$link_classes = ob_get_contents();
+				ob_end_clean();
+				$wpcc_card_output.= $link_classes;
 
 				// Card Link Href
-				$wpcc_card_output.= 'href="' .  $card_link . '" ';
+				$wpcc_card_output.= '" href="' .  $card_link . '" ';
 
 				// Card Link Inline Style
 				$wpcc_card_output.= 'style="background-color: ' . get_field('wpcc_color') . '" ';
@@ -100,7 +107,11 @@ if ( $wpcc_display_query -> have_posts() ) {
 				}
 
 				//Action to add additional attributes to the anchor
+				ob_start();
 				do_action('wpcc_card_link_attr'); 
+				$link_attrs = ob_get_contents();
+				ob_end_clean();
+				$wpcc_card_output.= $link_attrs;
 			
 			//END Anchor			 
 			$wpcc_card_output.= '>';
@@ -133,18 +144,30 @@ if ( $wpcc_display_query -> have_posts() ) {
 
 			do_action('wpcc_before_card'); 
 
-			// Card Link Classes
-			$wpcc_card_output.= '<a class="card small-card ' . do_action('wpcc_card_link_classes') . '" ';
-			
-				//Card Link Href			
-				$wpcc_card_output.= 'href="' . $card_link . '" ';
+			// Card Link
+			$wpcc_card_output.= '<a class="card ';
+
+				// Card Link Classes
+				ob_start();
+				do_action('wpcc_card_link_classes'); 
+				$link_classes = ob_get_contents();
+				ob_end_clean();
+				$wpcc_card_output.= $link_classes;
+
+				// Card Link Href			
+				$wpcc_card_output.= '" href="' . $card_link . '" ';
 				
 				// Card Link Target
 				if(get_field("wppc_external_new_window") == '1'){ 
 					$wpcc_card_output.= 'target="_blank" ';
 				}
 
+				//Action to add additional attributes to the anchor
+				ob_start();
 				do_action('wpcc_card_link_attr'); 
+				$link_attrs = ob_get_contents();
+				ob_end_clean();
+				$wpcc_card_output.= $link_attrs; 
 							 
 			$wpcc_card_output.= '>';
 
@@ -201,11 +224,18 @@ if ( $wpcc_display_query -> have_posts() ) {
 
 			do_action('wpcc_before_card');
 
-			// Card Link Classes
-			$wpcc_card_output.= '<a class="card ' . do_action('wpcc_card_link_classes') . '" ';
+			// Card Link
+			$wpcc_card_output.= '<a class="card ';
+
+				// Card Link Classes
+				ob_start();
+				do_action('wpcc_card_link_classes'); 
+				$link_classes = ob_get_contents();
+				ob_end_clean();
+				$wpcc_card_output.= $link_classes;
 
 				// Card Link Href
-				$wpcc_card_output.= 'href="' . $card_link . '" ';
+				$wpcc_card_output.= '" href="' . $card_link . '" ';
 							
 				// Card Link Tab Index
 				$wpcc_card_output.= 'tabindex="-1" ';
@@ -215,7 +245,12 @@ if ( $wpcc_display_query -> have_posts() ) {
 					$wpcc_card_output.= 'target="_blank" ';
 				}
 
-				do_action('wpcc_card_link_attr');
+				//Action to add additional attributes to the anchor
+				ob_start();
+				do_action('wpcc_card_link_attr'); 
+				$link_attrs = ob_get_contents();
+				ob_end_clean();
+				$wpcc_card_output.= $link_attrs;
 
 			$wpcc_card_output.= '>';
 
