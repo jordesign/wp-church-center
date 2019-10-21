@@ -1,19 +1,27 @@
 <?php // The loop for displaying cards 
 
-function wpcc_card_display($wpcc_display_query){ 
+function wpcc_card_display($wpcc_display_query,$wpcc_shortcode_layout){ 
+
+	//SET Get Default Layout for the cards
+	$layout = get_option( 'wpcc_layout' );
+
+	// Check URL vars for layout	
+	if ( isset($_GET["layout"]) ) {
+		$layout = esc_html( $_GET["layout"] );
+	}
+
+	// Check if Layout is set by the shortcode
+	if ( $wpcc_shortcode_layout ) {
+		$layout = $wpcc_shortcode_layout;
+	}
 
 // Construct outer 'cardHolder' DIV with classes
 $wpcc_card_output= '<div class="cardHolder ';
 
-     if( isset($_GET["layout"]) ) { 
-		$wpcc_card_output.= esc_html( $_GET["layout"] );
-	} elseif ( $layout = get_option( 'wpcc_layout' ) ){
-		$wpcc_card_output.=  esc_html( $layout );
-	} else {
-		$wpcc_card_output.=  'list';
-	}  
+		$wpcc_card_output.= $layout;
+	 
 
-	if(get_option( 'wpcc_layout' ) == 'card') { 
+	if($layout == 'card') { 
 		$wpcc_card_output.= ' ' . get_option( 'wpcc_scroll_direction' ); 
 	}
 
@@ -33,7 +41,7 @@ $wpcc_card_output.= '<div class="cards ';
 		$wpcc_card_output.= 'tint '; 
 	}  
 
-	if(get_option( 'wpcc_layout' ) == 'small-card') { 
+	if($layout == 'small-card') { 
 		$wpcc_card_output.= 'js-masonry ' . get_option('wpcc_small_card_columns'); 
 	} 
 
@@ -71,13 +79,9 @@ if ( $wpcc_display_query -> have_posts() ) {
 			$cardSubtitle = apply_filters('wpcc_archive_card_subtitle', $cardSubtitle);
 		}
 		
-		// Check URL vars for layout	
-		if ( isset($_GET["layout"]) ) {
-			$layout = esc_html( $_GET["layout"] );
-		}
 		
 		// when 'List' is the layout type
-		if ( get_option( 'wpcc_layout' ) == 'list' && $layout !='grid' && $layout !='card' && $layout != 'small-card' ) { 
+		if (  $layout =='list') { 
 
 			do_action('wpcc_before_card');
 
@@ -108,54 +112,6 @@ if ( $wpcc_display_query -> have_posts() ) {
 					// Output Card Title		
 					$wpcc_card_output.= '<h3 style="color: ' . get_field('wpcc_color') . '">' . $cardTitle . '</h3>';
 
-					// Output Card Subtitle
-					if($cardSubtitle){ 
-						$wpcc_card_output.= '<p>' . $cardSubtitle . '</p>';
-					} 
-						
-				// Close List Body Div
-				$wpcc_card_output.= '</div>';
-
-				// Output Card List Arrow
-				$wpcc_card_output.= '<i class="fa fa-angle-circled-right" style="color: ' . get_field('wpcc_color') . '"></i>';
-
-			// CLOSE Anchor
-			$wpcc_card_output.= '</a>';
-
-			do_action('wpcc_after_card'); 
-
-
-		// ALSO when 'List' is the layout type
-		} elseif ( $layout =='list' && $layout != 'small-card' ) { 
-
-			do_action('wpcc_before_card');
-
-			// Card Link Classes
-			$wpcc_card_output.= '<a class="card ' . do_action('wpcc_card_link_classes') . '" '; 
-
-				// Card Link Href
-				$wpcc_card_output.= 'href="' .  $card_link . '" ';
-
-				// Card Link Inline Style
-				$wpcc_card_output.= 'style="background-color: ' . get_field('wpcc_color') . '" ';
-				
-				// Card Link Target
-				if(get_field("wppc_external_new_window") == '1'){ 
-					$wpcc_card_output.= 'target="_blank" ';
-				}
-
-				//Action to add additional attributes to the anchor
-				do_action('wpcc_card_link_attr'); 
-			
-			//END Anchor			 
-			$wpcc_card_output.= '>';
-
-				// Card List Body DIV
-				$wpcc_card_output.= '<div class="cardBody">';
-					
-					// Output Card Title		
-					$wpcc_card_output.= '<h3 style="color: ' . get_field('wpcc_color') . '">' . $cardTitle . '</h3>';
-					
 					// Output Card Subtitle
 					if($cardSubtitle){ 
 						$wpcc_card_output.= '<p>' . $cardSubtitle . '</p>';
@@ -173,7 +129,7 @@ if ( $wpcc_display_query -> have_posts() ) {
 			do_action('wpcc_after_card'); 
 
 		// If 'Small Card' is the layout type
-		} elseif ( $layout=='small-card' ) { 
+		} elseif ( $layout == 'small-card' ) { 
 
 			do_action('wpcc_before_card'); 
 

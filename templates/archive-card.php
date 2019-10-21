@@ -5,7 +5,7 @@
 /**  Load Header */
 require_once plugin_dir_path( __FILE__ ) . 'header.php';
 
-echo wpcc_card_display($wp_query);
+echo wpcc_card_display($wp_query,NULL);
 
 
 /**  Load Footer */

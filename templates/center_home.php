@@ -28,7 +28,7 @@ require_once plugin_dir_path( __FILE__ ) . 'header.php';
 	     ),
 	) );
 
-echo wpcc_card_display($wpcc_query);
+echo wpcc_card_display($wpcc_query,NULL);
 
 
  /**  Load Footer */
