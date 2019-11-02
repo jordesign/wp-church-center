@@ -17,7 +17,6 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-
 /**
  * Include ACF. Current version bundled is 5.7.8
  */
