@@ -1,7 +1,7 @@
 === WP Church Center ===
-Contributors: jordesign, wpchurchteam
+Contributors: jordesign
 Requires at least: 4.7
-Tested up to: 5.0.2
+Tested up to: 5.2.4
 Stable tag: 1.3
 License: GPL2
 
@@ -11,7 +11,14 @@ Create a 'Next Steps' hub for your church using WordPress! Setup in minutes, mob
 WP Church Center enables churches to set up a central hub of next steps for their members. 
 Unlimited cards to inform your members and make it easy for them to get involved, signup, or find out more.
 
-Features include:
+### NEW in Version 3.0: 
+
+- Group Cards into categories
+- Insert cards using the new [wpcc] shortcode.
+- Set cards to be not show in the Center
+
+### Features include:
+
 - 4 layout options (grid, small card, list, and card views)
 - Colour customization options
 - Header and footer customization options
@@ -33,10 +40,11 @@ You'll need to set up some settings for your centre in the 'Church Center' secti
 
 4). If you're having 'page not found' issues when trying to view single cards - try saving your permalinks under Settings > Permalinks.
 
+5). Add/Edit Cards in the same way you would with any other content
 
+### Displaying 
 
-Add/Edit Cards in the same way you would with any other content
-Add a page which uses the 'Church Center Homepage' template
+== Frequently Asked Questions ==
 
 == Screenshots ==
 1. Editing Settings in the Customizer
