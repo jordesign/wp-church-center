@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="wpchurchcenter">WPChurch Center</h1>
+
+<p>A &#8216;Next Steps&#8217; Hub WordPress plugin for churches</p>
+
+<p>This is a WordPress plugin which enables an extra post-type and associated templates to run a set of &#8216;Next Steps&#8217; for a church. Intended to be used as part of an existing site, or as a standalone site.</p>
+
+<h3 id="newinversion1.3:">NEW in Version 1.3:</h3>
+
+<ul>
+<li>Change or remove the /card/ slug in URLs</li>
+<li>Group Cards into categories</li>
+<li>Insert cards using the new [wpcc] shortcode.</li>
+<li>Set cards to be unlisted/hidden in the Center</li>
+<li>Have a separate Favicon for your Center</li>
+<li>Control SEO settings for your Center</li>
+</ul>
+
+<h3 id="featuresinclude:">Features include:</h3>
+
+<ul>
+<li>4 layout options (grid, small card, list, and card views)</li>
+<li>Colour customization options</li>
+<li>Header and footer customization options</li>
+<li>Cards utilise and display any kind of WordPress content</li>
+<li>Mobile first and fully responsive</li>
+<li>Works as standalone site, or as part of your existing WordPress site</li>
+</ul>
+
+<p>== Installation ==
+1). Download the plugin</p>
+
+<p>2). Install the plugin by either:
+extracting the .zip file and uploading the entire wp-church-center folder to the /wp-content/plugins/ directory of our web server.
+go to Plugins &gt; Add New in the WordPress Admin and upload the .zip file.</p>
+
+<p>3). Activate the Plugin. You should see a &#8216;Cards&#8217; menu item.
+You&#8217;ll need to set up some settings for your centre in the &#8216;Church Center&#8217; section of the Customizer (Appearance &gt; Customizer). These will allow you to alter the appearance of your hub - editing the header, footer and other details of how things look.</p>
+
+<p>4). If you&#8217;re having &#8216;page not found&#8217; issues when trying to view single cards - try saving your permalinks under Settings &gt; Permalinks.</p>
+
+<p>5). Add/Edit Cards in the same way you would with any other content</p>
+
+<p>6). You can add your &#8216;Center&#8217; to any page using the <code>[wpcc]</code> shortcode. It supports the following attributes to adjust the display: `[wpcc count=10 card_group=&#8216;your_card_group_slug&#8217; layout=&#8220;small_card&#8221;]</p>
+
+<h3 id="displaying">Displaying</h3>
+
+<p>== Frequently Asked Questions ==</p>
+
+<p>== Screenshots ==</p>
+
+<ol>
+<li>Editing Settings in the Customizer</li>
+<li>Editing a card</li>
+<li>An example card</li>
+</ol>
+
+<p>== Changelog ==</p>
+
+<p>v1.3</p>
+
+<ul>
+<li>FEATURE: You can use a custom slug in the URL instead of &#8220;/card/&#8221;</li>
+<li>FEATURE: Cards can now be grouped in a &#8216;Card Group&#8217; taxonomy</li>
+<li>FEATURE: Cards can now be &#8216;unlisted&#8217; so they don&#8217;t show in card lists or grids</li>
+<li>FEATURE: You can now add a Favicon for your center</li>
+<li>UPDATED: Update bundled ACF version to 5.7.9</li>
+<li>UPDATED: Moved Customizer settings and Added SEO area</li>
+<li>UPDATED: Ensure social icons work with FontAwesome 5</li>
+<li>BUG: Fix Vertical scroll for cards on small screens</li>
+<li>BUG: Tidy up styles for list view</li>
+<li>BUG: Fix incorrect display of footer on Card view.</li>
+</ul>
+
+<p>v1.2.12</p>
+
+<ul>
+<li>UPDATED: updated bundled version of ACF to support WordPress 5.0</li>
+</ul>
+
+<p>v1.2.11</p>
+
+<ul>
+<li>UPDATED: More robust styles for the mobile menu</li>
+<li>UPDATED: Tidy up php files to remove additional headers</li>
+<li></li>
+</ul>
+
+<p>v1.2.10</p>
+
+<ul>
+<li>BUG: Make sure admin bar can be hidden</li>
+<li>BUG: Make sure the_content() never displays within cards</li>
+<li>BUG: Ensure that iframes and images with captions are contained by the card</li>
+<li>UPDATED: Set up card title and single titles to be filtered by plugins</li>
+<li>UPDATED: Better title styles for Small Cards</li>
+<li>UPDATED: Change the filtering of content and titles on the single-card views</li>
+<li>UPDATED: Add filters to OG:tags and Twitter tags</li>
+</ul>
+
+<p>v1.2.9</p>
+
+<ul>
+<li>UPDATED: Higher priority for our custom &#8216;single&#8217; template so it overides some themes with &#8216;builder&#8217; templates</li>
+<li>UPDATED: Introduce new style for selecting Card Type.</li>
+<li>UPDATED: Add filters to the single card so we can change it with addons?</li>
+<li>UPDATED: Change the way we output content within the cards.</li>
+<li>UPDATED: Allow Cards to be Password Protected</li>
+<li>BUG: Stop changing the order on all taxonomies in the site</li>
+<li>BUG: Don&#8217;t disable stylesheets in admin</li>
+</ul>
+
+<p>v1.2.8</p>
+
+<ul>
+<li>BUG: make addon scripts exempt from being disabled</li>
+</ul>
+
+<p>v1.2.7</p>
+
+<ul>
+<li>Add extra actions and filters to allow addons to change card behaviours</li>
+<li>Manually include WordPress' Media management scripts</li>
+</ul>
+
+<p>v1.2.6</p>
+
+<ul>
+<li>Add filter for Card Link</li>
+</ul>
+
+<p>v1.2.5</p>
+
+<ul>
+<li>UPDATED: Tested up to WP 4.9</li>
+<li>UPDATED: Add filter to allow for new PCO giving plugin</li>
+<li>UPDATED: Update to v5.x of Advanced Custom Fields</li>
+</ul>
+
+<p>v1.2.4</p>
+
+<ul>
+<li>UPDATED: Updated Advanced Custom Fields to v4.4.12</li>
+<li>BUG FIX: Return footer to desktop view of Card home page</li>
+<li>BUG FIX: Only include <p> tag for Subtitle if there is one</li>
+<li>BUG FIX: Fix permalink refresh on activation</li>
+<li>FEATURE: Add FitVids.js to make sure videos maintain aspect ratio</li>
+</ul>
+
+<p>v1.2.3</p>
+
+<ul>
+<li>BUG FIX: Logos no longer stretch out of shape in header (thanks @maco)</li>
+<li>BUG FIX: Remove anonymous functions that choke old PHP versions</li>
+<li>BUG FIX: specific list styles to allow for DIVI</li>
+<li>BUG FIX: Add class and styling to <html> for when weird styles are applied in some themes</li>
+<li>BUG FIX: Now an option to set a title on the &#8216;church website&#8217; link in the menu</li>
+<li>BUG FIX: More robust styling for &#8216;cards&#8217; view on small screens</li>
+</ul>
+
+<p>v1.2.2</p>
+
+<ul>
+<li>CHANGED: Start using a version number on our stylesheet and scripts to get around aggressive caching</li>
+<li>BUG FIX: Make sure stylesheet for MediaElement isn&#8217;t disabled</li>
+</ul>
+
+<p>v1.2.1</p>
+
+<ul>
+<li>FEATURE: Added option to have a custom URL on the site logo</li>
+<li>CHANGED: More specific classes on header (.wpccHeader) &amp; footer (.wpccFooter) for more robust styling</li>
+<li>BUG: External links now open in new tab if option is selected</li>
+<li>BUG: Disappearing toolbar buttons now show correctly</li>
+</ul>
+
+<p>v1.2</p>
+
+<ul>
+<li>FEATURE: Add architecture to allow for WPCC Addons</li>
+<li>FEATURE: Add new &#8216;External Link&#8217; card type</li>
+<li>FEATURE: More robust menu button for small screens</li>
+</ul>
+
+<p>v1.1.2</p>
+
+<ul>
+<li>FEATURE/BUG FIX: Use CDN version of icons</li>
+<li>FEATURE: Add option for maximum number of columns on Small Card view</li>
+<li>FEATURE: More robust type styles on cards</li>
+</ul>
+
+<p>v1.1.1</p>
+
+<ul>
+<li>BUG FIX: Fix error on Twitter card image</li>
+</ul>
+
+<p>v1.1</p>
+
+<ul>
+<li>FEATURE: Add drag-and-drop sorting</li>
+<li>FEATURE: Add option for scroll direction on small screens</li>
+<li>FEATURE: Add new &#8216;Small Card&#8217; layout</li>
+<li>FEATURE: Add a whole suite of new design/layout options for more variety</li>
+<li>FEATURE: Add link to &#8220;Center home&#8221; in admin menu</li>
+<li>BUG FIX: Fix undefined_constant error that sometimes appears</li>
+<li>BUG FIX: More robust styles to override custom themes</li>
+<li>BUG FIX: Escape all the html (and urls) so things are secure</li>
+<li>BUG FIX: Use a variable for our image field - so it works on older PHP versions</li>
+<li>BUG FIX: Lots of small tweaks and bug fixes</li>
+</ul>
+
+<p>v1.0.3</p>
+
+<ul>
+<li>BUG FIX: remove hover background behind menu items</li>
+<li>BUG FIX: Use a variable for our image field - so it works on older PHP versions</li>
+<li>BUG FIX: Make body BG more specific so it overrides installed theme</li>
+<li>BUG FIX: Simplify permalinks so they always work.</li>
+</ul>
+
+<p>v1.0.2</p>
+
+<ul>
+<li>FEATURE: Flush rewrite rules on plugin activation/deactivation</li>
+<li>FEATURE: Add styles for card view when &#8216;swiping&#8217; isn&#8217;t used.</li>
+<li>BUG FIX: Fix Instagram link</li>
+<li>BUG FIX: Default colours for social icons</li>
+<li>BUG FIX: More robust menu styles to allow for longer text</li>
+<li>BUG FIX: tidy up theme switcher</li>
+<li>BUG FIX: WPCC javascript not loading when scripts disabled</li>
+</ul>
+
+<p>v1.0.1</p>
+
+<ul>
+<li>BUG FIX: Include ACF later to avoid conflict with themes using ACF Pro</li>
+<li>BUG FIX: More robust OG &amp; Twitter meta tags</li>
+<li>Tweaks to logo &amp; header styling</li>
+<li>Make card header shorter on mobile screens</li>
+<li>Tidy up ReadMe.txt</li>
+</ul>
+
+<p>v1.0 First release of core plugin</p>
+
+</body>
+</html>
+

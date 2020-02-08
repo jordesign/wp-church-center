@@ -849,6 +849,7 @@ body .header #menu.wpccMenu ul.circle-outline li a i:before {
   .post-type-archive-card .wpccFooter.card,
   .page-template-center_home .wpccFooter.card {
     display: block;
+    position: static;
   }
   .admin-bar .header.card {
     top: 0px;
