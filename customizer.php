@@ -716,4 +716,5 @@ function wpcc_extra_admin_menu() {
 
     $submenu['edit.php?post_type=card'][] = array('Your Church Center', 'manage_options', wpcc_get_home_center_link() );
     $submenu['edit.php?post_type=card'][] = array('Center Settings', 'manage_options', $url);
+    $submenu['edit.php?post_type=card'][] = array('FB Support Group', 'manage_options', 'https://www.facebook.com/groups/wpchurchcenter/');
 }
