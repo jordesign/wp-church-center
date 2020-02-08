@@ -1,7 +1,7 @@
 === WP Church Center ===
 Contributors: jordesign
 Requires at least: 4.7
-Tested up to: 5.2.4
+Tested up to: 5.4
 Stable tag: 1.3
 License: GPL2
 
@@ -11,11 +11,15 @@ Create a 'Next Steps' hub for your church using WordPress! Setup in minutes, mob
 WP Church Center enables churches to set up a central hub of next steps for their members. 
 Unlimited cards to inform your members and make it easy for them to get involved, signup, or find out more.
 
-### NEW in Version 3.0: 
+### NEW in Version 1.3: 
 
+- Change or remove the /card/ slug in URLs
 - Group Cards into categories
 - Insert cards using the new [wpcc] shortcode.
-- Set cards to be not show in the Center
+- Set cards to be unlisted/hidden in the Center
+- Have a separate Favicon for your Center
+- Control SEO settings for your Center
+
 
 ### Features include:
 
