@@ -20,7 +20,6 @@ Unlimited cards to inform your members and make it easy for them to get involved
 - Have a separate Favicon for your Center
 - Control SEO settings for your Center
 
-
 ### Features include:
 
 - 4 layout options (grid, small card, list, and card views)
