@@ -45,6 +45,8 @@ You'll need to set up some settings for your centre in the 'Church Center' secti
 
 5). Add/Edit Cards in the same way you would with any other content
 
+6). You can add your 'Center' to any page using the `[wpcc]` shortcode. It supports the following attributes to adjust the display: `[wpcc count=10 card_group='your_card_group_slug' layout="small_card"]
+
 ### Displaying 
 
 == Frequently Asked Questions ==
@@ -66,6 +68,7 @@ v1.3
 - UPDATED: Ensure social icons work with FontAwesome 5
 - BUG: Fix Vertical scroll for cards on small screens
 - BUG: Tidy up styles for list view
+- BUG: Fix incorrect display of footer on Card view.
 
 
 v1.2.12
