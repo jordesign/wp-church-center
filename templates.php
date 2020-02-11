@@ -100,10 +100,11 @@ if( 1 == get_option( 'wpcc_disable_scripts' )  && !is_admin() ){
 
 //Now enqueue styles we want 
 function wpcc_add_styles() {
-	if( is_singular( 'card' )  || is_post_type_archive('card') || get_page_template_slug( get_the_ID() ) =='center_home.php' ){
-		wp_enqueue_style( 'wpcc-style', plugins_url( '/templates/wpcc_style.1.2.11.css', __FILE__  ) );
+	global $post;
+	if( is_singular( 'card' )  || is_post_type_archive('card') || get_page_template_slug( get_the_ID() ) =='center_home.php' || has_shortcode( $post->post_content, 'wpcc') ){
+		wp_enqueue_style( 'wpcc-style', plugins_url( '/templates/wpcc_style.1.3.css', __FILE__  ) );
 		//if( get_option('wpcc_scroll_direction') =='horizontal' ) {
-			wp_enqueue_script( 'wpcc-scripts', plugins_url( '/templates/wpcc_script.1.2.11-min.js', __FILE__ ), array( 'jquery' ) );
+			wp_enqueue_script( 'wpcc-scripts', plugins_url( '/templates/wpcc_script.1.3-min.js', __FILE__ ), array( 'jquery' ) );
 		//}
 		if( get_option('wpcc_layout') =='small-card' ) {
 			// Pull Masonry from the core of WordPress
@@ -159,6 +160,39 @@ function wpcc_sort_cards( $query ) {
         }       
     }
 } 
+
+// Don't show unlisted cards in Archive/Category queries
+add_action( 'pre_get_posts', 'wpcc_exclude_unlisted_cards' );
+function wpcc_exclude_unlisted_cards( $query ) {
+    if ( $query->is_main_query() && !is_admin() ) {
+        if (  $query->is_post_type_archive('card') ) {
+	        // in case for some reason there's already a meta query set from other plugin
+	        $meta_query = $query->get('meta_query')? : [];
+
+	        // append yours
+	        $meta_query[] = [
+	        'relation' => 'OR',
+	        array(
+  			'key' => 'wpcc_unlisted',
+	          'compare' => 'NOT EXISTS'
+	        ),
+	        array(
+  			'key' => 'wpcc_unlisted',
+  			'value' => '0',
+	          'compare' => '==',
+	        ),
+
+	            
+	        ];
+
+	        $query->set('meta_query', $meta_query);
+
+	      	//echo '<pre>'; print_r( $query ); echo '</pre>';
+
+	    }
+	}
+}
+
 
 //Add an extra class for theming
 /**

@@ -4,7 +4,7 @@
  * Plugin Name:       WP Church Center
  * Plugin URI:        http://wpchurch.center
  * Description:       Provides a 'Next Steps' Center for your Church.
- * Version:           1.2.12
+ * Version:           1.3
  * Author:            Jordesign, WP Church Team
  * Author URI:        http://wpchurch.team/
  * License:           GPL-2.0+
@@ -16,7 +16,6 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
-
 
 /**
  * Include ACF. Current version bundled is 5.7.8
@@ -72,6 +71,12 @@ require_once plugin_dir_path( __FILE__ ) . 'templates/pagetemplater.php';
 
 /**  Archive Page Templates */
 require_once plugin_dir_path( __FILE__ ) . 'templates.php';
+
+/**  Shortcodes */
+require_once plugin_dir_path( __FILE__ ) . 'shortcodes.php';
+
+/**  Function for dispaying the cards */
+require_once plugin_dir_path( __FILE__ ) . 'card-loop.php';
 
 /**  Page Ordering */
 require_once plugin_dir_path( __FILE__ ) . 'page-ordering/simple-page-ordering.php';

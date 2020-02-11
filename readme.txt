@@ -1,8 +1,8 @@
 === WP Church Center ===
-Contributors: jordesign, wpchurchteam
+Contributors: jordesign
 Requires at least: 4.7
-Tested up to: 5.0
-Stable tag: 1.2.12
+Tested up to: 5.4
+Stable tag: 1.3
 License: GPL2
 
 Create a 'Next Steps' hub for your church using WordPress! Setup in minutes, mobile first & responsive & designed to integrate with your existing WordPress site!
@@ -11,7 +11,17 @@ Create a 'Next Steps' hub for your church using WordPress! Setup in minutes, mob
 WP Church Center enables churches to set up a central hub of next steps for their members. 
 Unlimited cards to inform your members and make it easy for them to get involved, signup, or find out more.
 
-Features include:
+### NEW in Version 1.3: 
+
+- Change or remove the /card/ slug in URLs
+- Group Cards into categories
+- Insert cards using the new [wpcc] shortcode.
+- Set cards to be unlisted/hidden in the Center
+- Have a separate Favicon for your Center
+- Control SEO settings for your Center
+
+### Features include:
+
 - 4 layout options (grid, small card, list, and card views)
 - Colour customization options
 - Header and footer customization options
@@ -33,10 +43,13 @@ You'll need to set up some settings for your centre in the 'Church Center' secti
 
 4). If you're having 'page not found' issues when trying to view single cards - try saving your permalinks under Settings > Permalinks.
 
+5). Add/Edit Cards in the same way you would with any other content
 
+6). You can add your 'Center' to any page using the `[wpcc]` shortcode. It supports the following attributes to adjust the display: `[wpcc count=10 card_group='your_card_group_slug' layout="small_card"]
 
-Add/Edit Cards in the same way you would with any other content
-Add a page which uses the 'Church Center Homepage' template
+### Displaying 
+
+== Frequently Asked Questions ==
 
 == Screenshots ==
 1. Editing Settings in the Customizer
@@ -44,6 +57,19 @@ Add a page which uses the 'Church Center Homepage' template
 3. An example card
 
 == Changelog ==
+
+v1.3
+- FEATURE: You can use a custom slug in the URL instead of "/card/"
+- FEATURE: Cards can now be grouped in a 'Card Group' taxonomy
+- FEATURE: Cards can now be 'unlisted' so they don't show in card lists or grids
+- FEATURE: You can now add a Favicon for your center
+- UPDATED: Update bundled ACF version to 5.7.9
+- UPDATED: Moved Customizer settings and Added SEO area
+- UPDATED: Ensure social icons work with FontAwesome 5
+- BUG: Fix Vertical scroll for cards on small screens
+- BUG: Tidy up styles for list view
+- BUG: Fix incorrect display of footer on Card view.
+
 
 v1.2.12
 - UPDATED: updated bundled version of ACF to support WordPress 5.0

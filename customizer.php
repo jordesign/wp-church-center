@@ -29,6 +29,12 @@ $wp_customize->add_section('wpcc_footer', array(
 'panel' => 'WP_Church_Center',
 ));
 
+$wp_customize->add_section('wpcc_design', array(
+'title' => 'Design Options',
+'priority' => 120,
+'panel' => 'WP_Church_Center',
+));
+
 $wp_customize->add_section('wpcc_links', array(
 'title' => 'Church Links',
 'description' => 'Links to your website and Social Media profiles',
@@ -36,14 +42,14 @@ $wp_customize->add_section('wpcc_links', array(
 'panel' => 'WP_Church_Center',
 ));
 
-$wp_customize->add_section('wpcc_design', array(
-'title' => 'Design Options',
+$wp_customize->add_section('wpcc_settings', array(
+'title' => 'Settings',
 'priority' => 120,
 'panel' => 'WP_Church_Center',
 ));
 
-$wp_customize->add_section('wpcc_settings', array(
-'title' => 'Settings',
+$wp_customize->add_section('wpcc_seo', array(
+'title' => 'Search Engine Optimisation',
 'priority' => 120,
 'panel' => 'WP_Church_Center',
 ));
@@ -106,50 +112,19 @@ $wp_customize->add_control( 'wpcc_logo_link', array(
    'type'    => 'text',
 ) );
 
-
-// add a setting for the church name
-$wp_customize->add_setting('wpcc_church_name', array(
+// add a setting for the site Favicon
+$wp_customize->add_setting('wpcc_favicon', array(
      'type' => 'option', 
      'capability' => 'manage_options',
 ));
 
-//add control for church website name
-$wp_customize->add_control( 'wpcc_church_name', array(
-   'label'   => 'Church Center Title',
-   'description' => 'This will be used in the browser tab, and when shared on social media',
-   'section' => 'wpcc_header',
-   'type'    => 'text',
-) );
-
-// add a setting for the Center Description
-$wp_customize->add_setting( 'wpcc_center_description', array(
-  'type' => 'option', 
-  'capability' => 'manage_options',
-  'default' => 'This is our Next Steps center',
-  'sanitize_callback' => 'sanitize_text_field',
-) );
-
-// add a setting for the Center Description
-$wp_customize->add_control( 'wpcc_center_description', array(
-  'type' => 'textarea',
-  'section' => 'wpcc_header', // // Add a default or your own section
-  'label' => __( 'Church Center description' ),
-  'description' => __( 'This will be used as the description in Search results, and when shared on social media' ),
-) );
-
-// add a setting for the site logo
-$wp_customize->add_setting('wpcc_center_image', array(
-     'type' => 'option', 
-     'capability' => 'manage_options',
-));
-
-// Add a control to upload the logo
-$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wpcc_center_image',
+// Add a control to upload the Favicon
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wpcc_favicon',
 array(
-'label' => 'Center Homepage Image',
-'description' => 'This image will only be used when your center is shared on Social Media',
+'label' => 'Center Favicon',
+'description' => 'Upload a Favicon (32 x 32px PNG file) to be used for your Center pages',
 'section' => 'wpcc_header',
-'settings' => 'wpcc_center_image',
+'settings' => 'wpcc_favicon',
 ) ) );
 
 // add a setting for the church name
@@ -622,6 +597,21 @@ add_action( 'customize_render_control_wpcc_greyscale', 'wpcc_customizer_image_ti
         'description' => 'This will cause the image to be tinted with the selected feature color from the card',
     ) );
 
+    // add a setting for the card slug
+$wp_customize->add_setting('wpcc_custom_slug', array(
+     'type' => 'option', 
+     'capability' => 'manage_options',
+));
+
+//add control for card slug
+$wp_customize->add_control( 'wpcc_custom_slug', array(
+   'label'   => 'Custom Slug for Cards',
+   'description' => 'Enter the string you would like to replace "card" in URLs (like /card/my-awesome-card/"). If you have problems with 404 errors after changing this try visiting Settings > Permalinks and hitting "Save".',
+   'section' => 'wpcc_settings',
+   'type'    => 'text',
+   'placeholder' => 'card',
+) );
+
   // Add settings for disabling styles
     $wp_customize->add_setting( 'wpcc_disable_styles', array(
         'default'    => '',
@@ -638,6 +628,12 @@ add_action( 'customize_render_control_wpcc_greyscale', 'wpcc_customizer_image_ti
         'std'         => '1',
         'description' => 'This removes unnecessary stylesheets to help load your center faster. If some content appears incorrectly, you may need to disable this setting.',
     ) );
+
+    //Heading for the Menu section
+function wpcc_customizer_theme_compatability_title(){
+  printf( '<h2 style="margin: 0px 0 10px; padding-top: 35px; color:#333; font-size:16px;clear:both;">%s</h2>', __( 'Theme Compatibility', 'wpcc' ) );
+}
+add_action( 'customize_render_control_wpcc_disable_styles', 'wpcc_customizer_theme_compatability_title');
 
     // Add settings for disabling scripts
     $wp_customize->add_setting( 'wpcc_disable_scripts', array(
@@ -656,6 +652,51 @@ add_action( 'customize_render_control_wpcc_greyscale', 'wpcc_customizer_image_ti
         'description' => 'This removes unnecessary scripts to help load your center faster. If some content appears incorrectly, you may need to disable this setting.',
     ) );
 
+    // add a setting for the church name
+$wp_customize->add_setting('wpcc_church_name', array(
+     'type' => 'option', 
+     'capability' => 'manage_options',
+));
+
+//add control for church website name
+$wp_customize->add_control( 'wpcc_church_name', array(
+   'label'   => 'Church Center Title',
+   'description' => 'This will be used in the browser tab, and when shared on social media',
+   'section' => 'wpcc_seo',
+   'type'    => 'text',
+) );
+
+// add a setting for the Center Description
+$wp_customize->add_setting( 'wpcc_center_description', array(
+  'type' => 'option', 
+  'capability' => 'manage_options',
+  'default' => 'This is our Next Steps center',
+  'sanitize_callback' => 'sanitize_text_field',
+) );
+
+// add a setting for the Center Description
+$wp_customize->add_control( 'wpcc_center_description', array(
+  'type' => 'textarea',
+  'section' => 'wpcc_seo', // // Add a default or your own section
+  'label' => __( 'Church Center description' ),
+  'description' => __( 'This will be used as the description in Search results, and when shared on social media' ),
+) );
+
+// add a setting for the Center Home OG:Image
+$wp_customize->add_setting('wpcc_center_image', array(
+     'type' => 'option', 
+     'capability' => 'manage_options',
+));
+
+// Add a control to upload the Center Home OG:Image
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wpcc_center_image',
+array(
+'label' => 'Center Homepage Image',
+'description' => 'This image will only be used when your center is shared on Social Media',
+'section' => 'wpcc_seo',
+'settings' => 'wpcc_center_image',
+) ) );
+
 
 
 }
@@ -666,12 +707,14 @@ add_action('customize_register', 'wpcc_new_customizer_settings');
 add_action('admin_menu', 'wpcc_extra_admin_menu');
 
 function wpcc_extra_admin_menu() {
+    $homeURL = wpcc_get_home_center_link();
     global $submenu;
-    
+    $query['url'] = $homeURL;
     $query['autofocus[panel]'] = 'WP_Church_Center';
-    $query['url'] = wpcc_get_home_center_link();
+
     $url = add_query_arg( $query, admin_url( 'customize.php' ) );
 
     $submenu['edit.php?post_type=card'][] = array('Your Church Center', 'manage_options', wpcc_get_home_center_link() );
     $submenu['edit.php?post_type=card'][] = array('Center Settings', 'manage_options', $url);
+    $submenu['edit.php?post_type=card'][] = array('FB Support Group', 'manage_options', 'https://www.facebook.com/groups/wpchurchcenter/');
 }
