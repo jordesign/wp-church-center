@@ -1,8 +1,8 @@
 === WP Church Center ===
 Contributors: jordesign
 Requires at least: 4.7
-Tested up to: 5.4
-Stable tag: 1.3.2
+Tested up to: 5.5.1
+Stable tag: 1.3.3
 License: GPL2
 
 Create a 'Next Steps' hub for your church using WordPress! Setup in minutes, mobile first & responsive & designed to integrate with your existing WordPress site!
@@ -57,6 +57,9 @@ You'll need to set up some settings for your centre in the 'Church Center' secti
 3. An example card
 
 == Changelog ==
+v1.3.3
+- BUG: No PHP notice when cards are empty
+
 v1.3.2
 - Fix bug with card links
 
