@@ -111,7 +111,7 @@ class acf_field_relationship extends acf_field {
 	function get_ajax_query( $options = array() ) {
 		
    		// defaults
-   		$options = acf_parse_args($options, array(
+   		$options = wp_parse_args($options, array(
 			'post_id'		=> 0,
 			's'				=> '',
 			'field_key'		=> '',
@@ -135,7 +135,7 @@ class acf_field_relationship extends acf_field {
 		
    		// paged
    		$args['posts_per_page'] = 20;
-   		$args['paged'] = $options['paged'];
+   		$args['paged'] = intval($options['paged']);
    		
    		
    		// search
@@ -473,9 +473,7 @@ class acf_field_relationship extends acf_field {
 		/* search */	
 		if( in_array('search', $filters) ): ?>
 		<div class="filter -search">
-			<span>
-				<?php acf_text_input( array('placeholder' => __("Search...",'acf'), 'data-filter' => 's') ); ?>
-			</span>
+			<?php acf_text_input( array('placeholder' => __("Search...",'acf'), 'data-filter' => 's') ); ?>
 		</div>
 		<?php endif; 
 		
@@ -483,9 +481,7 @@ class acf_field_relationship extends acf_field {
 		/* post_type */	
 		if( in_array('post_type', $filters) ): ?>
 		<div class="filter -post_type">
-			<span>
-				<?php acf_select_input( array('choices' => $filter_post_type_choices, 'data-filter' => 'post_type') ); ?>
-			</span>
+			<?php acf_select_input( array('choices' => $filter_post_type_choices, 'data-filter' => 'post_type') ); ?>
 		</div>
 		<?php endif; 
 		
@@ -493,9 +489,7 @@ class acf_field_relationship extends acf_field {
 		/* post_type */	
 		if( in_array('taxonomy', $filters) ): ?>
 		<div class="filter -taxonomy">
-			<span>
-				<?php acf_select_input( array('choices' => $filter_taxonomy_choices, 'data-filter' => 'taxonomy') ); ?>
-			</span>
+			<?php acf_select_input( array('choices' => $filter_taxonomy_choices, 'data-filter' => 'taxonomy') ); ?>
 		</div>
 		<?php endif; ?>		
 	</div>
@@ -521,7 +515,7 @@ class acf_field_relationship extends acf_field {
 					<li>
 						<?php acf_hidden_input( array('name' => $field['name'].'[]', 'value' => $post->ID) ); ?>
 						<span data-id="<?php echo esc_attr($post->ID); ?>" class="acf-rel-item">
-							<?php echo $this->get_post_title( $post, $field ); ?>
+							<?php echo acf_esc_html( $this->get_post_title( $post, $field ) ); ?>
 							<a href="#" class="acf-icon -minus small dark" data-name="remove_item"></a>
 						</span>
 					</li>
@@ -754,38 +748,25 @@ class acf_field_relationship extends acf_field {
 	
 	function update_value( $value, $post_id, $field ) {
 		
-		// validate
+		// Bail early if no value.
 		if( empty($value) ) {
-			
 			return $value;
-			
 		}
 		
+		// Format array of values.
+		// - ensure each value is an id.
+		// - Parse each id as string for SQL LIKE queries.
+		if( acf_is_sequential_array($value) ) {
+			$value = array_map('acf_idval', $value);
+			$value = array_map('strval', $value);
 		
-		// force value to array
-		$value = acf_get_array( $value );
-		
-					
-		// array
-		foreach( $value as $k => $v ){
-		
-			// object?
-			if( is_object($v) && isset($v->ID) ) {
-			
-				$value[ $k ] = $v->ID;
-				
-			}
-			
+		// Parse single value for id.
+		} else {
+			$value = acf_idval( $value );
 		}
 		
-		
-		// save value as strings, so we can clearly search for them in SQL LIKE statements
-		$value = array_map('strval', $value);
-		
-	
-		// return
+		// Return value.
 		return $value;
-		
 	}
 		
 }
