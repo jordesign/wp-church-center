@@ -51,9 +51,6 @@ You'll need to set up some settings for your centre in the 'Church Center' secti
 3. An example card
 
 == Changelog ==
-v1.3.3
-- BUG: No PHP notice when cards are empty
-
 v1.3.2
 - Fix bug with card links
 
