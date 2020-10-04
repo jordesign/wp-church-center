@@ -51,6 +51,7 @@ $wpcc_card_output.= '">';
 if ( $wpcc_display_query -> have_posts() ) {
 	while ( $wpcc_display_query -> have_posts() ) {
 		$wpcc_display_query -> the_post();
+		global $post;
 
 				
 		//set up the link for the card
