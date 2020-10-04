@@ -51,6 +51,11 @@ You'll need to set up some settings for your centre in the 'Church Center' secti
 3. An example card
 
 == Changelog ==
+v1.3.2
+- Fix bug with card links
+
+v1.3.1
+- Checks for compatability with WordPress 5.4
 
 v1.3
 - FEATURE: You can use a custom slug in the URL instead of "/card/"

@@ -2,7 +2,7 @@
 Contributors: jordesign
 Requires at least: 4.7
 Tested up to: 5.4
-Stable tag: 1.3
+Stable tag: 1.3.2
 License: GPL2
 
 Create a 'Next Steps' hub for your church using WordPress! Setup in minutes, mobile first & responsive & designed to integrate with your existing WordPress site!
@@ -57,6 +57,11 @@ You'll need to set up some settings for your centre in the 'Church Center' secti
 3. An example card
 
 == Changelog ==
+v1.3.2
+- Fix bug with card links
+
+v1.3.1
+- Checks for compatability with WordPress 5.4
 
 v1.3
 - FEATURE: You can use a custom slug in the URL instead of "/card/"
