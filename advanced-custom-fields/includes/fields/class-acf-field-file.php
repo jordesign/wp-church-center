@@ -147,10 +147,11 @@ class acf_field_file extends acf_field {
 			</p>
 		</div>
 		<div class="acf-actions -hover">
-			<?php if( $uploader != 'basic' ): ?>
-			<a class="acf-icon -pencil dark" data-name="edit" href="#" title="<?php _e('Edit', 'acf'); ?>"></a>
-			<?php endif; ?>
-			<a class="acf-icon -cancel dark" data-name="remove" href="#" title="<?php _e('Remove', 'acf'); ?>"></a>
+			<?php 
+			if( $uploader != 'basic' ): 
+			?><a class="acf-icon -pencil dark" data-name="edit" href="#" title="<?php _e('Edit', 'acf'); ?>"></a><?php 
+			endif;
+			?><a class="acf-icon -cancel dark" data-name="remove" href="#" title="<?php _e('Remove', 'acf'); ?>"></a>
 		</div>
 	</div>
 	<div class="hide-if-value">
@@ -356,19 +357,37 @@ class acf_field_file extends acf_field {
 	
 	function update_value( $value, $post_id, $field ) {
 		
-		// Bail early if no value.
-		if( empty($value) ) {
-			return $value;
+		// bail early if is empty
+		if( empty($value) ) return false;
+		
+		
+		// validate
+		if( is_array($value) && isset($value['ID']) ) { 
+			
+			$value = $value['ID'];
+			
+		} elseif( is_object($value) && isset($value->ID) ) { 
+			
+			$value = $value->ID;
+			
 		}
 		
-		// Parse value for id.
-		$attachment_id = acf_idval( $value );
 		
-		// Connect attacment to post.
-		acf_connect_attachment_to_post( $attachment_id, $post_id );
+		// bail early if not attachment ID
+		if( !$value || !is_numeric($value) ) return false;
 		
-		// Return id.
-		return $attachment_id;
+		
+		// confirm type
+		$value = (int) $value;
+		
+		
+		// maybe connect attacment to post 
+		acf_connect_attachment_to_post( $value, $post_id );
+		
+		
+		// return
+		return $value;
+		
 	}
 		
 	

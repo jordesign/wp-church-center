@@ -10,41 +10,44 @@ class ACF_Ajax_Upgrade extends ACF_Ajax {
 	var $action = 'acf/ajax/upgrade';
 	
 	/**
-	 * get_response
-	 *
-	 * Returns the response data to sent back.
-	 *
-	 * @date	31/7/18
-	 * @since	5.7.2
-	 *
-	 * @param	array $request The request args.
-	 * @return	mixed The response data or WP_Error.
-	 */
-	function get_response( $request ) {
+	*  get_response
+	*
+	*  The actual logic for this AJAX request.
+	*
+	*  @date	31/7/18
+	*  @since	5.7.2
+	*
+	*  @param	void
+	*  @return	mixed The response data to send back or WP_Error.
+	*/
+	
+	function response() {
 		
-		// Switch blog.
-		if( isset($request['blog_id']) ) {
-			switch_to_blog( $request['blog_id'] );
+		// switch blog
+		if( $this->has('blog_id') ) {
+			switch_to_blog( $this->get('blog_id') );
 		}
 		
-		// Bail early if no upgrade avaiable.
+		// bail early if no upgrade avaiable
 		if( !acf_has_upgrade() ) {
 			return new WP_Error( 'upgrade_error', __('No updates available.', 'acf') );
 		}
 		
-		// Listen for output.
+		// listen for output
 		ob_start();
 		
-		// Run upgrades.
+		// run upgrades
 		acf_upgrade_all();
 		
-		// Store output.
+		// store output
 		$error = ob_get_clean();
 		
-		// Return error or success.
+		// return error if output
 		if( $error ) {
 			return new WP_Error( 'upgrade_error', $error );
 		}
+		
+		// return
 		return true;
 	}
 }
@@ -52,3 +55,5 @@ class ACF_Ajax_Upgrade extends ACF_Ajax {
 acf_new_instance('ACF_Ajax_Upgrade');
 
 endif; // class_exists check
+
+?>

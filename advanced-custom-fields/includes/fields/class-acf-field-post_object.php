@@ -504,7 +504,7 @@ class acf_field_post_object extends acf_field {
 		
 		
 		// convert back from array if neccessary
-		if( !$field['multiple'] && is_array($value) ) {
+		if( !$field['multiple'] && acf_is_array($value) ) {
 		
 			$value = current($value);
 			
@@ -535,25 +535,44 @@ class acf_field_post_object extends acf_field {
 	
 	function update_value( $value, $post_id, $field ) {
 		
-		// Bail early if no value.
+		// validate
 		if( empty($value) ) {
+		
 			return $value;
+			
 		}
 		
-		// Format array of values.
-		// - ensure each value is an id.
-		// - Parse each id as string for SQL LIKE queries.
-		if( acf_is_sequential_array($value) ) {
-			$value = array_map('acf_idval', $value);
+		
+		// format
+		if( is_array($value) ) {
+			
+			// array
+			foreach( $value as $k => $v ){
+			
+				// object?
+				if( is_object($v) && isset($v->ID) ) {
+					
+					$value[ $k ] = $v->ID;
+				
+				}
+			
+			}
+			
+			
+			// save value as strings, so we can clearly search for them in SQL LIKE statements
 			$value = array_map('strval', $value);
-		
-		// Parse single value for id.
-		} else {
-			$value = acf_idval( $value );
+			
+		} elseif( is_object($value) && isset($value->ID) ) {
+			
+			// object
+			$value = $value->ID;
+			
 		}
 		
-		// Return value.
+		
+		// return
 		return $value;
+		
 	}
 	
 	

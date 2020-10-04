@@ -12,6 +12,9 @@ class ACF_Updates {
 	/** @var array The array of registered plugins */
 	var $plugins = array();
 	
+	/** @var boolean Dev mode */
+	var $dev = false;	
+	
 	/** @var int Counts the number of plugin update checks */
 	var $checked = 0;	
 	
@@ -94,52 +97,48 @@ class ACF_Updates {
 	}
 	
 	/*
-	 * request
-	 *
-	 * Makes a request to the ACF connect server.
-	 *
-	 * @date	8/4/17
-	 * @since	5.5.10
-	 *
-	 * @param	string $endpoint The API endpoint.
-	 * @param	array $body The body to post.
-	 * @return	(array|string|WP_Error)
-	 */
-	function request( $endpoint = '', $body = null ) {
+	*  request
+	*
+	*  Makes a request to the ACF connect server.
+	*
+	*  @date	8/4/17
+	*  @since	5.5.10
+	*
+	*  @param	string $query The api path. Defaults to 'index.php'
+	*  @param	array $body The body to post
+	*  @return	array|string|WP_Error
+	*/
+	
+	function request( $query = 'index.php', $body = null ) {
 		
-		// Determine URL.
-		$url = "https://connect.advancedcustomfields.com/$endpoint";
+		// vars
+		$url = 'https://connect.advancedcustomfields.com/' . $query;
 		
-		// Staging environment.
-		if( defined('ACF_DEV_API') && ACF_DEV_API === 'STAGE' ) {
-			$url = "https://staging.connect.advancedcustomfields.com/$endpoint";
-			acf_log( $url, $body );
-		
-		// Dev environment.	
-		} elseif( defined('ACF_DEV_API') && ACF_DEV_API ) {
-			$url = "http://connect/$endpoint";
-			acf_log( $url, $body );
+		// development mode
+		if( $this->dev ) {
+			$url = 'http://connect/' . $query;
+			acf_log('acf connect: '. $url, $body);
 		}
 		
-		// Make request.
+		// post
 		$raw_response = wp_remote_post( $url, array(
 			'timeout'	=> 10,
 			'body'		=> $body
 		));
 		
-		// Handle response error.
+		// wp error
 		if( is_wp_error($raw_response) ) {
 			return $raw_response;
 		
-		// Handle http error.
+		// http error
 		} elseif( wp_remote_retrieve_response_code($raw_response) != 200 ) {
 			return new WP_Error( 'server_error', wp_remote_retrieve_response_message($raw_response) );
 		}
 		
-		// Decode JSON response.
+		// decode response
 		$json = json_decode( wp_remote_retrieve_body($raw_response), true );
 		
-		// Allow non json value.
+		// allow non json value
 		if( $json === null ) {
 			return wp_remote_retrieve_body($raw_response);
 		}

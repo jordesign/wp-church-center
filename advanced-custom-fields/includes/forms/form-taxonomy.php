@@ -246,27 +246,27 @@ class acf_form_taxonomy {
 	*/
 	
 	function admin_footer() {
-		
+	
 ?>
 <script type="text/javascript">
 (function($) {
 	
-	// Define vars.
+	// vars
 	var view = '<?php echo $this->view; ?>';
-	var $form = $('#' + view + 'tag');
-	var $submit = $('#' + view + 'tag input[type="submit"]:last');
 	
-	// Add missing spinner.
+	// add missing spinners
+	var $submit = $('input.button-primary');
 	if( !$submit.next('.spinner').length ) {
 		$submit.after('<span class="spinner"></span>');
 	}
 	
 <?php 
 	
-// View: Add.
+// add view
 if( $this->view == 'add' ): ?>
 	
 	// vars
+	var $form = $('#addtag');
 	var $fields = $('#acf-term-fields');
 	var html = '';
 	

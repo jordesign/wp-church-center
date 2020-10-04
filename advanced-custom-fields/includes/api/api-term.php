@@ -359,7 +359,10 @@ function acf_encode_term( $term ) {
 function acf_decode_term( $string ) {
 	if( is_string($string) && strpos($string, ':') ) {
 		list( $taxonomy, $slug ) = explode(':', $string);
-		return compact( 'taxonomy', 'slug' );
+		return array(
+			'taxonomy'	=> $taxonomy,
+			'slug'		=> $slug
+		);
 	}
 	return false;
 }

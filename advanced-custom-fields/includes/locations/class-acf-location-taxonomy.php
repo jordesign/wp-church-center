@@ -2,87 +2,94 @@
 
 if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if( ! class_exists('ACF_Location_Taxonomy') ) :
+if( ! class_exists('acf_location_taxonomy') ) :
 
-class ACF_Location_Taxonomy extends ACF_Location {
+class acf_location_taxonomy extends acf_location {
 	
-	/**
-	 * Initializes props.
-	 *
-	 * @date	5/03/2014
-	 * @since	5.0.0
-	 *
-	 * @param	void
-	 * @return	void
-	 */
-	public function initialize() {
+	
+	/*
+	*  __construct
+	*
+	*  This function will setup the class functionality
+	*
+	*  @type	function
+	*  @date	5/03/2014
+	*  @since	5.0.0
+	*
+	*  @param	n/a
+	*  @return	n/a
+	*/
+	
+	function initialize() {
+		
+		// vars
 		$this->name = 'taxonomy';
-		$this->label = __( "Taxonomy", 'acf' );
+		$this->label = __("Taxonomy",'acf');
 		$this->category = 'forms';
-		$this->object_type = 'term';
+    	
 	}
 	
-	/**
-	 * Matches the provided rule against the screen args returning a bool result.
-	 *
-	 * @date	9/4/20
-	 * @since	5.9.0
-	 *
-	 * @param	array $rule The location rule.
-	 * @param	array $screen The screen args.
-	 * @param	array $field_group The field group settings.
-	 * @return	bool
-	 */
-	public function match( $rule, $screen, $field_group ) {
+
+	/*
+	*  rule_match
+	*
+	*  This function is used to match this location $rule to the current $screen
+	*
+	*  @type	function
+	*  @date	3/01/13
+	*  @since	3.5.7
+	*
+	*  @param	$match (boolean) 
+	*  @param	$rule (array)
+	*  @return	$options (array)
+	*/
+	
+	function rule_match( $result, $rule, $screen ) {
 		
-		// Check screen args.
-		if( isset($screen['taxonomy']) ) {
-			$taxonomy = $screen['taxonomy'];
-		} else {
-			return false;
-		}
+		// vars
+		$taxonomy = acf_maybe_get( $screen, 'taxonomy' );
 		
-		// Compare rule against $taxonomy.
-		return $this->compare_to_rule( $taxonomy, $rule );
+		
+		// bail early if not taxonomy
+		if( !$taxonomy ) return false;
+				
+		
+        // return
+        return $this->compare( $taxonomy, $rule );
+		
 	}
 	
-	/**
-	 * Returns an array of possible values for this rule type.
-	 *
-	 * @date	9/4/20
-	 * @since	5.9.0
-	 *
-	 * @param	array $rule A location rule.
-	 * @return	array
-	 */
-	public function get_values( $rule ) {
-		return array_merge(
-			array(
-				'all' => __('All', 'acf')
-			),
-			acf_get_taxonomy_labels()
-		);
-	}
 	
-	/**
-	 * Returns the object_subtype connected to this location.
-	 *
-	 * @date	1/4/20
-	 * @since	5.9.0
-	 *
-	 * @param	array $rule A location rule.
-	 * @return	string|array
-	 */
-	function get_object_subtype( $rule ) {
-		if( $rule['operator'] === '==' ) {
-			return $rule['value'];
-		}
-		return '';
+	/*
+	*  rule_operators
+	*
+	*  This function returns the available values for this rule type
+	*
+	*  @type	function
+	*  @date	30/5/17
+	*  @since	5.6.0
+	*
+	*  @param	n/a
+	*  @return	(array)
+	*/
+	
+	function rule_values( $choices, $rule ) {
+		
+		// vars
+		$choices = array( 'all' => __('All', 'acf') );
+		$choices = array_merge( $choices, acf_get_taxonomy_labels() );
+		
+		
+		// return
+		return $choices;
+		
 	}
 	
 }
 
 // initialize
-acf_register_location_type( 'ACF_Location_Taxonomy' );
+acf_register_location_rule( 'acf_location_taxonomy' );
 
 endif; // class_exists check
+
+?>

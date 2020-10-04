@@ -47,31 +47,55 @@ class acf_field_text extends acf_field {
 	*/
 	
 	function render_field( $field ) {
+		
+		// vars
+		$atts = array();
+		$keys = array( 'type', 'id', 'class', 'name', 'value', 'placeholder', 'maxlength', 'pattern' );
+		$keys2 = array( 'readonly', 'disabled', 'required' );
 		$html = '';
 		
-		// Prepend text.
+		
+		// prepend
 		if( $field['prepend'] !== '' ) {
+		
 			$field['class'] .= ' acf-is-prepended';
 			$html .= '<div class="acf-input-prepend">' . acf_esc_html($field['prepend']) . '</div>';
+			
 		}
 		
-		// Append text.
+		
+		// append
 		if( $field['append'] !== '' ) {
+		
 			$field['class'] .= ' acf-is-appended';
 			$html .= '<div class="acf-input-append">' . acf_esc_html($field['append']) . '</div>';
+			
 		}
 		
-		// Input.
-		$input_attrs = array();
-		foreach( array( 'type', 'id', 'class', 'name', 'value', 'placeholder', 'maxlength', 'pattern', 'readonly', 'disabled', 'required' ) as $k ) {
-			if( isset($field[ $k ]) ) {
-				$input_attrs[ $k ] = $field[ $k ];
-			}
-		}
-		$html .= '<div class="acf-input-wrap">' . acf_get_text_input( acf_filter_attrs($input_attrs) ) . '</div>';
 		
-		// Display.
+		// atts (value="123")
+		foreach( $keys as $k ) {
+			if( isset($field[ $k ]) ) $atts[ $k ] = $field[ $k ];
+		}
+		
+		
+		// atts2 (disabled="disabled")
+		foreach( $keys2 as $k ) {
+			if( !empty($field[ $k ]) ) $atts[ $k ] = $k;
+		}
+		
+		
+		// remove empty atts
+		$atts = acf_clean_atts( $atts );
+		
+		
+		// render
+		$html .= '<div class="acf-input-wrap">' . acf_get_text_input( $atts ) . '</div>';
+		
+		
+		// return
 		echo $html;
+		
 	}
 	
 	
@@ -136,30 +160,6 @@ class acf_field_text extends acf_field {
 		
 	}
 	
-	/**
-	 * validate_value
-	 *
-	 * Validates a field's value.
-	 *
-	 * @date	29/1/19
-	 * @since	5.7.11
-	 *
-	 * @param	(bool|string) Whether the value is vaid or not.
-	 * @param	mixed $value The field value.
-	 * @param	array $field The field array.
-	 * @param	string $input The HTML input name.
-	 * @return	(bool|string)
-	 */
-	function validate_value( $valid, $value, $field, $input ){
-		
-		// Check maxlength
-		if( $field['maxlength'] && (acf_strlen($value) > $field['maxlength']) ) {
-			return sprintf( __('Value must not exceed %d characters', 'acf'), $field['maxlength'] );
-		}
-		
-		// Return.
-		return $valid;
-	}
 }
 
 
