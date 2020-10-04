@@ -5,6 +5,7 @@ define( 'wpcc_PLUGIN_PATH', dirname(__FILE__) );
 //Use Filters to direct the 'card' CPT to use the templates in our plugin
 add_filter( 'single_template' , 'wpcc_single_template', 20 );
 add_filter( 'archive_template' , 'wpcc_archive_template' );
+add_filter( 'taxonomy_template' , 'wpcc_taxonomy_archive_template' );
 
 //route single-template
 function wpcc_single_template( $single_template ){
@@ -14,6 +15,18 @@ function wpcc_single_template( $single_template ){
     $single_template = wpcc_PLUGIN_PATH .'/templates/single-card.php';
   }
   return $single_template;
+}
+
+//route taxonomy-archive-template
+function wpcc_taxonomy_archive_template( $template ){
+  if( is_tax('card_group') ){
+    $theme_files = array('archive-card.php','taxonomy-card_group.php')  ;
+    $exists_in_theme = locate_template($theme_files, false);
+    if( $exists_in_theme == '' ){
+      return wpcc_PLUGIN_PATH . '/templates/archive-card.php';
+    }
+  }
+  return $template;
 }
 
 //route archive-template
@@ -27,6 +40,8 @@ function wpcc_archive_template( $template ){
   }
   return $template;
 }
+
+
 
 
 // De-Queue all Stylesheets
@@ -101,7 +116,7 @@ if( 1 == get_option( 'wpcc_disable_scripts' )  && !is_admin() ){
 //Now enqueue styles we want 
 function wpcc_add_styles() {
 	global $post;
-	if( is_singular( 'card' )  || is_post_type_archive('card') || get_page_template_slug( get_the_ID() ) =='center_home.php' || has_shortcode( $post->post_content, 'wpcc') ){
+	if( is_singular( 'card' )  || is_post_type_archive('card') || get_page_template_slug( get_the_ID() ) =='center_home.php' || is_tax('card_group') || has_shortcode( $post->post_content, 'wpcc') ){
 		wp_enqueue_style( 'wpcc-style', plugins_url( '/templates/wpcc_style.1.3.css', __FILE__  ) );
 		//if( get_option('wpcc_scroll_direction') =='horizontal' ) {
 			wp_enqueue_script( 'wpcc-scripts', plugins_url( '/templates/wpcc_script.1.3-min.js', __FILE__ ), array( 'jquery' ) );
