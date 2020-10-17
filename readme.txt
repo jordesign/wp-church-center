@@ -58,6 +58,8 @@ You'll need to set up some settings for your centre in the 'Church Center' secti
 
 == Changelog ==
 v1.3.3
+- FEATURE: Allow custom 'back' link on cards
+- FEATURE: Set up default view for 'Card Group' taxonomy pages
 - BUG: No PHP notice when cards are empty
 
 v1.3.2
