@@ -272,8 +272,9 @@ function wpcc_get_home_center_link(){
 	    'orderby' 	  => 'modified',
 	    'posts_per_page' => 1
 	) );
-
-	if ( $centerHomeQuery->have_posts() ) : 
+	if ( '' != get_option( 'wpcc_custom_back_link' )):
+		$homeURL = get_option( 'wpcc_custom_back_link' );
+	elseif ( $centerHomeQuery->have_posts() ) : 
 		while ( $centerHomeQuery->have_posts() ) : $centerHomeQuery->the_post();
 			$homeURL =  get_the_permalink(); 
 		endwhile; 
