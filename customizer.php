@@ -612,6 +612,21 @@ $wp_customize->add_control( 'wpcc_custom_slug', array(
    'placeholder' => 'card',
 ) );
 
+// add a setting for the custom 'back' link
+$wp_customize->add_setting('wpcc_custom_back_link', array(
+     'type' => 'option', 
+     'capability' => 'manage_options',
+));
+
+//add control for card slug
+$wp_customize->add_control( 'wpcc_custom_back_link', array(
+   'label'   => 'Custom link for Back Button',
+   'description' => 'When using the shortcode for your center - enter the URL for the page you would like the "back" button to return users to',
+   'section' => 'wpcc_settings',
+   'type'    => 'text',
+   'placeholder' => '',
+) );
+
   // Add settings for disabling styles
     $wp_customize->add_setting( 'wpcc_disable_styles', array(
         'default'    => '',
